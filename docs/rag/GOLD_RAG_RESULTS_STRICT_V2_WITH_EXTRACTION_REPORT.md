@@ -1,0 +1,48 @@
+# RAG Gold Validation Report
+
+> Generated at: 2026-07-10T23:16:54.262792
+
+## Conclusion
+
+- Top5 exact evidence recall: 100.00%
+- Top10 exact evidence recall: 100.00%
+- Top5 page recall: 100.00%
+- Top10 page recall: 100.00%
+- Risk element extraction accuracy: 100.00%
+- Risk element extraction threshold: keyword coverage >= 75%
+- Average risk keyword coverage: 95.72%
+
+Current metrics are computed dynamically from Retriever results and the manually labeled Gold set.
+
+## Gold Set
+
+- Gold file: `evaluation\gold\gold_risk_annotations_strict_v2.json`
+- Cases: 12
+- Company: 德合集團
+- Coverage: contract_asset_recoverability, cost_estimation_overrun, covid_project_award_and_receivable, covid_site_interruption, insurance_coverage_gap, performance_bond_liquidity, revenue_non_recurring_projects, subcontractor_performance, supplier_material_defect, supplier_subcontractor_disruption, variation_order_cost_recovery, variation_order_margin_volatility
+
+## Case Results
+
+| ID | Risk type | Top5 exact | Top10 exact | Top5 page | Top10 page | Risk extraction | Keyword coverage |
+|---|---|---:|---:|---:|---:|---:|---:|
+| `strict_001` | revenue_non_recurring_projects | True | True | True | True | True | 88.89% |
+| `strict_002` | performance_bond_liquidity | True | True | True | True | True | 100.00% |
+| `strict_003` | covid_project_award_and_receivable | True | True | True | True | True | 100.00% |
+| `strict_004` | covid_site_interruption | True | True | True | True | True | 100.00% |
+| `strict_005` | supplier_subcontractor_disruption | True | True | True | True | True | 100.00% |
+| `strict_006` | variation_order_margin_volatility | True | True | True | True | True | 100.00% |
+| `strict_007` | variation_order_cost_recovery | True | True | True | True | True | 100.00% |
+| `strict_008` | contract_asset_recoverability | True | True | True | True | True | 100.00% |
+| `strict_009` | cost_estimation_overrun | True | True | True | True | True | 83.33% |
+| `strict_010` | subcontractor_performance | True | True | True | True | True | 88.89% |
+| `strict_011` | supplier_material_defect | True | True | True | True | True | 87.50% |
+| `strict_012` | insurance_coverage_gap | True | True | True | True | True | 100.00% |
+
+## Failed Top5 Exact Cases
+
+
+## Interpretation
+
+- The current Retriever meets the 85% Top5 exact evidence recall target on this gold set.
+- The current rule-based risk element extraction metric is above the 80% target on this gold set.
+- This extraction metric checks whether returned evidence contains the manually labeled risk element keywords; it is not a chat Agent score.

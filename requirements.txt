@@ -1,0 +1,5 @@
+faiss-cpu
+loguru
+numpy
+opencc-python-reimplemented
+sentence-transformers
