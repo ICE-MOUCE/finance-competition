@@ -1,35 +1,35 @@
-# RAG Benchmark Report
+# RAG Benchmark 报告
 
-> Generated: 2026-07-11T18:25:45.936698
+> 生成时间：2026-07-12T08:07:52.735211
 
-## Scope
+## 评估范围
 
-This benchmark evaluates retrieval grounding, not generated-answer accuracy. `gold_seed` cases have manually verified source labels; `catalog_document_label` cases verify the named local pilot document and retrieval terms but require later human section/page annotation.
+本 Benchmark 评估的是检索 grounding 能力，而不是最终生成答案的准确率。`gold_seed` 表示来源标签已人工核验；`catalog_document_label` 只校验当前本地样本文档与检索术语，章节与页码仍需后续人工补标。
 
-## Summary
+## 总体结果
 
-| Metric | Result |
+| 指标 | 结果 |
 |---|---:|
-| Cases | 60 |
-| Correct document hit rate | 81.67% (60 labeled) |
-| Correct company hit rate | 81.67% (60 labeled) |
-| Expected keyword coverage | 64.44% (60 labeled) |
-| Expected section hit rate | 76.47% (17 labeled) |
-| Page range hit rate | 47.06% (17 labeled) |
-| Evidence completeness | 100.00% |
-| Page reference rate | 100.00% |
-| No-result rate | 0.00% |
-| Low-confidence cases | 3 |
-| Vector documents | 10992 |
+| 问题数量 | 60 |
+| 正确文档命中率 | 81.67% (60 labeled) |
+| 正确公司命中率 | 81.67% (60 labeled) |
+| 预期关键词覆盖率 | 64.44% (60 条有标签) |
+| 预期章节命中率 | 76.47% (17 labeled) |
+| 预期页码区间命中率 | 47.06% (17 labeled) |
+| Evidence 完整率 | 100.00% |
+| 页码引用存在率 | 100.00% |
+| 无结果占比 | 0.00% |
+| 低置信问题数 | 3 |
+| 向量文档数 | 10992 |
 
-## Label Coverage
+## 标签覆盖情况
 
 - `catalog_document_label`: 43
 - `gold_seed`: 17
 
-## Failure Analysis
+## 失败案例分析
 
-### Complete document misses
+### 完全未命中文档
 
 - `seed_fin_001` [financial_risk] doc=False keyword=0.5 section=True page=False
 - `seed_fin_004` [financial_risk] doc=False keyword=1.0 section=True page=False
@@ -43,20 +43,20 @@ This benchmark evaluates retrieval grounding, not generated-answer accuracy. `go
 - `cat_comp_006` [compliance_risk] doc=False keyword=1.0 section=None page=None
 - `cat_ipo_005` [ipo_specific_risk] doc=False keyword=0.3333 section=None page=None
 
-### Document hit but expected keyword miss
+### 命中文档但未命中预期关键词
 
 - `cat_ipo_002` [ipo_specific_risk] doc=True keyword=0.0 section=None page=None
 - `cat_ipo_004` [ipo_specific_risk] doc=True keyword=0.0 section=None page=None
 - `cat_ipo_009` [ipo_specific_risk] doc=True keyword=0.0 section=None page=None
 
-### Keyword hit but expected section miss
+### 命中关键词但章节明显不对
 
 - `seed_fin_005` [financial_risk] doc=True keyword=0.6667 section=False page=False
 - `seed_bus_003` [business_risk] doc=True keyword=0.3333 section=False page=False
 - `seed_bus_004` [business_risk] doc=True keyword=0.3333 section=False page=False
 - `seed_bus_005` [business_risk] doc=False keyword=0.6667 section=False page=False
 
-### Missing or untrusted page references
+### 页码缺失或页码不可信
 
 - `seed_fin_001` [financial_risk] doc=False keyword=0.5 section=True page=False
 - `seed_fin_004` [financial_risk] doc=False keyword=1.0 section=True page=False
@@ -68,7 +68,7 @@ This benchmark evaluates retrieval grounding, not generated-answer accuracy. `go
 - `seed_bus_005` [business_risk] doc=False keyword=0.6667 section=False page=False
 - `seed_comp_002` [compliance_risk] doc=True keyword=0.6667 section=True page=False
 
-### Table-answer cases
+### 表格类问题
 
 - `seed_fin_003` [financial_risk] doc=True keyword=1.0 section=True page=True
 - `seed_fin_004` [financial_risk] doc=False keyword=1.0 section=True page=False
@@ -85,7 +85,7 @@ This benchmark evaluates retrieval grounding, not generated-answer accuracy. `go
 - `cat_ipo_009` [ipo_specific_risk] doc=True keyword=0.0 section=None page=None
 - `cat_ipo_011` [ipo_specific_risk] doc=True keyword=0.6667 section=None page=None
 
-### Low coverage in governance, compliance, or IPO-specific risk
+### 治理 / 合规 / IPO 特殊风险中的低覆盖问题
 
 - `cat_own_009` [ownership_risk] doc=True keyword=0.3333 section=None page=None
 - `cat_own_011` [ownership_risk] doc=True keyword=0.3333 section=None page=None
@@ -102,10 +102,10 @@ This benchmark evaluates retrieval grounding, not generated-answer accuracy. `go
 - `cat_ipo_009` [ipo_specific_risk] doc=True keyword=0.0 section=None page=None
 - `cat_ipo_010` [ipo_specific_risk] doc=True keyword=0.3333 section=None page=None
 
-## Decision Guidance
+## 下一步决策建议
 
-- Do not introduce Hybrid Retrieval from this v1 alone. First increase the `gold_seed` subset across companies and complete section/page labels for catalog cases.
-- If the expanded gold subset shows document hits but keyword misses, test keyword filtering first. If document/keyword hits are good but ranking is poor, test reranking before BM25.
-- BM25 is justified only when manually labeled failures show exact lexical terms are absent from vector TopK. Section filtering is justified only when section labels show recurring wrong-section hits.
-- Do not start the 568-PDF production run or an RAG API based on this benchmark alone; use the Production Readiness Review gates and a representative full-PDF acceptance run.
-- Table cases should be reviewed separately. Persistently low table coverage is evidence to improve table descriptions/chunks before changing retrieval architecture.
+- 不建议仅凭这一版结果就直接上 Hybrid Retrieval。先扩充 `gold_seed`，并为 catalog 类问题补齐章节和页码标签。
+- 如果扩充后的 Gold 子集显示“文档命中了，但关键词经常漏掉”，优先测试关键词过滤；如果文档和关键词都对但排序靠后，优先测试 rerank，再考虑 BM25。
+- 只有在人工核验后的失败案例明确显示“精确词项没有进入向量 TopK”时，BM25 才是高优先级；如果主要问题是命错章节，再考虑章节过滤。
+- 不建议仅根据这份 Benchmark 就直接启动 568 份 PDF 全量跑数，也不建议立刻开始做 RAG API；应以前面的生产就绪度审查门槛和整本 PDF 验收跑为准。
+- 表格类问题应单独复盘。如果表格覆盖持续偏低，应优先改进 table description 和 table chunk 表达，而不是先改检索架构。

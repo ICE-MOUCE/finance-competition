@@ -1,113 +1,142 @@
-# IPO-Risk-Agent Production Readiness Review
+# IPO-Risk-Agent 生产就绪度审查
 
-> Review date: 2026-07-11
+> 审查日期：2026-07-11
 >
-> Scope: read-only review of the executable pipeline, local artifacts, tests, and Streamlit applications. No production code was modified.
+> 范围：仅做只读审查，覆盖可执行流水线、本地产物、测试和 Streamlit 应用。未修改任何生产代码。
 
-## Executive conclusion
+## 总结结论
 
-The project has a working RAG MVP, but is **not production-ready** for parsing all pages of 568 Hong Kong IPO prospectuses. The intended full-pipeline entry point calls MinerU without page-range arguments, so its default parsing behavior is full-PDF. However, the repository also retains an executable 200-400-page, three-sample pipeline, and the stored artifacts demonstrate only limited-scale validation:
+项目已经具备可运行的 RAG MVP，但**尚未达到**“完整解析 568 份港股 IPO 招股书全部页面”的生产级标准。
 
-- `data/raw/` contains 568 PDFs.
-- `data/processed/` contains 4 document directories; `data/precision_chunks/` contains 3 documents.
-- The latest full-pipeline result processed 3 documents, not 568.
-- The current vector index contains 2,448 vectors from 6 documents.
-- Three documents have only 41-74 KB of Evidence JSON, consistent with the historical partial-page validation output; they must not be treated as full-prospectus artifacts.
+目前正式全流程入口默认会调用 MinerU 对整本 PDF 做解析，并不会主动限制页码范围；这一点方向是对的。但仓库里仍然保留着“只跑 200-400 页、只测三个样本”的可执行脚本，而且现有落盘产物也主要证明了小规模验证可行，不能证明全量生产可行：
 
-The main blockers are end-to-end scale validation, resumable/versioned processing, batching in the actual full-pipeline path, failure isolation, and operational observability.
+- `data/raw/` 下有 568 份 PDF。
+- `data/processed/` 只有 4 个文档目录；`data/precision_chunks/` 只有 3 个文档目录。
+- 最近一次 full pipeline 结果只处理了 3 份 PDF，不是 568 份。
+- 当前向量索引只有 2,448 个向量，覆盖 6 个文档。
+- 其中 3 个文档的 Evidence JSON 只有 41-74 KB，明显更接近历史“局部页码验证”产物，不能视为整本招股书的完整结果。
 
-## Evidence examined
+当前离生产级最主要的差距在于：
+
+- 缺少整本招股书的端到端验证
+- 缺少稳定的断点续跑与版本化产物管理
+- 正式全流程里没有真正使用批量 Embedding
+- 失败隔离能力不足
+- 缺少面向大规模跑数的可观测性
+
+## 审查依据
 
 - `scripts/run_full_pipeline.py`
 - `scripts/parse_precision_sections.py`
 - `scripts/reparse_for_precision.py`
-- `src/evidence/`, `src/chunk/`, `src/embedding/`, `src/vector/`
+- `src/evidence/`
+- `src/chunk/`
+- `src/embedding/`
+- `src/vector/`
 - `scripts/build_vectors.py`
-- `app/app.py`, `app/rag_console.py`
-- Current local data artifacts, reports, and tests
+- `app/app.py`
+- `app/rag_console.py`
+- 当前本地数据产物、报告和测试
 
-## 1. Parser and MinerU pipeline
+## 1. Parser 与 MinerU 流水线
 
-### Findings
+### 发现
 
-| Classification | Location | Finding | Production implication |
+| 分类 | 位置 | 发现 | 生产影响 |
 |---|---|---|---|
-| MUST MODIFY | `scripts/parse_precision_sections.py:3,24-48,53-67,85-106` | An executable precision parser hardcodes three samples and pages `200-400`, passing MinerU `-s` and `-e`. | It can be run accidentally and produces incomplete source data that is indistinguishable by the downstream Evidence/Chunk interfaces. Remove it from the production execution surface, or make its experimental-only status and output isolation unambiguous. |
-| MUST MODIFY | `scripts/reparse_for_precision.py:39-58,118-200` | A second executable script hardcodes the same three samples and writes separate `*_v2` data. | This preserves a sample-only workflow beside the production path and adds ambiguity over which artifacts are authoritative. Archive or explicitly isolate it from operational commands. |
-| MUST MODIFY | `scripts/run_full_pipeline.py:181` | Each MinerU invocation has one fixed 600-second timeout. | Full IPO PDFs can exceed this limit. A timeout currently records failure and moves on, with no retry policy, timeout classification, or retained command diagnostics. |
-| MUST MODIFY | `scripts/run_full_pipeline.py:40-47,55-78` | PDF discovery is limited to six hardcoded year-folder names. Those names currently total 568 PDFs. | It meets today's folder convention but is not robust to a new year, corrected directory name, or a different source layout. Production discovery should be data-driven and report expected versus discovered counts. |
-| SUGGEST MODIFY | `scripts/run_full_pipeline.py:319-323` | `--start` and `--limit` slice the document list. | This is appropriate for controlled batches and resumption, not a page-range restriction. Record the selected document IDs in every run manifest so a partial run cannot be mistaken for a full run. |
-| NO CHANGE | `scripts/run_full_pipeline.py:160-176` | The default MinerU command supplies no `-s` or `-e` page arguments. | This is the correct default for whole-PDF parsing. |
-| NO CHANGE | `src/evidence/parser.py:104-134` | MinerU `content_list.json` is iterated without a page range or sample filter. | It will consume every block present in a valid full-PDF MinerU result. |
+| 必须修改 | `scripts/parse_precision_sections.py:3,24-48,53-67,85-106` | 这个精细解析脚本写死了三个样本和 `200-400` 页，并显式传入 MinerU 的 `-s` 和 `-e` 参数。 | 它很容易被误运行，并生成“下游接口看起来正常、但实际上不是全书”的不完整数据。必须从生产入口面移除，或者明确隔离为实验脚本。 |
+| 必须修改 | `scripts/reparse_for_precision.py:39-58,118-200` | 第二个脚本同样写死了三个样本，并输出单独的 `*_v2` 产物。 | 这会让仓库长期保留一条样本专用流程，增加“哪个结果才是权威结果”的歧义。建议归档或显式隔离。 |
+| 必须修改 | `scripts/run_full_pipeline.py:181` | 每次调用 MinerU 都使用固定 `600` 秒超时。 | 整本 IPO PDF 完全可能超过这个时限。当前一旦超时，只记录失败并继续，没有重试、错误分类或足够的诊断信息。 |
+| 必须修改 | `scripts/run_full_pipeline.py:40-47,55-78` | PDF 发现逻辑只扫描六个写死的年份目录。 | 这虽然覆盖了当前 568 份 PDF，但对新增年份、目录命名修正或数据布局变化都不稳。生产版应改为数据驱动，并输出“预期数 vs 实际发现数”。 |
+| 建议修改 | `scripts/run_full_pipeline.py:319-323` | `--start` 和 `--limit` 是按文档列表切片。 | 这个设计适合控制批次和断点恢复，不是问题本身。但需要把每次跑的 `document_id` 明确写进 manifest，避免局部批次被误认成全量结果。 |
+| 无需修改 | `scripts/run_full_pipeline.py:160-176` | 默认 MinerU 命令没有传 `-s` / `-e` 页码参数。 | 这是整本 PDF 解析的正确默认行为。 |
+| 无需修改 | `src/evidence/parser.py:104-134` | 遍历 `content_list.json` 时没有页码过滤或样本过滤。 | 只要 MinerU 结果是完整的，这里就能消费整本 PDF 的 block。 |
 
-### Answer to the MinerU default question
+### 关于 MinerU 默认是否解析整本 PDF
 
-Yes. The default production entry point, `run_full_pipeline.py`, requests the entire PDF from MinerU. The partial-page behavior exists only in `parse_precision_sections.py`; nevertheless, because that script is runnable and creates downstream-like artifacts, it is a production-readiness risk until isolated.
+答案是：**是的**。
+
+当前正式入口 `run_full_pipeline.py` 默认请求 MinerU 解析整本 PDF。局部页码行为只存在于 `parse_precision_sections.py` 这类实验脚本里。
+
+但需要强调：只要这些脚本还可执行、产物目录又没有强隔离，它们就仍然是生产风险。
 
 ## 2. Evidence Builder
 
-| Classification | Location | Finding | Production implication |
+| 分类 | 位置 | 发现 | 生产影响 |
 |---|---|---|---|
-| MUST MODIFY | `src/evidence/builder.py:44-92,101-154` and `src/evidence/parser.py:104-134` | A full `content_list.json`, all `RawBlock` objects, and all Evidence objects are materialized in memory before saving. | There is no configured evidence cap, which is good for completeness, but no memory budget or streaming path for long prospectuses. Capacity must be measured on representative worst-case files before 568-document execution. |
-| MUST MODIFY | `src/evidence/store.py:16-34` | Every accessed document is cached as an in-memory `evidence_id -> evidence` map with no cache bound or invalidation. | A long-lived Streamlit process that accesses many full prospectuses can retain all Evidence payloads indefinitely. Add bounded caching or explicit eviction, plus artifact-version invalidation. |
-| SUGGEST MODIFY | `src/evidence/builder.py` document save path | Evidence artifacts have no visible input fingerprint, parser configuration fingerprint, page-count verification, or completion marker. | Existing partial artifacts are reused by `run_full_pipeline.py:357-364` as if they were complete. A manifest must distinguish complete full-PDF output from partial/failed output. |
-| NO CHANGE | `src/evidence/builder.py:101-154` | The builder loops over every eligible raw block and has no fixed Evidence-number limit. | The core Evidence construction logic itself does not assume pages 200-400. |
+| 必须修改 | `src/evidence/builder.py:44-92,101-154` 与 `src/evidence/parser.py:104-134` | 会先把完整 `content_list.json`、全部 `RawBlock`、全部 Evidence 对象都加载到内存，再统一保存。 | 当前虽然没有 Evidence 数量上限，这是对完整性的好事；但对于长招股书，没有内存预算也没有流式方案。跑 568 份之前必须先测最坏情况容量。 |
+| 必须修改 | `src/evidence/store.py:16-34` | 被访问过的文档都会缓存为内存中的 `evidence_id -> evidence` 映射，且没有缓存上限或失效机制。 | 长时间运行的 Streamlit 进程如果访问很多整本招股书，会无限保留 Evidence 数据，存在明显内存膨胀风险。 |
+| 建议修改 | `src/evidence/builder.py` 保存路径 | 目前 Evidence 产物没有输入指纹、解析配置指纹、页数校验或“完整完成标记”。 | `run_full_pipeline.py:357-364` 会把“文件存在”直接当成“可以复用”，这会把历史局部产物误当作完整产物。 |
+| 无需修改 | `src/evidence/builder.py:101-154` | Builder 会遍历所有合格 block，没有写死 Evidence 数量限制。 | 核心逻辑本身并不假设只有 200-400 页。 |
 
-## 3. Chunk pipeline
+## 3. Chunk 流水线
 
-| Classification | Location | Finding | Production implication |
-|---|---|---|
-| SUGGEST MODIFY | `src/chunk/builder.py:42-144` | All Evidence for a document are separated into lists, sorted, and accumulated in memory before chunks are returned. | There is no 200-400 page assumption, but peak memory grows with the complete document. Validate the largest prospectus and define memory ceilings. |
-| SUGGEST MODIFY | `src/chunk/store.py:30-42` | All chunks are serialized as one `chunks.json` file per document. | This is simple and adequate for MVP scale, but reprocessing and loading large files will become expensive. A manifest and per-document completion status are more urgent than changing the interface. |
-| NO CHANGE | `src/chunk/builder.py:75-144,178-282` | Text is sorted by page; tables and images are processed across the supplied Evidence list with no page upper bound. | Chunk creation is structurally compatible with a whole PDF. |
+| 分类 | 位置 | 发现 | 生产影响 |
+|---|---|---|---|
+| 建议修改 | `src/chunk/builder.py:42-144` | 会先把一个文档的全部 Evidence 拆分类别、排序，再统一在内存里构建 Chunk。 | 逻辑上支持整本 PDF，但峰值内存会随文档长度增长。需要对最大招股书做实测。 |
+| 建议修改 | `src/chunk/store.py:30-42` | 每个文档的 Chunk 都一次性落成一个 `chunks.json`。 | MVP 阶段这样很简单，但文档变大后，重处理和加载成本会上升。短期比改接口更重要的是增加 manifest 和完成状态。 |
+| 无需修改 | `src/chunk/builder.py:75-144,178-282` | 文本按页排序，表格和图片也会遍历完整 Evidence 列表，没有页码上限假设。 | 结构上兼容整本 PDF。 |
 
-## 4. Embedding pipeline
+## 4. Embedding 流水线
 
-| Classification | Location | Finding | Production implication |
-|---|---|---|
-| MUST MODIFY | `scripts/run_full_pipeline.py:236-290`, especially `:273` | The actual full-pipeline route calls `engine.embed_text()` once per chunk. | Hundreds of thousands of chunks would create excessive model-call overhead and make a 568-document run impractically slow. The existing batch API is not used here. |
-| MUST MODIFY | `scripts/run_full_pipeline.py:241-290` | It retains all `VectorDocument` instances for a document before adding them to FAISS. | Peak memory grows with all chunks in the document. Use bounded batches and persist/report progress at batch granularity. |
-| SUGGEST MODIFY | `src/embedding/engine.py:55-75` | `embed_batch()` supports configured batching, but its batch size and device behavior are not accompanied by capacity tests, OOM handling, or retry/downsizing logic. | The primitive exists; production needs empirically selected settings and failure recovery. |
-| NO CHANGE | `scripts/build_vectors.py:101-141` | The standalone vector build path already uses `embed_batch()`. | This is the correct reuse target for the full-pipeline implementation. |
+| 分类 | 位置 | 发现 | 生产影响 |
+|---|---|---|---|
+| 必须修改 | `scripts/run_full_pipeline.py:236-290`，尤其是 `:273` | 正式全流程里是逐 chunk 调用 `engine.embed_text()`。 | 面对几十万 chunk，这个实现会非常慢。仓库里虽然已有 `embed_batch()`，但正式路径并没有复用。 |
+| 必须修改 | `scripts/run_full_pipeline.py:241-290` | 会先把一个文档的全部 `VectorDocument` 都留在内存里，再一起写入 FAISS。 | 文档越长，峰值内存越大。生产版应该做成分批嵌入、分批写入、分批记录进度。 |
+| 建议修改 | `src/embedding/engine.py:55-75` | `embed_batch()` 虽然支持批处理，但还没有围绕批大小、设备、OOM 重试等做容量验证。 | 基础能力已经有了，缺的是生产级容量参数和失败恢复机制。 |
+| 无需修改 | `scripts/build_vectors.py:101-141` | 独立向量构建路径已经使用 `embed_batch()`。 | 这是正式全流程应该复用的正确方向。 |
 
 ## 5. Vector Store
 
-| Classification | Location | Finding | Production implication |
-|---|---|---|
-| MUST MODIFY | `src/vector/store.py:26-29,139-177` | FAISS uses `IndexFlatIP` and loads the entire index plus all document metadata JSON into memory. | Exact flat search is acceptable for MVP quality work but has linear query cost and in-memory metadata growth. It has not been capacity-tested for the anticipated corpus size. |
-| MUST MODIFY | `scripts/run_full_pipeline.py:406-410` plus `src/vector/store.py:60-88` | The pipeline re-embeds every reused chunk, then relies on `chunk_id` de-duplication to discard existing vectors. | Re-runs waste embedding time. More importantly, a changed chunk with the same ID cannot replace its stale vector. Incremental updates require source/artifact fingerprints and explicit upsert/rebuild semantics. |
-| MUST MODIFY | `src/vector/store.py:121-135` | FAISS index replacement and `documents.json` replacement are separate operations. | A crash between them can leave index and metadata out of sync; loading has no count/integrity check. Use a transactional generation directory or validate and recover on load. |
-| SUGGEST MODIFY | `scripts/build_vectors.py:49-57,73-79` | The default is a full rebuild; `--append` exists and duplicate chunk IDs are skipped. | This gives a basic append mechanism, but it lacks run manifests, deletion handling, versioned updates, and verification that all 568 expected documents are present. |
-| NO CHANGE | `src/vector/store.py:64-88` | Chunk ID de-duplication prevents duplicate vectors during an append run. | This is useful baseline protection, but it is not sufficient incremental-update semantics. |
+| 分类 | 位置 | 发现 | 生产影响 |
+|---|---|---|---|
+| 必须修改 | `src/vector/store.py:26-29,139-177` | 使用 `faiss.IndexFlatIP`，并在加载时把整个索引和全部 metadata 一次性读入内存。 | 作为 MVP 可以接受，但查询复杂度线性增长，metadata 内存也会持续上升。当前还没有做针对目标规模的容量验证。 |
+| 必须修改 | `scripts/run_full_pipeline.py:406-410` 与 `src/vector/store.py:60-88` | 复跑时会对已存在 chunk 重新做 embedding，再依赖 `chunk_id` 去重跳过重复写入。 | 这会浪费 embedding 时间，更关键的是“同一 `chunk_id` 内容变了也不会更新旧向量”，缺乏真正的增量更新语义。 |
+| 必须修改 | `src/vector/store.py:121-135` | `faiss.index` 和 `documents.json` 是分别替换的。 | 如果中途崩溃，索引和 metadata 很可能不一致，而加载时又没有完整一致性校验。 |
+| 建议修改 | `scripts/build_vectors.py:49-57,73-79` | 默认是全量重建，`--append` 只是简单追加并跳过重复 `chunk_id`。 | 这只能算基础 append 能力，离生产需要的 manifest、删除感知、版本化更新、覆盖率校验还差很远。 |
+| 无需修改 | `src/vector/store.py:64-88` | `chunk_id` 去重可以防止重复向量被重复写入。 | 这是一个有用的底线保护，但不等于完整的增量更新方案。 |
 
 ## 6. Streamlit
 
-| Classification | Location | Finding | Production implication |
-|---|---|---|
-| SUGGEST MODIFY | `app/app.py:391-408`, `app/rag_console.py:65-79` | Both apps load the full vector store as a cached resource; `rag_console.py` caches a recursive scan of all PDF files. | Neither app is hardcoded to exactly three samples, and both can address a larger index. They need startup-health checks, index generation/version display, corpus coverage display, and bounded Evidence caching before production use. |
-| SUGGEST MODIFY | `app/app.py:466-527`, `app/rag_console.py:82-87,301-353` | Gold evaluation is driven by small local annotation sets. | It is useful for Retriever regression checks but does not validate 568-document ingestion completeness or full-page citation correctness. |
-| NO CHANGE | `app/rag_console.py:100-111,228-235` | PDF lookup scans candidates dynamically and opens source PDFs by path. | There is no three-sample UI hardcode in the current applications. |
+| 分类 | 位置 | 发现 | 生产影响 |
+|---|---|---|---|
+| 建议修改 | `app/app.py:391-408`，`app/rag_console.py:65-79` | 两个应用都会缓存完整向量索引；`rag_console.py` 还会递归缓存 PDF 列表。 | 当前并没有写死“三个样本”，但在大语料下需要补启动健康检查、索引版本展示、覆盖率展示和 Evidence 缓存上限。 |
+| 建议修改 | `app/app.py:466-527`，`app/rag_console.py:82-87,301-353` | Gold 评估依赖的是小规模本地标注集。 | 它适合做 Retriever 回归检查，但不能证明 568 份 PDF 的完整入库和页码可信性。 |
+| 无需修改 | `app/rag_console.py:100-111,228-235` | PDF 路径是动态扫描的，不是样本写死。 | 当前 UI 并没有三样本硬编码问题。 |
 
-## Test and operational gaps
+## 测试与运维缺口
 
-### MUST MODIFY
+### 必须补齐
 
-1. Add an end-to-end acceptance run for a representative full prospectus, verifying: PDF page count equals parsed page coverage, Evidence/Chunk counts, page 0 and final page presence, citations, vectors, and restart behavior.
-2. Add a 568-document run manifest that records every document ID, source checksum, source page count, parser version/configuration, stage status, attempts, elapsed time, output counts, and failure reason.
-3. Add automated checks that reject partial-page artifacts from the production `data/evidence`, `data/chunks`, and vector index unless explicitly marked experimental.
-4. Add capacity benchmarks for the largest PDFs and a corpus-scale estimate: wall time, CPU/GPU, peak RAM/VRAM, disk, vector count, index size, and query latency.
-5. Add integrity checks between `faiss.index`, `documents.json`, chunk artifacts, and Evidence artifacts.
+1. 增加一份“完整招股书端到端验收跑”，校验 PDF 页数、解析覆盖页、Evidence/Chunk 数量、首页与末页是否存在、引用是否可追溯、向量是否齐全、重启后是否可恢复。
+2. 增加 568 文档级别的 manifest，记录每份文档的 `document_id`、源文件校验和、页数、解析版本、阶段状态、尝试次数、耗时、产物计数和失败原因。
+3. 增加自动校验，防止局部页码产物在未标记实验状态时混入正式 `data/evidence`、`data/chunks` 和向量索引。
+4. 增加最大 PDF 和全语料级容量基准：总耗时、CPU/GPU、峰值 RAM/VRAM、磁盘占用、向量数、索引大小、查询时延。
+5. 增加 `faiss.index`、`documents.json`、Chunk 产物和 Evidence 产物之间的一致性检查。
 
-### SUGGEST MODIFY
+### 建议补齐
 
-1. Separate experimental data roots from production artifacts more strongly than naming conventions alone.
-2. Add retries with backoff and diagnostic capture for MinerU failures; avoid one fixed timeout policy for all document sizes.
-3. Add structured logs and a machine-readable dashboard/report for completion rate, page coverage, failures, and resource use.
-4. Define data retention and artifact cleanup rules before full-scale parsing, since full MinerU output, images, Evidence, Chunks, and vectors can consume substantial disk.
-5. Expand tests beyond Retriever/Gold unit and smoke checks. Current tests do not exercise MinerU, a complete Evidence/Chunk run, the full pipeline, 568-document discovery, or restart/update behavior.
+1. 进一步把实验数据目录和正式数据目录彻底隔离，不仅靠命名区分。
+2. 为 MinerU 失败增加重试、退避和诊断输出，而不是固定一个超时策略。
+3. 增加结构化日志和机器可读报表，用于追踪完成率、页覆盖率、失败情况和资源消耗。
+4. 在全量解析前明确数据保留和清理策略，因为 MinerU 中间产物、图片、Evidence、Chunk、向量都会明显占盘。
+5. 扩展测试范围。目前测试还没有覆盖 MinerU、完整 Evidence/Chunk 路径、568 文档发现、断点恢复和更新一致性。
 
-## Current production gap
+## 当前距离生产级还差什么
 
-The architecture is directionally sound: default MinerU invocation is full-PDF, Evidence and Chunk logic do not impose a 200-400-page range, batch embedding already exists, and VectorStore has basic duplicate protection. The missing work is operational correctness at corpus scale.
+当前架构方向本身没有问题：
 
-Before claiming production readiness, the project must demonstrate one full-page end-to-end run, then a resumable and observable 568-document run with strict page-completeness and artifact-integrity gates. It also needs batched embedding in the real pipeline, reliable incremental/update semantics, bounded memory behavior, and performance evidence for the expected corpus size. The current 2,448-vector, 6-document index and 3-document full-pipeline report are useful MVP evidence, not production evidence.
+- 正式 MinerU 默认是整本 PDF 解析
+- Evidence / Chunk 核心逻辑没有 200-400 页假设
+- 批量 Embedding 能力已经存在
+- VectorStore 也有最基础的去重保护
+
+真正缺的不是“再加几个功能”，而是**面向大语料运行的工程正确性**：
+
+- 至少跑通一份整本招股书的全链路验收
+- 再跑通一轮可观察、可恢复、可校验的 568 份批处理
+- 在正式全流程中切换到批量 Embedding
+- 建立完整的增量更新与产物版本语义
+- 证明内存、磁盘、耗时和检索质量都在可控范围内
+
+当前这个“2,448 向量、6 份文档、3 份 full pipeline”的结果，可以证明 MVP 是通的，但还不能当作生产就绪证据。

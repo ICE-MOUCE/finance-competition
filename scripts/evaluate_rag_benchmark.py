@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate the current Retriever against the versioned RAG benchmark."""
+"""使用版本化 RAG Benchmark 评估当前 Retriever。"""
 
 import argparse
 import json
@@ -202,44 +202,44 @@ def write_report(report: Dict) -> None:
         return "N/A" if value["rate"] is None else f"{value['rate']:.2%} ({value['denominator']} labeled)"
 
     lines = [
-        "# RAG Benchmark Report",
+        "# RAG Benchmark 报告",
         "",
-        f"> Generated: {report['timestamp']}",
+        f"> 生成时间：{report['timestamp']}",
         "",
-        "## Scope",
+        "## 评估范围",
         "",
-        "This benchmark evaluates retrieval grounding, not generated-answer accuracy. `gold_seed` cases have manually verified source labels; `catalog_document_label` cases verify the named local pilot document and retrieval terms but require later human section/page annotation.",
+        "本 Benchmark 评估的是检索 grounding 能力，而不是最终生成答案的准确率。`gold_seed` 表示来源标签已人工核验；`catalog_document_label` 只校验当前本地样本文档与检索术语，章节与页码仍需后续人工补标。",
         "",
-        "## Summary",
+        "## 总体结果",
         "",
-        "| Metric | Result |",
+        "| 指标 | 结果 |",
         "|---|---:|",
-        f"| Cases | {summary['total_cases']} |",
-        f"| Correct document hit rate | {metric('document', summary['correct_document_hit_rate'])} |",
-        f"| Correct company hit rate | {metric('company', summary['correct_company_hit_rate'])} |",
-        f"| Expected keyword coverage | {summary['expected_keyword_coverage']:.2%} ({summary['keyword_coverage_denominator']} labeled) |",
-        f"| Expected section hit rate | {metric('section', summary['expected_section_hit_rate'])} |",
-        f"| Page range hit rate | {metric('page', summary['page_range_hit_rate'])} |",
-        f"| Evidence completeness | {summary['evidence_completeness']:.2%} |",
-        f"| Page reference rate | {summary['page_reference_rate']:.2%} |",
-        f"| No-result rate | {summary['no_result_rate']:.2%} |",
-        f"| Low-confidence cases | {len(summary['low_confidence_cases'])} |",
-        f"| Vector documents | {summary['vector_count']} |",
+        f"| 问题数量 | {summary['total_cases']} |",
+        f"| 正确文档命中率 | {metric('document', summary['correct_document_hit_rate'])} |",
+        f"| 正确公司命中率 | {metric('company', summary['correct_company_hit_rate'])} |",
+        f"| 预期关键词覆盖率 | {summary['expected_keyword_coverage']:.2%} ({summary['keyword_coverage_denominator']} 条有标签) |",
+        f"| 预期章节命中率 | {metric('section', summary['expected_section_hit_rate'])} |",
+        f"| 预期页码区间命中率 | {metric('page', summary['page_range_hit_rate'])} |",
+        f"| Evidence 完整率 | {summary['evidence_completeness']:.2%} |",
+        f"| 页码引用存在率 | {summary['page_reference_rate']:.2%} |",
+        f"| 无结果占比 | {summary['no_result_rate']:.2%} |",
+        f"| 低置信问题数 | {len(summary['low_confidence_cases'])} |",
+        f"| 向量文档数 | {summary['vector_count']} |",
         "",
-        "## Label Coverage",
+        "## 标签覆盖情况",
         "",
         *[f"- `{status}`: {count}" for status, count in summary["label_status_counts"].items()],
         "",
-        "## Failure Analysis",
+        "## 失败案例分析",
         "",
     ]
     labels = {
-        "complete_misses": "Complete document misses",
-        "document_hit_keyword_miss": "Document hit but expected keyword miss",
-        "keyword_hit_section_miss": "Keyword hit but expected section miss",
-        "page_missing_or_untrusted": "Missing or untrusted page references",
-        "table_cases": "Table-answer cases",
-        "special_risk_low_coverage": "Low coverage in governance, compliance, or IPO-specific risk",
+        "complete_misses": "完全未命中文档",
+        "document_hit_keyword_miss": "命中文档但未命中预期关键词",
+        "keyword_hit_section_miss": "命中关键词但章节明显不对",
+        "page_missing_or_untrusted": "页码缺失或页码不可信",
+        "table_cases": "表格类问题",
+        "special_risk_low_coverage": "治理 / 合规 / IPO 特殊风险中的低覆盖问题",
     }
     for key, title in labels.items():
         rows = failures[key]
@@ -252,13 +252,13 @@ def write_report(report: Dict) -> None:
         lines.append("")
 
     lines.extend([
-        "## Decision Guidance",
+        "## 下一步决策建议",
         "",
-        "- Do not introduce Hybrid Retrieval from this v1 alone. First increase the `gold_seed` subset across companies and complete section/page labels for catalog cases.",
-        "- If the expanded gold subset shows document hits but keyword misses, test keyword filtering first. If document/keyword hits are good but ranking is poor, test reranking before BM25.",
-        "- BM25 is justified only when manually labeled failures show exact lexical terms are absent from vector TopK. Section filtering is justified only when section labels show recurring wrong-section hits.",
-        "- Do not start the 568-PDF production run or an RAG API based on this benchmark alone; use the Production Readiness Review gates and a representative full-PDF acceptance run.",
-        "- Table cases should be reviewed separately. Persistently low table coverage is evidence to improve table descriptions/chunks before changing retrieval architecture.",
+        "- 不建议仅凭这一版结果就直接上 Hybrid Retrieval。先扩充 `gold_seed`，并为 catalog 类问题补齐章节和页码标签。",
+        "- 如果扩充后的 Gold 子集显示“文档命中了，但关键词经常漏掉”，优先测试关键词过滤；如果文档和关键词都对但排序靠后，优先测试 rerank，再考虑 BM25。",
+        "- 只有在人工核验后的失败案例明确显示“精确词项没有进入向量 TopK”时，BM25 才是高优先级；如果主要问题是命错章节，再考虑章节过滤。",
+        "- 不建议仅根据这份 Benchmark 就直接启动 568 份 PDF 全量跑数，也不建议立刻开始做 RAG API；应以前面的生产就绪度审查门槛和整本 PDF 验收跑为准。",
+        "- 表格类问题应单独复盘。如果表格覆盖持续偏低，应优先改进 table description 和 table chunk 表达，而不是先改检索架构。",
     ])
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
@@ -288,7 +288,7 @@ def run_benchmark(benchmark_path: Path, results_path: Path, top_k: int) -> Dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Evaluate the RAG benchmark.")
+    parser = argparse.ArgumentParser(description="评估 RAG Benchmark。")
     parser.add_argument("--benchmark-path", type=Path, default=BENCHMARK_PATH)
     parser.add_argument("--results-path", type=Path, default=RESULTS_PATH)
     parser.add_argument("--top-k", type=int, default=5)
@@ -296,9 +296,9 @@ def main() -> None:
     benchmark_path = args.benchmark_path if args.benchmark_path.is_absolute() else ROOT / args.benchmark_path
     results_path = args.results_path if args.results_path.is_absolute() else ROOT / args.results_path
     report = run_benchmark(benchmark_path, results_path, args.top_k)
-    print(f"RAG benchmark complete: {report['summary']['total_cases']} cases")
-    print(f"Results: {results_path}")
-    print(f"Report: {REPORT_PATH}")
+    print(f"RAG Benchmark 评估完成：共 {report['summary']['total_cases']} 条问题")
+    print(f"结果文件：{results_path}")
+    print(f"报告文件：{REPORT_PATH}")
 
 
 if __name__ == "__main__":

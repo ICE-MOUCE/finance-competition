@@ -1,21 +1,21 @@
-# RAG Handoff Scope
+# RAG 交接范围说明
 
-This repository snapshot is prepared for parallel development with an Agent team.
+这个仓库快照是为 Agent 团队并行开发准备的 RAG 交接版本。
 
-The upload target is the stabilized RAG stack only:
+本次上传目标仅限已经相对稳定的 RAG 主链：
 
-- Parser integration
-- Evidence layer
-- Chunk layer
+- Parser 集成
+- Evidence Layer
+- Chunk Layer
 - Embedding
 - FAISS VectorStore
 - Layered Retriever
-- Evaluation and benchmark assets
-- Production-readiness and corpus planning reports
+- 评估与 Benchmark 资产
+- 生产化审查与容量规划报告
 
-The frontend demo, local planning notes, student workflow material, cached data, and legacy/archive materials are intentionally excluded from this GitHub snapshot.
+前端 Demo、本地规划笔记、学生协作文档、缓存数据，以及历史 archive 材料，均有意排除在这次 GitHub 交接包之外。
 
-## Included Code
+## 纳入的代码
 
 - `src/chunk/`
 - `src/embedding/`
@@ -34,20 +34,20 @@ The frontend demo, local planning notes, student workflow material, cached data,
 - `tests/test_retriever.py`
 - `tests/test_retriever_keyword_boost.py`
 
-## Included Evaluation Assets
+## 纳入的评估资产
 
 - `evaluation/benchmark/benchmark_queries.json`
 - `evaluation/gold/gold_risk_annotations.json`
 - `evaluation/gold/gold_risk_annotations_strict_v2.json`
 - `evaluation/queries/queries.json`
 
-Generated result files under `evaluation/results/` remain local-only.
+`evaluation/results/` 下的结果文件仍然只保留在本地，不作为标准提交内容。
 
-## Markdown Classification
+## Markdown 文件分类
 
-### Include
+### 建议保留并上传
 
-These files are directly useful for handoff, implementation alignment, evaluation, or operations:
+以下文件对交接、实现对齐、评估复现或生产规划直接有用：
 
 - `README.md`
 - `CONTRIBUTING.md`
@@ -85,32 +85,32 @@ These files are directly useful for handoff, implementation alignment, evaluatio
 - `docs/reports/VECTOR_BUILD_REPORT.md`
 - `docs/risk/RISK_TAXONOMY.md`
 
-### Exclude
+### 与项目有关，但本次不上传
 
-These files are project-related but are not part of the cleaned RAG handoff snapshot:
+以下文件虽然与项目有关，但不属于这次清理后的 RAG 交接包：
 
 - `FULL_PIPELINE_REPORT.md`
-  Reason: duplicated by `docs/reports/FULL_PIPELINE_REPORT.md`.
+  原因：与 `docs/reports/FULL_PIPELINE_REPORT.md` 内容重复。
 - `PROJECT_CLEANUP_PLAN.md`
-  Reason: internal cleanup planning, not a runtime or handoff artifact.
+  原因：属于内部清理计划，不是运行或交接资产。
 - `PROJECT_STRUCTURE_REPORT.md`
-  Reason: temporary structure review; superseded by `README.md` and this scope file.
+  原因：属于阶段性结构审查，已被 `README.md` 和本说明覆盖。
 - `findings.md`
-  Reason: agent working notes.
+  原因：Agent 工作过程笔记。
 - `progress.md`
-  Reason: agent working notes.
+  原因：Agent 工作过程笔记。
 - `task_plan.md`
-  Reason: agent working notes.
+  原因：Agent 工作过程笔记。
 - `docs/rag/RAG_CONSOLE.md`
-  Reason: tied to the local Streamlit console, which is intentionally not uploaded now.
+  原因：依赖本地 Streamlit 控制台，而这次不交接前端。
 - `docs/experiments/EXPERIMENT_LOG.md`
-  Reason: experiment journal, not part of the stable handoff surface.
+  原因：属于实验日志，不是稳定交接面。
 - `team_work/*.md`
-  Reason: student workflow and team process docs, not required for Agent-side parallel development.
+  原因：是学生协作流程文档，不是 Agent 并行开发的必要输入。
 - `docs/archive/**/*.md`
-  Reason: historical/legacy references kept locally, excluded to avoid ambiguity.
+  原因：历史/旧版材料，保留在本地即可，上传会增加歧义。
 
-## Non-Markdown Exclusions
+## 非 Markdown 排除项
 
 - `app/`
 - `app.py`
@@ -118,15 +118,15 @@ These files are project-related but are not part of the cleaned RAG handoff snap
 - `evaluation/results/`
 - `scripts/parse_precision_sections.py`
 - `scripts/reparse_for_precision.py`
-- Python cache directories
+- Python 缓存目录
 
-## Handoff Contract For Agent Team
+## 给 Agent 团队的对接约定
 
-The uploaded snapshot should be treated as a retrieval-and-grounding subsystem, not as an end-user application.
+上传后的仓库应被视为“检索与证据归因子系统”，而不是一个终端用户应用。
 
-Expected integration boundary:
+建议的集成边界如下：
 
-1. The Agent team calls Retriever and receives chunk-level grounded results.
-2. Grounding must preserve `document_id`, `company`, `pages`, `section_path`, `block_type`, and `evidence_ids`.
-3. Agent-side answer generation should not modify parser, Evidence, Chunk, or VectorStore interfaces without coordination.
-4. Benchmark and gold evaluation should remain the acceptance gate before major retrieval changes.
+1. Agent 团队调用 Retriever，拿到带 grounding 的 chunk 级结果。
+2. 返回结果必须保留 `document_id`、`company`、`pages`、`section_path`、`block_type` 和 `evidence_ids`。
+3. Agent 侧的答案生成逻辑不要擅自改 Parser、Evidence、Chunk、VectorStore 的核心接口，如需改动应先同步。
+4. Benchmark 与 Gold 评估应继续作为检索改动的验收门槛。

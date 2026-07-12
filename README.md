@@ -1,32 +1,32 @@
 # IPO-Risk-Agent
 
-IPO-Risk-Agent is a RAG subsystem for Hong Kong IPO prospectus risk analysis. The current repository snapshot focuses on document parsing, evidence construction, chunking, embedding, vector search, Retriever evaluation, and benchmark assets.
+IPO-Risk-Agent 是一个面向港股 IPO 招股书风险分析的 RAG 子系统仓库。当前仓库快照聚焦于文档解析、Evidence 构建、Chunk 构建、Embedding、向量检索、Retriever 评估，以及 Benchmark 资产建设。
 
-This GitHub snapshot is prepared for parallel development with an Agent team. It does not include the frontend demo or a final answer-generation Agent.
+这个 GitHub 版本是为了和 Agent 开发同学并行协作准备的 RAG 交接包，不包含前端 Demo，也不包含最终的答案生成 Agent。
 
-## Current Capabilities
+## 当前能力
 
-- PDF/MinerU parsing pipeline
-- Evidence Layer for source-grounded text, table, and image evidence
-- Chunk Layer for retrieval-ready chunks
-- BGE embedding generation
+- PDF / MinerU 解析流程
+- 面向可追溯引用的 Evidence Layer，支持文本、表格、图片
+- 面向检索的 Chunk Layer
+- BGE Embedding 生成
 - FAISS VectorStore
 - Layered Retriever MVP
-- Gold-set Retriever evaluation
-- Benchmark and gold-set evaluation assets
+- Gold 集评估
+- Benchmark 与 Gold 标注相关评估资产
 
-## Project Structure
+## 项目结构
 
 ```text
-src/                  Core RAG source code
-scripts/              Build, parsing, and evaluation scripts
-tests/                Lightweight smoke/self-check tests
-docs/                 Design docs, reports, and handoff notes
-evaluation/           Gold annotations and benchmark/query sets
-data/                 Local raw/generated data; ignored by Git
+src/                  RAG 核心源码
+scripts/              构建、解析、评估脚本
+tests/                轻量级自检与 smoke tests
+docs/                 设计文档、报告与交接说明
+evaluation/           Gold 标注、Benchmark 与查询集
+data/                 本地原始/生成数据，默认不提交到 Git
 ```
 
-## Setup
+## 环境准备
 
 ```powershell
 python -m venv .venv
@@ -34,44 +34,51 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-The default embedding model is `BAAI/bge-small-zh-v1.5`, loaded through `sentence-transformers`.
+默认 Embedding 模型为 `BAAI/bge-small-zh-v1.5`，通过 `sentence-transformers` 加载。
 
-## Run Evaluation
+## 运行评估
 
-Gold evidence recall:
+Gold Evidence 召回评估：
 
 ```powershell
 python scripts/evaluate_gold_rag.py
 ```
 
-Retriever query benchmark:
+Retriever 查询评估：
 
 ```powershell
 python scripts/evaluate_retriever.py
 ```
 
-RAG benchmark:
+RAG Benchmark 评估：
 
 ```powershell
 python scripts/evaluate_rag_benchmark.py --top-k 5
 ```
 
-## Run Checks
+## 运行检查
 
 ```powershell
 python tests/test_gold_report_summary.py
 python tests/test_retriever.py
 ```
 
-`tests/test_retriever.py` requires local `data/vectors/` and model availability.
+其中 `tests/test_retriever.py` 依赖本地 `data/vectors/` 和可用模型环境。
 
-## Data Policy
+## 数据提交规则
 
-Large raw prospectus PDFs and generated artifacts are not intended for normal Git commits. Keep local/generated data under `data/`, and commit only small gold/query files needed for reproducible evaluation.
+大体量原始招股书 PDF 和本地生成产物不应直接提交到 Git。请将本地原始数据和生成数据保留在 `data/` 下，只提交可以复现实验和评估的小体量标注文件、查询文件与报告。
 
-Ignored generated paths include `data/cache/`, `data/vectors/`, `data/processed/`, `data/chunks/`, `data/evidence/`, and `evaluation/results/`.
+默认忽略的生成路径包括：
 
-## Handoff Docs
+- `data/cache/`
+- `data/vectors/`
+- `data/processed/`
+- `data/chunks/`
+- `data/evidence/`
+- `evaluation/results/`
+
+## 交接入口文档
 
 - `docs/architecture/AI_CONTEXT.md`
 - `docs/architecture/RAG_HANDOFF_SCOPE.md`
