@@ -1,1 +1,17 @@
 .tools/
+
+.env
+**/.env
+!.env.example
+
+known_hosts.txt
+**/__pycache__/
+**/.venv/
+**/runtime/
+**/.pytest_cache/
+*.pyc
+
+# Local nested clone / scratch copies
+work/hk_ipo_risk_system/
+work/hk_ipo_risk_system_sync/
+work/hk_ipo_risk_system.git.bak/

@@ -1,0 +1,23 @@
+version: agent-skills-1.0
+description: One agent maps to one skill. New skills can be added by implementing BaseSkill and registering in SkillRegistry.
+skills:
+  - skill_id: rag_retrieval
+    agent_name: RAG_RETRIEVAL_AGENT
+    label: RAG 检索 Agent
+    default_provider: offline
+  - skill_id: legal_compliance
+    agent_name: LEGAL_COMPLIANCE_AGENT
+    label: 法务合规 Agent
+    default_provider: deepseek
+  - skill_id: financial_dd
+    agent_name: FINANCIAL_DD_AGENT
+    label: 财务穿透 Agent
+    default_provider: deepseek
+  - skill_id: market_sentiment
+    agent_name: MARKET_SENTIMENT_AGENT
+    label: 市场情绪 Agent
+    default_provider: deepseek
+  - skill_id: orchestrator_decision
+    agent_name: ORCHESTRATOR_AGENT
+    label: 总控决策 Agent
+    default_provider: deepseek

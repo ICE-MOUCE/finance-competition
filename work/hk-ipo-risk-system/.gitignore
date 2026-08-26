@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Runtime / local artifacts
+runtime/
+*.sqlite3
+*.db
+*.log
+*.pid
+
+# Models and large artifacts
+*.joblib
+*.pkl
+*.pickle
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Archives / temp sync packs
+*.tgz
+*.tar.gz
+*.zip
