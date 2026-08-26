@@ -1,0 +1,13 @@
+version: calibration-policy-1.0
+primary_horizon: p_5d_drop
+levels:
+  - {name: LOW, minimum: 0.00, maximum: 0.30}
+  - {name: MEDIUM, minimum: 0.30, maximum: 0.55}
+  - {name: HIGH, minimum: 0.55, maximum: 0.75}
+  - {name: CRITICAL, minimum: 0.75, maximum: 1.01}
+rule_review_threshold: 70
+registration_gate:
+  minimum_test_samples: 50
+  minimum_primary_roc_auc: 0.55
+  minimum_primary_auprc_lift: 1.10
+  maximum_primary_ece: 0.15

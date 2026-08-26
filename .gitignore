@@ -6,6 +6,8 @@ __pycache__/
 .pytest_cache/
 .cache/
 .env
+**/.env
+!.env.example
 .venv/
 venv/
 
@@ -45,3 +47,12 @@ docs/experiments/
 docs/rag/RAG_CONSOLE.md
 scripts/parse_precision_sections.py
 scripts/reparse_for_precision.py
+
+.tools/
+known_hosts.txt
+**/runtime/
+
+# Local nested clone / scratch copies
+work/hk_ipo_risk_system/
+work/hk_ipo_risk_system_sync/
+work/hk_ipo_risk_system.git.bak/

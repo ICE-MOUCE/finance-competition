@@ -1,10 +1,13 @@
 # IPO-Risk-Agent
 
-IPO-Risk-Agent 是一个面向港股 IPO 招股书风险分析的 RAG 子系统仓库。当前仓库快照聚焦于文档解析、Evidence 构建、Chunk 构建、Embedding、向量检索、Retriever 评估，以及 Benchmark 资产建设。
+IPO-Risk-Agent 是一个面向港股 IPO 招股书风险分析的仓库，当前同时包含：
 
-这个 GitHub 版本是为了和 Agent 开发同学并行协作准备的 RAG 交接包，不包含前端 Demo，也不包含最终的答案生成 Agent。
+- RAG 检索子系统交接包
+- Agentic 风险预警系统原型 `work/hk-ipo-risk-system`
 
-## 当前能力
+这个 GitHub 版本便于和 Agent 开发同学并行协作。RAG 部分不包含前端 Demo；Agent 部分提供可运行的证据门禁分析与会诊室。
+
+## RAG 当前能力
 
 - PDF / MinerU 解析流程
 - 面向可追溯引用的 Evidence Layer，支持文本、表格、图片
@@ -15,7 +18,23 @@ IPO-Risk-Agent 是一个面向港股 IPO 招股书风险分析的 RAG 子系统�
 - Gold 集评估
 - Benchmark 与 Gold 标注相关评估资产
 
-## 项目结构
+## Agent 系统
+
+`work/hk-ipo-risk-system`：证据门禁的多智能体风险预警原型。
+
+- 检索后端：Thin RAG API（`IPO-RAG`）
+- 解析：MinerU 证据库优先，找不到则回退 PyMuPDF
+- 会诊室默认使用 DeepSeek
+
+```bash
+cd work/hk-ipo-risk-system
+./scripts/bootstrap.sh
+./scripts/start.sh
+```
+
+配置见 `work/hk-ipo-risk-system/.env.example`。不要提交 `.env`。
+
+## RAG 项目结构
 
 ```text
 src/                  RAG 核心源码
@@ -24,9 +43,10 @@ tests/                轻量级自检与 smoke tests
 docs/                 设计文档、报告与交接说明
 evaluation/           Gold 标注、Benchmark 与查询集
 data/                 本地原始/生成数据，默认不提交到 Git
+work/hk-ipo-risk-system  Agent 原型
 ```
 
-## 环境准备
+## RAG 环境准备
 
 ```powershell
 python -m venv .venv

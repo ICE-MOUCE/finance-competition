@@ -1,0 +1,176 @@
+version: risk-taxonomy-1.0
+risks:
+  FIN_RUNWAY:
+    label: 现金消耗与续航
+    owner: FINANCIAL_DD_AGENT
+    severity: 7
+    keywords: [现金消耗, 現金消耗, 现金流出, 現金流出, 经营活动所用现金, 經營活動所用現金, cash burn, liquidity risk, 流动资金不足, 流動資金不足]
+    mitigants: [所得款项净额, 募集资金, 未动用授信, 现金及现金等价物]
+  FIN_CASHFLOW:
+    label: 经营现金流
+    owner: FINANCIAL_DD_AGENT
+    severity: 6
+    keywords: [经营活动现金流, 經營活動現金流, 经营活动所用现金, 經營活動所用現金, operating cash flow, net cash used in operating]
+    mitigants: [经营活动所得现金, positive operating cash flow]
+  FIN_PROFIT_QUALITY:
+    label: 盈利质量
+    owner: FINANCIAL_DD_AGENT
+    severity: 6
+    keywords: [持续亏损, 持續虧損, 净亏损, 淨虧損, adjusted loss, loss for the year, 尚未盈利, 未盈利]
+    mitigants: [扭亏为盈, 实现盈利, profit for the year]
+  FIN_LEVERAGE:
+    label: 杠杆与偿债
+    owner: FINANCIAL_DD_AGENT
+    severity: 6
+    keywords: [流动负债净额, 流動負債淨額, 债务违约, 債務違約, gearing ratio, borrowings, 借款, 偿债, 償債, 後償, 资本资源, 資本資源]
+    mitigants: [净现金, 无抵押银行融资, 未动用银行授信, 并无任何银行借款, 並無任何銀行借款, 无任何银行借款, 無任何銀行借款, 并无任何重大借款, 並無任何重大借款]
+  FIN_CONCENTRATION:
+    label: 客户或供应商集中
+    owner: FINANCIAL_DD_AGENT
+    severity: 6
+    keywords: [五大客户, 五大客戶, 最大客户, 最大客戶, 五大供应商, 五大供應商, 客户集中, 客戶集中, supplier concentration, customer concentration]
+    mitigants: [客户多元化, 供应商多元化]
+  FIN_RELATED_PARTY:
+    label: 关联交易
+    owner: FINANCIAL_DD_AGENT
+    severity: 5
+    keywords: [关联方交易, 關連交易, 关连交易, related party, connected transaction, 合營企業, 联合所有权, 聯合所有權]
+    mitigants: [按一般商业条款, 独立第三方]
+  FIN_USE_OF_PROCEEDS:
+    label: 募资用途约束
+    owner: FINANCIAL_DD_AGENT
+    severity: 5
+    keywords: [所得款项用途, 所得款項用途, use of proceeds, 营运资金, 營運資金, 募资用途, 進行股份發售之理由]
+    mitigants: [用于营运资金, working capital]
+  LEGAL_LITIGATION:
+    label: 重大诉讼
+    owner: LEGAL_COMPLIANCE_AGENT
+    severity: 7
+    keywords: [重大诉讼, 重大訴訟, 法律程序, litigation, legal proceedings, 仲裁, 彌償保證, 弥偿保证]
+    mitigants: [已和解, 已撤诉, 保险覆盖, 并无涉及任何重大诉讼, 並無涉及任何重大訴訟, 无涉及重大诉讼, 無涉及重大訴訟, 并无任何待决法律程序, 並無任何待決法律程序]
+  LEGAL_REGULATORY:
+    label: 监管调查与处罚
+    owner: LEGAL_COMPLIANCE_AGENT
+    severity: 8
+    keywords: [监管调查, 監管調查, 行政处罚, 行政處罰, regulatory investigation, penalty, 罚款, 罰款, 不合规, 不合規, 法律及監管合規]
+    mitigants: [整改完成, 已结案, 无重大不利影响]
+  LEGAL_LICENSE:
+    label: 核心牌照
+    owner: LEGAL_COMPLIANCE_AGENT
+    severity: 8
+    keywords: [牌照续期, 牌照續期, 许可证到期, 未取得许可, 未取得許可, license renewal, permit, 資本市場服務牌照]
+    mitigants: [已取得许可, 牌照有效]
+  LEGAL_IP:
+    label: 知识产权
+    owner: LEGAL_COMPLIANCE_AGENT
+    severity: 6
+    keywords: [知识产权纠纷, 知識產權糾紛, 专利侵权, 專利侵權, intellectual property, patent infringement]
+    mitigants: [自有专利, 专利组合]
+  LEGAL_DATA:
+    label: 数据合规
+    owner: LEGAL_COMPLIANCE_AGENT
+    severity: 7
+    keywords: [数据安全, 數據安全, 个人信息保护, 個人信息保護, cybersecurity, data compliance, 隐私, 私隱, 網絡安全, 资讯安全, 資訊安全]
+    mitigants: [通过数据安全评估, 合规认证]
+  EQUITY_REDEMPTION:
+    label: 赎回权
+    owner: EQUITY_CLAUSE_AGENT
+    severity: 8
+    keywords: [赎回权, 贖回權, redemption right, redeemable preference]
+    mitigants: [上市时终止, 自动终止, 不可恢复, 已豁免]
+  EQUITY_VAM:
+    label: 对赌安排
+    owner: EQUITY_CLAUSE_AGENT
+    severity: 8
+    keywords: [对赌, 對賭, 估值调整, 估值調整, valuation adjustment, performance undertaking]
+    mitigants: [已终止, 自动终止, 不可恢复]
+  EQUITY_PREFERENCE:
+    label: 优先与反稀释权
+    owner: EQUITY_CLAUSE_AGENT
+    severity: 7
+    keywords: [清算优先权, 清算優先權, 反稀释, 反攤薄, liquidation preference, anti-dilution, 优先股, 優先股]
+    mitigants: [转换为普通股, 上市时终止]
+  EQUITY_WVR:
+    label: 特殊投票权
+    owner: EQUITY_CLAUSE_AGENT
+    severity: 6
+    keywords: [不同投票权, 不同投票權, 特别投票权, 特別投票權, weighted voting rights, WVR, 投票權益]
+    mitigants: [日落条款, 股东保障]
+  EQUITY_LOCKUP:
+    label: 锁定期与解禁
+    owner: EQUITY_CLAUSE_AGENT
+    severity: 5
+    keywords: [禁售期, 锁定期, 鎖定, lock-up, lockup, 出售及轉讓限制]
+    mitigants: [自愿延长禁售]
+  BIZ_PRODUCT_DEPENDENCY:
+    label: 单一产品依赖
+    owner: INDUSTRY_PIPELINE_AGENT
+    severity: 7
+    keywords: [单一产品, 單一產品, 主要产品贡献, product concentration, dependent on our core product, 分銷網絡, 代理佔]
+    mitigants: [产品多元化, 多产品组合]
+  BIZ_PIPELINE:
+    label: 研发管线不确定性
+    owner: INDUSTRY_PIPELINE_AGENT
+    severity: 7
+    keywords: [临床试验失败, 臨床試驗失敗, 管线终止, 尚未获批, clinical trial, pipeline, 研发失败, 研發失敗]
+    mitigants: [获批上市, 达成里程碑, 多管线]
+  BIZ_COMMERCIALIZATION:
+    label: 商业化不确定性
+    owner: INDUSTRY_PIPELINE_AGENT
+    severity: 7
+    keywords: [尚未商业化, 尚未商業化, 商业化能力, 商業化, commercialization, 未产生产品收入]
+    mitigants: [已商业化, 已获订单, 授权合作]
+  BIZ_TECH_DEPENDENCY:
+    label: 技术与供应依赖
+    owner: INDUSTRY_PIPELINE_AGENT
+    severity: 6
+    keywords: [依赖第三方技术, 依賴第三方, 关键供应商, 關鍵供應商, technology dependency, single source, 第三方服務供應商, 合營企業]
+    mitigants: [替代供应商, 自主研发]
+  TEXT_VAGUENESS:
+    label: 模糊措辞密度
+    owner: RISK_EXTRACTION_AGENT
+    severity: 4
+    keywords: [可能无法, 可能無法, 不能保证, 不能夠, may not, cannot assure, 重大不利影响, 重大不利影響]
+    mitigants: []
+  TEXT_QUANT_MISSING:
+    label: 关键量化缺失
+    owner: RISK_EXTRACTION_AGENT
+    severity: 4
+    keywords: [无法量化, 無法量化, 尚未确定, 尚未確定, not practicable to quantify]
+    mitigants: []
+  VAL_PREMIUM:
+    label: 发行估值溢价
+    owner: VALUATION_AGENT
+    severity: 6
+    keywords: [估值溢价, 估值溢價, valuation premium, 市销率, EV/Sales, price-to-sales, 發售價, 发售价]
+    mitigants: [高增长, 稀缺牌照, 净现金]
+  VAL_COMPARABLE_QUALITY:
+    label: 可比公司质量
+    owner: VALUATION_AGENT
+    severity: 4
+    keywords: [可比公司有限, 缺乏可比公司, limited comparables, 可比公司]
+    mitigants: []
+  MKT_REGIME:
+    label: 市场状态
+    owner: MARKET_SENTIMENT_AGENT
+    severity: 5
+    keywords: [市场波动, 市場波動, market volatility, 市况低迷, 市況低迷, 市场情绪, 市場情緒]
+    mitigants: [市场回暖]
+  MKT_IPO_WINDOW:
+    label: IPO 窗口
+    owner: MARKET_SENTIMENT_AGENT
+    severity: 5
+    keywords: [新股破发, 新股破發, IPO market, 首日表现, 股份發售, 發售股份]
+    mitigants: [新股市场活跃]
+  MKT_SUBSCRIPTION:
+    label: 认购热度
+    owner: MARKET_SENTIMENT_AGENT
+    severity: 4
+    keywords: [超额认购, 超額認購, 认购不足, 認購不足, oversubscription, subscription rate, 公開發售, 申請認購]
+    mitigants: [基石投资者, 超额认购]
+  MKT_SENTIMENT:
+    label: 新闻与舆情
+    owner: MARKET_SENTIMENT_AGENT
+    severity: 5
+    keywords: [负面新闻, 負面新聞, negative sentiment, 舆情风险, 聲譽受損, 失去客户]
+    mitigants: [正面报道]

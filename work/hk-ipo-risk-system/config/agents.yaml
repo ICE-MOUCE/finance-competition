@@ -1,0 +1,69 @@
+version: prompt-pack-1.0
+agents:
+  ORCHESTRATOR_AGENT:
+    label: 总控决策
+    temperature: 0.1
+    tools: [task_state, agent_dispatch, trace_writer, schema_validator]
+    depends_on: []
+  DOCUMENT_PARSER_AGENT:
+    label: 文档解析
+    temperature: 0.0
+    tools: [pdf_parser, ocr, layout_parser, table_extractor, document_hash, evidence_writer]
+    depends_on: [ORCHESTRATOR_AGENT]
+  RISK_EXTRACTION_AGENT:
+    label: 风险抽取
+    temperature: 0.1
+    tools: [hybrid_search, table_search, neighbor_expand, risk_taxonomy, evidence_reader]
+    depends_on: [DOCUMENT_PARSER_AGENT]
+  FINANCIAL_DD_AGENT:
+    label: 财务穿透
+    temperature: 0.1
+    tools: [evidence_search, financial_table, unit_converter, financial_calculator, consistency_check]
+    depends_on: [RISK_EXTRACTION_AGENT]
+  LEGAL_COMPLIANCE_AGENT:
+    label: 法务合规
+    temperature: 0.1
+    tools: [evidence_search, regulation_dictionary, amount_normalizer, sanctions_snapshot]
+    depends_on: [RISK_EXTRACTION_AGENT]
+  EQUITY_CLAUSE_AGENT:
+    label: 股权与非标条款
+    temperature: 0.1
+    tools: [clause_search, cap_table_parser, dilution_calculator, temporal_check]
+    depends_on: [RISK_EXTRACTION_AGENT]
+  INDUSTRY_PIPELINE_AGENT:
+    label: 行业与管线
+    temperature: 0.2
+    tools: [evidence_search, industry_snapshot, product_dictionary, competitor_snapshot]
+    depends_on: [RISK_EXTRACTION_AGENT]
+  MARKET_SENTIMENT_AGENT:
+    label: 市场情绪
+    temperature: 0.0
+    tools: [market_snapshot, trading_calendar, sector_mapping, ipo_window, news_sentiment]
+    depends_on: [RISK_EXTRACTION_AGENT]
+  VALUATION_AGENT:
+    label: 估值
+    temperature: 0.1
+    tools: [comparable_filter, financial_normalizer, fx_snapshot, valuation_calculator]
+    depends_on: [RISK_EXTRACTION_AGENT]
+  CHALLENGE_AUDIT_AGENT:
+    label: 反驳审计
+    temperature: 0.0
+    tools: [evidence_search, table_review, calculation_replay, temporal_check, schema_validator]
+    depends_on: [FINANCIAL_DD_AGENT, LEGAL_COMPLIANCE_AGENT, EQUITY_CLAUSE_AGENT, INDUSTRY_PIPELINE_AGENT, MARKET_SENTIMENT_AGENT, VALUATION_AGENT]
+  RISK_MODEL_AGENT:
+    label: 风险模型
+    temperature: 0.0
+    tools: [feature_builder, rule_engine, model_registry, calibration, feature_contribution]
+    depends_on: [CHALLENGE_AUDIT_AGENT]
+  BACKTEST_EVALUATION_AGENT:
+    label: 回测评估
+    temperature: 0.0
+    tools: [market_labels, trading_calendar, time_split, metrics, calibration_evaluation, ablation]
+    depends_on: [RISK_MODEL_AGENT]
+    mode: EVALUATE
+  REPORT_GENERATION_AGENT:
+    label: 报告生成
+    temperature: 0.2
+    tools: [report_renderer, chart_renderer, evidence_screenshot, page_link, report_validator]
+    depends_on: [RISK_MODEL_AGENT]
+
