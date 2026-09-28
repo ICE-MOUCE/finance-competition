@@ -18,3 +18,9 @@ cd /home/ma-user/work/IPO_Sentinel_Platform/hk_ipo_risk_system
 ```
 
 HK 系统通过 `HKIPO_RAG_BASE_URL=http://127.0.0.1:8000` 调用 RAG API。
+
+## Streamlit Cloud
+
+部署入口：`IPO_Sentinel_Platform/streamlit_app.py`。
+
+云端版本支持上传招股书、执行规则与证据审计并下载 HTML 报告。运行时文件写入临时目录，RAG 服务默认关闭；如需外部模型，可在 Streamlit Secrets 中配置 `DEEPSEEK_API_KEY` 或 `DOUBAO_API_KEY`。
