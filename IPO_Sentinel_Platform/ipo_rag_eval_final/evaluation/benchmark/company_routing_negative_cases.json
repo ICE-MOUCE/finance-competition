@@ -1,0 +1,219 @@
+[
+  {
+    "id": "no_company_001",
+    "type": "no_company",
+    "question": "是否存在持续亏损或现金流压力",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_002",
+    "type": "no_company",
+    "question": "客户集中度是否构成重大经营风险",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_003",
+    "type": "no_company",
+    "question": "供应商依赖是否会影响业务稳定性",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_004",
+    "type": "no_company",
+    "question": "是否存在重大诉讼或仲裁事项",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_005",
+    "type": "no_company",
+    "question": "是否存在牌照或许可证合规风险",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_006",
+    "type": "no_company",
+    "question": "募集资金用途是否清晰",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_007",
+    "type": "no_company",
+    "question": "上市前投资是否存在特殊权利",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_008",
+    "type": "no_company",
+    "question": "毛利率下降是否提示盈利质量风险",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_009",
+    "type": "no_company",
+    "question": "控股股东是否可能影响公司治理",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "no_company_010",
+    "type": "no_company",
+    "question": "是否存在破发或估值波动风险",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  },
+  {
+    "id": "actual_catalog_positive_001",
+    "type": "actual_catalog_positive",
+    "question": "RAFFLESINTERIOR是否存在财务或经营风险",
+    "expected_status": "matched",
+    "expected_document_id": "2020_01376_RAFFLESINTERIOR",
+    "actual_status": "matched",
+    "actual_document_id": "2020_01376_RAFFLESINTERIOR",
+    "matched_name": "RAFFLESINTERIOR",
+    "candidate_document_ids": [
+      "2020_01376_RAFFLESINTERIOR"
+    ],
+    "pass": true
+  },
+  {
+    "id": "actual_catalog_positive_002",
+    "type": "actual_catalog_positive",
+    "question": "CHINANEWENERGY是否存在财务或经营风险",
+    "expected_status": "matched",
+    "expected_document_id": "2020_01156_CHINANEWENERGY",
+    "actual_status": "matched",
+    "actual_document_id": "2020_01156_CHINANEWENERGY",
+    "matched_name": "CHINANEWENERGY",
+    "candidate_document_ids": [
+      "2020_01156_CHINANEWENERGY"
+    ],
+    "pass": true
+  },
+  {
+    "id": "actual_catalog_positive_003",
+    "type": "actual_catalog_positive",
+    "question": "華潤萬象生活是否存在财务或经营风险",
+    "expected_status": "matched",
+    "expected_document_id": "2020_01209_華潤萬象生活",
+    "actual_status": "matched",
+    "actual_document_id": "2020_01209_華潤萬象生活",
+    "matched_name": "華潤萬象生活",
+    "candidate_document_ids": [
+      "2020_01209_華潤萬象生活"
+    ],
+    "pass": true
+  },
+  {
+    "id": "actual_catalog_positive_004",
+    "type": "actual_catalog_positive",
+    "question": "温嶺工量刃具是否存在财务或经营风险",
+    "expected_status": "matched",
+    "expected_document_id": "2020_01379_温嶺工量刃具",
+    "actual_status": "matched",
+    "actual_document_id": "2020_01379_温嶺工量刃具",
+    "matched_name": "温嶺工量刃具",
+    "candidate_document_ids": [
+      "2020_01379_温嶺工量刃具"
+    ],
+    "pass": true
+  },
+  {
+    "id": "longest_unique_name_001",
+    "type": "longest_unique_name",
+    "question": "RAFFLESINTERIOR控股有限公司是否存在合规风险",
+    "expected_status": "matched",
+    "expected_document_id": "synthetic_long_doc",
+    "actual_status": "matched",
+    "actual_document_id": "synthetic_long_doc",
+    "matched_name": "RAFFLESINTERIOR控股有限公司",
+    "candidate_document_ids": [
+      "synthetic_long_doc"
+    ],
+    "pass": true
+  },
+  {
+    "id": "ambiguous_same_name_001",
+    "type": "ambiguous_same_name",
+    "question": "同名控股是否存在诉讼风险",
+    "expected_status": "ambiguous",
+    "expected_document_id": null,
+    "actual_status": "ambiguous",
+    "actual_document_id": null,
+    "matched_name": "同名控股",
+    "candidate_document_ids": [
+      "2099_00001_同名控股",
+      "2099_00002_同名控股"
+    ],
+    "pass": true
+  },
+  {
+    "id": "no_fuzzy_guess_001",
+    "type": "no_fuzzy_guess",
+    "question": "多点这家公司是否存在监管处罚",
+    "expected_status": "no_match",
+    "expected_document_id": null,
+    "actual_status": "no_match",
+    "actual_document_id": null,
+    "matched_name": null,
+    "candidate_document_ids": [],
+    "pass": true
+  }
+]

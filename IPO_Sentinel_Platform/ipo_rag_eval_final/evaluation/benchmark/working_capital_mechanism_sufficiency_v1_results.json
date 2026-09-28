@@ -1,0 +1,683 @@
+{
+  "task": "working_capital_mechanism_sufficiency_v1",
+  "timestamp": "2026-07-28T11:11:05+08:00",
+  "diagnosis": {
+    "gold_mechanism_in_chunk_and_vector": true,
+    "example_gold_chunk_id": "chk_2020_01351_輝煌明天_p49_txt050",
+    "pre_fix_raw_candidate_rank": 22,
+    "pre_fix_top3_roles": [
+      "ocf_footnote_number",
+      "ar_days_neg_ocf",
+      "cashflow_table"
+    ],
+    "root_cause": "mechanism narrative existed in index but ranking favored OCF reconciliation footnote / CFS table; WC timing-mismatch intent under-specified",
+    "fix": "generic working_capital_mechanism intent aux + answer_excerpt/evidence_role (HGE flags); no company/case whitelist"
+  },
+  "anchor_case": {
+    "id": "manual_new_董飞飞_cat_fin_010",
+    "question": "辉煌明天是否存在负经营现金流、垫付款与客户回款错配造成的营运资金压力？",
+    "document_id": "2020_01351_輝煌明天",
+    "before_hge_top3": [
+      {
+        "rank": 1,
+        "chunk_id": "chk_2020_01351_輝煌明天_p285_txt291",
+        "pages": [
+          285,
+          286
+        ],
+        "role": "footnote_number",
+        "is_mechanism_like": false,
+        "preview": "經營活動所用現金淨額約為人民幣12.2百萬元...加回非現金項目/折舊及攤銷"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chk_2020_01351_輝煌明天_p284_txt290",
+        "pages": [
+          284,
+          285
+        ],
+        "role": "ar_days_plus_neg_ocf",
+        "is_mechanism_like": false,
+        "preview": "貿易應收款項周轉天數...錄得負經營現金流量"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chk_2020_01351_輝煌明天_p18_tbl012",
+        "pages": [
+          18
+        ],
+        "role": "cashflow_table",
+        "is_mechanism_like": false,
+        "preview": "表格（14行）...經營活動所得現金流量..."
+      }
+    ],
+    "after_hge": {
+      "top3_has_mechanism_like": true,
+      "rows": [
+        {
+          "rank": 1,
+          "score": 1.6223,
+          "pages": [
+            283,
+            284
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p283_txt289",
+          "block_type": "text",
+          "has_mismatch": false,
+          "has_token": false,
+          "has_prepay": true,
+          "is_mechanism_like": false,
+          "preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們動用的現金主要用作營運資金及就有關物業、廠房及設備的資本開支。我們通過(i)每日監察企業資源管理系統中向媒體發佈商支付的預付款項金額；及(ii)每日監察銀行現金結餘，管理流動資金水平。倘我們預計現金狀況不足以支持我們向媒體發佈商支付預付款項，我們將與媒體發佈",
+          "answer_excerpt_reason": "wc_token_prepay_context+wc_financing_noise",
+          "answer_excerpt_boost": 0.12,
+          "answer_excerpt_penalty": 0.14
+        },
+        {
+          "rank": 2,
+          "score": 1.5535,
+          "pages": [
+            9,
+            10
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p9_txt013",
+          "block_type": "text",
+          "has_mismatch": true,
+          "has_token": true,
+          "has_prepay": true,
+          "is_mechanism_like": true,
+          "preview": "向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）",
+          "answer_excerpt_reason": "wc_token_timing_mismatch_mechanism",
+          "answer_excerpt_boost": 0.55,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 3,
+          "score": 1.5118,
+          "pages": [
+            132,
+            133
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p132_txt141",
+          "block_type": "text",
+          "has_mismatch": true,
+          "has_token": true,
+          "has_prepay": true,
+          "is_mechanism_like": true,
+          "preview": "由於支付預付款項及從客戶收取款項之間存在時間差距，可能妨礙我們以營運資金為新廣告訂單支付預付款項的能力及充裕程度，我們在預付款項安排及客戶後續結算方面面臨流動資金風險。由於能否收回貿易應收款項取決於客戶的信貸誠信，我們亦就未收回貿易應收款項結餘面臨信貸風險。雖然以虛擬代幣支付的預付款項一般均可按我們的要求以現金退還，但無法保證我們能及時收到向供應商支付的預付款項的退款。因此，我們亦就預付款項的退款面臨違約風險及可收回性風險。 展望未來，我們擬通過以下方式擴大業務規模及範圍：(",
+          "answer_excerpt_reason": "wc_token_timing_mismatch_mechanism",
+          "answer_excerpt_boost": 0.55,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 4,
+          "score": 1.4811,
+          "pages": [
+            160
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p160_txt178",
+          "block_type": "text",
+          "has_mismatch": true,
+          "has_token": true,
+          "has_prepay": false,
+          "is_mechanism_like": true,
+          "preview": "我們致力持續擴展中介服務以提升盈利能力。特別是，由於中國移動廣告業迅速發展，隨著時間流逝，媒體發佈商的受歡迎程度可能會隨著市場趨勢及受眾喜好的變化而發生變化。我們的業務策略是發展及維持均衡的媒體發佈商組合，從而可以將廣告投放至擁有穩定且可觀的流量及較強用戶黏性的一線媒體發佈商，以及具備相對正面增長潛力的二線媒體發佈商。由於廣告主一般於多名媒體發佈商投放廣告以覆蓋更廣泛的受眾，因此董事認為維持較大的不同層次的媒體發佈商組合可以為我們的客戶提供更多媒體發佈商以供選擇，以滿足其不同",
+          "answer_excerpt_reason": "wc_token_timing_mismatch_mechanism",
+          "answer_excerpt_boost": 0.55,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 5,
+          "score": 1.4783,
+          "pages": [
+            132
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p132_txt140",
+          "block_type": "text",
+          "has_mismatch": true,
+          "has_token": true,
+          "has_prepay": true,
+          "is_mechanism_like": true,
+          "preview": "根據F&S報告，頭部媒體發佈商通常自設廣告投放系統以供購買虛擬代幣及競投廣告庫存，故以購買虛擬代幣的方式向媒體發佈商支付預付款項的要求對採購廣告庫存而言屬必要。因此，向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及",
+          "answer_excerpt_reason": "wc_token_timing_mismatch_mechanism",
+          "answer_excerpt_boost": 0.55,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 6,
+          "score": 1.3148,
+          "pages": [
+            14,
+            15
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p14_txt022",
+          "block_type": "text",
+          "has_mismatch": false,
+          "has_token": true,
+          "has_prepay": true,
+          "is_mechanism_like": false,
+          "preview": "我們的業務及股份發售涉及本招股章程「風險因素」所載的若干風險。　閣下在決定投資股份之前，應細閱該節所載的全部資料。我們所面臨的若干主要風險概要如下：(i)我們可能無法在預期熾熱的市場競爭下與其他移動廣告公司有效競爭，且我們主要客戶及媒體發佈商的強勁市場地位可能限制我們與其的議價能力；(ii)我們的收入僅來自一個移動廣告服務分部。倘我們無法維持、深化或拓展與現有供應商、媒體發佈商及客戶的關係、吸引新客戶，或倘我們的廣告主決定就廣告直接委聘媒體發佈商，我們的財務狀況、經營業績及前",
+          "answer_excerpt_reason": "wc_prepay_mismatch_chain",
+          "answer_excerpt_boost": 0.36,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 7,
+          "score": 1.3054,
+          "pages": [
+            161
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p161_txt179",
+          "block_type": "text",
+          "has_mismatch": false,
+          "has_token": true,
+          "has_prepay": true,
+          "is_mechanism_like": false,
+          "preview": "我們按每份訂單代表客戶向媒體發佈商支付預付款項以購買虛擬代幣，而未使用的虛擬代幣一般均可按我們的要求以現金退還。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項（即未使用的虛擬代幣）分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，",
+          "answer_excerpt_reason": "wc_prepay_mismatch_chain",
+          "answer_excerpt_boost": 0.36,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 8,
+          "score": 1.1503,
+          "pages": [
+            15,
+            16
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p15_txt023",
+          "block_type": "text",
+          "has_mismatch": false,
+          "has_token": false,
+          "has_prepay": false,
+          "is_mechanism_like": false,
+          "preview": "基於以下原因，我們實質上是客戶的代理，負責按其指示投放廣告：(i)我們的客戶對其廣告所採用的媒體發佈商作最終決定；(ii)我們向客戶收費及供應商向我們收費的定價機制一致，二者均根據每次點擊成本、每次下載成本、每次時間成本或每千次曝光成本收費；(iii)我們的利潤率受限於客戶投放廣告時選擇的媒體發佈商；及(iv)成功競投而購入的廣告庫存不歸我們所有，故我們並無任何庫存風險。因此，我們的中介服務收入按淨額基準確認。 基於以下原因，我們實質上是與客戶進行有效成果的交易：(i)我們可",
+          "answer_excerpt_reason": "wc_prepay_mismatch_chain",
+          "answer_excerpt_boost": 0.32,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 9,
+          "score": 1.1449,
+          "pages": [
+            23,
+            24
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p23_txt039",
+          "block_type": "text",
+          "has_mismatch": false,
+          "has_token": false,
+          "has_prepay": false,
+          "is_mechanism_like": false,
+          "preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無不利變動。我們精準廣告服務及中介服務的未經審計月均毛收入增加主要由於業務規模擴展",
+          "answer_excerpt_reason": "wc_ocf_with_partial_context",
+          "answer_excerpt_boost": 0.06,
+          "answer_excerpt_penalty": 0.0
+        },
+        {
+          "rank": 10,
+          "score": 1.0537,
+          "pages": [
+            290,
+            291
+          ],
+          "chunk_id": "chk_2020_01351_輝煌明天_p290_txt296",
+          "block_type": "text",
+          "has_mismatch": false,
+          "has_token": false,
+          "has_prepay": true,
+          "is_mechanism_like": false,
+          "preview": "於2020年8月31日，於2020年4月30日約人民幣255 .5百萬元或91 .6%之貿易應收款項（扣除呆賬撥備前）已獲結付。 按金、預付款項及其他應收款項 我們的按金、預付款項及其他應收款項主要包括(i)向媒體發佈商及廣告代理支付的廣告流量成本預付款項；及(ii)租金及其他按金。下表載列於各所示日期的按金、預付款項及其他應收款項明細： 我們的按金、預付款項及其他應收款項由2017年12月31日的約人民幣19 .7百萬元增加至2018年12月31日的人民幣71 .0百萬元，",
+          "answer_excerpt_reason": "wc_token_prepay_context",
+          "answer_excerpt_boost": 0.12,
+          "answer_excerpt_penalty": 0.0
+        }
+      ]
+    },
+    "human4_row_compact": {
+      "id": "manual_new_董飞飞_cat_fin_010",
+      "dataset": "manual_human4_v1",
+      "category": "financial_risk",
+      "question": "辉煌明天是否存在负经营现金流、垫付款与客户回款错配造成的营运资金压力？",
+      "document_id": "2020_01351_輝煌明天",
+      "gold_rank": 1,
+      "gold_aligned_rank": 1,
+      "gold_aligned_at_1": true,
+      "gold_aligned_at_3": true,
+      "gold_aligned_at_5": true,
+      "recall_at_1": true,
+      "recall_at_3": true,
+      "recall_at_5": true,
+      "recall_at_10": true,
+      "doc_hit": true,
+      "page_hit_any": false,
+      "quant_hit_at_5": false,
+      "quant_hit_at_10": false,
+      "multi_span_support_at_5": false,
+      "multi_span_support_at_10": false,
+      "quant_markers_expected": [],
+      "quant_markers_hit_top10": [],
+      "top1": {
+        "content_hit": true,
+        "coverage": 0.5,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "预付款项"
+        ],
+        "page_hit": false,
+        "pages": [
+          283,
+          284
+        ],
+        "doc": "2020_01351_輝煌明天",
+        "score": 1.622273,
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們動用的現金主要用作營運資金及就有關物業、廠房及設備的資本開支。我們通過(i)每日監察企業資源管理系統中向媒體發佈商支付的預付款項金額；及(ii)每日監察銀行現金結餘，管理流動資金水平。倘我們預計現金狀況不足以支持我們向媒體發佈商支付預付款項，我們將與媒體發佈商探討作出其他付款安排的可能性，包括分期付款。於最後實際可行日期，我們並無經歷任何有關在日常業務過程中償還應付款項的流動資金問題。 於2017年、2018年及2019年12月31日以及2020年4月30日，我們分別擁有現金及現金等價物約人民幣9 .0百萬元、人民幣12 .2百萬元、人民幣23 .8百萬元及人民幣12 .6百萬元，而截至2018年及2019年1",
+        "evidence_type": "historical_or_actual_event",
+        "chunk_id": "chk_2020_01351_輝煌明天_p283_txt289",
+        "evidence_ids": [
+          "ev_2020_01351_輝煌明天_p283_txt003",
+          "ev_2020_01351_輝煌明天_p283_txt004",
+          "ev_2020_01351_輝煌明天_p284_txt001"
+        ],
+        "full_text": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們動用的現金主要用作營運資金及就有關物業、廠房及設備的資本開支。我們通過(i)每日監察企業資源管理系統中向媒體發佈商支付的預付款項金額；及(ii)每日監察銀行現金結餘，管理流動資金水平。倘我們預計現金狀況不足以支持我們向媒體發佈商支付預付款項，我們將與媒體發佈商探討作出其他付款安排的可能性，包括分期付款。於最後實際可行日期，我們並無經歷任何有關在日常業務過程中償還應付款項的流動資金問題。 於2017年、2018年及2019年12月31日以及2020年4月30日，我們分別擁有現金及現金等價物約人民幣9 .0百萬元、人民幣12 .2百萬元、人民幣23 .8百萬元及人民幣12 .6百萬元，而截至2018年及2019年12月31日止年度以及截至2020年4月30日止四個月經營活動所用現金淨額分別約為人民幣0 .6百萬元、人民幣12 .2百萬元及人民幣15 .1百萬元。截至2019年12月31日止年度及截至2020年4月30日止四個月的經營活動所用現金淨額主要由於我們的貿易應收款項增加，主要由於(i)毛收入隨著業務擴展而增加；(ii)客戶結付貿易應收款項較慢；及(iii)貿易應收款項周轉天數由截至2018年12月31日止年度的約64 .2天增加至截至2019年12月31日止年度的92 .6天以及截至2020年4月30日止四個月的90 .6天。為了管理日後的經營現金流量，我們採納監察程序，確保採取後續行動以追回逾期的債務，而我們將與客戶就收款條款協商信貸期（倘適用）。 資本及流動資金管理政策"
+      },
+      "ranked_brief": [
+        {
+          "rank": 1,
+          "coverage": 0.5,
+          "content_hit": true,
+          "gold_aligned": true,
+          "page_hit": false,
+          "type": "historical_or_actual_event",
+          "pages": [
+            283,
+            284
+          ],
+          "score": 1.622273,
+          "chunk_id": "chk_2020_01351_輝煌明天_p283_txt289",
+          "preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們動用的現金主要用作營運資金及就有關物業、廠房及設備的資本開支。我們通過(i)每日監察企業資源管理系統中向媒體發佈商支付的預付款項金額；及(ii)每日監察銀行現金結餘，管理流動資金水平。倘我們預計現金狀況不足以支持我們向媒體發佈商支付預付款項，我們將與媒體發佈商探討作出其他付款安排的可能性，包括分期付款。於最後實際可行日期，我們並無經歷任何有關在日常業務過程中償還應付款項的流動資金問題。 於2017年、2018年及2019年12月31日以及2020年4月30日，我們分別擁有現金及現金等價物約人民幣9 .0百萬元、人民幣12 .2百萬元、人民幣23 .8百萬元及人民幣12 .6百萬元，而截至2018年及2019年1"
+        },
+        {
+          "rank": 2,
+          "coverage": 0.5417,
+          "content_hit": true,
+          "gold_aligned": true,
+          "page_hit": false,
+          "type": "historical_or_actual_event",
+          "pages": [
+            9,
+            10
+          ],
+          "score": 1.553487,
+          "chunk_id": "chk_2020_01351_輝煌明天_p9_txt013",
+          "preview": "向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）的64 .5%、77 .7%、94 .1%及80 .5%。我們向客戶提供介乎30至150天的信貸期，因此我們代表客戶購買虛擬代幣與客戶結付貿易應收款項之間相隔一段時間。有關詳情請參閱「業務－我們的服務－我們移動廣告服務的關鍵服務流程－營運資金週期」及「財務資料－若干主要綜合財務狀況表討論－按金、預付款項及其他應收款項」各節。中介服務的規模受到我們手頭不時擁有"
+        },
+        {
+          "rank": 3,
+          "coverage": 0.125,
+          "content_hit": false,
+          "gold_aligned": false,
+          "page_hit": false,
+          "type": "generic_future_risk",
+          "pages": [
+            132,
+            133
+          ],
+          "score": 1.511797,
+          "chunk_id": "chk_2020_01351_輝煌明天_p132_txt141",
+          "preview": "由於支付預付款項及從客戶收取款項之間存在時間差距，可能妨礙我們以營運資金為新廣告訂單支付預付款項的能力及充裕程度，我們在預付款項安排及客戶後續結算方面面臨流動資金風險。由於能否收回貿易應收款項取決於客戶的信貸誠信，我們亦就未收回貿易應收款項結餘面臨信貸風險。雖然以虛擬代幣支付的預付款項一般均可按我們的要求以現金退還，但無法保證我們能及時收到向供應商支付的預付款項的退款。因此，我們亦就預付款項的退款面臨違約風險及可收回性風險。 展望未來，我們擬通過以下方式擴大業務規模及範圍：(i)進一步擴展中介服務，從而長遠提升盈利能力與競爭力及擴大市場份額；(ii)進一步開發視頻形式廣告，藉此進一步擴大服務種類，以及推廣移動廣告服務，尤其是針對我們市場地位較低的行業；(iii)持續參與研發，包括提高數據管理平台及信息技術系統所提供信息的覆蓋面、完整性及應用能力；及(iv)聘請及挽留高質量僱員。 我們的競爭優勢 我們相信以下競爭優勢有助我們成功及"
+        },
+        {
+          "rank": 4,
+          "coverage": 0.2083,
+          "content_hit": false,
+          "gold_aligned": false,
+          "page_hit": false,
+          "type": "generic_future_risk",
+          "pages": [
+            160
+          ],
+          "score": 1.481054,
+          "chunk_id": "chk_2020_01351_輝煌明天_p160_txt178",
+          "preview": "我們致力持續擴展中介服務以提升盈利能力。特別是，由於中國移動廣告業迅速發展，隨著時間流逝，媒體發佈商的受歡迎程度可能會隨著市場趨勢及受眾喜好的變化而發生變化。我們的業務策略是發展及維持均衡的媒體發佈商組合，從而可以將廣告投放至擁有穩定且可觀的流量及較強用戶黏性的一線媒體發佈商，以及具備相對正面增長潛力的二線媒體發佈商。由於廣告主一般於多名媒體發佈商投放廣告以覆蓋更廣泛的受眾，因此董事認為維持較大的不同層次的媒體發佈商組合可以為我們的客戶提供更多媒體發佈商以供選擇，以滿足其不同的廣告需求，這不僅令我們能夠把握來自同一客戶的額外商機，亦提高了我們在其他市場參與者之間的競爭力。因此，董事相信，長遠而言，此業務策略能使我們推動來自穩固的客戶群中的收入增長，並進一步提升我們的市場份額及盈利能力。與此同時，倘任何層次的媒體發佈商的受歡迎程度下降，以及市場趨勢及受眾喜好不斷出現變化，我們均可減輕業務風險。 營運資金週期 就中介服務而言，我們代"
+        },
+        {
+          "rank": 5,
+          "coverage": 0.625,
+          "content_hit": true,
+          "gold_aligned": true,
+          "page_hit": false,
+          "type": "historical_or_actual_event",
+          "pages": [
+            132
+          ],
+          "score": 1.478292,
+          "chunk_id": "chk_2020_01351_輝煌明天_p132_txt140",
+          "preview": "根據F&S報告，頭部媒體發佈商通常自設廣告投放系統以供購買虛擬代幣及競投廣告庫存，故以購買虛擬代幣的方式向媒體發佈商支付預付款項的要求對採購廣告庫存而言屬必要。因此，向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）的64 .5%、77 .7%、94 .1%及80 .5%。我們向客戶提供介乎30至150天的信貸期，因此我們代表客戶購買虛擬代幣與客戶結付貿易應收款項之間相隔一段時間。相隔一段時間的原因是(i)"
+        }
+      ],
+      "content_hit_at_1": true,
+      "content_hit_at_3": true,
+      "content_hit_at_5": true,
+      "content_hit_at_10": true,
+      "content_status": "hit",
+      "page_status": "mismatch",
+      "interpretation": "content_success_page_mismatch",
+      "page_hit_at_gold_rank": false,
+      "page_grounded_when_content_hit": false,
+      "multi_location_like": false,
+      "failure_reason": "content_hit_page_mismatch",
+      "narrative": "content_success_with_page_residual_not_retrieval_failure"
+    }
+  },
+  "human4": {
+    "experiment": "HGE_working_capital_mechanism",
+    "n_cases": 19,
+    "summary": {
+      "n_cases": 19,
+      "recall_at_1": 0.8947,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "mrr": 0.9474,
+      "content_hit_at_1": 0.8947,
+      "content_hit_at_3": 1.0,
+      "content_hit_at_5": 1.0,
+      "content_hit_at_10": 1.0,
+      "gold_aligned_at_1": 0.8947,
+      "gold_aligned_at_3": 1.0,
+      "gold_aligned_at_5": 1.0,
+      "doc_hit_rate": 1.0,
+      "page_hit_any_rate": 0.7368,
+      "content_success_rate": 1.0,
+      "page_grounding_rate": 0.7368,
+      "page_grounded_when_content_hit_rate": 0.4737,
+      "content_success_page_mismatch_rate": 0.5263,
+      "multi_location_like_count": 5,
+      "quant_hit_at_5": 0.4737,
+      "quant_hit_at_10": 0.5263,
+      "multi_span_support_at_5": 0.0,
+      "multi_span_support_at_10": 0.0526,
+      "interpretation_counts": {
+        "content_success_page_mismatch": 10,
+        "full_success": 9
+      },
+      "avg_gold_rank_when_recalled": 1.105,
+      "failure_reason_counts": {
+        "gold_recalled_but_rank_low": 2,
+        "content_hit_page_mismatch": 8,
+        "ok": 9
+      },
+      "metric_definitions": {
+        "recall_at_k": "content_hit anchored; page mismatch does not zero out R@k",
+        "gold_aligned_at_k": "content-oriented human-gold alignment; main product acceptance",
+        "content_success_rate": "share of cases with any content_hit in top_k",
+        "page_grounding_rate": "share of cases with any expected-page hit in top_k (independent)",
+        "content_success_page_mismatch_rate": "content success where top content hit is not page-grounded",
+        "multi_location_like_count": "content success + page mismatch + page_hit_any in topk (approx multi-location)",
+        "quant_hit_at_k": "TopK union text hits expected percent/quant markers (related-party sufficiency)",
+        "multi_span_support_at_k": "TopK union loosely supports all expected_evidence_spans when configured"
+      },
+      "by_dataset": {
+        "manual_human4_v1": {
+          "n": 19,
+          "recall_at_1": 0.8947,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "gold_aligned_at_1": 0.8947,
+          "gold_aligned_at_3": 1.0,
+          "gold_aligned_at_5": 1.0,
+          "content_success_rate": 1.0,
+          "page_grounding_rate": 0.7368,
+          "content_success_page_mismatch_rate": 0.5263,
+          "mrr": 0.9474,
+          "top_failures": {
+            "ok": 9,
+            "content_hit_page_mismatch": 8,
+            "gold_recalled_but_rank_low": 2
+          },
+          "top_interpretations": {
+            "content_success_page_mismatch": 10,
+            "full_success": 9
+          }
+        }
+      },
+      "by_category": {
+        "business_risk": {
+          "n": 7,
+          "recall_at_1": 0.8571,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "gold_aligned_at_1": 0.8571,
+          "gold_aligned_at_3": 1.0,
+          "gold_aligned_at_5": 1.0,
+          "content_success_rate": 1.0,
+          "page_grounding_rate": 0.8571,
+          "content_success_page_mismatch_rate": 0.5714,
+          "mrr": 0.9286,
+          "top_failures": {
+            "content_hit_page_mismatch": 3,
+            "ok": 3,
+            "gold_recalled_but_rank_low": 1
+          },
+          "top_interpretations": {
+            "content_success_page_mismatch": 4,
+            "full_success": 3
+          }
+        },
+        "compliance_risk": {
+          "n": 3,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "gold_aligned_at_1": 1.0,
+          "gold_aligned_at_3": 1.0,
+          "gold_aligned_at_5": 1.0,
+          "content_success_rate": 1.0,
+          "page_grounding_rate": 0.6667,
+          "content_success_page_mismatch_rate": 0.3333,
+          "mrr": 1.0,
+          "top_failures": {
+            "ok": 2,
+            "content_hit_page_mismatch": 1
+          },
+          "top_interpretations": {
+            "full_success": 2,
+            "content_success_page_mismatch": 1
+          }
+        },
+        "financial_risk": {
+          "n": 3,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "gold_aligned_at_1": 1.0,
+          "gold_aligned_at_3": 1.0,
+          "gold_aligned_at_5": 1.0,
+          "content_success_rate": 1.0,
+          "page_grounding_rate": 0.3333,
+          "content_success_page_mismatch_rate": 1.0,
+          "mrr": 1.0,
+          "top_failures": {
+            "content_hit_page_mismatch": 3
+          },
+          "top_interpretations": {
+            "content_success_page_mismatch": 3
+          }
+        },
+        "ipo_specific_risk": {
+          "n": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "gold_aligned_at_1": 0.75,
+          "gold_aligned_at_3": 1.0,
+          "gold_aligned_at_5": 1.0,
+          "content_success_rate": 1.0,
+          "page_grounding_rate": 1.0,
+          "content_success_page_mismatch_rate": 0.25,
+          "mrr": 0.875,
+          "top_failures": {
+            "ok": 3,
+            "gold_recalled_but_rank_low": 1
+          },
+          "top_interpretations": {
+            "full_success": 3,
+            "content_success_page_mismatch": 1
+          }
+        },
+        "ownership_risk": {
+          "n": 2,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "gold_aligned_at_1": 1.0,
+          "gold_aligned_at_3": 1.0,
+          "gold_aligned_at_5": 1.0,
+          "content_success_rate": 1.0,
+          "page_grounding_rate": 0.5,
+          "content_success_page_mismatch_rate": 0.5,
+          "mrr": 1.0,
+          "top_failures": {
+            "content_hit_page_mismatch": 1,
+            "ok": 1
+          },
+          "top_interpretations": {
+            "content_success_page_mismatch": 1,
+            "full_success": 1
+          }
+        }
+      }
+    },
+    "watch_cases": {
+      "manual_ch_duodian_bus_001": {
+        "id": "manual_ch_duodian_bus_001",
+        "question": "多点数智是否存在对关联方客户收入的重大依赖？",
+        "gold_aligned_rank": 2,
+        "gold_aligned_at_1": false,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "quant_hit_at_10": true,
+        "multi_span_support_at_10": true,
+        "content_hit_at_1": false,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "content_status": "hit",
+        "page_status": "mismatch",
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "gold_recalled_but_rank_low"
+      },
+      "manual_new_董飞飞_cat_bus_009": {
+        "id": "manual_new_董飞飞_cat_bus_009",
+        "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+        "gold_aligned_rank": 1,
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "quant_hit_at_10": false,
+        "multi_span_support_at_10": false,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "content_status": "hit",
+        "page_status": "mismatch",
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_cat_fin_010": {
+        "id": "manual_new_董飞飞_cat_fin_010",
+        "question": "辉煌明天是否存在负经营现金流、垫付款与客户回款错配造成的营运资金压力？",
+        "gold_aligned_rank": 1,
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "quant_hit_at_10": false,
+        "multi_span_support_at_10": false,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "content_status": "hit",
+        "page_status": "mismatch",
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_seed_bus_001": {
+        "id": "manual_new_董飞飞_seed_bus_001",
+        "question": "辉煌明天是否高度依赖少数主要客户，主要客户流失会产生什么影响？",
+        "gold_aligned_rank": 1,
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "quant_hit_at_10": true,
+        "multi_span_support_at_10": false,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "content_status": "hit",
+        "page_status": "mismatch",
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_seed_bus_005": {
+        "id": "manual_new_董飞飞_seed_bus_005",
+        "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+        "gold_aligned_rank": 1,
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "quant_hit_at_10": false,
+        "multi_span_support_at_10": false,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "content_status": "hit",
+        "page_status": "hit",
+        "interpretation": "full_success",
+        "failure_reason": "ok"
+      },
+      "manual_new_田歌_cat_fin_010": {
+        "id": "manual_new_田歌_cat_fin_010",
+        "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+        "gold_aligned_rank": 1,
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "quant_hit_at_10": false,
+        "multi_span_support_at_10": false,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "content_status": "hit",
+        "page_status": "mismatch",
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      }
+    },
+    "ga_at_1": 0.8947,
+    "ga_at_3": 1.0,
+    "ga_at_5": 1.0,
+    "recall_at_5": 1.0
+  },
+  "default_flags": {
+    "enable_intent_multiquery": false,
+    "enable_answer_excerpt_rerank": false,
+    "enable_evidence_role_rerank": false,
+    "enable_ipo_specific_rerank": false,
+    "enable_related_party_quant_complement": false,
+    "enable_section_hard_prior": false,
+    "enable_sufficiency_rerank": false
+  },
+  "acceptance": {
+    "anchor_top3_mechanism": true,
+    "no_company_case_whitelist": true,
+    "default_flags_off": true
+  }
+}

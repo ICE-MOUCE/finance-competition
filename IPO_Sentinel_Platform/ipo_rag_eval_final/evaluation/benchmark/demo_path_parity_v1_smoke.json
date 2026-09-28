@@ -1,0 +1,151 @@
+{
+  "task": "demo_path_parity_v1_smoke",
+  "note": "selected_top_k=5 on purpose; hge must floor to 10 and return profile=hge",
+  "rows": [
+    {
+      "id": "manual_new_董飞飞_cat_own_010",
+      "default": {
+        "id": "manual_new_董飞飞_cat_own_010",
+        "profile": "default",
+        "selected_top_k": 5,
+        "effective_top_k": 5,
+        "document_id": "2020_01351_輝煌明天",
+        "document_constrained": true,
+        "n_results": 5,
+        "top1_gold_aligned": true,
+        "top3_gold_aligned": true,
+        "top1_hit_keywords": [
+          "控股股东",
+          "董先生"
+        ],
+        "top1_page_status": "page_mismatch",
+        "top1_interpretation": "内容已对齐，页码残差",
+        "top1_preview": "我們已實施一系列內部控制程序，以促進高效獨立經營業務。 此外，於最後實際可行日期，本集團與控股股東及彼等的緊密聯繫人之間並無業務交易。董事認為，本集團能夠獨立於控股股東及彼等各自的緊密聯繫人經營。 財務可行性及財務獨立 於往績記錄期及直至最後實際可行日期，我們自設內部控制及會計系統、財務團隊，以及現金收款與付款庫務職能。 於往績記錄期，本集團擁有若干應付董事",
+        "top1_pages": [
+          231,
+          232
+        ]
+      },
+      "hge": {
+        "id": "manual_new_董飞飞_cat_own_010",
+        "profile": "hge",
+        "selected_top_k": 5,
+        "effective_top_k": 10,
+        "document_id": "2020_01351_輝煌明天",
+        "document_constrained": true,
+        "n_results": 10,
+        "top1_gold_aligned": true,
+        "top3_gold_aligned": true,
+        "top1_hit_keywords": [
+          "一致行动",
+          "控股股东",
+          "董先生"
+        ],
+        "top1_page_status": "page_mismatch",
+        "top1_interpretation": "内容已对齐，页码残差",
+        "top1_preview": "公司架構 於重組完成後但於資本化發行及股份發售前，本集團的公司架構如下： 緊隨資本化發行及股份發售完成後的股權架構 下圖載列緊隨資本化發行及股份發售完成後的本集團股權架構，假設超額配股權未獲行使且根據購股權計劃可能授出的任何購股權概無獲行使： 附註： (1) 根據上市規則第8 .08條，城市能源持有的股份將計入公眾持股量。 (2) 深圳輝煌明天於2017年4",
+        "top1_pages": [
+          127,
+          128,
+          129
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_seed_bus_001",
+      "default": {
+        "id": "manual_new_董飞飞_seed_bus_001",
+        "profile": "default",
+        "selected_top_k": 5,
+        "effective_top_k": 5,
+        "document_id": "2020_01351_輝煌明天",
+        "document_constrained": true,
+        "n_results": 5,
+        "top1_gold_aligned": true,
+        "top3_gold_aligned": true,
+        "top1_hit_keywords": [
+          "客户B"
+        ],
+        "top1_page_status": "page_mismatch",
+        "top1_interpretation": "内容已对齐，页码残差",
+        "top1_preview": "• 終止 。 任何一方可通過發出30日的書面通知終止協議。 我們相信，憑藉我們提供優質的廣告服務，我們能夠建立忠誠的客戶群。下表載列於往績記錄期的回頭客數量以及彼等對本集團的收入貢獻（中介服務及精準廣告服務均按收入確認總額基準列賬）： 附註： (1) 客戶流失率乃根據相關年度╱期間開始時所服務的客戶總數減去相關年度╱期間的回頭客數量，再除以相關年度╱期間開始",
+        "top1_pages": [
+          194,
+          195
+        ]
+      },
+      "hge": {
+        "id": "manual_new_董飞飞_seed_bus_001",
+        "profile": "hge",
+        "selected_top_k": 5,
+        "effective_top_k": 10,
+        "document_id": "2020_01351_輝煌明天",
+        "document_constrained": true,
+        "n_results": 10,
+        "top1_gold_aligned": true,
+        "top3_gold_aligned": true,
+        "top1_hit_keywords": [
+          "五大客户",
+          "最大客户",
+          "总收入",
+          "集中风险"
+        ],
+        "top1_page_status": "page_mismatch",
+        "top1_interpretation": "内容已对齐，页码残差",
+        "top1_preview": "截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們分別為279名、469名、592名及275名客戶提供服務。我們不時在與客戶訂立有關提供廣告服務的正式協議前，先評估客戶的誠信度。我們評估（其中包括）客戶的營業額、其歷史及聲譽、其尋求銷售推廣的產品或服務、業務關係年期、付款準時程度以及從客戶獲取有用數據的潛力。對於我們並不熟悉的新客戶",
+        "top1_pages": [
+          185,
+          186,
+          189,
+          191,
+          192
+        ]
+      }
+    },
+    {
+      "id": "manual_new_田歌_cat_fin_010",
+      "default": {
+        "id": "manual_new_田歌_cat_fin_010",
+        "profile": "default",
+        "selected_top_k": 5,
+        "effective_top_k": 5,
+        "document_id": "2022_03931_中創新航",
+        "document_constrained": true,
+        "n_results": 5,
+        "top1_gold_aligned": true,
+        "top3_gold_aligned": true,
+        "top1_hit_keywords": [
+          "知识产权侵权"
+        ],
+        "top1_page_status": "page_mismatch",
+        "top1_interpretation": "内容已对齐，页码残差",
+        "top1_preview": "我們主要依賴專利、商業秘密、商標、由僱員簽署保密協議及與第三方簽署保密協議相結合的方式保護知識產權。截至最後實際可行日期，我們並無涉及任何我們認為侵犯我們知識產權的法律訴訟。請參閱「業務－知識產權」及附錄六「法定及一般資料－B.知識產權」。為保護知識產權及維持競爭優勢，我們或會對疑似侵害我們的知識產權的人士提出法律訴訟。法律訴訟一般費用高昂，且管理層或須費神",
+        "top1_pages": [
+          84,
+          85
+        ]
+      },
+      "hge": {
+        "id": "manual_new_田歌_cat_fin_010",
+        "profile": "hge",
+        "selected_top_k": 5,
+        "effective_top_k": 10,
+        "document_id": "2022_03931_中創新航",
+        "document_constrained": true,
+        "n_results": 10,
+        "top1_gold_aligned": true,
+        "top3_gold_aligned": true,
+        "top1_hit_keywords": [
+          "知识产权侵权"
+        ],
+        "top1_page_status": "page_mismatch",
+        "top1_interpretation": "内容已对齐，页码残差",
+        "top1_preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協",
+        "top1_pages": [
+          81,
+          82
+        ]
+      }
+    }
+  ]
+}

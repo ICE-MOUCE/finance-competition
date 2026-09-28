@@ -1,0 +1,1713 @@
+[
+  {
+    "id": "manual_ts_yideng_bus_001",
+    "annotator": "谭思怡",
+    "category": "business_risk",
+    "question": "伊登软件是否严重依赖单一客户？该客户关系是否存在重大风险？",
+    "keywords": [
+      "客户A",
+      "总收益",
+      "美国禁令"
+    ],
+    "expected_keywords": [
+      "客户A",
+      "总收益",
+      "美国禁令"
+    ],
+    "expected_document_ids": [
+      "2020_01147_伊登軟件"
+    ],
+    "expected_companies": [
+      "伊登軟件",
+      "伊登软件",
+      "伊登软件控股有限公司"
+    ],
+    "expected_sections": [
+      "概要",
+      "我们与客户A的关系"
+    ],
+    "expected_page_ranges": [
+      [
+        5,
+        6
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        5,
+        6
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        5,
+        6
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        11,
+        12
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[11, 12]] and preserved printed page labels [[5, 6]].",
+    "expected_evidence_text": "– 5 – 概 要 我們與客戶A 的關係 客戶A 為我們於往績記錄期的最大客戶，是全球領先的信息通信技術及智能設備提供商。根 據行業報告，以2018年的收益計，客戶A 在中國IT 服務行業排名首位，佔2018年市場總份額約5.4%。 我們與客戶A 擁有逾10年的業務關係。於往績記錄期，我們對客戶A 的銷售涉及IT 服務，對客 戶A 的日常運營及管理而言至關重要。截至2019年12月31日止四個年度，對客戶A 的銷售分別佔我 們總收益約42.8%、49.6%、42.3% 及40.4%。 考慮到致使客戶A 與我們之間形成相互依賴的業務關係的因素，我們認為在客戶A 極不可能 與我們終止業務關係的情況下，我們的業務運營不會受到重大不利影響。有關詳情請見本招股章程「業 務－於往績記錄期與客戶A 的關係」一段。 本集團擬採取措施以減少對客戶A 的依賴，此符合我們的業務發展策略。有關詳情請參閱本 招股章程「業務－於往績記錄期與客戶A 的關係」及「業務－我們的策略」各段。 美國禁令 於2019年5月16日，美國對美國及非美國公司向客戶A 及其部分非美國聯屬公司提供美國原產 或出口產品實施限制，惟獲得BIS 頒發的許可授權除外。因此，本集團被禁止向客戶A 提供由美國出",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "hard",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "team_work/teamer_ex/PDF证据标注模板-谭思怡.txt",
+    "review_status": "confirmed",
+    "review_note": "复核原始 PDF：printed labels 5-6 映射到 0-based physical pages 11-12，证据包含客户A收入占比和美国限制。",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "manual_ts_yideng_bus_002",
+    "annotator": "谭思怡",
+    "category": "business_risk",
+    "question": "伊登软件是否严重依赖单一供应商？该供应关系是否存在风险？",
+    "keywords": [
+      "供应商A",
+      "采购总额",
+      "框架协议"
+    ],
+    "expected_keywords": [
+      "供应商A",
+      "采购总额",
+      "框架协议"
+    ],
+    "expected_document_ids": [
+      "2020_01147_伊登軟件"
+    ],
+    "expected_companies": [
+      "伊登軟件",
+      "伊登软件",
+      "伊登软件控股有限公司"
+    ],
+    "expected_sections": [
+      "概要",
+      "我们与供应商A的关系"
+    ],
+    "expected_page_ranges": [
+      [
+        8,
+        9
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        8,
+        9
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        8,
+        9
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        14,
+        15
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[14, 15]] and preserved printed page labels [[8, 9]].",
+    "expected_evidence_text": "分。 於截至2019年12月31日止四個年度，向五大供應商作出的採購總額分別佔我們採購總額的約 42.9%、60.0%、62.6% 及62.3%，向最大供應商（供應商A）作出的採購額佔我們同期採購總額的約 29.7%、37.2%、36.4% 及32.7%。截至2019年12月31日止四個年度，分包成本佔我們銷售成本總額約 6.5%、5.5%、8.1% 及5.4%。 截至2019年12月31日止四個年度，我們分別有24名、27名、23名及25名供應商亦為我們的客戶 （「供應商╱客戶」）。 於往績記錄期，我們向供應商╱客戶作出的銷售主要來自供應商A。其餘供應商╱客戶絕大多 數為IT 相關公司。於往績記錄期，我們向供應商╱客戶作出的銷售主要包括提供IT 實施及支持服務 以及銷售供應商A 品牌的硬件及軟件。 於往績記錄期，本集團向該等IT 相關公司出售亦向彼等購買的原因為(i) 若干供應商及客戶為 不同公司但屬於同一集團；(ii) 接受我們的IT 基礎設施服務的若干供應商╱客戶亦獲我們委聘為分 包商，以就我們提供的IT 實施及支持服務提供協助；及(iii) 我們亦向分包若干服務予我們的若干供 應商╱客戶採購硬件及╱或軟件。 下表載列我們分別於截至2019年12月31日止四個年度來自供應商╱客戶的收益及向其作出的 採購額的百分比及毛利： 截至12月31日止年度 2016年 2017年 201",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "hard",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "team_work/teamer_ex/PDF证据标注模板-谭思怡.txt",
+    "review_status": "confirmed",
+    "review_note": "复核原始 PDF：printed labels 8-9 映射到 0-based physical pages 14-15，证据包含供应商A依赖和框架协议。",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "manual_ts_yideng_fin_001",
+    "annotator": "谭思怡",
+    "category": "financial_risk",
+    "question": "伊登软件是否存在经营现金流压力或经营现金流为负的风险？",
+    "keywords": [
+      "经营活动",
+      "现金流量",
+      "流动负债"
+    ],
+    "expected_keywords": [
+      "经营活动",
+      "现金流量",
+      "流动负债"
+    ],
+    "expected_document_ids": [
+      "2020_01147_伊登軟件"
+    ],
+    "expected_companies": [
+      "伊登軟件",
+      "伊登软件",
+      "伊登软件控股有限公司"
+    ],
+    "expected_sections": [
+      "概要",
+      "综合现金流量表概要"
+    ],
+    "expected_page_ranges": [
+      [
+        12,
+        13
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        12,
+        13
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        12,
+        13
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        18,
+        19
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[18, 19]] and preserved printed page labels [[12, 13]].",
+    "expected_evidence_text": "營運資金變動 (16,016) (5,818) (18,400) (20,266) 已付所得稅 (2,188) (1,770) (2,781) (4,417) 經營活動（所用）╱所得現金流量淨額 (902) 21,777 12,594 10,071 投資活動（所用）╱所得現金流量淨額 (12,600) 3,560 1,137 (2,889) 融資活動所得╱（所用）現金流量淨額 29,995 (54,769) (13,479) 2,366 現金及現金等價物增加╱（減少）淨額 16,493 (29,432) 252 9,548 年初現金及現金等價物 26,936 43,429 13,997 14,022 匯率變動影響淨額 – – (227) 322 年末現金及現金等價物 43,429 13,997 14,022 23,892 – 13 – 概 要 截至2016年12月31日止年度，我們經營活動所用現金流量淨額約為人民幣0.9百萬元，主要是 由於(i) 存貨增加約人民幣24.0百萬元（主要由於2015年12月31日的存貨水平因我們於截至2015年12 月31日止年度之前已向我們的客戶交付大部分存貨而較低）；(ii) 貿易應收款項及應收票據主要因 我們截至2016年12月31日止年度的銷售額較截至2015年12月31日止年度增加而增加約人民幣5.9百萬 元；及(iii) 合約資產因截至20",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "catalog_document_label",
+    "source_annotation_file": "team_work/teamer_ex/PDF证据标注模板-谭思怡.txt",
+    "review_status": "confirmed",
+    "review_note": "复核原始 PDF：catalog 候选页码有效，printed labels 12-13 映射到 physical pages 18-19，证据表格和说明确在目标页。",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "manual_ts_yideng_ipo_001",
+    "annotator": "谭思怡",
+    "category": "ipo_specific_risk",
+    "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+    "keywords": [
+      "所得款项",
+      "业务扩张",
+      "研发",
+      "云服务"
+    ],
+    "expected_keywords": [
+      "所得款项",
+      "业务扩张",
+      "研发",
+      "云服务"
+    ],
+    "expected_document_ids": [
+      "2020_01147_伊登軟件"
+    ],
+    "expected_companies": [
+      "伊登軟件",
+      "伊登软件",
+      "伊登软件控股有限公司"
+    ],
+    "expected_sections": [
+      "未来计划及所得款项用途"
+    ],
+    "expected_page_ranges": [
+      [
+        277,
+        278
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        277,
+        278
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        277,
+        278
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        283,
+        284
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[283, 284]] and preserved printed page labels [[277, 278]].",
+    "expected_evidence_text": "– 277 – 未來計劃及所得款項用途 未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲行使，則扣除股份發售的包 銷佣金、成本及其他估計開支後，我們估計將自股份發售收取所得款項淨額約74.0百萬港元。 根據我們的業務策略，我們擬將股份發售所得款項淨額用作以下用途： • 股份發售所得款項淨額的約33.0%（或約24.4百萬港元），將於截至2022年12月31日止年 度上半年前用於擴張我們的辦事處及增強我們的服務實力以把握中國各地區的商機，其 中(i) 股份發售所得款項淨額的約12.9%（或約9.6百萬港元）將用於擴展我們的深圳辦事 處（包括租賃裝修成本、租金成本以及硬件及軟件成本）；(ii) 股份發售所得款項淨額的 約2.7%（或約2.0百萬港元）將用於在上海設立新辦事分處（包括租賃裝修成本、租金成 本以及硬件及軟件成本）；(iii) 股份發售所得款項淨額的約1.4%（或約1.0百萬港元）將用 於在深圳及上海辦事處設立技術服務中心；及(iv) 股份發售所得款項淨額的約16.0%（或 約11.8百萬港元），將用於新聘員工及技術人員以及加強培訓以支",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "hard",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "catalog_document_label",
+    "source_annotation_file": "team_work/teamer_ex/PDF证据标注模板-谭思怡.txt",
+    "review_status": "confirmed",
+    "review_note": "复核原始 PDF：catalog 候选页码有效，printed labels 277-278 映射到 physical pages 283-284，证据为未来计划及所得款项用途表。",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "manual_ch_duodian_bus_001",
+    "annotator": "陈慧",
+    "category": "business_risk",
+    "question": "多点数智是否存在对关联方客户收入的重大依赖？",
+    "keywords": [
+      "关联方",
+      "收益",
+      "收益百分比",
+      "物美集团",
+      "独立客户",
+      "收益贡献",
+      "占比",
+      "70.6%",
+      "78.2%"
+    ],
+    "expected_keywords": [
+      "关联方",
+      "收益",
+      "收益百分比",
+      "物美集团",
+      "独立客户",
+      "收益贡献",
+      "占比",
+      "70.6%",
+      "78.2%"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "风险因素",
+      "业务",
+      "客户",
+      "我们与关联方的关系"
+    ],
+    "expected_page_ranges": [
+      [
+        51,
+        51
+      ],
+      [
+        227,
+        227
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        51,
+        51
+      ],
+      [
+        227,
+        227
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        51,
+        51
+      ],
+      [
+        227,
+        227
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        58,
+        58
+      ],
+      [
+        234,
+        234
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[58, 58], [234, 234]] and preserved printed page labels [[51, 51], [227, 227]].",
+    "expected_evidence_text": "【叙事】我們非常依賴關聯方，而我們與關聯方關係的任何重大變化均會對我們的業務、財務狀況和經營業績產生重大不利影響。我們與關聯方有密切的業務關係，並於往績記錄期間進行了大量的業務交易，且希望在未來繼續與他們保持業務關係。於往績記錄期間，我們淨收益的絕大部分來自關聯方，而物美集團亦為本集團的最大客戶。截至2021年、2022年及2023年12月31日止年度以及截至2024年6月30日止六個月，(i)我們來自物美集團的收益分別為人民幣384.1百萬元、人民幣561.6百萬元、人民幣821.0百萬元及人民幣484.5百萬元，分別佔我們同年╱期收益的45.3%、42.3%、51.8%及51.6%。\n【量化表】關聯方收益貢獻佔比分別為70.6%、72.7%、75.9%、77.2%及78.2%；物美集團同期收益貢獻佔比分別為45.3%、42.3%、51.8%、51.9%及51.6%；其他關聯方及獨立客戶收益貢獻亦於收益貢獻表中列示。",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "hard",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.; related_party_quant_sufficiency_v1: dual-span narrative+quant table verbatim package",
+    "label_status": "catalog_document_label",
+    "source_annotation_file": "team_work/teamer_ex/PDF证据标注模板-陈慧.txt",
+    "review_status": "confirmed",
+    "review_note": "复核原始 PDF：catalog 候选两处页码有效，printed labels 51 与 227 映射到 physical pages 58 与 234，风险叙述和业务表格均存在。",
+    "reviewer": "Codex",
+    "expected_evidence_spans": [
+      {
+        "span_id": "span_narrative",
+        "role": "span_narrative",
+        "text": "我們非常依賴關聯方，而我們與關聯方關係的任何重大變化均會對我們的業務、財務狀況和經營業績產生重大不利影響。我們與關聯方有密切的業務關係，並於往績記錄期間進行了大量的業務交易，且希望在未來繼續與他們保持業務關係。於往績記錄期間，我們淨收益的絕大部分來自關聯方，而物美集團亦為本集團的最大客戶。截至2021年、2022年及2023年12月31日止年度以及截至2024年6月30日止六個月，(i)我們來自物美集團的收益分別為人民幣384.1百萬元、人民幣561.6百萬元、人民幣821.0百萬元及人民幣484.5百萬元，分別佔我們同年╱期收益的45.3%、42.3%、51.8%及51.6%。",
+        "page_labels": [
+          [
+            51,
+            51
+          ]
+        ],
+        "physical_page_ranges_0_based": [
+          [
+            58,
+            58
+          ]
+        ]
+      },
+      {
+        "span_id": "span_quant_table",
+        "role": "span_quant_table",
+        "text": "關聯方收益貢獻佔比分別為70.6%、72.7%、75.9%、77.2%及78.2%；物美集團同期收益貢獻佔比分別為45.3%、42.3%、51.8%、51.9%及51.6%；其他關聯方及獨立客戶收益貢獻亦於收益貢獻表中列示。",
+        "page_labels": [
+          [
+            227,
+            227
+          ]
+        ],
+        "physical_page_ranges_0_based": [
+          [
+            234,
+            234
+          ]
+        ]
+      }
+    ],
+    "expected_quant_markers": [
+      "70.6%",
+      "72.7%",
+      "75.9%",
+      "77.2%",
+      "78.2%",
+      "45.3%",
+      "51.6%"
+    ]
+  },
+  {
+    "id": "mgv1_duodian_fin_margin_001",
+    "annotator": "Codex_manual_review",
+    "category": "financial_risk",
+    "question": "多点数智的毛利率是否出现波动或下降，是否提示盈利质量风险？",
+    "keywords": [
+      "毛利",
+      "毛利率",
+      "38.3%"
+    ],
+    "expected_keywords": [
+      "毛利",
+      "毛利率",
+      "38.3%"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "概要",
+      "毛利及毛利率"
+    ],
+    "expected_page_ranges": [
+      [
+        5,
+        5
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        5,
+        5
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        5,
+        5
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        12,
+        12
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[12, 12]] and preserved printed page labels [[5, 5]].",
+    "expected_evidence_text": "024年6月30日止六個月，自其他產生的收益分別為人民幣1.3百萬元及 人民幣1.7百萬元。請參閱「業務 — 其他 — 與重慶百貨大樓訂立營銷資源合作協議」。 毛利及毛利率 於2021年、2022年、2023年以及截至2023年及2024年6月30日止六個月，我們的總毛利 率分別為20.4%、38.0%、35.0%、36.3%及38.3%。於往績記錄期間，毛利率的整體增加得益 於我們專注高毛利率經營分部的戰略以及普遍高毛利率的零售核心服務雲業務對收益貢獻 加大。2022年至2023年的減少乃由於我們的客戶更多地採用我們的AIoT解決方案，與我們 的其他產品相比，其毛利率相對較低。 下表載列於所示年度╱期間我們的毛利，以絕對金額及佔相關分部收益的百分比或 毛利率列示： 截至12月31日止年度 截至6月30日止六個月 2021年 2022年 2023年 2023年 2024年 毛利╱ （毛損） 毛利率 毛利 毛利率 毛利╱ （毛損） 毛利率 毛利╱ （毛損） 毛利率 毛利╱ （毛損） 毛利率 人民幣元 % 人民幣元 % 人民幣元 % 人民幣元 % 人民幣元 % （以千計，百分比除外） （未經審核） 零售核心服務雲 . . . . . . . 260,163 59.3 494,570 56.2 541,721 41.7 265,308 44.1 368,566 39.5 操作系統. . ",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_leapmotor_fin_loss_001",
+    "annotator": "Codex_manual_review",
+    "category": "financial_risk",
+    "question": "零跑汽车是否持续录得净亏损及经调整净亏损？",
+    "keywords": [
+      "净亏损",
+      "经调整净亏损",
+      "收益"
+    ],
+    "expected_keywords": [
+      "净亏损",
+      "经调整净亏损",
+      "收益"
+    ],
+    "expected_document_ids": [
+      "2022_09863_零跑汽車"
+    ],
+    "expected_companies": [
+      "零跑汽車",
+      "零跑汽车"
+    ],
+    "expected_sections": [
+      "概要",
+      "历史财务资料概要"
+    ],
+    "expected_page_ranges": [
+      [
+        20,
+        22
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        20,
+        22
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        20,
+        22
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[20, 22]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": "03) – 13 – 概 要 非國際財務報告準則計量 為補充我們根據國際財務報告準則呈列的合併財務報表，我們亦採用並非 國際財務報告準則所規定或據此呈列的經調整淨虧損作為額外財務計量。我們 認為，此項非國際財務報告準則計量可消除項目的潛在影響，有助於比較不同年 度及不同公司間的經營表現。 我們相信，此項計量提供有用信息，供投資者及其他人士以與管理層相同 方式了解及評估我們的合併經營業績。然而，我們呈列的經調整淨虧損未必與其 他公司所呈列類似名目的計量可比。將此項非國際財務報告準則計量用作分析 工具存在局限性，閣下不應視其為獨立於或可代替我們根據國際財務報告準則 所呈報經營業績或財務狀況的分析。我們將經調整淨虧損定義為加回以股份為 基礎的付款開支及按攤銷成本計量附帶優先權金融工具的利息開支調整的期內 淨虧損。 下表載列所呈列期間經調整淨虧損與期內淨虧損（為根據國際財務報告準 則計算及呈列的最具直接可比性的財務計量）的對賬： 截至12月31日止年度 截至3月31日 止三個月 2019年 2020年 2021年 2021年 2022年 （人民幣千元） （未經審核） 淨虧損與經調整淨虧損的 對賬： 年╱期內虧損 (901,131) (1,100,093) (2,845,773) (397,235) (1,042,203) 加： －以 股份為基礎的 付款開支(1) 3,327 42,559 ",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_yunzhisheng_fin_loss_cash_001",
+    "annotator": "Codex_manual_review",
+    "category": "financial_risk",
+    "question": "云知声是否存在持续亏损、净负债或经营现金流净流出的风险？",
+    "keywords": [
+      "净亏损",
+      "净负债",
+      "经营活动所用现金"
+    ],
+    "expected_keywords": [
+      "净亏损",
+      "净负债",
+      "经营活动所用现金"
+    ],
+    "expected_document_ids": [
+      "2025_09678_雲知聲"
+    ],
+    "expected_companies": [
+      "雲知聲",
+      "云知声"
+    ],
+    "expected_sections": [
+      "概要",
+      "风险因素",
+      "合并全面亏损表"
+    ],
+    "expected_page_ranges": [
+      [
+        7,
+        9
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        7,
+        9
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        7,
+        9
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        15,
+        17
+      ],
+      [
+        19,
+        20
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[15, 17], [19, 20]] and preserved printed page labels [[7, 9], [11, 12]].",
+    "expected_evidence_text": "戶預期的產品及解決方案； • 我們面臨與客戶延遲付款及違約有關的信貸風險； • 我們可能無法成功與當前或未來的競爭對手競爭； • 於往績記錄期間，我們有經營活動淨虧損、淨負債及淨現金流出，且日後可能 無法實現或隨後維持盈利能力； • 我們近期的增長未必反映我們的未來表現，且我們日後未必能維持收益增長率； • AI行業在中國不斷發展且受到廣泛的監管。未來法律法規可能施加額外要求及 其他責任，這可能對我們的業務、財務狀況及經營業績造成重大不利影響； • 我們須遵守複雜且不斷發展的有關數據安全、隱私及個人信息的法律、法規及 政府政策。實際或聲稱未能遵守隱私及數據保護法律、法規及政府政策可能會 損害我們的聲譽，阻止現有及潛在客戶使用我們的產品及解決方案，並可能使 我們面臨重大法律、財務及經營後果； • 我們可能無法挽留現有客戶、吸引新客戶或增加其消費； • 我們面臨與延長現金轉換週期相關的風險； • 我們可能未能有效管理存貨； • 我們的業務很大程度上取決於管理層及其他主要人員的持續努力，以及支持我 們營運及未來發展的優秀人才儲備，而我們可能未能挽留、吸引、招聘及培訓 該等人員；及 申請於聯交所上市 我們已向聯交所申請根據(i)全球發售（包括因超額配股權獲行使而可能發行的任何 H股）；及(ii)將由我們現有境內非上市股份及非上市外資股轉換而來的H股上市，前提包括 我們滿足上市規則第8.05",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_youran_fin_liquidity_001",
+    "annotator": "Codex_manual_review",
+    "category": "financial_risk",
+    "question": "优然牧业是否持续录得流动负债净额并面临流动资金风险？",
+    "keywords": [
+      "流动负债净额",
+      "流动资金风险",
+      "银行及其他借款"
+    ],
+    "expected_keywords": [
+      "流动负债净额",
+      "流动资金风险",
+      "银行及其他借款"
+    ],
+    "expected_document_ids": [
+      "2021_09858_優然牧業"
+    ],
+    "expected_companies": [
+      "優然牧業",
+      "优然牧业"
+    ],
+    "expected_sections": [
+      "概要",
+      "财务资料"
+    ],
+    "expected_page_ranges": [
+      [
+        25,
+        25
+      ],
+      [
+        85,
+        85
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        25,
+        25
+      ],
+      [
+        85,
+        85
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        25,
+        25
+      ],
+      [
+        85,
+        85
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[25, 25], [85, 85]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": "年新牧場的資本支出增加。有 關更多資料，請參閱「財務資料－本集團綜合財務狀況表若干主要項目討論－流動資產及 負債」一節。 (3) 於往績記錄期間，本集團持續錄得流動負債淨額狀況，令本集團持續面臨流動資金風險。 董事認為，持續錄得流動負債淨額乃由於我們依賴銀行及其他借款（流動資金的重要來源） 來撥付營運及投資活動，當中的即期部分入賬列為流動負債。我們產生收入的大額資本投 資（包括生物資產以及物業、廠房及設備）入賬列為非流動資產，因此導致流動負債結餘較 大而流動資產結餘較小。截至2020年12月31日流動負債淨額大幅增長主要由於收購賽科星 的控股權，併入賽科星的流動負債。我們預期通過採取以下措施逐步降低流動負債淨額：(i) 增加使用中長期貸款，優化賽科星的融資結構，(ii)動用全球發售所得款項淨額總額的10% 補充營運資金，降低對短期貸款的需求，及(iii)進一步提高牧場的營運效率和盈利能力，產 生更多的現金，進而用以降低短期貸款。有關更多資料，請參閱「財務資料－本集團綜合財 務狀況表若干主要項目討論－流動資產及負債」一節。 下表載列我們於所示期間的現金流量概要。 截至12月31日止年度 2018年 2019年 2020年 人民幣千元 經營活動所得現金淨額 605,801 870,809 1,707,871 投資活動所用現金淨額 (1,142,959) (1,490,454) (4,7",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_maogeping_bus_supplier_001",
+    "annotator": "Codex_manual_review",
+    "category": "business_risk",
+    "question": "毛戈平是否依赖ODM/OEM供应商进行产品生产，供应链管理风险体现在哪里？",
+    "keywords": [
+      "ODM/OEM",
+      "供应商",
+      "客户",
+      "供应链管理"
+    ],
+    "expected_keywords": [
+      "ODM/OEM",
+      "供应商",
+      "客户",
+      "供应链管理"
+    ],
+    "expected_document_ids": [
+      "2024_01318_毛戈平"
+    ],
+    "expected_companies": [
+      "毛戈平"
+    ],
+    "expected_sections": [
+      "概要",
+      "生产及供应链管理"
+    ],
+    "expected_page_ranges": [
+      [
+        20,
+        20
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        20,
+        20
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        20,
+        20
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        19,
+        19
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[19, 19]] and preserved printed page labels [[20, 20]].",
+    "expected_evidence_text": "– 我們的生產及供應鏈管理 我們主要採購彩妝及護膚品原材料、包裝材料及外購成品。為確保最優效率及維 持嚴格的質量控制標準，於整個往績記錄期間，我們始終選擇可靠的ODM/OEM供應 商負責我們的產品生產。在此方面，我們保留了對產品屬性、功效和美學表現的決定 權。我們工作的重點在於完善基本的化妝品參數，如色調、油水平衡、柔韌性、黏度 和表面活性劑水平，以確保我們的產品適合中國消費者的皮膚類型以及化妝品需求和 偏好。請參閱「業務－生產及供應鏈管理」。 客戶及供應商 我們的客戶主要包括個人客戶及企業客戶，企業客戶主要包括線下零售商（包括 一家高端跨國美妝零售商）以及線下及線上經銷商。於2021年、2022年、2023年及截 至2024年6月30日止六個月，來自往績記錄期間各年度╱期間五大客戶的收入分別為 人民幣174.2百萬元、人民幣196.7百萬元、人民幣250.2百萬元及人民幣191.2百萬元， 佔我們同期總收入的10.9%、10.7%、8.8%及9.7%。請參閱「業務－我們的客戶」。 我們的供應商主要包括美妝材料及製成品供應商、ODM/OEM供應商以及物流及 運輸服務供應商。於2021年、2022年、2023年及截至2024年6月30日止六個月，向往 績記錄期間各年度╱期間五大供應商採購所發生的金額分別為人民幣175.8百萬元、人 民幣194.0百萬元、人民幣262.3百萬元及人民幣",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_leapmotor_bus_customer_supplier_001",
+    "annotator": "Codex_manual_review",
+    "category": "business_risk",
+    "question": "零跑汽车是否依赖单一客户，客户及供应商集中度如何？",
+    "keywords": [
+      "客户群",
+      "不依赖任何单一客户",
+      "供应商"
+    ],
+    "expected_keywords": [
+      "客户群",
+      "不依赖任何单一客户",
+      "供应商"
+    ],
+    "expected_document_ids": [
+      "2022_09863_零跑汽車"
+    ],
+    "expected_companies": [
+      "零跑汽車",
+      "零跑汽车"
+    ],
+    "expected_sections": [
+      "概要",
+      "客户及供应商"
+    ],
+    "expected_page_ranges": [
+      [
+        17,
+        17
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        17,
+        17
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        17,
+        17
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[17, 17]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": " 客戶及供應商 儘管我們通常將購買我們車輛的個人視為客戶，但由於我們也會通過渠道 合作夥伴銷售車輛，因此我們亦將渠道合作夥伴視為客戶。我們擁有龐大的客 戶群，並不依賴任何單一客戶。於2019年、2020年、2021年及截至2022 年3 月31日 止三個月，來自我們最大客戶的收益分別佔該等期間總收益的6.8%、5.1%、2.3% 及1.7%。於往績記錄期間，來自我們前五大客戶的收益分別佔該等期間總收益的 27.1%、16.2%、9.5%及6.1%。見「業務－客戶」。 我們的主要供應商為電芯、汽車電子及服務供應商。於2019年、2020年、 2021 年及截至2022 年3月31日止三個月，我們向最大供應商進行採購的金額分別 佔該等期間銷售成本的5.4%、21.4%、19.1%及16.2%。我們向前五大供應商進行採 購的金額分別佔各同期銷售成本的17.1%、28.2%、33.7%及35.4%。見「業務－我們 的供應商－我們的主要供應商」。 我們的優勢 我們認為下列競爭優勢有助於我們取得成功： • 全域自主研發能力； • 中國垂直整合度最高的新興電動汽車製造商； • 多樣化的智能電動汽車產品組合； • 經驗證的快速擴展產品組合的能力； • 先進的自動駕駛及智能座艙技術；及 • 富有遠見且強執行力的管理團隊。 我們的戰略 我們將採取以下戰略來實現我們下文所述的目標： • 我們將開發更為先",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_duodian_owner_controller_001",
+    "annotator": "Codex_manual_review",
+    "category": "ownership_risk",
+    "question": "多点数智的控股股东是谁，控股股东关系是否构成治理风险关注点？",
+    "keywords": [
+      "控股股东",
+      "物美",
+      "张文中"
+    ],
+    "expected_keywords": [
+      "控股股东",
+      "物美",
+      "张文中"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "概要",
+      "控股股东",
+      "与控股股东的关系"
+    ],
+    "expected_page_ranges": [
+      [
+        24,
+        24
+      ],
+      [
+        290,
+        290
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        24,
+        24
+      ],
+      [
+        290,
+        290
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        24,
+        24
+      ],
+      [
+        290,
+        290
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        31,
+        31
+      ],
+      [
+        297,
+        297
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[31, 31], [297, 297]] and preserved printed page labels [[24, 24], [290, 290]].",
+    "expected_evidence_text": "幣 50.0百萬元，並將可轉換債券本金金額修改為人民幣140.0元百萬元。請參閱本文件「歷史、 重組及公司架構 — 首次公開發售前投資」一節以了解進一步詳情。 控股股東 緊隨全球發售完成後（假設超額配股權未獲行使、可轉換債券未獲轉換及並無根據股 份激勵計劃發行股份），我們的創始人兼高級顧問張博士將通過多家中介機構（均為由他全 資擁有或控制的公司）擁有及控制合共502,452,135股股份的權益，合共佔我們已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後構成本公司的一組控股股東。 請參閱「與控股股東的關係」一節以了解控股股東的進一步詳情。 持續關連交易 我們已訂立若干交易，根據上市規則，該等交易將於上市後構成本公司的非獲豁免 或部分豁免持續關連交易。我們已就該等交易向聯交所申請，且聯交所已授出嚴格遵守上 市規則第14A章的若干豁免。請參閱「關連交易」一節以了解詳情。 290 與控股股東的關係 控股股東 緊隨全球發售完成後，我們的創始人兼高級顧問張博士將通過Celestial Limited、Odor Nice Limited、D&W Inc.、Interface Holdings Inc.、Retail Enterprise Corporation Limited、物美 南方科技有限責任公司、物美科技、北京中勝華特科技有限公司及北京京西硅谷科技有限 公司（均為",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_duodian_owner_connected_tx_001",
+    "annotator": "Codex_manual_review",
+    "category": "ownership_risk",
+    "question": "多点数智是否存在持续关连交易或关联方交易治理风险？",
+    "keywords": [
+      "持续关连交易",
+      "关联方",
+      "合作协议"
+    ],
+    "expected_keywords": [
+      "持续关连交易",
+      "关联方",
+      "合作协议"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "概要",
+      "持续关连交易",
+      "我们与关联方的关系"
+    ],
+    "expected_page_ranges": [
+      [
+        24,
+        24
+      ],
+      [
+        227,
+        227
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        24,
+        24
+      ],
+      [
+        227,
+        227
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        24,
+        24
+      ],
+      [
+        227,
+        227
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        31,
+        31
+      ],
+      [
+        234,
+        234
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[31, 31], [234, 234]] and preserved printed page labels [[24, 24], [227, 227]].",
+    "expected_evidence_text": "已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後構成本公司的一組控股股東。 請參閱「與控股股東的關係」一節以了解控股股東的進一步詳情。 持續關連交易 我們已訂立若干交易，根據上市規則，該等交易將於上市後構成本公司的非獲豁免 或部分豁免持續關連交易。我們已就該等交易向聯交所申請，且聯交所已授出嚴格遵守上 市規則第14A章的若干豁免。請參閱「關連交易」一節以了解詳情。 227 業 務 銀川新華集團主要經營百貨商店、超市及電子零售業務。其擁有百貨商店、超市及電 子店，主要位於寧夏回族自治區及陝西、甘肅、內蒙古及青海等周邊省份。銀川新華於1997 年在上海證券交易所上市。截至2024年6月30日，物美集團持有銀川新華約42.1%的股權。 重慶百貨集團主要經營百貨商店、超市、電器及汽車貿易業務。重慶百貨集團擁有 如重慶百貨及新世紀百貨等著名品牌及商標。其在中國擁有商場及店鋪，地域覆蓋廣泛， 包括重慶、四川、貴州、湖北等地。重慶百貨大樓於1996年在上海證券交易所上市。張博 士為重慶百貨大樓的董事兼董事會主席。截至2023年12月31日，重慶百貨大樓由重慶商社 （集團）有限公司持有約51.4%的權益，而重慶商社（集團）有限公司由物美集團持有44.5%的 權益。截至2024年3月9日，重慶百貨大樓由物美集團持有24.89%的權益。 多點新鮮（北京）主要從事提供網絡營銷及廣",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_leapmotor_owner_no_controller_001",
+    "annotator": "Codex_manual_review",
+    "category": "ownership_risk",
+    "question": "零跑汽车是否披露单一最大股东集团及上市后无控股股东安排？",
+    "keywords": [
+      "单一最大股东集团",
+      "一致行动",
+      "控股股东"
+    ],
+    "expected_keywords": [
+      "单一最大股东集团",
+      "一致行动",
+      "控股股东"
+    ],
+    "expected_document_ids": [
+      "2022_09863_零跑汽車"
+    ],
+    "expected_companies": [
+      "零跑汽車",
+      "零跑汽车"
+    ],
+    "expected_sections": [
+      "概要",
+      "单一最大股东集团"
+    ],
+    "expected_page_ranges": [
+      [
+        19,
+        19
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        19,
+        19
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        19,
+        19
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[19, 19]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": "1 – 概 要 • 我們可能面臨與自動駕駛技術有關的風險；及 • 支持新能源汽車的政府激勵措施或補貼變動可能會對我們的業務、財 務狀況及經營業績造成不利影響。 單一最大股東集團 截至最後實際可行日期，朱先生、傅先生、劉女士（朱先生的配偶）及陳女士（傅 先生的配偶）根據彼等之間的一致行動安排合共於我們已發行股本總額中擁有約 31.01% 的權益，包括(i)朱先生直接及透過杭州芯圖、寧波景航及萬載明昭間接控 制的11.89% 權益，(ii)傅先生直接及透過寧波華暘及寧波顧麟間接控制的13.53% 權益及(iii) 陳女士透過寧波華綾間接控制的5.59%權益。 緊隨全球發售完成後（假設發售量調整權及超額配股權未獲行使），朱先生、 傅先生、劉女士及陳女士將繼續直接及透過杭州芯圖、寧波景航、萬載明昭、寧 波華暘、寧波顧麟及寧波華綾間接控制我們已發行股本總額合共約27.46%。因此， 彼等將繼續為我們的單一最大股東集團，而本公司於上市後將不再擁有任何控 股股東（定義見上市規則）。 有關股權架構的詳情，請參閱「歷史、發展及公司架構」。 本公司承諾將維持控制權穩定，並將按照相關法律法規及主管部門的要求 履行必要的告知、申報程序，並配合主管部門進行必要的審查。 首次公開發售前投資者 自成立以來，我們已完成八輪首次公開發售前投資。我們的主要首次公開 發售前投資者包括紅杉智盛、紅杉捷盛、上海電氣香港、金",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_yunzhisheng_owner_controller_001",
+    "annotator": "Codex_manual_review",
+    "category": "ownership_risk",
+    "question": "云知声是否披露控股股东及其上市后持股影响？",
+    "keywords": [
+      "控股股东",
+      "发售股份",
+      "股本"
+    ],
+    "expected_keywords": [
+      "控股股东",
+      "发售股份",
+      "股本"
+    ],
+    "expected_document_ids": [
+      "2025_09678_雲知聲"
+    ],
+    "expected_companies": [
+      "雲知聲",
+      "云知声"
+    ],
+    "expected_sections": [
+      "概要",
+      "控股股东"
+    ],
+    "expected_page_ranges": [
+      [
+        13,
+        13
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        13,
+        13
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        13,
+        13
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        21,
+        21
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[21, 21]] and preserved printed page labels [[13, 13]].",
+    "expected_evidence_text": "概 要 13 33.18%。因此，上市後，彼等將繼續作為我們的控股股東。請參閱「歷史、發展及公司架構 — 控股股東」及「與控股股東的關係」以了解詳情。 發售統計數據 下表所有統計數據基於以下假設得出：(i)全球發售已完成，並根據全球發售發行 1,560,980股H股；(ii)全球發售完成後，70,953,453股股份已發行在外（下文附註(2)所披露者除 外）；及(iii)將境內非上市股份及非上市外資股轉換為H股，且超額配股權未獲行使。 根據每股發售價 165.00港元 根據每股發售價 205.00港元 我們股份的市值 (1) . . . . . . . . . . . . . . . . . . . . . . . . . 11,707.3百萬港元 14,545.5百萬港元 每股股份未經審核備考經調整 合併有形資產淨值 (2) . . . . . . . . . . . . . . . . . . . . . 11.68港元 12.52港元 (1) 市值乃基於預期根據全球發售將予發行的1,560,980股H股及緊隨全球發售完成後已發行的合共70,953,453股 股份（假定將境內非上市股份及非上市外資股轉換為H股，且超額配股權未獲行使）計算。 (2) 截至2024年12月31日的每股股",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_youran_owner_controller_connected_001",
+    "annotator": "Codex_manual_review",
+    "category": "ownership_risk",
+    "question": "优然牧业与控股股东及伊利之间是否存在治理和持续关连交易关注点？",
+    "keywords": [
+      "控股股东",
+      "持续关连交易",
+      "伊利"
+    ],
+    "expected_keywords": [
+      "控股股东",
+      "持续关连交易",
+      "伊利"
+    ],
+    "expected_document_ids": [
+      "2021_09858_優然牧業"
+    ],
+    "expected_companies": [
+      "優然牧業",
+      "优然牧业"
+    ],
+    "expected_sections": [
+      "概要",
+      "控股股东",
+      "持续关连交易"
+    ],
+    "expected_page_ranges": [
+      [
+        33,
+        35
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        33,
+        35
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        33,
+        35
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[33, 35]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": "所支 付的代價總額分別為人民幣3,467.1百萬元及460百萬美元。有關進一步詳情，請參閱 本招股章程「歷史、重組及集團架構－首次公開發售前投資」一節。 我們的控股股東 截至最後實際可行日期，本公司的股權分別由PAG實體及伊利股份（透過其全 資附屬公司中國優然牧業控股有限公司及金港控股）持有約42.89%及40.00%。緊隨全 球發售完成後，PAG實體及伊利股份將分別於我們的已發行股本中擁有約31.46%及 34.80%的權益（假設超額配股權並無獲行使且可換股票據未被轉換）。 假設緊隨全球發售完成後可換股票據獲悉數轉換，PAG實體將分別擁有本公司 已發行股本約40.07%（假設超額配股權未獲行使）及37.85%（假設超額配股權獲悉數行 使）的權益；而伊利股份將擁有本公司已發行股本約27.36%（不論超額配股權行使與 否）的權益。因此，假設可換股票據獲悉數轉換，於上市後，PAG實體將仍為我們的控 股股東（定義見上市規則），而伊利股份將不再為我們的控股股東之一。 有關我們的股權架構，請參閱本招股章程「歷史、重組及集團架構」。 概 要 – 26 – 持續關連交易 我們已經訂立若干交易，將於全球發售完成後構成本公司的持續關連交易，有關 持續關連交易的詳情，請參閱本招股章程「持續關連交易」。 全球發售統計數據 按發售價 6.98港元計算 按發售價 8.66港元計算 股份市值(1) 26,49",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_duodian_comp_license_data_001",
+    "annotator": "Codex_manual_review",
+    "category": "compliance_risk",
+    "question": "多点数智是否面临牌照、许可证或数据合规风险？",
+    "keywords": [
+      "牌照",
+      "许可证",
+      "数据",
+      "隐私"
+    ],
+    "expected_keywords": [
+      "牌照",
+      "许可证",
+      "数据",
+      "隐私"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "风险因素",
+      "牌照",
+      "数据安全"
+    ],
+    "expected_page_ranges": [
+      [
+        56,
+        59
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        56,
+        59
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        56,
+        59
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        63,
+        66
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[63, 66]] and preserved printed page labels [[56, 59]].",
+    "expected_evidence_text": "式產生不利影響的新法律或法 規的頒佈，可能要求我們變更業務的若干方面，以確保合規性，這會減少對我們產品及服 務的需求、減少收益、增加成本，且可能要求我們取得更多牌照、許可證、批文或證書， 或使我們承擔額外責任。倘需實施任何新的或更嚴格的措施，我們的業務、財務狀況及經 營業績可能會受到不利影響。 由於我們經營所在行業的監管環境的發展，故概不保證我們能夠維持現有批文、許 可證及牌照，或根據任何未來法律或法規的規定取得任何新批文、許可證及牌照。倘我們 未能取得及維持我們業務所需的批文、牌照或許可證，我們可能面臨責任、罰款、處罰及 57 風險因素 營運中斷，或可能被要求修改我們的業務模式，這可能對我們的業務、財務狀況及經營業 績造成重大不利影響。請參閱「— 我們業務若然缺乏任何適用的必要批文、牌照或許可證， 可能會對我們的日常運營產生重大不利影響，並阻礙我們的增長」。 由於我們收取、存儲及處理數據，其中部分包含敏感個人信息，我們面臨有關收集、不當使 用或披露個人信息的擔憂，這可能會使當前及潛在用戶不再使用我們的服務及技術平台、 損害我們的聲譽、面臨監管審查，繼而對我們的業務、財務狀況及經營業績產生重大不利 影響。 我們受到我們經營所在各個國家及地區（即中國內地、香港特別行政區、柬埔寨、 新加坡、馬來西亞、波蘭、澳門特別行政區、印尼、菲律賓及汶萊）有關個人信息保護的法 律、法規、指引及行業建",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_duodian_comp_litigation_001",
+    "annotator": "Codex_manual_review",
+    "category": "compliance_risk",
+    "question": "多点数智是否存在供应商合同纠纷或诉讼风险？",
+    "keywords": [
+      "纠纷",
+      "诉讼",
+      "供应商"
+    ],
+    "expected_keywords": [
+      "纠纷",
+      "诉讼",
+      "供应商"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "业务",
+      "法律诉讼",
+      "重大诉讼"
+    ],
+    "expected_page_ranges": [
+      [
+        403,
+        403
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        403,
+        403
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        403,
+        403
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        410,
+        410
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[410, 410]] and preserved printed page labels [[403, 403]].",
+    "expected_evidence_text": "至2021年12月31日，因若干爭議資產凍結，我們錄得受限制銀行存款人民幣55.7百 萬元。於往績記錄期間，本公司的一家附屬公司捲入與本公司一家供應商有關的合約糾紛， 且法院從該附屬公司的銀行賬戶中凍結了若干爭議資產。於2022年9月，法院駁回了此案， 爭議資產於2022年10月解凍。請參閱「風險因素 — 與我們的業務及行業有關的風險 — 在我 們的業務運營過程中，我們已經並可能不時再次受到法律訴訟的影響。我們的董事、管理 層、股東及僱員亦可能不時再次受到法律訴訟的影響，從而可能對我們的聲譽及經營業績 產生不利影響」以了解詳情。 截至2022年12月31日及截至2023年12月31日，我們分別錄得受限制銀行存款人民幣 56.1百萬元及人民幣20.9百萬元，主要指向消費者收取並存放於銀行監管賬戶中以支付予零 售商及商戶的現金。 於往績記錄期間，本公司附屬公司智聯武漢與一名產品製造商就我們的AIoT解決方 案發生合約糾紛。於2019年4月15日，多點智聯與一名產品製造商（「製造商」）訂立製造合約 （「製造合約」），據此，製造商同意製造AIoT設備。於2019年5月25日，製造商多點智聯與智 聯武漢訂立協議，將製造合約訂約方變更為智聯武漢，並由智聯武漢承擔製造合約項下的 權利及義務。根據製造合約，倘AIoT設備出現質量問題，質量保證金將於解決質量問題後 支付。智聯武漢認為，產品製造商交付",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_maogeping_comp_no_litigation_001",
+    "annotator": "Codex_manual_review",
+    "category": "compliance_risk",
+    "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+    "keywords": [
+      "重大诉讼",
+      "仲裁",
+      "董事确认"
+    ],
+    "expected_keywords": [
+      "重大诉讼",
+      "仲裁",
+      "董事确认"
+    ],
+    "expected_document_ids": [
+      "2024_01318_毛戈平"
+    ],
+    "expected_companies": [
+      "毛戈平"
+    ],
+    "expected_sections": [
+      "业务",
+      "法律诉讼"
+    ],
+    "expected_page_ranges": [
+      [
+        611,
+        611
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        611,
+        611
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        611,
+        611
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        610,
+        610
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[610, 610]] and preserved printed page labels [[611, 611]].",
+    "expected_evidence_text": "授出獎勵。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或我們的子公司不可能承擔重大遺產稅責任。 2. 訴訟 據董事所知，本集團成員公司並無尚未完結或面臨重大訴訟或申索。",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_yunzhisheng_comp_no_litigation_001",
+    "annotator": "Codex_manual_review",
+    "category": "compliance_risk",
+    "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+    "keywords": [
+      "重大诉讼",
+      "仲裁",
+      "行政程序"
+    ],
+    "expected_keywords": [
+      "重大诉讼",
+      "仲裁",
+      "行政程序"
+    ],
+    "expected_document_ids": [
+      "2025_09678_雲知聲"
+    ],
+    "expected_companies": [
+      "雲知聲",
+      "云知声"
+    ],
+    "expected_sections": [
+      "法律诉讼",
+      "业务"
+    ],
+    "expected_page_ranges": [
+      [
+        31,
+        31
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        31,
+        31
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        31,
+        31
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        559,
+        559
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[559, 559]] and preserved printed page labels [[31, 31]].",
+    "expected_evidence_text": " 董事已獲告知，本公司或其任何附屬公司不大可能承擔重大遺產稅責任。 2. 訴訟 除本招股章程所披露者外，據董事所知，本集團任何成員公司概無任何待決或遭受 威脅的重大訴訟或申索。 3. 聯席保薦人 聯席保薦人已代表我們向上市委員會申請批准H股上市及買賣。我們已作出所有必要 安排以使證券獲准納入中央結算系統。 聯席保薦人符合上市規則第3A.07條所載適用於保薦人的獨立性標準。聯席保薦人各 自將就擔任上市保薦人收取費用500,000美元。 4. 開辦費用 本公司並無產生任何重大開辦費用。",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_youran_comp_arbitration_001",
+    "annotator": "Codex_manual_review",
+    "category": "compliance_risk",
+    "question": "优然牧业是否因赛科星收购事项面临仲裁或索赔风险？",
+    "keywords": [
+      "仲裁",
+      "赛科星",
+      "索赔"
+    ],
+    "expected_keywords": [
+      "仲裁",
+      "赛科星",
+      "索赔"
+    ],
+    "expected_document_ids": [
+      "2021_09858_優然牧業"
+    ],
+    "expected_companies": [
+      "優然牧業",
+      "优然牧业"
+    ],
+    "expected_sections": [
+      "业务",
+      "法律诉讼",
+      "仲裁"
+    ],
+    "expected_page_ranges": [
+      [
+        824,
+        826
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        824,
+        826
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        824,
+        826
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[824, 826]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": "或就我們的董事所知擁 有本公司已發行股本5%以上的現有股東概無於本集團五大客戶或五大供應 商擁有任何權益。 D. 其他資料 1. 法律程序 有關賽科星收購事項的仲裁 於2020年12月7日，我們收到北京仲裁委員會（「仲裁委員會」）發來的答辯通知 （「仲裁」），告知優然牧業，賽科星29名前股東作為仲裁申請人（「申請人」）向仲裁委員 會請求裁決優然牧業向申請人支付根據相關購股協議（「購股協議」）進行股份轉讓的未 償還代價合計人民幣44,909,459.44元。 購股協議乃優然牧業（一方）與賽科星79名前股東（「賣方」，其中29名為申請人） （另一方）之間於2019年7月9日訂立，據此，優然牧業同意購買而賣方同意向優然牧 業出售賽科星約58.36%股權，代價約為人民幣22.8億元（「代價」），惟完成後可予下調 （「調整」）。根據賽科星於完成前一個月最後一日的經審核財務報表（「完成賬目」）錄得 的資產價值與賽科星截至2018年12月31日的經審核財務報表（「2018年賬目」）錄得的 資產價值的比較，倘完成賬目中的單一資產項目減值超過人民幣100百萬元或倘完成 附錄五 法定及一般資料 – V-17 – 賬目中資產總值的累計減值超過10%，代價須根據購股協議的條款以減值金額按比例 下調。於2020年1月8日完成收購賽科星後，優然牧業委聘購股協議中先前約定的會計 師，以編製完成賬目。根據於202",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "hard",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_duodian_ipo_preipo_001",
+    "annotator": "Codex_manual_review",
+    "category": "ipo_specific_risk",
+    "question": "多点数智的首次公开发售前投资是否存在特殊权利或无禁售安排？",
+    "keywords": [
+      "首次公开发售前投资",
+      "特殊权利",
+      "禁售"
+    ],
+    "expected_keywords": [
+      "首次公开发售前投资",
+      "特殊权利",
+      "禁售"
+    ],
+    "expected_document_ids": [
+      "2024_02586_多點數智"
+    ],
+    "expected_companies": [
+      "多點數智",
+      "多点数智"
+    ],
+    "expected_sections": [
+      "历史、重组及公司架构",
+      "首次公开发售前投资"
+    ],
+    "expected_page_ranges": [
+      [
+        148,
+        150
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        148,
+        150
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        148,
+        150
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        155,
+        157
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[155, 157]] and preserved printed page labels [[148, 150]].",
+    "expected_evidence_text": "ous Link Group Limited持有的所有股份所附帶的投票權由董事會最終指示及控制，因為 受益人認為董事會將基於本公司及股東的整體利益行使投票權。 首次公開發售前投資 概覽 自成立以來，我們已收到三輪首次公開發售前投資，概述如下。所有首次公開發售 前投資者均根據首次公開發售前投資獲發行本公司優先股。 輪 投資協議日期 (1) 完成日期 (2) 投資協議項下 的股份總數 概約籌集金額 向本公司支付 的每股成本 於每輪首次公開 發售前投資 本集團的交易後 估值 (3) 發售價的折讓 (4) 1. A輪 2015年4月 2017年5月9日 106,000,000股 A輪優先股 106.0百萬美元 1.00美元 606.0百萬美元 74.2% 2. B輪 2018年7月 2018年9月28日 40,404,040股 B輪優先股 80.0百萬美元 1.98美元 1,280.0百萬美元 49.0% 2018年12月 2019年4月15日 25,505,051股 B+輪優先股 50.5百萬美元 1.98美元 1,330.5百萬美元 49.0% 2019年7月 2020年11月10日 18,399,621股 B++輪優先股 46.0百萬美元 2.50美元 1,726.0百萬美元 35.6% 3. C輪 2020年8月 2021年9月30日 132,103,065股 C輪優先股 369.",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "narrative",
+    "difficulty": "hard",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_maogeping_ipo_use_proceeds_001",
+    "annotator": "Codex_manual_review",
+    "category": "ipo_specific_risk",
+    "question": "毛戈平计划如何使用全球发售所得款项？",
+    "keywords": [
+      "所得款项",
+      "品牌",
+      "销售网络"
+    ],
+    "expected_keywords": [
+      "所得款项",
+      "品牌",
+      "销售网络"
+    ],
+    "expected_document_ids": [
+      "2024_01318_毛戈平"
+    ],
+    "expected_companies": [
+      "毛戈平"
+    ],
+    "expected_sections": [
+      "概要",
+      "所得款项用途"
+    ],
+    "expected_page_ranges": [
+      [
+        27,
+        27
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        27,
+        27
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        27,
+        27
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        26,
+        26
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[26, 26]] and preserved printed page labels [[27, 27]].",
+    "expected_evidence_text": "概 要 – 17 – 所得款項用途 假設發售價為每股股份28.05港元（即本招股章程所述發售價範圍的中位數）以及 發售量調整權及超額配股權未獲行使，我們估計，經扣除我們就全球發售已付及應付 的包銷佣金及其他估計開支後，我們將收到的全球發售所得款項淨額約為1,844.5百萬 港元。根據我們的戰略，我們擬將全球發售所得款項按下述金額用於以下用途： • 所得款項淨額約25.0%或461.1百萬港元，預期將用於擴大我們的銷售網 絡； • 所得款項淨額約20.0%或369.0百萬港元，預期將用於品牌建設活動； • 所得款項淨額約15.0%或276.6百萬港元，預期將用於海外擴張及收購； • 所得款項淨額約10.0%或184.5百萬港元，預期將用於加強我們的生產及供 應鏈能力； • 所得款項淨額約9.0%或166.0百萬港元，預期將用於增強我們的產品設計及 開發能力； • 所得款項淨額約6.0%或110.6百萬港元，預期將用於我們的化妝藝術培訓機 構； • 所得款項淨額約5.0%或92.2百萬港元，預期將用於我們的運營及信息基礎 設施數字化；及 • 所得款項淨額約10.0%或184.5百萬港元，預期將用作營運資金及一般公司 用途。 請參閱「未來計劃及所得款項",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_leapmotor_ipo_use_proceeds_001",
+    "annotator": "Codex_manual_review",
+    "category": "ipo_specific_risk",
+    "question": "零跑汽车上市募集资金主要用于哪些方向？",
+    "keywords": [
+      "所得款项",
+      "研发",
+      "销售"
+    ],
+    "expected_keywords": [
+      "所得款项",
+      "研发",
+      "销售"
+    ],
+    "expected_document_ids": [
+      "2022_09863_零跑汽車"
+    ],
+    "expected_companies": [
+      "零跑汽車",
+      "零跑汽车"
+    ],
+    "expected_sections": [
+      "未来计划及所得款项用途"
+    ],
+    "expected_page_ranges": [
+      [
+        411,
+        414
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        411,
+        414
+      ]
+    ],
+    "page_basis": "pdf_physical_page",
+    "expected_page_labels": [],
+    "expected_physical_page_ranges_0_based": [
+      [
+        411,
+        414
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[411, 414]] and preserved physical page numbers because PDF page labels are empty.",
+    "expected_evidence_text": "– 403 – 未來計劃及所得款項用途 未來計劃 有關未來計劃的詳盡討論，見「業務－我們的戰略」。 所得款項用途 假設發售價為每股發售股份55.00港元（即所述發售價範圍每股發售股份 48.00 港元至62.00 港元的中位數），經扣除包銷佣金、費用及有關全球發售的其他 估計開支並假設發售量調整權及超額配股權未獲行使，我們估計將收取全球發 售所得款項淨額約6,950.2 百萬港元，或倘發售量調整權及超額配股權獲悉數行使 則收取9,212.4 百萬港元。為了符合我們的戰略，我們擬按照如下用途動用全球發 售所得款項： • 所得款項淨額中約40.0% 或約2,780.1百萬港元用於我們的研發，包括： i. 所得款項淨額中約15.0%或約1,042.5百萬港元將用於拓展及升級 智能電動汽車組合。我們計劃以每年一到三款車型的速度於2025 年底前推出七款全新的純電動車型，涵蓋緊湊型到中大型的轎車、 SUV及MPV，使我們得以進一步滲透可觸及的市場及響應更廣泛 客戶的需求。例如，我們已於2022年5 月推出與C11基於同平台打 造的智能純電動中大型轎車C01，並預期於2022年第三季度實現 交付。作為現有產品的補充，我們亦計劃基於自研增程式技術， 同時或隨後推出",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  },
+  {
+    "id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+    "annotator": "Codex_manual_review",
+    "category": "ipo_specific_risk",
+    "question": "云知声上市所得款项是否主要投入研发和商业化？",
+    "keywords": [
+      "所得款项",
+      "研发",
+      "商业化"
+    ],
+    "expected_keywords": [
+      "所得款项",
+      "研发",
+      "商业化"
+    ],
+    "expected_document_ids": [
+      "2025_09678_雲知聲"
+    ],
+    "expected_companies": [
+      "雲知聲",
+      "云知声"
+    ],
+    "expected_sections": [
+      "未来计划及所得款项用途"
+    ],
+    "expected_page_ranges": [
+      [
+        335,
+        338
+      ]
+    ],
+    "raw_annotated_page_ranges": [
+      [
+        335,
+        338
+      ]
+    ],
+    "page_basis": "printed_page_label",
+    "expected_page_labels": [
+      [
+        335,
+        338
+      ]
+    ],
+    "expected_physical_page_ranges_0_based": [
+      [
+        343,
+        346
+      ]
+    ],
+    "page_mapping_status": "confirmed",
+    "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[343, 346]] and preserved printed page labels [[335, 338]].",
+    "expected_evidence_text": "未來計劃及所得款項用途 335 GPU類型 估計總成本 單價 相關計算能力 通用GPU推理服務器 1.3百萬 港元 0.25百萬 港元 每個GPU服務器可提供最多1 PFLOPS的計算性能。該等服 務器可處理大量請求，並對超 過100億參數的大語言模型進 行同步推理，最高處理能力為 每天22百萬次（每次10秒）。 雲知大腦升級 о 約7.7%或13.6百萬港元，將用於升級雲知大腦，以進一步提高我們的AI技術開發 能力。我們計劃採購訓練語料以及人工反饋及標註服務，以支持我們的軟件和 算法的升級，滿足各種應用場景中不斷變化的需求。我們計劃提高我們的大語 言模型的表現，並提升其對應場景的快速適配能力。我們預期進一步提升大語 言模型的參數規模和數據規模，訓練及優化自有的可直接處理圖像、語音及文 本等輸入的多模態大語言模型。 此外，我們計劃訓練針對行業任務優化的大語 言模型，以擴大應用範圍，特別是針對某些高度專業化的行業，例如諮詢服務 和公用事業。 此外，我們計劃通過以下方式進一步改進我們的AI組件：(i)擴大我們的AI多語言 能力，以適應多模態場景；(ii)提高知識圖譜的質量和規模；(iii)提高物聯網平台 整體的開放性和易用性；及(iv)通",
+    "expected_evidence_verified_in_pdf": true,
+    "answer_type": "table",
+    "difficulty": "medium",
+    "notes": "Manual Gold V1 case created by direct original-PDF review; no Retriever output was used to create or change the Gold label.",
+    "label_status": "gold_seed",
+    "source_annotation_file": "manual_gold_v1_pdf_review",
+    "review_status": "confirmed",
+    "review_note": "Confirmed from original PDF text and page label/physical-page mapping before baseline run.",
+    "reviewer": "Codex"
+  }
+]

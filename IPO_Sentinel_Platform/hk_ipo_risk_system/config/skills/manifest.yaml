@@ -1,0 +1,23 @@
+version: agent-skills-1.0
+description: One agent maps to one skill. New skills can be added by implementing BaseSkill and registering in SkillRegistry.
+skills:
+  - skill_id: financial_risk
+    agent_name: FINANCIAL_RISK_AGENT
+    label: 财务风险 Agent
+    default_provider: deepseek
+  - skill_id: legal_risk
+    agent_name: LEGAL_RISK_AGENT
+    label: 法务风险 Agent
+    default_provider: deepseek
+  - skill_id: equity_risk
+    agent_name: EQUITY_RISK_AGENT
+    label: 股权风险 Agent
+    default_provider: deepseek
+  - skill_id: business_risk
+    agent_name: BUSINESS_RISK_AGENT
+    label: 经营风险 Agent
+    default_provider: deepseek
+  - skill_id: nonstandard_risk
+    agent_name: NONSTANDARD_RISK_AGENT
+    label: 非标风险 Agent
+    default_provider: deepseek

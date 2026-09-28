@@ -1,0 +1,6 @@
+version: label-policy-1.0
+horizons:
+  y_1d_break: {trading_days: 1, price: close, threshold: 0.00}
+  y_5d_drop: {trading_days: 5, price: low, threshold: -0.10}
+  y_20d_drop: {trading_days: 20, price: low, threshold: -0.15}
+  y_60d_drop: {trading_days: 60, price: low, threshold: -0.20}

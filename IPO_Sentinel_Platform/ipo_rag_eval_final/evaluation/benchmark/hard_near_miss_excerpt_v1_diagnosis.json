@@ -1,0 +1,3035 @@
+{
+  "experiments": {
+    "baseline": {
+      "summary": {
+        "n_cases": 39,
+        "recall_at_1": 0.5128,
+        "recall_at_3": 0.7436,
+        "recall_at_5": 0.7436,
+        "recall_at_10": 0.8205,
+        "content_hit_at_1": 0.5128,
+        "content_hit_at_3": 0.7436,
+        "content_hit_at_5": 0.7436,
+        "content_hit_at_10": 0.8205,
+        "doc_hit_rate": 1.0,
+        "page_hit_any_rate": 0.6923,
+        "content_success_rate": 0.8205,
+        "page_grounding_rate": 0.6923,
+        "page_grounded_when_content_hit_rate": 0.4688,
+        "content_success_page_mismatch_rate": 0.4359,
+        "multi_location_like_count": 11,
+        "interpretation_counts": {
+          "full_success": 10,
+          "content_success_page_mismatch": 17,
+          "content_success_page_hit_not_top1": 5,
+          "content_miss_page_hit_elsewhere": 1,
+          "content_miss": 6
+        },
+        "mrr": 0.6264,
+        "avg_gold_rank_when_recalled": 1.938,
+        "failure_reason_counts": {
+          "ok": 10,
+          "content_hit_page_mismatch": 10,
+          "gold_recalled_but_rank_low": 12,
+          "gold_not_in_topk_content": 1,
+          "semantic_near_miss_or_chunk_boundary": 6
+        },
+        "metric_definitions": {
+          "recall_at_k": "content_hit anchored; page mismatch does not zero out R@k",
+          "content_success_rate": "share of cases with any content_hit in top_k",
+          "page_grounding_rate": "share of cases with any expected-page hit in top_k (independent)",
+          "content_success_page_mismatch_rate": "content success where top content hit is not page-grounded",
+          "multi_location_like_count": "content success + page mismatch + page_hit_any in topk (approx multi-location)"
+        },
+        "by_dataset": {
+          "manual_gold_v1": {
+            "n": 25,
+            "recall_at_1": 0.6,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.8,
+            "recall_at_10": 0.84,
+            "content_success_rate": 0.84,
+            "page_grounding_rate": 0.76,
+            "content_success_page_mismatch_rate": 0.4,
+            "mrr": 0.6857,
+            "top_failures": {
+              "ok": 8,
+              "content_hit_page_mismatch": 7,
+              "gold_recalled_but_rank_low": 6,
+              "semantic_near_miss_or_chunk_boundary": 3,
+              "gold_not_in_topk_content": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 10,
+              "full_success": 8,
+              "content_success_page_hit_not_top1": 3,
+              "content_miss": 3,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "manual_new_annotators_v1": {
+            "n": 14,
+            "recall_at_1": 0.3571,
+            "recall_at_3": 0.6429,
+            "recall_at_5": 0.6429,
+            "recall_at_10": 0.7857,
+            "content_success_rate": 0.7857,
+            "page_grounding_rate": 0.5714,
+            "content_success_page_mismatch_rate": 0.5,
+            "mrr": 0.5204,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 6,
+              "content_hit_page_mismatch": 3,
+              "semantic_near_miss_or_chunk_boundary": 3,
+              "ok": 2
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 7,
+              "content_miss": 3,
+              "full_success": 2,
+              "content_success_page_hit_not_top1": 2
+            }
+          }
+        },
+        "by_category": {
+          "business_risk": {
+            "n": 9,
+            "recall_at_1": 0.5556,
+            "recall_at_3": 0.7778,
+            "recall_at_5": 0.7778,
+            "recall_at_10": 0.7778,
+            "content_success_rate": 0.7778,
+            "page_grounding_rate": 0.6667,
+            "content_success_page_mismatch_rate": 0.3333,
+            "mrr": 0.6481,
+            "top_failures": {
+              "ok": 3,
+              "content_hit_page_mismatch": 2,
+              "gold_recalled_but_rank_low": 2,
+              "semantic_near_miss_or_chunk_boundary": 2
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 3,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          },
+          "financial_risk": {
+            "n": 7,
+            "recall_at_1": 0.7143,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.8571,
+            "mrr": 0.8333,
+            "top_failures": {
+              "content_hit_page_mismatch": 4,
+              "gold_recalled_but_rank_low": 2,
+              "ok": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 6,
+              "full_success": 1
+            }
+          },
+          "ipo_specific_risk": {
+            "n": 8,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.5,
+            "recall_at_5": 0.5,
+            "recall_at_10": 0.75,
+            "content_success_rate": 0.75,
+            "page_grounding_rate": 0.75,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.5357,
+            "top_failures": {
+              "ok": 3,
+              "semantic_near_miss_or_chunk_boundary": 2,
+              "gold_recalled_but_rank_low": 2,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 2,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          },
+          "ownership_risk": {
+            "n": 7,
+            "recall_at_1": 0.2857,
+            "recall_at_3": 0.8571,
+            "recall_at_5": 0.8571,
+            "recall_at_10": 0.8571,
+            "content_success_rate": 0.8571,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.5714,
+            "mrr": 0.5476,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 4,
+              "content_hit_page_mismatch": 2,
+              "gold_not_in_topk_content": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 4,
+              "content_success_page_hit_not_top1": 2,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "compliance_risk": {
+            "n": 8,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.625,
+            "recall_at_5": 0.625,
+            "recall_at_10": 0.75,
+            "content_success_rate": 0.75,
+            "page_grounding_rate": 0.625,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.5804,
+            "top_failures": {
+              "ok": 3,
+              "gold_recalled_but_rank_low": 2,
+              "semantic_near_miss_or_chunk_boundary": 2,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 2,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          }
+        }
+      },
+      "hard_hit_at_5": 1,
+      "hard_total": 6,
+      "cases": [
+        {
+          "case_id": "manual_new_田歌_cat_fin_010",
+          "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "mismatch",
+          "interpretation": "content_success_page_mismatch",
+          "failure_reason": "content_hit_page_mismatch",
+          "top1_preview": "我們主要依賴專利、商業秘密、商標、由僱員簽署保密協議及與第三方簽署保密協議相結合的方式保護知識產權。截至最後實際可行日期，我們並無涉及任何我們認為侵犯我們知識產權的法律訴訟。請參閱「業務－知識產權」及附錄六「法定及一般資料－B.知識產權」。為保護知識產權及維持競爭優勢，我們或會對疑似侵害我們的知識產權的人士提出法律訴訟。法律訴訟一般費用高昂，且管理層或須費神兼顧，並會耗用我們的業務資源。於若干情況",
+          "top1_pages": [
+            84,
+            85
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0833,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                84,
+                85
+              ],
+              "score": 1.200538,
+              "chunk_id": "chk_2022_03931_中創新航_p84_txt053",
+              "preview": "我們主要依賴專利、商業秘密、商標、由僱員簽署保密協議及與第三方簽署保密協議相結合的方式保護知識產權。截至最後實際可行日期，我們並無涉及任何我們認為侵犯我們知識產權的法律訴訟。請參閱「業務－知識產權」及附錄六「法定及一般資料－B.知識產權」。為保護知識產權及維持競爭優勢，我們或會對疑似侵害我們的知識產權的人士提出法律訴訟。法律訴訟一般費用高昂，且管理層或須費神兼顧，並會耗用我們的業務資源。於若干情況下，我們或會於海外司法權區提出法律訴訟，於此情況下，我們須就訴訟結果及可得到的賠"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.25,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                81,
+                82
+              ],
+              "score": 1.175821,
+              "chunk_id": "chk_2022_03931_中創新航_p81_txt049",
+              "preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協助我們進行抗辯。截至最後實際可行日期，針對其中五項專利的申索已進入實體審理階段及我們正對該等申索提出抗辯。有關詳情，請參"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                85,
+                86
+              ],
+              "score": 1.171457,
+              "chunk_id": "chk_2022_03931_中創新航_p85_txt054",
+              "preview": "任何潛在申索╱請求是否成立及申索╱請求的範圍可能複雜且涉及複雜的科學、法律及舉證問題及分析，因此難以確定。就知識產權訴訟、專利異議訴訟以及相關法律及行政訴訟或請求作出辯護及起訴涉及高昂費用且相當費時，管理層可能須費神兼顧，並投入大量資源。再者，倘若競爭對手發起惡意訴訟或不正當法律程序，就有關申索進行抗辯（不論其理據），將涉及額外訴訟費用並可能分散我們管理層的時間及精力。若我們牽涉的任何訴訟或法律程序或請求出現的判決，或會使我們的專利無效，令我們須向第三方支付賠償、向第三方徵求"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                350,
+                351
+              ],
+              "score": 1.130179,
+              "chunk_id": "chk_2022_03931_中創新航_p350_txt307",
+              "preview": "於2022年4月24日，國家知識產權局公佈一項決定，維持專利三的部分有效性，即宣告發明或者實用新型專利項下的一項或者數項（但不是全部）權利要求無效，其他權利要求維持有效。國家知識產權局維持專利三部分有效的裁定，是由於發現所呈列的對比文件中發現╱公開部分權利要求的技術特徵，國家知識產權局認定該等權利要求無效；同時，所呈列的對比文件中亦未發現╱公開部分其他權利要求的技術特徵。因此，國家知識產權局裁定，就所呈列的對比文件中尚未發現╱公開的若干權利要求（即尚未證明失去新穎性及╱或創造"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.125,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                785,
+                786
+              ],
+              "score": 1.098766,
+              "chunk_id": "chk_2022_03931_中創新航_p785_txt627",
+              "preview": "(ii) 通知債權人或刊登公告； (iii) 處理及解決有關公司的未了結業務； (iv) 清繳任何逾期稅款； (v) 清理公司的債權及負責； (vi) 處理公司清償債務後的剩餘財產；及 (vii) 代表公司參與民事訴訟。 如公司財產足以清償債務，則須用於支付清算費用、拖欠僱員的工資及勞動保險費用、逾期稅項及公司債項。剩餘財產須按公司股東的持股比例分配予股東。 清算期間，公司不得開展與清算無關的經營活動。 清算組如發現公司財產不足以清償債務，須立即依法向人民法院申請宣告破產。待"
+            }
+          ],
+          "expected_keywords": [
+            "知识产权侵权"
+          ],
+          "gold_preview": "於2021年8月及10月，我們接獲福建省福州市中級人民法院（「福州市中院」）通 知 對我們及╱或洛陽公司（就專利一至專利五（定義見下文））提出的若干知識產權侵權申 索，並於2022年8月接獲福建省高級人民法院（與福州市中院合稱「法院」）通知對我們 及洛陽公司（就專利六（定義見下文））提出一項知識產權侵權申索（各稱「申索」，共稱 「該等申索」）。該等申索分別於2021年7月、2021年9月及2022"
+        },
+        {
+          "case_id": "manual_new_董飞飞_seed_bus_005",
+          "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流",
+          "top1_pages": [
+            19,
+            20
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                19,
+                20
+              ],
+              "score": 0.698794,
+              "chunk_id": "chk_2020_01351_輝煌明天_p19_txt029",
+              "preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流動資金水平，包括(i)對新客戶進行信用評估；(ii)定期審查客戶的信譽；(iii"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                23,
+                24
+              ],
+              "score": 0.697874,
+              "chunk_id": "chk_2020_01351_輝煌明天_p23_txt039",
+              "preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無不利變動。我們精準廣告服務及中介服務的未經審計月均毛收入增加主要由於業務規模擴展"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                9,
+                10
+              ],
+              "score": 0.694991,
+              "chunk_id": "chk_2020_01351_輝煌明天_p9_txt013",
+              "preview": "向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                17
+              ],
+              "score": 0.680637,
+              "chunk_id": "chk_2020_01351_輝煌明天_p17_txt025",
+              "preview": "然而，我們錄得毛利率由截至2017年12月31日止年度的約38 .6%下降至截至2018年12月31日止年度的31 .3%及截至2019年12月31日止年度的28 .9%。毛利率下降主要由於中介服務的毛利率下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                396,
+                397
+              ],
+              "score": 0.674301,
+              "chunk_id": "chk_2020_01351_輝煌明天_p396_txt407",
+              "preview": "預期虧損率乃根據過往經歷的信貸虧損進行調整，以反映上述影響客戶結付應收款項的能力的即期及前瞻性資料。由於各類貿易應收款項的實際虧損率及未來宏觀經濟數據調整於截至2017年及2018年12月31日止年度並無重大變動， 貴公司董事認為，於截至2017年及2018年12月31日止年度，預期信貸虧損率變動並不重大。截至2017年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： 截至2018年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： "
+            }
+          ],
+          "expected_keywords": [
+            "财政困难",
+            "延迟付款",
+            "无法履行付款责任",
+            "营运资金",
+            "流失客户"
+          ],
+          "gold_preview": "宏觀經濟狀況亦可導致客戶出現財政困難，包括進入信貸市場受到限制、無力償債或破產，因此亦可能導致客戶延遲向我們付款、要求修改付款安排或無法向我們履行付款責任。在此情況下，我們的中介服務可能並無足夠營運資金，而我們可能因無法接受額外廣告訂單而流失客戶。"
+        },
+        {
+          "case_id": "manual_new_董飞飞_cat_bus_009",
+          "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "在移動互聯網用戶數量及數字媒體使用率均有所增長的驅動下，中國移動廣告市場由2014年的人民幣375億元激增至2019年的人民幣4,149億元，複合年增長率為61 .7%，而中國移動廣告代理市場由2014年的人民幣219億元增長至2019年的人民幣1,541億元，複合年增長率為47 .7%。隨著移動廣告技術的發展，移動廣告市場預計將繼續增長，於2024年達至人民幣7,954億元，複合年增長率為13 ",
+          "top1_pages": [
+            13,
+            14
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "future_risk_with_fact",
+              "pages": [
+                13,
+                14
+              ],
+              "score": 0.767307,
+              "chunk_id": "chk_2020_01351_輝煌明天_p13_txt020",
+              "preview": "在移動互聯網用戶數量及數字媒體使用率均有所增長的驅動下，中國移動廣告市場由2014年的人民幣375億元激增至2019年的人民幣4,149億元，複合年增長率為61 .7%，而中國移動廣告代理市場由2014年的人民幣219億元增長至2019年的人民幣1,541億元，複合年增長率為47 .7%。隨著移動廣告技術的發展，移動廣告市場預計將繼續增長，於2024年達至人民幣7,954億元，複合年增長率為13 .9%，而移動廣告代理市場將於2024年發展及達至人民幣3,054億元，複合年增"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                13
+              ],
+              "score": 0.763935,
+              "chunk_id": "chk_2020_01351_輝煌明天_p13_txt019",
+              "preview": "我們於往績記錄期的移動廣告服務收入銳升。我們的收入於截至2019年12月31日止年度約為人民幣281 .9百萬元，而於2018年及2017年則分別約為人民幣254 .9百萬元及人民幣102 .6百萬元，複合年增長率約為65 .8%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們的溢利分別為人民幣30 .9百萬元、人民幣42 .4百萬元、人民幣38 .4百萬元及人民幣24 .3百萬元。我們的收入增長主要來自(i)根據F&S報告，移動廣告市場規模整體"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.2857,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "generic_risk_disclosure",
+              "pages": [
+                8
+              ],
+              "score": 0.756038,
+              "chunk_id": "chk_2020_01351_輝煌明天_p8_txt011",
+              "preview": "廣告主是價值鏈的發起者，其尋求市場營銷解決方案，以進行產品和服務推廣及品牌建設。廣告主傾向委聘移動廣告公司提供移動廣告服務，因為(i)其通常不會直接與主要媒體發佈商聯繫，而後者不會設置龐大的人力團隊處理投放廣告請求；及(ii)移動廣告公司向其提供增值服務。移動廣告公司所增添的價值包括(i)豐富的行業經驗及專業知識，以接觸廣泛的媒體發佈商網絡；(ii)全方位附加服務，例如選擇合適媒體發佈商以達成廣告主的目標，以及與媒體發佈商建立聯繫；(iii)因其與媒體發佈商建立的關係而獲提供"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                159
+              ],
+              "score": 0.743631,
+              "chunk_id": "chk_2020_01351_輝煌明天_p159_txt177",
+              "preview": "毛利率下降主要由於中介服務的利潤率（以百分比計）下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因為該等媒體發佈商通常會向移動廣告公司提供較小的折扣，而一線媒體發佈商通常具有穩定移動流量，以確保所投放廣告的效果。至於二線媒體發佈商，彼等一般向我們提供相對較"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "mitigation_or_improvement",
+              "pages": [
+                184
+              ],
+              "score": 0.734241,
+              "chunk_id": "chk_2020_01351_輝煌明天_p184_txt200",
+              "preview": "於移動廣告業，廣告代理收入一般受季節性因素影響而波動，舉例來說，許多廣告主為了配合假日購物增加，會將最大比例的廣告預算投放於節日假期期間。一般而言，由於電商公司通常會選擇在下半年進行促銷，廣告主在下半年就移動廣告服務作出的投入會較上半年為多。儘管如此，由於我們已建立由來自不同行業的客戶組成之客戶群，及由於我們於整個年度就廣告方案積極與客戶接洽，董事認為我們的營運不會因季節性而出現重大波動。 2019冠狀病毒病 自2020年初以來，2019冠狀病毒病已在中國乃至全球迅速散播。為"
+            }
+          ],
+          "expected_keywords": [
+            "竞争激烈",
+            "进入壁垒低",
+            "议价能力",
+            "降价",
+            "流失客户"
+          ],
+          "gold_preview": "由於對移動廣告服務的需求持續增長，加上進入壁壘低，我們預期新競爭對手將進入該等市場，且現有競爭對手將分配額外資源至該等市場。因此，移動廣告業的競爭預期將更趨激烈。新競爭及日趨激烈的競爭可能導致我們降價、利潤減少或失去市場地位，並可能導致我們流失現有客戶或收入減少。"
+        },
+        {
+          "case_id": "mgv1_maogeping_comp_no_litigation_001",
+          "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "根據《中華人民共和國證券法（2019修訂）》（「《證券法》」），在中華人民共和國境內，股票、公司債券、存託憑證和國務院依法認定的其他證券的發行和交易，適用本法；本法未規定的，適用《公司法》和其他法律、行政法規的規定。在中華人民共和國境外的證券發行和交易活動，擾亂中華人民共和國境內市場秩序，損害境內投資者合法權益的，依照《證券法》有關規定處理並追究法律責任。 《證券法》為中國第一部全國性的證券法律，",
+          "top1_pages": [
+            571
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                571
+              ],
+              "score": 1.575237,
+              "chunk_id": "chk_2024_01318_毛戈平_p571_txt508",
+              "preview": "根據《中華人民共和國證券法（2019修訂）》（「《證券法》」），在中華人民共和國境內，股票、公司債券、存託憑證和國務院依法認定的其他證券的發行和交易，適用本法；本法未規定的，適用《公司法》和其他法律、行政法規的規定。在中華人民共和國境外的證券發行和交易活動，擾亂中華人民共和國境內市場秩序，損害境內投資者合法權益的，依照《證券法》有關規定處理並追究法律責任。 《證券法》為中國第一部全國性的證券法律，全面規範中國證券市場活動。其分為14章及226個條目，內容包括證券發行及交易、上"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                567,
+                568
+              ],
+              "score": 1.563165,
+              "chunk_id": "chk_2024_01318_毛戈平_p567_txt505",
+              "preview": "根據《公司法》，公司股東會作出修改公司章程的決議，必須經出席會議的股東所持表決權的三分之二以上通過。根據《上市公司章程指引》，股東會決議通過的章程修 改事項應經主管機關審批的，須報主管機關批准；涉及公司登記事項的，依法辦理變更登記。章程修改事項屬於法律、法規要求披露的信息，按規定予以公告。 18. 解散及清算 根據《公司法》，公司因下列原因解散：(1)公司章程規定的營業期限屆滿或者公司章程規定的其他解散事由出現；(2)股東會決議解散；(3)因公司合併或者分立需要解散；(4)依"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                565,
+                566
+              ],
+              "score": 1.557264,
+              "chunk_id": "chk_2024_01318_毛戈平_p565_txt503",
+              "preview": "董事或高級管理人員履行其職務時違反法律、行政法規或公司章程對公司造成損失，連續180日以上單獨或合共持有公司1%以上股份的股東，可以書面請求監事會代其向人民法院提起訴訟。若監事在執行公司職務時違反法律、行政法規或組織章程細則對公司造成損失，前述股東可以書面請求董事會代其向人民法院提起訴訟。若監事會或董事會收到前述規定的股東書面請求後拒絕提起訴訟，或自收到請求之日起30日內未能提起訴訟，或若情況緊急、不能立即提起訴訟將會使公司利益受到難以彌補的損害，前述規定的股東有權為公司的利"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                68,
+                69
+              ],
+              "score": 1.549612,
+              "chunk_id": "chk_2024_01318_毛戈平_p68_txt059",
+              "preview": "此外，我們通常與該等OEM/ODM供應商協商確定知識產權的所有權。請參閱「業務－生產及供應鏈管理－生產」。儘管我們已採取措施防止機密資料披露予第三方，但我們無法保證所有OEM/ODM供應商始終會遵守有關要求。倘我們的任何OEM/ODM供應商被發現向未經授權的第三方洩露有關資料，我們可能會產生大量的法律及財務費用。此外，任何商業秘密的丟失或未經授權使用我們的專有資料均可能限制我們在市場上的競爭能力，從而可能導致我們的市場份額及收入下降。 此外，我們無法向 閣下保證我們的業務並無"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                80,
+                81
+              ],
+              "score": 1.542599,
+              "chunk_id": "chk_2024_01318_毛戈平_p80_txt077",
+              "preview": "於2023年2月24日，中國證監會、財政部、中國國家保密局和中國國家檔案局頒佈了《關於加強境內企業境外發行證券和上市相關保密和檔案管理工作的規定》（「《檔案規定》」），於2023年3月31日生效。《檔案規定》規定，關於境內企業以直接或間接形式進行境外發行證券和上市活動的，相關境內企業以及提供相關證券服務的證券公司和證券服務機構均須嚴格遵守相關保密和檔案管理規定、建立健全保密和檔案工作制度，並採取必要措施落實其保密和檔案管理責任。未能遵守《檔案規定》可能嚴重影響我們的業務、經營"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "董事确认"
+          ],
+          "gold_preview": "授出獎勵。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或我們的子公司不可能承擔重大遺產稅責任。 2. 訴訟 據董事所知，本集團成員公司並無尚未完結或面臨重大訴訟或申索。"
+        },
+        {
+          "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+          "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "我們的經營或業務的任何方面可能侵犯或以其他方式違反第三方持有的商標、著作權、專利、專有技術、商業秘密或其他知識產權。聲稱與我們的技術基礎設施或業務若干方面有關的專利或其他知識產權的持有人（倘存在任何該等持有人）或會尋求在中國或任何其他司法轄區對我們強制執行專利或其他知識產權。此外，與專利及其他知識產權有關的中國法律的應用及解釋以及在中國授予該等專利或其他知識產權的程序及標準仍在不斷發展，我們無法向",
+          "top1_pages": [
+            57,
+            58
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                57,
+                58
+              ],
+              "score": 1.603156,
+              "chunk_id": "chk_2025_09678_雲知聲_p57_txt062",
+              "preview": "我們的經營或業務的任何方面可能侵犯或以其他方式違反第三方持有的商標、著作權、專利、專有技術、商業秘密或其他知識產權。聲稱與我們的技術基礎設施或業務若干方面有關的專利或其他知識產權的持有人（倘存在任何該等持有人）或會尋求在中國或任何其他司法轄區對我們強制執行專利或其他知識產權。此外，與專利及其他知識產權有關的中國法律的應用及解釋以及在中國授予該等專利或其他知識產權的程序及標準仍在不斷發展，我們無法向 閣下保證相關法院或監管機構會同意我們的分析。由於我們面臨來自中國其他競爭對手日"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                57
+              ],
+              "score": 1.602075,
+              "chunk_id": "chk_2025_09678_雲知聲_p57_txt061",
+              "preview": "我們認為我們的商標、著作權、專利、專有技術、商業秘密及其他知識產權對我們的成功至關重要，並依賴專利、商標及版權法、商業秘密保護、披露限制及限制使用我們知識產權的其他協議來保護該等權利。儘管我們與業務夥伴的合約禁止未經授權使用我們的品牌、形象、角色及其他知識產權，但我們無法向 閣下保證彼等將一直遵守該等條款。該等協議可能無法有效防止機密資料的披露，且可能無法在未經授權披露機密資料的情況下提供足夠的補救措施。此外，第三方可能獨立發現商業秘密及自有資料，限制我們向該等人士主張任何商"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                56,
+                57
+              ],
+              "score": 1.600418,
+              "chunk_id": "chk_2025_09678_雲知聲_p56_txt060",
+              "preview": "我們易受申索及各種法律及行政程序的影響。客戶、業務夥伴、供應商、競爭對手、僱員或政府實體可能在調查及法律程序中對我們提出因實際或涉嫌違反法律、違約或侵權行為而產生的申索。具體而言，倘我們的產品存在重大缺陷，我們可能面臨產品責任申索。業內產品及解決方案（如我們開發的產品及解決方案）可能包含難以發現及糾正的錯誤、缺陷、安全漏洞或軟件問題，尤其是在首次推出或發佈新版本或改進時。鑒於我們的許多客戶在對其業務至關重要的流程中使用我們的產品及解決方案，我們的產品及解決方案中的任何錯誤、缺"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                502
+              ],
+              "score": 1.596986,
+              "chunk_id": "chk_2025_09678_雲知聲_p502_txt492",
+              "preview": "董事、監事或高級管理人員執行公司職務時違反法律、行政法規或者組織章程細則的規定，給公司造成損失的，應當承擔賠償責任。 股東大會要求董事、監事或高級管理人員列席會議的，董事、監事或高級管理人員應當列席並接受股東的質詢。監事會可以要求董事或高級管理人員提交履職情況報告。董事及高級管理人員應當如實向監事會提供有關情況和資料，不得妨礙監事會或監事行使職權。 董事、高級管理人員執行公司職務時違反法律、行政法規或者組織章程細則的規定，給公司造成損失的，連續180日以上單獨或者合計持有公司"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                63,
+                64
+              ],
+              "score": 1.593985,
+              "chunk_id": "chk_2025_09678_雲知聲_p63_txt071",
+              "preview": "此外，根據《境外上市法規》，我們首次公開發售後的任何未來發行或上市亦須通過中國證監會備案程序，且我們亦須於首次公開發售後向中國證監會報告若干重大事項。倘未能履行有關備案或報告程序，我們可能會受到中國證監會的行政處罰，這可能會損害我們的聲譽，並可能對我們的財務狀況造成不利影響。 閣下可能難以向我們及我們的管理層送達法律程序文件或執行外國判決。 我們根據中國法律註冊成立，所有業務及經營均位於中國。此外，我們幾乎所有董事、監事及高級職員均居住在中國，且其絕大部分資產均位於中國。由於"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "行政程序"
+          ],
+          "gold_preview": " 董事已獲告知，本公司或其任何附屬公司不大可能承擔重大遺產稅責任。 2. 訴訟 除本招股章程所披露者外，據董事所知，本集團任何成員公司概無任何待決或遭受 威脅的重大訴訟或申索。 3. 聯席保薦人 聯席保薦人已代表我們向上市委員會申請批准H股上市及買賣。我們已作出所有必要 安排以使證券獲准納入中央結算系統。 聯席保薦人符合上市規則第3A.07條所載適用於保薦人的獨立性標準。聯席保薦人各 自將就擔任上"
+        },
+        {
+          "case_id": "mgv1_duodian_owner_connected_tx_001",
+          "question": "多点数智是否存在持续关连交易或关联方交易治理风险？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "hit",
+          "interpretation": "content_miss_page_hit_elsewhere",
+          "failure_reason": "gold_not_in_topk_content",
+          "top1_preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記錄期間，我們確認來自與關聯方合作的大部分",
+          "top1_pages": [
+            234,
+            235
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                234,
+                235
+              ],
+              "score": 0.946699,
+              "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+              "preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記錄期間，我們確認來自與關聯方合作的大部分收益。下表載列於往績記錄期間按絕對金額及佔我們收益百分比計的關聯方、其他關聯方及"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                16,
+                17,
+                18
+              ],
+              "score": 0.917626,
+              "chunk_id": "chk_2024_02586_多點數智_p16_txt024",
+              "preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們五大客戶產生的收益分別佔同年╱期收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                10
+              ],
+              "score": 0.895597,
+              "chunk_id": "chk_2024_02586_多點數智_p10_txt012",
+              "preview": "於往績記錄期間，我們於零售核心服務雲業務分部項下主要提供Dmall OS系統及AIoT解決方案。於2021年、2022年及2023年以及截至2023年及2024年6月30日止六個月，我們零售核心服務雲解決方案的收益分別為人民幣438.8百萬元、人民幣880.5百萬元、人民幣1,298.7百萬元、人民幣602.3百萬元及人民幣933.2百萬元，佔同年╱期收益的51.7%、66.3%、81.9%、78.8%及99.4%。於往績記錄期間，我們自零售核心服務雲解決方案的收益增加乃主要"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                242,
+                246
+              ],
+              "score": 0.892202,
+              "chunk_id": "chk_2024_02586_多點數智_p242_txt292",
+              "preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及我們的控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年12月31日止年度及截至2024年6月30日止六個月各期間，我們五大客戶產生的收益分別佔同年╱期我們收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年12月31日止"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                21,
+                22
+              ],
+              "score": 0.884175,
+              "chunk_id": "chk_2024_02586_多點數智_p21_txt032",
+              "preview": "我們推出並將繼續推出新的改進產品，以提高客戶參與度並增加客戶的消費。對於我們的零售核心服務雲解決方案，我們正推出新模塊及功能，以豐富及擴大我們的AIoT解決方案。我們的AIoT解決方案有助零售商（尤其是現有的Dmall OS客戶）降低成本及提高效率。我們已於AIoT解決方案業務項下推出多種服務，例如智能商品補貨，包裹分揀、收銀、智能防損及清潔。我們認為該等舉措能推動收益快速增長。我們亦致力提高AIoT解決方案的毛利率，而此目前主要受到我們的AIoT的解決方案在引入新客戶時因產"
+            }
+          ],
+          "expected_keywords": [
+            "持续关连交易",
+            "关联方",
+            "合作协议"
+          ],
+          "gold_preview": "已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後構成本公司的一組控股股東。 請參閱「與控股股東的關係」一節以了解控股股東的進一步詳情。 持續關連交易 我們已訂立若干交易，根據上市規則，該等交易將於上市後構成本公司的非獲豁免 或部分豁免持續關連交易。我們已就該等交易向聯交所申請，且聯交所已授出嚴格遵守上 市規則第14A章的若干豁免。請參閱「關連交易」一節以了解詳情。 227 "
+        }
+      ]
+    },
+    "G_plus_E": {
+      "summary": {
+        "n_cases": 39,
+        "recall_at_1": 0.5385,
+        "recall_at_3": 0.8205,
+        "recall_at_5": 0.8718,
+        "recall_at_10": 0.8718,
+        "content_hit_at_1": 0.5385,
+        "content_hit_at_3": 0.8205,
+        "content_hit_at_5": 0.8718,
+        "content_hit_at_10": 0.8718,
+        "doc_hit_rate": 1.0,
+        "page_hit_any_rate": 0.7436,
+        "content_success_rate": 0.8718,
+        "page_grounding_rate": 0.7436,
+        "page_grounded_when_content_hit_rate": 0.5,
+        "content_success_page_mismatch_rate": 0.4359,
+        "multi_location_like_count": 11,
+        "interpretation_counts": {
+          "full_success": 11,
+          "content_success_page_mismatch": 17,
+          "content_success_page_hit_not_top1": 6,
+          "content_miss_page_hit_elsewhere": 1,
+          "content_miss": 4
+        },
+        "mrr": 0.6739,
+        "avg_gold_rank_when_recalled": 1.647,
+        "failure_reason_counts": {
+          "ok": 11,
+          "content_hit_page_mismatch": 10,
+          "gold_recalled_but_rank_low": 13,
+          "gold_not_in_topk_content": 1,
+          "semantic_near_miss_or_chunk_boundary": 4
+        },
+        "metric_definitions": {
+          "recall_at_k": "content_hit anchored; page mismatch does not zero out R@k",
+          "content_success_rate": "share of cases with any content_hit in top_k",
+          "page_grounding_rate": "share of cases with any expected-page hit in top_k (independent)",
+          "content_success_page_mismatch_rate": "content success where top content hit is not page-grounded",
+          "multi_location_like_count": "content success + page mismatch + page_hit_any in topk (approx multi-location)"
+        },
+        "by_dataset": {
+          "manual_gold_v1": {
+            "n": 25,
+            "recall_at_1": 0.56,
+            "recall_at_3": 0.8,
+            "recall_at_5": 0.88,
+            "recall_at_10": 0.88,
+            "content_success_rate": 0.88,
+            "page_grounding_rate": 0.8,
+            "content_success_page_mismatch_rate": 0.4,
+            "mrr": 0.6847,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 8,
+              "ok": 7,
+              "content_hit_page_mismatch": 7,
+              "semantic_near_miss_or_chunk_boundary": 2,
+              "gold_not_in_topk_content": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 10,
+              "full_success": 7,
+              "content_success_page_hit_not_top1": 5,
+              "content_miss": 2,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "manual_new_annotators_v1": {
+            "n": 14,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.8571,
+            "recall_at_5": 0.8571,
+            "recall_at_10": 0.8571,
+            "content_success_rate": 0.8571,
+            "page_grounding_rate": 0.6429,
+            "content_success_page_mismatch_rate": 0.5,
+            "mrr": 0.6548,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 5,
+              "ok": 4,
+              "content_hit_page_mismatch": 3,
+              "semantic_near_miss_or_chunk_boundary": 2
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 7,
+              "full_success": 4,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          }
+        },
+        "by_category": {
+          "business_risk": {
+            "n": 9,
+            "recall_at_1": 0.5556,
+            "recall_at_3": 0.7778,
+            "recall_at_5": 0.7778,
+            "recall_at_10": 0.7778,
+            "content_success_rate": 0.7778,
+            "page_grounding_rate": 0.6667,
+            "content_success_page_mismatch_rate": 0.3333,
+            "mrr": 0.6481,
+            "top_failures": {
+              "ok": 3,
+              "content_hit_page_mismatch": 2,
+              "gold_recalled_but_rank_low": 2,
+              "semantic_near_miss_or_chunk_boundary": 2
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 3,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          },
+          "financial_risk": {
+            "n": 7,
+            "recall_at_1": 0.5714,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.8571,
+            "mrr": 0.7619,
+            "top_failures": {
+              "content_hit_page_mismatch": 3,
+              "gold_recalled_but_rank_low": 3,
+              "ok": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 6,
+              "full_success": 1
+            }
+          },
+          "ipo_specific_risk": {
+            "n": 8,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.875,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 1.0,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.6979,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 4,
+              "ok": 3,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "content_success_page_hit_not_top1": 3,
+              "full_success": 3,
+              "content_success_page_mismatch": 2
+            }
+          },
+          "ownership_risk": {
+            "n": 7,
+            "recall_at_1": 0.4286,
+            "recall_at_3": 0.7143,
+            "recall_at_5": 0.8571,
+            "recall_at_10": 0.8571,
+            "content_success_rate": 0.8571,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.5714,
+            "mrr": 0.5762,
+            "top_failures": {
+              "content_hit_page_mismatch": 3,
+              "gold_recalled_but_rank_low": 3,
+              "gold_not_in_topk_content": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 4,
+              "content_success_page_hit_not_top1": 2,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "compliance_risk": {
+            "n": 8,
+            "recall_at_1": 0.625,
+            "recall_at_3": 0.75,
+            "recall_at_5": 0.75,
+            "recall_at_10": 0.75,
+            "content_success_rate": 0.75,
+            "page_grounding_rate": 0.625,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.6875,
+            "top_failures": {
+              "ok": 4,
+              "semantic_near_miss_or_chunk_boundary": 2,
+              "gold_recalled_but_rank_low": 1,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "full_success": 4,
+              "content_success_page_mismatch": 2,
+              "content_miss": 2
+            }
+          }
+        }
+      },
+      "hard_hit_at_5": 1,
+      "hard_total": 6,
+      "cases": [
+        {
+          "case_id": "manual_new_田歌_cat_fin_010",
+          "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "mismatch",
+          "interpretation": "content_success_page_mismatch",
+          "failure_reason": "content_hit_page_mismatch",
+          "top1_preview": "我們主要依賴專利、商業秘密、商標、由僱員簽署保密協議及與第三方簽署保密協議相結合的方式保護知識產權。截至最後實際可行日期，我們並無涉及任何我們認為侵犯我們知識產權的法律訴訟。請參閱「業務－知識產權」及附錄六「法定及一般資料－B.知識產權」。為保護知識產權及維持競爭優勢，我們或會對疑似侵害我們的知識產權的人士提出法律訴訟。法律訴訟一般費用高昂，且管理層或須費神兼顧，並會耗用我們的業務資源。於若干情況",
+          "top1_pages": [
+            84,
+            85
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0833,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                84,
+                85
+              ],
+              "score": 1.200538,
+              "chunk_id": "chk_2022_03931_中創新航_p84_txt053",
+              "preview": "我們主要依賴專利、商業秘密、商標、由僱員簽署保密協議及與第三方簽署保密協議相結合的方式保護知識產權。截至最後實際可行日期，我們並無涉及任何我們認為侵犯我們知識產權的法律訴訟。請參閱「業務－知識產權」及附錄六「法定及一般資料－B.知識產權」。為保護知識產權及維持競爭優勢，我們或會對疑似侵害我們的知識產權的人士提出法律訴訟。法律訴訟一般費用高昂，且管理層或須費神兼顧，並會耗用我們的業務資源。於若干情況下，我們或會於海外司法權區提出法律訴訟，於此情況下，我們須就訴訟結果及可得到的賠"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.25,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                81,
+                82
+              ],
+              "score": 1.175821,
+              "chunk_id": "chk_2022_03931_中創新航_p81_txt049",
+              "preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協助我們進行抗辯。截至最後實際可行日期，針對其中五項專利的申索已進入實體審理階段及我們正對該等申索提出抗辯。有關詳情，請參"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                85,
+                86
+              ],
+              "score": 1.171457,
+              "chunk_id": "chk_2022_03931_中創新航_p85_txt054",
+              "preview": "任何潛在申索╱請求是否成立及申索╱請求的範圍可能複雜且涉及複雜的科學、法律及舉證問題及分析，因此難以確定。就知識產權訴訟、專利異議訴訟以及相關法律及行政訴訟或請求作出辯護及起訴涉及高昂費用且相當費時，管理層可能須費神兼顧，並投入大量資源。再者，倘若競爭對手發起惡意訴訟或不正當法律程序，就有關申索進行抗辯（不論其理據），將涉及額外訴訟費用並可能分散我們管理層的時間及精力。若我們牽涉的任何訴訟或法律程序或請求出現的判決，或會使我們的專利無效，令我們須向第三方支付賠償、向第三方徵求"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                350,
+                351
+              ],
+              "score": 1.130179,
+              "chunk_id": "chk_2022_03931_中創新航_p350_txt307",
+              "preview": "於2022年4月24日，國家知識產權局公佈一項決定，維持專利三的部分有效性，即宣告發明或者實用新型專利項下的一項或者數項（但不是全部）權利要求無效，其他權利要求維持有效。國家知識產權局維持專利三部分有效的裁定，是由於發現所呈列的對比文件中發現╱公開部分權利要求的技術特徵，國家知識產權局認定該等權利要求無效；同時，所呈列的對比文件中亦未發現╱公開部分其他權利要求的技術特徵。因此，國家知識產權局裁定，就所呈列的對比文件中尚未發現╱公開的若干權利要求（即尚未證明失去新穎性及╱或創造"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.125,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                785,
+                786
+              ],
+              "score": 1.098766,
+              "chunk_id": "chk_2022_03931_中創新航_p785_txt627",
+              "preview": "(ii) 通知債權人或刊登公告； (iii) 處理及解決有關公司的未了結業務； (iv) 清繳任何逾期稅款； (v) 清理公司的債權及負責； (vi) 處理公司清償債務後的剩餘財產；及 (vii) 代表公司參與民事訴訟。 如公司財產足以清償債務，則須用於支付清算費用、拖欠僱員的工資及勞動保險費用、逾期稅項及公司債項。剩餘財產須按公司股東的持股比例分配予股東。 清算期間，公司不得開展與清算無關的經營活動。 清算組如發現公司財產不足以清償債務，須立即依法向人民法院申請宣告破產。待"
+            }
+          ],
+          "expected_keywords": [
+            "知识产权侵权"
+          ],
+          "gold_preview": "於2021年8月及10月，我們接獲福建省福州市中級人民法院（「福州市中院」）通 知 對我們及╱或洛陽公司（就專利一至專利五（定義見下文））提出的若干知識產權侵權申 索，並於2022年8月接獲福建省高級人民法院（與福州市中院合稱「法院」）通知對我們 及洛陽公司（就專利六（定義見下文））提出一項知識產權侵權申索（各稱「申索」，共稱 「該等申索」）。該等申索分別於2021年7月、2021年9月及2022"
+        },
+        {
+          "case_id": "manual_new_董飞飞_seed_bus_005",
+          "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流",
+          "top1_pages": [
+            19,
+            20
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                19,
+                20
+              ],
+              "score": 0.698794,
+              "chunk_id": "chk_2020_01351_輝煌明天_p19_txt029",
+              "preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流動資金水平，包括(i)對新客戶進行信用評估；(ii)定期審查客戶的信譽；(iii"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                23,
+                24
+              ],
+              "score": 0.697874,
+              "chunk_id": "chk_2020_01351_輝煌明天_p23_txt039",
+              "preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無不利變動。我們精準廣告服務及中介服務的未經審計月均毛收入增加主要由於業務規模擴展"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                9,
+                10
+              ],
+              "score": 0.694991,
+              "chunk_id": "chk_2020_01351_輝煌明天_p9_txt013",
+              "preview": "向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                17
+              ],
+              "score": 0.680637,
+              "chunk_id": "chk_2020_01351_輝煌明天_p17_txt025",
+              "preview": "然而，我們錄得毛利率由截至2017年12月31日止年度的約38 .6%下降至截至2018年12月31日止年度的31 .3%及截至2019年12月31日止年度的28 .9%。毛利率下降主要由於中介服務的毛利率下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                396,
+                397
+              ],
+              "score": 0.674301,
+              "chunk_id": "chk_2020_01351_輝煌明天_p396_txt407",
+              "preview": "預期虧損率乃根據過往經歷的信貸虧損進行調整，以反映上述影響客戶結付應收款項的能力的即期及前瞻性資料。由於各類貿易應收款項的實際虧損率及未來宏觀經濟數據調整於截至2017年及2018年12月31日止年度並無重大變動， 貴公司董事認為，於截至2017年及2018年12月31日止年度，預期信貸虧損率變動並不重大。截至2017年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： 截至2018年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： "
+            }
+          ],
+          "expected_keywords": [
+            "财政困难",
+            "延迟付款",
+            "无法履行付款责任",
+            "营运资金",
+            "流失客户"
+          ],
+          "gold_preview": "宏觀經濟狀況亦可導致客戶出現財政困難，包括進入信貸市場受到限制、無力償債或破產，因此亦可能導致客戶延遲向我們付款、要求修改付款安排或無法向我們履行付款責任。在此情況下，我們的中介服務可能並無足夠營運資金，而我們可能因無法接受額外廣告訂單而流失客戶。"
+        },
+        {
+          "case_id": "manual_new_董飞飞_cat_bus_009",
+          "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "在移動互聯網用戶數量及數字媒體使用率均有所增長的驅動下，中國移動廣告市場由2014年的人民幣375億元激增至2019年的人民幣4,149億元，複合年增長率為61 .7%，而中國移動廣告代理市場由2014年的人民幣219億元增長至2019年的人民幣1,541億元，複合年增長率為47 .7%。隨著移動廣告技術的發展，移動廣告市場預計將繼續增長，於2024年達至人民幣7,954億元，複合年增長率為13 ",
+          "top1_pages": [
+            13,
+            14
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "future_risk_with_fact",
+              "pages": [
+                13,
+                14
+              ],
+              "score": 0.767307,
+              "chunk_id": "chk_2020_01351_輝煌明天_p13_txt020",
+              "preview": "在移動互聯網用戶數量及數字媒體使用率均有所增長的驅動下，中國移動廣告市場由2014年的人民幣375億元激增至2019年的人民幣4,149億元，複合年增長率為61 .7%，而中國移動廣告代理市場由2014年的人民幣219億元增長至2019年的人民幣1,541億元，複合年增長率為47 .7%。隨著移動廣告技術的發展，移動廣告市場預計將繼續增長，於2024年達至人民幣7,954億元，複合年增長率為13 .9%，而移動廣告代理市場將於2024年發展及達至人民幣3,054億元，複合年增"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                13
+              ],
+              "score": 0.763935,
+              "chunk_id": "chk_2020_01351_輝煌明天_p13_txt019",
+              "preview": "我們於往績記錄期的移動廣告服務收入銳升。我們的收入於截至2019年12月31日止年度約為人民幣281 .9百萬元，而於2018年及2017年則分別約為人民幣254 .9百萬元及人民幣102 .6百萬元，複合年增長率約為65 .8%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們的溢利分別為人民幣30 .9百萬元、人民幣42 .4百萬元、人民幣38 .4百萬元及人民幣24 .3百萬元。我們的收入增長主要來自(i)根據F&S報告，移動廣告市場規模整體"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.2857,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "generic_risk_disclosure",
+              "pages": [
+                8
+              ],
+              "score": 0.756038,
+              "chunk_id": "chk_2020_01351_輝煌明天_p8_txt011",
+              "preview": "廣告主是價值鏈的發起者，其尋求市場營銷解決方案，以進行產品和服務推廣及品牌建設。廣告主傾向委聘移動廣告公司提供移動廣告服務，因為(i)其通常不會直接與主要媒體發佈商聯繫，而後者不會設置龐大的人力團隊處理投放廣告請求；及(ii)移動廣告公司向其提供增值服務。移動廣告公司所增添的價值包括(i)豐富的行業經驗及專業知識，以接觸廣泛的媒體發佈商網絡；(ii)全方位附加服務，例如選擇合適媒體發佈商以達成廣告主的目標，以及與媒體發佈商建立聯繫；(iii)因其與媒體發佈商建立的關係而獲提供"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                159
+              ],
+              "score": 0.743631,
+              "chunk_id": "chk_2020_01351_輝煌明天_p159_txt177",
+              "preview": "毛利率下降主要由於中介服務的利潤率（以百分比計）下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因為該等媒體發佈商通常會向移動廣告公司提供較小的折扣，而一線媒體發佈商通常具有穩定移動流量，以確保所投放廣告的效果。至於二線媒體發佈商，彼等一般向我們提供相對較"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "mitigation_or_improvement",
+              "pages": [
+                184
+              ],
+              "score": 0.734241,
+              "chunk_id": "chk_2020_01351_輝煌明天_p184_txt200",
+              "preview": "於移動廣告業，廣告代理收入一般受季節性因素影響而波動，舉例來說，許多廣告主為了配合假日購物增加，會將最大比例的廣告預算投放於節日假期期間。一般而言，由於電商公司通常會選擇在下半年進行促銷，廣告主在下半年就移動廣告服務作出的投入會較上半年為多。儘管如此，由於我們已建立由來自不同行業的客戶組成之客戶群，及由於我們於整個年度就廣告方案積極與客戶接洽，董事認為我們的營運不會因季節性而出現重大波動。 2019冠狀病毒病 自2020年初以來，2019冠狀病毒病已在中國乃至全球迅速散播。為"
+            }
+          ],
+          "expected_keywords": [
+            "竞争激烈",
+            "进入壁垒低",
+            "议价能力",
+            "降价",
+            "流失客户"
+          ],
+          "gold_preview": "由於對移動廣告服務的需求持續增長，加上進入壁壘低，我們預期新競爭對手將進入該等市場，且現有競爭對手將分配額外資源至該等市場。因此，移動廣告業的競爭預期將更趨激烈。新競爭及日趨激烈的競爭可能導致我們降價、利潤減少或失去市場地位，並可能導致我們流失現有客戶或收入減少。"
+        },
+        {
+          "case_id": "mgv1_maogeping_comp_no_litigation_001",
+          "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "根據《中華人民共和國證券法（2019修訂）》（「《證券法》」），在中華人民共和國境內，股票、公司債券、存託憑證和國務院依法認定的其他證券的發行和交易，適用本法；本法未規定的，適用《公司法》和其他法律、行政法規的規定。在中華人民共和國境外的證券發行和交易活動，擾亂中華人民共和國境內市場秩序，損害境內投資者合法權益的，依照《證券法》有關規定處理並追究法律責任。 《證券法》為中國第一部全國性的證券法律，",
+          "top1_pages": [
+            571
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                571
+              ],
+              "score": 1.597299,
+              "chunk_id": "chk_2024_01318_毛戈平_p571_txt508",
+              "preview": "根據《中華人民共和國證券法（2019修訂）》（「《證券法》」），在中華人民共和國境內，股票、公司債券、存託憑證和國務院依法認定的其他證券的發行和交易，適用本法；本法未規定的，適用《公司法》和其他法律、行政法規的規定。在中華人民共和國境外的證券發行和交易活動，擾亂中華人民共和國境內市場秩序，損害境內投資者合法權益的，依照《證券法》有關規定處理並追究法律責任。 《證券法》為中國第一部全國性的證券法律，全面規範中國證券市場活動。其分為14章及226個條目，內容包括證券發行及交易、上"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                554,
+                555
+              ],
+              "score": 1.585981,
+              "chunk_id": "chk_2024_01318_毛戈平_p554_txt491",
+              "preview": "外國人、無國籍人或外國企業或組織一般同中國公民、法人有同等的訴訟權利和責任。外國法院對中國公民和企業的訴訟權利加以限制的，中國法院可對該國公民和企業的訴訟權利實行對等原則。外國人、無國籍人、外國企業和組織在人民法院起訴、應訴，需要委託律師代理訴訟的，必須委託中華人民共和國的律師。根據中國締結或者參加的國際條約，或者按照互惠原則，中國人民法院和外國法院可以相互請求，代為送達文書、調查取證以及進行其他訴訟行為。外國法院請求協助的事項有損於中國的主權、安全或者社會公共利益的，中國人"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                553,
+                554
+              ],
+              "score": 1.584924,
+              "chunk_id": "chk_2024_01318_毛戈平_p553_txt490",
+              "preview": "地方人民法院由基層人民法院、中級人民法院及高級人民法院組成。高級人民法院對基層人民法院及中級人民法院進行監督。人民檢察院亦有權對同級及下級人民法院的民事訴訟活動行使法律監督權。最高人民法院是中國的最高司法機關，監督各級人民法院的司法審理工作。 人民法院採用兩審終審制度，即人民法院的二審判決或裁定乃終審判決或裁定。當事人可就地方人民法院一審判決或裁定提出上訴。人民檢察院可根據法律規定程序向上一級人民法院提出抗訴。若在規定時間內當事人並未提出任何上訴而人民檢察院亦無提出抗訴，則該"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                565,
+                566
+              ],
+              "score": 1.584289,
+              "chunk_id": "chk_2024_01318_毛戈平_p565_txt503",
+              "preview": "董事或高級管理人員履行其職務時違反法律、行政法規或公司章程對公司造成損失，連續180日以上單獨或合共持有公司1%以上股份的股東，可以書面請求監事會代其向人民法院提起訴訟。若監事在執行公司職務時違反法律、行政法規或組織章程細則對公司造成損失，前述股東可以書面請求董事會代其向人民法院提起訴訟。若監事會或董事會收到前述規定的股東書面請求後拒絕提起訴訟，或自收到請求之日起30日內未能提起訴訟，或若情況緊急、不能立即提起訴訟將會使公司利益受到難以彌補的損害，前述規定的股東有權為公司的利"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                80,
+                81
+              ],
+              "score": 1.573934,
+              "chunk_id": "chk_2024_01318_毛戈平_p80_txt077",
+              "preview": "於2023年2月24日，中國證監會、財政部、中國國家保密局和中國國家檔案局頒佈了《關於加強境內企業境外發行證券和上市相關保密和檔案管理工作的規定》（「《檔案規定》」），於2023年3月31日生效。《檔案規定》規定，關於境內企業以直接或間接形式進行境外發行證券和上市活動的，相關境內企業以及提供相關證券服務的證券公司和證券服務機構均須嚴格遵守相關保密和檔案管理規定、建立健全保密和檔案工作制度，並採取必要措施落實其保密和檔案管理責任。未能遵守《檔案規定》可能嚴重影響我們的業務、經營"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "董事确认"
+          ],
+          "gold_preview": "授出獎勵。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或我們的子公司不可能承擔重大遺產稅責任。 2. 訴訟 據董事所知，本集團成員公司並無尚未完結或面臨重大訴訟或申索。"
+        },
+        {
+          "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+          "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "我們易受申索及各種法律及行政程序的影響。客戶、業務夥伴、供應商、競爭對手、僱員或政府實體可能在調查及法律程序中對我們提出因實際或涉嫌違反法律、違約或侵權行為而產生的申索。具體而言，倘我們的產品存在重大缺陷，我們可能面臨產品責任申索。業內產品及解決方案（如我們開發的產品及解決方案）可能包含難以發現及糾正的錯誤、缺陷、安全漏洞或軟件問題，尤其是在首次推出或發佈新版本或改進時。鑒於我們的許多客戶在對其業",
+          "top1_pages": [
+            56,
+            57
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                56,
+                57
+              ],
+              "score": 1.652281,
+              "chunk_id": "chk_2025_09678_雲知聲_p56_txt060",
+              "preview": "我們易受申索及各種法律及行政程序的影響。客戶、業務夥伴、供應商、競爭對手、僱員或政府實體可能在調查及法律程序中對我們提出因實際或涉嫌違反法律、違約或侵權行為而產生的申索。具體而言，倘我們的產品存在重大缺陷，我們可能面臨產品責任申索。業內產品及解決方案（如我們開發的產品及解決方案）可能包含難以發現及糾正的錯誤、缺陷、安全漏洞或軟件問題，尤其是在首次推出或發佈新版本或改進時。鑒於我們的許多客戶在對其業務至關重要的流程中使用我們的產品及解決方案，我們的產品及解決方案中的任何錯誤、缺"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                57
+              ],
+              "score": 1.632654,
+              "chunk_id": "chk_2025_09678_雲知聲_p57_txt061",
+              "preview": "我們認為我們的商標、著作權、專利、專有技術、商業秘密及其他知識產權對我們的成功至關重要，並依賴專利、商標及版權法、商業秘密保護、披露限制及限制使用我們知識產權的其他協議來保護該等權利。儘管我們與業務夥伴的合約禁止未經授權使用我們的品牌、形象、角色及其他知識產權，但我們無法向 閣下保證彼等將一直遵守該等條款。該等協議可能無法有效防止機密資料的披露，且可能無法在未經授權披露機密資料的情況下提供足夠的補救措施。此外，第三方可能獨立發現商業秘密及自有資料，限制我們向該等人士主張任何商"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                57,
+                58
+              ],
+              "score": 1.631439,
+              "chunk_id": "chk_2025_09678_雲知聲_p57_txt062",
+              "preview": "我們的經營或業務的任何方面可能侵犯或以其他方式違反第三方持有的商標、著作權、專利、專有技術、商業秘密或其他知識產權。聲稱與我們的技術基礎設施或業務若干方面有關的專利或其他知識產權的持有人（倘存在任何該等持有人）或會尋求在中國或任何其他司法轄區對我們強制執行專利或其他知識產權。此外，與專利及其他知識產權有關的中國法律的應用及解釋以及在中國授予該等專利或其他知識產權的程序及標準仍在不斷發展，我們無法向 閣下保證相關法院或監管機構會同意我們的分析。由於我們面臨來自中國其他競爭對手日"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                508,
+                509
+              ],
+              "score": 1.623894,
+              "chunk_id": "chk_2025_09678_雲知聲_p508_txt500",
+              "preview": "香港上市規則規定，香港上市公司的公司章程須載有仲裁條款，而香港上市規則也規定在公司與各董事或監事訂立的合同中載列仲裁條款，以便下列當事人之間出現任何糾紛或索賠時將有關糾紛或索賠提交仲裁裁決：(1) H股持有人與公司之間；(2) H股持有人與內資股持有人之間；(3) H股持有人與公司的董事、監事或其他管理人員之間，基於公司章程、《中國公司法》及其他有關公司事務的法律、行政法規所規定的權利義務發生的與公司事務有關的爭議或者權利主張。 相關當事人各方可以選擇把該項爭議或權利主張在中"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                63,
+                64
+              ],
+              "score": 1.623283,
+              "chunk_id": "chk_2025_09678_雲知聲_p63_txt071",
+              "preview": "此外，根據《境外上市法規》，我們首次公開發售後的任何未來發行或上市亦須通過中國證監會備案程序，且我們亦須於首次公開發售後向中國證監會報告若干重大事項。倘未能履行有關備案或報告程序，我們可能會受到中國證監會的行政處罰，這可能會損害我們的聲譽，並可能對我們的財務狀況造成不利影響。 閣下可能難以向我們及我們的管理層送達法律程序文件或執行外國判決。 我們根據中國法律註冊成立，所有業務及經營均位於中國。此外，我們幾乎所有董事、監事及高級職員均居住在中國，且其絕大部分資產均位於中國。由於"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "行政程序"
+          ],
+          "gold_preview": " 董事已獲告知，本公司或其任何附屬公司不大可能承擔重大遺產稅責任。 2. 訴訟 除本招股章程所披露者外，據董事所知，本集團任何成員公司概無任何待決或遭受 威脅的重大訴訟或申索。 3. 聯席保薦人 聯席保薦人已代表我們向上市委員會申請批准H股上市及買賣。我們已作出所有必要 安排以使證券獲准納入中央結算系統。 聯席保薦人符合上市規則第3A.07條所載適用於保薦人的獨立性標準。聯席保薦人各 自將就擔任上"
+        },
+        {
+          "case_id": "mgv1_duodian_owner_connected_tx_001",
+          "question": "多点数智是否存在持续关连交易或关联方交易治理风险？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "hit",
+          "interpretation": "content_miss_page_hit_elsewhere",
+          "failure_reason": "gold_not_in_topk_content",
+          "top1_preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記錄期間，我們確認來自與關聯方合作的大部分",
+          "top1_pages": [
+            234,
+            235
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                234,
+                235
+              ],
+              "score": 1.003416,
+              "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+              "preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記錄期間，我們確認來自與關聯方合作的大部分收益。下表載列於往績記錄期間按絕對金額及佔我們收益百分比計的關聯方、其他關聯方及"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                16,
+                17,
+                18
+              ],
+              "score": 0.991946,
+              "chunk_id": "chk_2024_02586_多點數智_p16_txt024",
+              "preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們五大客戶產生的收益分別佔同年╱期收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                242,
+                246
+              ],
+              "score": 0.96525,
+              "chunk_id": "chk_2024_02586_多點數智_p242_txt292",
+              "preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及我們的控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年12月31日止年度及截至2024年6月30日止六個月各期間，我們五大客戶產生的收益分別佔同年╱期我們收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年12月31日止"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                10
+              ],
+              "score": 0.94183,
+              "chunk_id": "chk_2024_02586_多點數智_p10_txt012",
+              "preview": "於往績記錄期間，我們於零售核心服務雲業務分部項下主要提供Dmall OS系統及AIoT解決方案。於2021年、2022年及2023年以及截至2023年及2024年6月30日止六個月，我們零售核心服務雲解決方案的收益分別為人民幣438.8百萬元、人民幣880.5百萬元、人民幣1,298.7百萬元、人民幣602.3百萬元及人民幣933.2百萬元，佔同年╱期收益的51.7%、66.3%、81.9%、78.8%及99.4%。於往績記錄期間，我們自零售核心服務雲解決方案的收益增加乃主要"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                555,
+                556
+              ],
+              "score": 0.938016,
+              "chunk_id": "chk_2024_02586_多點數智_p555_txt633",
+              "preview": "於2021年、2022年、2023年12月31日及2024年6月30日，已發行予貴公司股權持有人的發行在外普通股分別為525,150,000股、525,150,000股、525,150,000股及525,150,000股。 (b) 儲備 (i) 資本儲備 貴集團及一名非控股股東向一家附屬公司注資 於2022年1月6日，多點（深圳）數字與北京物美超市有限公司向多點智聯注資總計人民幣60,928,000元，其中人民幣27,260,000元由貴集團以現金出資，而人民幣33,668,"
+            }
+          ],
+          "expected_keywords": [
+            "持续关连交易",
+            "关联方",
+            "合作协议"
+          ],
+          "gold_preview": "已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後構成本公司的一組控股股東。 請參閱「與控股股東的關係」一節以了解控股股東的進一步詳情。 持續關連交易 我們已訂立若干交易，根據上市規則，該等交易將於上市後構成本公司的非獲豁免 或部分豁免持續關連交易。我們已就該等交易向聯交所申請，且聯交所已授出嚴格遵守上 市規則第14A章的若干豁免。請參閱「關連交易」一節以了解詳情。 227 "
+        }
+      ]
+    },
+    "H_answer_excerpt_rerank": {
+      "summary": {
+        "n_cases": 39,
+        "recall_at_1": 0.5641,
+        "recall_at_3": 0.7692,
+        "recall_at_5": 0.7949,
+        "recall_at_10": 0.8718,
+        "content_hit_at_1": 0.5641,
+        "content_hit_at_3": 0.7692,
+        "content_hit_at_5": 0.7949,
+        "content_hit_at_10": 0.8718,
+        "doc_hit_rate": 1.0,
+        "page_hit_any_rate": 0.7436,
+        "content_success_rate": 0.8718,
+        "page_grounding_rate": 0.7436,
+        "page_grounded_when_content_hit_rate": 0.5,
+        "content_success_page_mismatch_rate": 0.4359,
+        "multi_location_like_count": 11,
+        "interpretation_counts": {
+          "full_success": 12,
+          "content_success_page_mismatch": 17,
+          "content_success_page_hit_not_top1": 5,
+          "content_miss_page_hit_elsewhere": 1,
+          "content_miss": 4
+        },
+        "mrr": 0.6712,
+        "avg_gold_rank_when_recalled": 1.941,
+        "failure_reason_counts": {
+          "ok": 12,
+          "content_hit_page_mismatch": 10,
+          "gold_recalled_but_rank_low": 12,
+          "semantic_near_miss_or_chunk_boundary": 4,
+          "generic_risk_outranks_actual_event": 1
+        },
+        "metric_definitions": {
+          "recall_at_k": "content_hit anchored; page mismatch does not zero out R@k",
+          "content_success_rate": "share of cases with any content_hit in top_k",
+          "page_grounding_rate": "share of cases with any expected-page hit in top_k (independent)",
+          "content_success_page_mismatch_rate": "content success where top content hit is not page-grounded",
+          "multi_location_like_count": "content success + page mismatch + page_hit_any in topk (approx multi-location)"
+        },
+        "by_dataset": {
+          "manual_gold_v1": {
+            "n": 25,
+            "recall_at_1": 0.68,
+            "recall_at_3": 0.84,
+            "recall_at_5": 0.88,
+            "recall_at_10": 0.92,
+            "content_success_rate": 0.92,
+            "page_grounding_rate": 0.84,
+            "content_success_page_mismatch_rate": 0.4,
+            "mrr": 0.7557,
+            "top_failures": {
+              "ok": 10,
+              "content_hit_page_mismatch": 7,
+              "gold_recalled_but_rank_low": 6,
+              "semantic_near_miss_or_chunk_boundary": 2
+            },
+            "top_interpretations": {
+              "full_success": 10,
+              "content_success_page_mismatch": 10,
+              "content_success_page_hit_not_top1": 3,
+              "content_miss_page_hit_elsewhere": 1,
+              "content_miss": 1
+            }
+          },
+          "manual_new_annotators_v1": {
+            "n": 14,
+            "recall_at_1": 0.3571,
+            "recall_at_3": 0.6429,
+            "recall_at_5": 0.6429,
+            "recall_at_10": 0.7857,
+            "content_success_rate": 0.7857,
+            "page_grounding_rate": 0.5714,
+            "content_success_page_mismatch_rate": 0.5,
+            "mrr": 0.5204,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 6,
+              "content_hit_page_mismatch": 3,
+              "ok": 2,
+              "semantic_near_miss_or_chunk_boundary": 2,
+              "generic_risk_outranks_actual_event": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 7,
+              "content_miss": 3,
+              "full_success": 2,
+              "content_success_page_hit_not_top1": 2
+            }
+          }
+        },
+        "by_category": {
+          "business_risk": {
+            "n": 9,
+            "recall_at_1": 0.5556,
+            "recall_at_3": 0.7778,
+            "recall_at_5": 0.7778,
+            "recall_at_10": 0.7778,
+            "content_success_rate": 0.7778,
+            "page_grounding_rate": 0.6667,
+            "content_success_page_mismatch_rate": 0.3333,
+            "mrr": 0.6481,
+            "top_failures": {
+              "ok": 3,
+              "content_hit_page_mismatch": 2,
+              "gold_recalled_but_rank_low": 2,
+              "semantic_near_miss_or_chunk_boundary": 1,
+              "generic_risk_outranks_actual_event": 1
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 3,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          },
+          "financial_risk": {
+            "n": 7,
+            "recall_at_1": 0.7143,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.8571,
+            "mrr": 0.8333,
+            "top_failures": {
+              "content_hit_page_mismatch": 4,
+              "gold_recalled_but_rank_low": 2,
+              "ok": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 6,
+              "full_success": 1
+            }
+          },
+          "ipo_specific_risk": {
+            "n": 8,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.5,
+            "recall_at_5": 0.5,
+            "recall_at_10": 0.75,
+            "content_success_rate": 0.75,
+            "page_grounding_rate": 0.75,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.5357,
+            "top_failures": {
+              "ok": 3,
+              "semantic_near_miss_or_chunk_boundary": 2,
+              "gold_recalled_but_rank_low": 2,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 2,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          },
+          "ownership_risk": {
+            "n": 7,
+            "recall_at_1": 0.2857,
+            "recall_at_3": 0.7143,
+            "recall_at_5": 0.8571,
+            "recall_at_10": 0.8571,
+            "content_success_rate": 0.8571,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.5714,
+            "mrr": 0.5119,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 4,
+              "content_hit_page_mismatch": 2,
+              "semantic_near_miss_or_chunk_boundary": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 4,
+              "content_success_page_hit_not_top1": 2,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "compliance_risk": {
+            "n": 8,
+            "recall_at_1": 0.75,
+            "recall_at_3": 0.875,
+            "recall_at_5": 0.875,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 0.875,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.8304,
+            "top_failures": {
+              "ok": 5,
+              "gold_recalled_but_rank_low": 2,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "full_success": 5,
+              "content_success_page_mismatch": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          }
+        }
+      },
+      "hard_hit_at_5": 3,
+      "hard_total": 6,
+      "cases": [
+        {
+          "case_id": "manual_new_田歌_cat_fin_010",
+          "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "mismatch",
+          "interpretation": "content_success_page_mismatch",
+          "failure_reason": "content_hit_page_mismatch",
+          "top1_preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協助我們進行抗辯。截至最後實際可行日期，針",
+          "top1_pages": [
+            81,
+            82
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.25,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                81,
+                82
+              ],
+              "score": 1.695821,
+              "chunk_id": "chk_2022_03931_中創新航_p81_txt049",
+              "preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協助我們進行抗辯。截至最後實際可行日期，針對其中五項專利的申索已進入實體審理階段及我們正對該等申索提出抗辯。有關詳情，請參"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0833,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                85,
+                86
+              ],
+              "score": 1.571457,
+              "chunk_id": "chk_2022_03931_中創新航_p85_txt054",
+              "preview": "任何潛在申索╱請求是否成立及申索╱請求的範圍可能複雜且涉及複雜的科學、法律及舉證問題及分析，因此難以確定。就知識產權訴訟、專利異議訴訟以及相關法律及行政訴訟或請求作出辯護及起訴涉及高昂費用且相當費時，管理層可能須費神兼顧，並投入大量資源。再者，倘若競爭對手發起惡意訴訟或不正當法律程序，就有關申索進行抗辯（不論其理據），將涉及額外訴訟費用並可能分散我們管理層的時間及精力。若我們牽涉的任何訴訟或法律程序或請求出現的判決，或會使我們的專利無效，令我們須向第三方支付賠償、向第三方徵求"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                350,
+                351
+              ],
+              "score": 1.530179,
+              "chunk_id": "chk_2022_03931_中創新航_p350_txt307",
+              "preview": "於2022年4月24日，國家知識產權局公佈一項決定，維持專利三的部分有效性，即宣告發明或者實用新型專利項下的一項或者數項（但不是全部）權利要求無效，其他權利要求維持有效。國家知識產權局維持專利三部分有效的裁定，是由於發現所呈列的對比文件中發現╱公開部分權利要求的技術特徵，國家知識產權局認定該等權利要求無效；同時，所呈列的對比文件中亦未發現╱公開部分其他權利要求的技術特徵。因此，國家知識產權局裁定，就所呈列的對比文件中尚未發現╱公開的若干權利要求（即尚未證明失去新穎性及╱或創造"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                351,
+                352
+              ],
+              "score": 1.517652,
+              "chunk_id": "chk_2022_03931_中創新航_p351_txt308",
+              "preview": "北京知識產權法院作出的法院判決為一審判決，倘自法院判決送達之日起十五日內並無向上一級法院上訴的，該判決將生效。將因北京知識產權法院一審判決承擔不利後果的本公司及國家知識產權局（作為訴訟當事人）及寧德時代（作為第三方），有權在上述上訴期內就該判決向最高人民法院提出上訴。倘上述各方向最高人民法院提起上訴，則根據中國兩級司法體制，最高人民法院的上訴判決將為終審判決並生效。待行政訴訟判決生效後，倘判決結果為「駁回國家知識產權局的決定，國家知識產權局應重新作出決定」，則國家知識產權局須"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                767
+              ],
+              "score": 1.515218,
+              "chunk_id": "chk_2022_03931_中創新航_p767_txt613",
+              "preview": "人民法院採用兩審終審制度。當事人可就地方人民法院一審判決或裁定提出上訴。人民檢察院可根據法律規定程序向上一級人民法院提出抗訴。倘在規定時間內當事人並未提出任何上訴而人民檢察院亦無提出抗訴，則該人民法院的判決或裁定為終審判決或裁定。中級人民法院、高級人民法院和最高人民法院作出的二審判決或裁定為終審判決或裁定。最高人民法院的一審判決或裁定亦是終審判決或裁定。然而，若最高人民法院對各級人民法院已經發生法律效力的判決、裁定、調解書，或上級人民法院對下級人民法院已經發生法律效力的判決、"
+            }
+          ],
+          "expected_keywords": [
+            "知识产权侵权"
+          ],
+          "gold_preview": "於2021年8月及10月，我們接獲福建省福州市中級人民法院（「福州市中院」）通 知 對我們及╱或洛陽公司（就專利一至專利五（定義見下文））提出的若干知識產權侵權申 索，並於2022年8月接獲福建省高級人民法院（與福州市中院合稱「法院」）通知對我們 及洛陽公司（就專利六（定義見下文））提出一項知識產權侵權申索（各稱「申索」，共稱 「該等申索」）。該等申索分別於2021年7月、2021年9月及2022"
+        },
+        {
+          "case_id": "manual_new_董飞飞_seed_bus_005",
+          "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無",
+          "top1_pages": [
+            23,
+            24
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                23,
+                24
+              ],
+              "score": 0.697874,
+              "chunk_id": "chk_2020_01351_輝煌明天_p23_txt039",
+              "preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無不利變動。我們精準廣告服務及中介服務的未經審計月均毛收入增加主要由於業務規模擴展"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                9,
+                10
+              ],
+              "score": 0.694991,
+              "chunk_id": "chk_2020_01351_輝煌明天_p9_txt013",
+              "preview": "向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                17
+              ],
+              "score": 0.680637,
+              "chunk_id": "chk_2020_01351_輝煌明天_p17_txt025",
+              "preview": "然而，我們錄得毛利率由截至2017年12月31日止年度的約38 .6%下降至截至2018年12月31日止年度的31 .3%及截至2019年12月31日止年度的28 .9%。毛利率下降主要由於中介服務的毛利率下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                396,
+                397
+              ],
+              "score": 0.674301,
+              "chunk_id": "chk_2020_01351_輝煌明天_p396_txt407",
+              "preview": "預期虧損率乃根據過往經歷的信貸虧損進行調整，以反映上述影響客戶結付應收款項的能力的即期及前瞻性資料。由於各類貿易應收款項的實際虧損率及未來宏觀經濟數據調整於截至2017年及2018年12月31日止年度並無重大變動， 貴公司董事認為，於截至2017年及2018年12月31日止年度，預期信貸虧損率變動並不重大。截至2017年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： 截至2018年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： "
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                284,
+                285
+              ],
+              "score": 0.669622,
+              "chunk_id": "chk_2020_01351_輝煌明天_p284_txt290",
+              "preview": "鑒於(i)貿易應收款項周轉天數由截至2018年12月31日止年度的64 .2天增加至截至2019年12月31日止年度的92 .6天，主要由於部分主要客戶結付款項較慢；及(ii)我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量，主要由於貿易應收款項增加，我們採納更嚴格的政策及程序以管理日後資本及流動資金水平，旨在提升我們的流動資金水平，包括： (i) 對新客戶進行信用評估，例如經客戶同意後評估其背景、聲譽及財務"
+            }
+          ],
+          "expected_keywords": [
+            "财政困难",
+            "延迟付款",
+            "无法履行付款责任",
+            "营运资金",
+            "流失客户"
+          ],
+          "gold_preview": "宏觀經濟狀況亦可導致客戶出現財政困難，包括進入信貸市場受到限制、無力償債或破產，因此亦可能導致客戶延遲向我們付款、要求修改付款安排或無法向我們履行付款責任。在此情況下，我們的中介服務可能並無足夠營運資金，而我們可能因無法接受額外廣告訂單而流失客戶。"
+        },
+        {
+          "case_id": "manual_new_董飞飞_cat_bus_009",
+          "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "generic_risk_outranks_actual_event",
+          "top1_preview": "廣告主是價值鏈的發起者，其尋求市場營銷解決方案，以進行產品和服務推廣及品牌建設。廣告主傾向委聘移動廣告公司提供移動廣告服務，因為(i)其通常不會直接與主要媒體發佈商聯繫，而後者不會設置龐大的人力團隊處理投放廣告請求；及(ii)移動廣告公司向其提供增值服務。移動廣告公司所增添的價值包括(i)豐富的行業經驗及專業知識，以接觸廣泛的媒體發佈商網絡；(ii)全方位附加服務，例如選擇合適媒體發佈商以達成廣告",
+          "top1_pages": [
+            8
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.2857,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "generic_risk_disclosure",
+              "pages": [
+                8
+              ],
+              "score": 0.756038,
+              "chunk_id": "chk_2020_01351_輝煌明天_p8_txt011",
+              "preview": "廣告主是價值鏈的發起者，其尋求市場營銷解決方案，以進行產品和服務推廣及品牌建設。廣告主傾向委聘移動廣告公司提供移動廣告服務，因為(i)其通常不會直接與主要媒體發佈商聯繫，而後者不會設置龐大的人力團隊處理投放廣告請求；及(ii)移動廣告公司向其提供增值服務。移動廣告公司所增添的價值包括(i)豐富的行業經驗及專業知識，以接觸廣泛的媒體發佈商網絡；(ii)全方位附加服務，例如選擇合適媒體發佈商以達成廣告主的目標，以及與媒體發佈商建立聯繫；(iii)因其與媒體發佈商建立的關係而獲提供"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                159
+              ],
+              "score": 0.743631,
+              "chunk_id": "chk_2020_01351_輝煌明天_p159_txt177",
+              "preview": "毛利率下降主要由於中介服務的利潤率（以百分比計）下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因為該等媒體發佈商通常會向移動廣告公司提供較小的折扣，而一線媒體發佈商通常具有穩定移動流量，以確保所投放廣告的效果。至於二線媒體發佈商，彼等一般向我們提供相對較"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "mitigation_or_improvement",
+              "pages": [
+                184
+              ],
+              "score": 0.734241,
+              "chunk_id": "chk_2020_01351_輝煌明天_p184_txt200",
+              "preview": "於移動廣告業，廣告代理收入一般受季節性因素影響而波動，舉例來說，許多廣告主為了配合假日購物增加，會將最大比例的廣告預算投放於節日假期期間。一般而言，由於電商公司通常會選擇在下半年進行促銷，廣告主在下半年就移動廣告服務作出的投入會較上半年為多。儘管如此，由於我們已建立由來自不同行業的客戶組成之客戶群，及由於我們於整個年度就廣告方案積極與客戶接洽，董事認為我們的營運不會因季節性而出現重大波動。 2019冠狀病毒病 自2020年初以來，2019冠狀病毒病已在中國乃至全球迅速散播。為"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                17
+              ],
+              "score": 0.730144,
+              "chunk_id": "chk_2020_01351_輝煌明天_p17_txt025",
+              "preview": "然而，我們錄得毛利率由截至2017年12月31日止年度的約38 .6%下降至截至2018年12月31日止年度的31 .3%及截至2019年12月31日止年度的28 .9%。毛利率下降主要由於中介服務的毛利率下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "generic_risk_disclosure",
+              "pages": [
+                14
+              ],
+              "score": 0.730008,
+              "chunk_id": "chk_2020_01351_輝煌明天_p14_txt021",
+              "preview": "我們相信我們的競爭優勢有助我們成功及使我們於競爭對手中脫穎而出，包括(i)移動廣告業不斷發展，我們憑藉穩健的供應商基礎，把握新商機的能力；(ii)我們的優質廣告服務及穩固的客戶群；(iii)我們利用信息技術及研發的能力，而此有助我們為客戶提供量身定制的服務；及(iv)我們精通業內專業知識的富經驗管理團隊。詳情請參閱本招股章程「業務－我們的競爭優勢」一節。 我們的策略 我們的目標是在中國迅速增長的移動廣告代理市場不斷爭取市場份額。為了達成目標，我們擬採取以下策略：(i)通過增加"
+            }
+          ],
+          "expected_keywords": [
+            "竞争激烈",
+            "进入壁垒低",
+            "议价能力",
+            "降价",
+            "流失客户"
+          ],
+          "gold_preview": "由於對移動廣告服務的需求持續增長，加上進入壁壘低，我們預期新競爭對手將進入該等市場，且現有競爭對手將分配額外資源至該等市場。因此，移動廣告業的競爭預期將更趨激烈。新競爭及日趨激烈的競爭可能導致我們降價、利潤減少或失去市場地位，並可能導致我們流失現有客戶或收入減少。"
+        },
+        {
+          "case_id": "mgv1_maogeping_comp_no_litigation_001",
+          "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "hit",
+          "interpretation": "full_success",
+          "failure_reason": "ok",
+          "top1_preview": "截至最後實際可行日期，根據員工激勵計劃向合共四名參與者授出獎勵，根據員工激勵計劃向該四名參與者授出的獎勵的相關股份總數為本公司於股份拆細完成前600,000股面值人民幣1.0元的股份（相當於股份拆細完成後的1,200,000股股份），相當於緊接股份拆細及全球發售完成前已發行股份總數的約0.30%或緊隨股份拆細及全球發售完成後已發行股份總數的約0.26%（假設發售量調整權及超額配股權未獲行使）。截至",
+          "top1_pages": [
+            610,
+            611
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 1.0,
+              "content_hit": true,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                610,
+                611
+              ],
+              "score": 1.849856,
+              "chunk_id": "chk_2024_01318_毛戈平_p610_txt528",
+              "preview": "截至最後實際可行日期，根據員工激勵計劃向合共四名參與者授出獎勵，根據員工激勵計劃向該四名參與者授出的獎勵的相關股份總數為本公司於股份拆細完成前600,000股面值人民幣1.0元的股份（相當於股份拆細完成後的1,200,000股股份），相當於緊接股份拆細及全球發售完成前已發行股份總數的約0.30%或緊隨股份拆細及全球發售完成後已發行股份總數的約0.26%（假設發售量調整權及超額配股權未獲行使）。截至最後實際可行日期，四名參與者均為我們的僱員及本集團管理層成員，其中三名為獨立第三"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                567,
+                568
+              ],
+              "score": 1.563165,
+              "chunk_id": "chk_2024_01318_毛戈平_p567_txt505",
+              "preview": "根據《公司法》，公司股東會作出修改公司章程的決議，必須經出席會議的股東所持表決權的三分之二以上通過。根據《上市公司章程指引》，股東會決議通過的章程修 改事項應經主管機關審批的，須報主管機關批准；涉及公司登記事項的，依法辦理變更登記。章程修改事項屬於法律、法規要求披露的信息，按規定予以公告。 18. 解散及清算 根據《公司法》，公司因下列原因解散：(1)公司章程規定的營業期限屆滿或者公司章程規定的其他解散事由出現；(2)股東會決議解散；(3)因公司合併或者分立需要解散；(4)依"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                565,
+                566
+              ],
+              "score": 1.557264,
+              "chunk_id": "chk_2024_01318_毛戈平_p565_txt503",
+              "preview": "董事或高級管理人員履行其職務時違反法律、行政法規或公司章程對公司造成損失，連續180日以上單獨或合共持有公司1%以上股份的股東，可以書面請求監事會代其向人民法院提起訴訟。若監事在執行公司職務時違反法律、行政法規或組織章程細則對公司造成損失，前述股東可以書面請求董事會代其向人民法院提起訴訟。若監事會或董事會收到前述規定的股東書面請求後拒絕提起訴訟，或自收到請求之日起30日內未能提起訴訟，或若情況緊急、不能立即提起訴訟將會使公司利益受到難以彌補的損害，前述規定的股東有權為公司的利"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                68,
+                69
+              ],
+              "score": 1.549612,
+              "chunk_id": "chk_2024_01318_毛戈平_p68_txt059",
+              "preview": "此外，我們通常與該等OEM/ODM供應商協商確定知識產權的所有權。請參閱「業務－生產及供應鏈管理－生產」。儘管我們已採取措施防止機密資料披露予第三方，但我們無法保證所有OEM/ODM供應商始終會遵守有關要求。倘我們的任何OEM/ODM供應商被發現向未經授權的第三方洩露有關資料，我們可能會產生大量的法律及財務費用。此外，任何商業秘密的丟失或未經授權使用我們的專有資料均可能限制我們在市場上的競爭能力，從而可能導致我們的市場份額及收入下降。 此外，我們無法向 閣下保證我們的業務並無"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                80,
+                81
+              ],
+              "score": 1.542599,
+              "chunk_id": "chk_2024_01318_毛戈平_p80_txt077",
+              "preview": "於2023年2月24日，中國證監會、財政部、中國國家保密局和中國國家檔案局頒佈了《關於加強境內企業境外發行證券和上市相關保密和檔案管理工作的規定》（「《檔案規定》」），於2023年3月31日生效。《檔案規定》規定，關於境內企業以直接或間接形式進行境外發行證券和上市活動的，相關境內企業以及提供相關證券服務的證券公司和證券服務機構均須嚴格遵守相關保密和檔案管理規定、建立健全保密和檔案工作制度，並採取必要措施落實其保密和檔案管理責任。未能遵守《檔案規定》可能嚴重影響我們的業務、經營"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "董事确认"
+          ],
+          "gold_preview": "授出獎勵。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或我們的子公司不可能承擔重大遺產稅責任。 2. 訴訟 據董事所知，本集團成員公司並無尚未完結或面臨重大訴訟或申索。"
+        },
+        {
+          "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+          "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "hit",
+          "interpretation": "full_success",
+          "failure_reason": "ok",
+          "top1_preview": "截至最後實際可行日期，授予計劃參與者的獎勵相關股份總數為60,555股（均授予本集團七名僱員（均為獨立第三方）並由彼等歸屬及行使），相當於緊接全球發售完成前已發行股份總數的約0.09%以及緊隨全球發售完成後已發行股本總額的0.07%（假設超額配股權未獲行使）。 2023年僱員激勵計劃下的所有獎勵均已授出、歸屬及行使，且僱員激勵平台概無為根據2023年僱員激勵計劃向未來承授人授出獎勵而保留的相關股份",
+          "top1_pages": [
+            559,
+            560
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 1.0,
+              "content_hit": true,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                559,
+                560
+              ],
+              "score": 1.868123,
+              "chunk_id": "chk_2025_09678_雲知聲_p559_txt529",
+              "preview": "截至最後實際可行日期，授予計劃參與者的獎勵相關股份總數為60,555股（均授予本集團七名僱員（均為獨立第三方）並由彼等歸屬及行使），相當於緊接全球發售完成前已發行股份總數的約0.09%以及緊隨全球發售完成後已發行股本總額的0.07%（假設超額配股權未獲行使）。 2023年僱員激勵計劃下的所有獎勵均已授出、歸屬及行使，且僱員激勵平台概無為根據2023年僱員激勵計劃向未來承授人授出獎勵而保留的相關股份。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或其任何附屬公司不大可能承"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                57
+              ],
+              "score": 1.602075,
+              "chunk_id": "chk_2025_09678_雲知聲_p57_txt061",
+              "preview": "我們認為我們的商標、著作權、專利、專有技術、商業秘密及其他知識產權對我們的成功至關重要，並依賴專利、商標及版權法、商業秘密保護、披露限制及限制使用我們知識產權的其他協議來保護該等權利。儘管我們與業務夥伴的合約禁止未經授權使用我們的品牌、形象、角色及其他知識產權，但我們無法向 閣下保證彼等將一直遵守該等條款。該等協議可能無法有效防止機密資料的披露，且可能無法在未經授權披露機密資料的情況下提供足夠的補救措施。此外，第三方可能獨立發現商業秘密及自有資料，限制我們向該等人士主張任何商"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                63,
+                64
+              ],
+              "score": 1.593985,
+              "chunk_id": "chk_2025_09678_雲知聲_p63_txt071",
+              "preview": "此外，根據《境外上市法規》，我們首次公開發售後的任何未來發行或上市亦須通過中國證監會備案程序，且我們亦須於首次公開發售後向中國證監會報告若干重大事項。倘未能履行有關備案或報告程序，我們可能會受到中國證監會的行政處罰，這可能會損害我們的聲譽，並可能對我們的財務狀況造成不利影響。 閣下可能難以向我們及我們的管理層送達法律程序文件或執行外國判決。 我們根據中國法律註冊成立，所有業務及經營均位於中國。此外，我們幾乎所有董事、監事及高級職員均居住在中國，且其絕大部分資產均位於中國。由於"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                51,
+                52
+              ],
+              "score": 1.555153,
+              "chunk_id": "chk_2025_09678_雲知聲_p51_txt052",
+              "preview": "任何有關中斷或不足導致我們的經營中斷或未能維護網絡及服務器均可能影響客戶使用我們產品及解決方案的能力，並降低客戶滿意度。實際或被視為的攻擊或安全漏洞可能會損害我們的聲譽及品牌，使我們面臨潛在訴訟及責任的風險，並要求我們花費大量資金及其他資源來緩解該等攻擊或安全漏洞造成的問題。於往績記錄期間，我們並無遇到任何重大網絡或服務中斷、系統故障、數據丟失、不足、安全漏洞或網絡攻擊。我們無法向 閣下保證任何適用的恢復系統、安全協議、網絡保護機制或其他防禦程序會或將會足以防止該等網絡或服務"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                52
+              ],
+              "score": 1.526822,
+              "chunk_id": "chk_2025_09678_雲知聲_p52_txt053",
+              "preview": "我們委聘供應商供應我們AI產品及解決方案的若干硬件。我們亦將大部分運輸及物流管理、軟件開發支持及若干非必要的研發工作外包予第三方承包商。儘管該等安排可能降低我們的經營成本，但亦可能減少我們對開發及交付的直接控制。我們可能面臨供應商及承包商的經營困難，包括供應短缺、可用資源及產能減少、不符合我們的標準、質量控制不足、所需交貨時間延長及開發過程延遲。例如，市場上半導體供應普遍短缺可能會對我們產品的半導體供應造成影響。 我們的供應商及承包商可能因設備故障、罷工或短缺、自然災害、部件"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "行政程序"
+          ],
+          "gold_preview": " 董事已獲告知，本公司或其任何附屬公司不大可能承擔重大遺產稅責任。 2. 訴訟 除本招股章程所披露者外，據董事所知，本集團任何成員公司概無任何待決或遭受 威脅的重大訴訟或申索。 3. 聯席保薦人 聯席保薦人已代表我們向上市委員會申請批准H股上市及買賣。我們已作出所有必要 安排以使證券獲准納入中央結算系統。 聯席保薦人符合上市規則第3A.07條所載適用於保薦人的獨立性標準。聯席保薦人各 自將就擔任上"
+        },
+        {
+          "case_id": "mgv1_duodian_owner_connected_tx_001",
+          "question": "多点数智是否存在持续关连交易或关联方交易治理风险？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "hit",
+          "interpretation": "content_miss_page_hit_elsewhere",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "表格（6行）. 列: 1. 本集團向物美集團提供 零售核心服務雲解決方案 | 由於(i)麥德龍供應鏈集團、銀川新華集團及百安居實體 為物美科技的附屬公司及(ii)我們根據物美零售核心服務 雲交易(即交易A1.1.)向物美集團提供的零售核心服務雲 解決方案與我們根據麥德龍供應鏈零售核心服務雲框架 協議向麥德龍供應鏈集團（即交易B1.1.）、根據銀川新華 框架協議向銀川新華集團（即交易E.1.）及根據",
+          "top1_pages": [
+            243
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "future_risk_with_fact",
+              "pages": [
+                243
+              ],
+              "score": 1.01645,
+              "chunk_id": "chk_2024_02586_多點數智_p243_tbl109",
+              "preview": "表格（6行）. 列: 1. 本集團向物美集團提供 零售核心服務雲解決方案 | 由於(i)麥德龍供應鏈集團、銀川新華集團及百安居實體 為物美科技的附屬公司及(ii)我們根據物美零售核心服務 雲交易(即交易A1.1.)向物美集團提供的零售核心服務雲 解決方案與我們根據麥德龍供應鏈零售核心服務雲框架 協議向麥德龍供應鏈集團（即交易B1.1.）、根據銀川新華 框架協議向銀川新華集團（即交易E.1.）及根據百安居框架 協議向百安居實體(即交易C.1.)提供的零售核心服務雲 解決方案的性"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.2917,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "future_risk_with_fact",
+              "pages": [
+                243
+              ],
+              "score": 1.000938,
+              "chunk_id": "chk_2024_02586_多點數智_p243_tbl108",
+              "preview": "表格（20行）. 列: 1. 本集團向物美集團提供 零售核心服務雲解決方案 | 由於(i)麥德龍供應鏈集團、銀川新華集團及百安居實體 為物美科技的附屬公司及(ii)我們根據物美零售核心服務 雲交易(即交易A1.1.)向物美集團提供的零售核心服務雲 解決方案與我們根據麥德龍供應鏈零售核心服務雲框架 協議向麥德龍供應鏈集團（即交易B1.1.）、根據銀川新華 框架協議向銀川新華集團（即交易E.1.）及根據百安居框架 協議向百安居實體(即交易C.1.)提供的零售核心服務雲 解決方案的"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                10
+              ],
+              "score": 0.895597,
+              "chunk_id": "chk_2024_02586_多點數智_p10_txt012",
+              "preview": "於往績記錄期間，我們於零售核心服務雲業務分部項下主要提供Dmall OS系統及AIoT解決方案。於2021年、2022年及2023年以及截至2023年及2024年6月30日止六個月，我們零售核心服務雲解決方案的收益分別為人民幣438.8百萬元、人民幣880.5百萬元、人民幣1,298.7百萬元、人民幣602.3百萬元及人民幣933.2百萬元，佔同年╱期收益的51.7%、66.3%、81.9%、78.8%及99.4%。於往績記錄期間，我們自零售核心服務雲解決方案的收益增加乃主要"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                242,
+                246
+              ],
+              "score": 0.892202,
+              "chunk_id": "chk_2024_02586_多點數智_p242_txt292",
+              "preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及我們的控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年12月31日止年度及截至2024年6月30日止六個月各期間，我們五大客戶產生的收益分別佔同年╱期我們收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年12月31日止"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                234,
+                235
+              ],
+              "score": 0.886699,
+              "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+              "preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記錄期間，我們確認來自與關聯方合作的大部分收益。下表載列於往績記錄期間按絕對金額及佔我們收益百分比計的關聯方、其他關聯方及"
+            }
+          ],
+          "expected_keywords": [
+            "持续关连交易",
+            "关联方",
+            "合作协议"
+          ],
+          "gold_preview": "已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後構成本公司的一組控股股東。 請參閱「與控股股東的關係」一節以了解控股股東的進一步詳情。 持續關連交易 我們已訂立若干交易，根據上市規則，該等交易將於上市後構成本公司的非獲豁免 或部分豁免持續關連交易。我們已就該等交易向聯交所申請，且聯交所已授出嚴格遵守上 市規則第14A章的若干豁免。請參閱「關連交易」一節以了解詳情。 227 "
+        }
+      ]
+    },
+    "H_plus_G_plus_E": {
+      "summary": {
+        "n_cases": 39,
+        "recall_at_1": 0.5641,
+        "recall_at_3": 0.8718,
+        "recall_at_5": 0.9231,
+        "recall_at_10": 0.9231,
+        "content_hit_at_1": 0.5641,
+        "content_hit_at_3": 0.8718,
+        "content_hit_at_5": 0.9231,
+        "content_hit_at_10": 0.9231,
+        "doc_hit_rate": 1.0,
+        "page_hit_any_rate": 0.7949,
+        "content_success_rate": 0.9231,
+        "page_grounding_rate": 0.7949,
+        "page_grounded_when_content_hit_rate": 0.5278,
+        "content_success_page_mismatch_rate": 0.4359,
+        "multi_location_like_count": 11,
+        "interpretation_counts": {
+          "full_success": 13,
+          "content_success_page_mismatch": 17,
+          "content_success_page_hit_not_top1": 6,
+          "content_miss_page_hit_elsewhere": 1,
+          "content_miss": 2
+        },
+        "mrr": 0.7081,
+        "avg_gold_rank_when_recalled": 1.667,
+        "failure_reason_counts": {
+          "ok": 13,
+          "content_hit_page_mismatch": 9,
+          "gold_recalled_but_rank_low": 14,
+          "semantic_near_miss_or_chunk_boundary": 2,
+          "generic_risk_outranks_actual_event": 1
+        },
+        "metric_definitions": {
+          "recall_at_k": "content_hit anchored; page mismatch does not zero out R@k",
+          "content_success_rate": "share of cases with any content_hit in top_k",
+          "page_grounding_rate": "share of cases with any expected-page hit in top_k (independent)",
+          "content_success_page_mismatch_rate": "content success where top content hit is not page-grounded",
+          "multi_location_like_count": "content success + page mismatch + page_hit_any in topk (approx multi-location)"
+        },
+        "by_dataset": {
+          "manual_gold_v1": {
+            "n": 25,
+            "recall_at_1": 0.6,
+            "recall_at_3": 0.88,
+            "recall_at_5": 0.96,
+            "recall_at_10": 0.96,
+            "content_success_rate": 0.96,
+            "page_grounding_rate": 0.88,
+            "content_success_page_mismatch_rate": 0.4,
+            "mrr": 0.738,
+            "top_failures": {
+              "ok": 9,
+              "gold_recalled_but_rank_low": 9,
+              "content_hit_page_mismatch": 6,
+              "semantic_near_miss_or_chunk_boundary": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 10,
+              "full_success": 9,
+              "content_success_page_hit_not_top1": 5,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "manual_new_annotators_v1": {
+            "n": 14,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.8571,
+            "recall_at_5": 0.8571,
+            "recall_at_10": 0.8571,
+            "content_success_rate": 0.8571,
+            "page_grounding_rate": 0.6429,
+            "content_success_page_mismatch_rate": 0.5,
+            "mrr": 0.6548,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 5,
+              "ok": 4,
+              "content_hit_page_mismatch": 3,
+              "semantic_near_miss_or_chunk_boundary": 1,
+              "generic_risk_outranks_actual_event": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 7,
+              "full_success": 4,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          }
+        },
+        "by_category": {
+          "business_risk": {
+            "n": 9,
+            "recall_at_1": 0.5556,
+            "recall_at_3": 0.7778,
+            "recall_at_5": 0.7778,
+            "recall_at_10": 0.7778,
+            "content_success_rate": 0.7778,
+            "page_grounding_rate": 0.6667,
+            "content_success_page_mismatch_rate": 0.3333,
+            "mrr": 0.6481,
+            "top_failures": {
+              "ok": 3,
+              "content_hit_page_mismatch": 2,
+              "gold_recalled_but_rank_low": 2,
+              "semantic_near_miss_or_chunk_boundary": 1,
+              "generic_risk_outranks_actual_event": 1
+            },
+            "top_interpretations": {
+              "full_success": 3,
+              "content_success_page_mismatch": 3,
+              "content_miss": 2,
+              "content_success_page_hit_not_top1": 1
+            }
+          },
+          "financial_risk": {
+            "n": 7,
+            "recall_at_1": 0.5714,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.8571,
+            "mrr": 0.7619,
+            "top_failures": {
+              "content_hit_page_mismatch": 3,
+              "gold_recalled_but_rank_low": 3,
+              "ok": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 6,
+              "full_success": 1
+            }
+          },
+          "ipo_specific_risk": {
+            "n": 8,
+            "recall_at_1": 0.5,
+            "recall_at_3": 0.875,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 1.0,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.6979,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 4,
+              "ok": 3,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "content_success_page_hit_not_top1": 3,
+              "full_success": 3,
+              "content_success_page_mismatch": 2
+            }
+          },
+          "ownership_risk": {
+            "n": 7,
+            "recall_at_1": 0.2857,
+            "recall_at_3": 0.7143,
+            "recall_at_5": 0.8571,
+            "recall_at_10": 0.8571,
+            "content_success_rate": 0.8571,
+            "page_grounding_rate": 0.7143,
+            "content_success_page_mismatch_rate": 0.5714,
+            "mrr": 0.481,
+            "top_failures": {
+              "gold_recalled_but_rank_low": 4,
+              "content_hit_page_mismatch": 2,
+              "semantic_near_miss_or_chunk_boundary": 1
+            },
+            "top_interpretations": {
+              "content_success_page_mismatch": 4,
+              "content_success_page_hit_not_top1": 2,
+              "content_miss_page_hit_elsewhere": 1
+            }
+          },
+          "compliance_risk": {
+            "n": 8,
+            "recall_at_1": 0.875,
+            "recall_at_3": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "content_success_rate": 1.0,
+            "page_grounding_rate": 0.875,
+            "content_success_page_mismatch_rate": 0.25,
+            "mrr": 0.9375,
+            "top_failures": {
+              "ok": 6,
+              "gold_recalled_but_rank_low": 1,
+              "content_hit_page_mismatch": 1
+            },
+            "top_interpretations": {
+              "full_success": 6,
+              "content_success_page_mismatch": 2
+            }
+          }
+        }
+      },
+      "hard_hit_at_5": 3,
+      "hard_total": 6,
+      "cases": [
+        {
+          "case_id": "manual_new_田歌_cat_fin_010",
+          "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "mismatch",
+          "interpretation": "content_success_page_mismatch",
+          "failure_reason": "content_hit_page_mismatch",
+          "top1_preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協助我們進行抗辯。截至最後實際可行日期，針",
+          "top1_pages": [
+            81,
+            82
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.25,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                81,
+                82
+              ],
+              "score": 1.695821,
+              "chunk_id": "chk_2022_03931_中創新航_p81_txt049",
+              "preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該等申索涉及六項專利，針對我們四款特定型號電池產品中的若干組件，含有相關組件的相關產品的收入佔於往績記錄期間本集團收入的主要部分。 本公司已聘請知識產權特別顧問協助我們進行抗辯。截至最後實際可行日期，針對其中五項專利的申索已進入實體審理階段及我們正對該等申索提出抗辯。有關詳情，請參"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0833,
+              "content_hit": true,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                85,
+                86
+              ],
+              "score": 1.571457,
+              "chunk_id": "chk_2022_03931_中創新航_p85_txt054",
+              "preview": "任何潛在申索╱請求是否成立及申索╱請求的範圍可能複雜且涉及複雜的科學、法律及舉證問題及分析，因此難以確定。就知識產權訴訟、專利異議訴訟以及相關法律及行政訴訟或請求作出辯護及起訴涉及高昂費用且相當費時，管理層可能須費神兼顧，並投入大量資源。再者，倘若競爭對手發起惡意訴訟或不正當法律程序，就有關申索進行抗辯（不論其理據），將涉及額外訴訟費用並可能分散我們管理層的時間及精力。若我們牽涉的任何訴訟或法律程序或請求出現的判決，或會使我們的專利無效，令我們須向第三方支付賠償、向第三方徵求"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                350,
+                351
+              ],
+              "score": 1.530179,
+              "chunk_id": "chk_2022_03931_中創新航_p350_txt307",
+              "preview": "於2022年4月24日，國家知識產權局公佈一項決定，維持專利三的部分有效性，即宣告發明或者實用新型專利項下的一項或者數項（但不是全部）權利要求無效，其他權利要求維持有效。國家知識產權局維持專利三部分有效的裁定，是由於發現所呈列的對比文件中發現╱公開部分權利要求的技術特徵，國家知識產權局認定該等權利要求無效；同時，所呈列的對比文件中亦未發現╱公開部分其他權利要求的技術特徵。因此，國家知識產權局裁定，就所呈列的對比文件中尚未發現╱公開的若干權利要求（即尚未證明失去新穎性及╱或創造"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                351,
+                352
+              ],
+              "score": 1.517652,
+              "chunk_id": "chk_2022_03931_中創新航_p351_txt308",
+              "preview": "北京知識產權法院作出的法院判決為一審判決，倘自法院判決送達之日起十五日內並無向上一級法院上訴的，該判決將生效。將因北京知識產權法院一審判決承擔不利後果的本公司及國家知識產權局（作為訴訟當事人）及寧德時代（作為第三方），有權在上述上訴期內就該判決向最高人民法院提出上訴。倘上述各方向最高人民法院提起上訴，則根據中國兩級司法體制，最高人民法院的上訴判決將為終審判決並生效。待行政訴訟判決生效後，倘判決結果為「駁回國家知識產權局的決定，國家知識產權局應重新作出決定」，則國家知識產權局須"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                767
+              ],
+              "score": 1.515218,
+              "chunk_id": "chk_2022_03931_中創新航_p767_txt613",
+              "preview": "人民法院採用兩審終審制度。當事人可就地方人民法院一審判決或裁定提出上訴。人民檢察院可根據法律規定程序向上一級人民法院提出抗訴。倘在規定時間內當事人並未提出任何上訴而人民檢察院亦無提出抗訴，則該人民法院的判決或裁定為終審判決或裁定。中級人民法院、高級人民法院和最高人民法院作出的二審判決或裁定為終審判決或裁定。最高人民法院的一審判決或裁定亦是終審判決或裁定。然而，若最高人民法院對各級人民法院已經發生法律效力的判決、裁定、調解書，或上級人民法院對下級人民法院已經發生法律效力的判決、"
+            }
+          ],
+          "expected_keywords": [
+            "知识产权侵权"
+          ],
+          "gold_preview": "於2021年8月及10月，我們接獲福建省福州市中級人民法院（「福州市中院」）通 知 對我們及╱或洛陽公司（就專利一至專利五（定義見下文））提出的若干知識產權侵權申 索，並於2022年8月接獲福建省高級人民法院（與福州市中院合稱「法院」）通知對我們 及洛陽公司（就專利六（定義見下文））提出一項知識產權侵權申索（各稱「申索」，共稱 「該等申索」）。該等申索分別於2021年7月、2021年9月及2022"
+        },
+        {
+          "case_id": "manual_new_董飞飞_seed_bus_005",
+          "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無",
+          "top1_pages": [
+            23,
+            24
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                23,
+                24
+              ],
+              "score": 0.697874,
+              "chunk_id": "chk_2020_01351_輝煌明天_p23_txt039",
+              "preview": "根據我們對本集團於截至2020年6月30日止六個月的營運的初步審閱，儘管近期2019冠狀病毒病爆發導致中國整體經濟活動暫時中斷，我們的業務營運及財務表現並無受到重大不利影響。截至2020年6月30日止六個月與2019年同期相比：(i)我們精準廣告服務的未經審計月均毛收入較高，而我們的精準廣告服務利潤率（以百分比計）保持穩定；及(ii)我們中介服務的未經審計月均毛收入較高，而利潤率（以百分比計）並無不利變動。我們精準廣告服務及中介服務的未經審計月均毛收入增加主要由於業務規模擴展"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                9,
+                10
+              ],
+              "score": 0.694991,
+              "chunk_id": "chk_2020_01351_輝煌明天_p9_txt013",
+              "preview": "向媒體發佈商支付的預付款項佔我們營運資金的很大一部分。於2017年、2018年及2019年12月31日以及2020年4月30日，向媒體發佈商支付的預付款項分別約為人民幣18 .4百萬元、人民幣67 .4百萬元、人民幣67 .2百萬元及人民幣67 .6百萬元，分別佔總資產約21 .2%、27 .1%、19 .9%及17 .7%。截至2019年12月31日止三個年度及截至2020年4月30日止四個月，須支付預付款項的中介服務交易額分別佔中介服務所得總收入（按收入確認總額基準列賬）"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                17
+              ],
+              "score": 0.680637,
+              "chunk_id": "chk_2020_01351_輝煌明天_p17_txt025",
+              "preview": "然而，我們錄得毛利率由截至2017年12月31日止年度的約38 .6%下降至截至2018年12月31日止年度的31 .3%及截至2019年12月31日止年度的28 .9%。毛利率下降主要由於中介服務的毛利率下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                396,
+                397
+              ],
+              "score": 0.674301,
+              "chunk_id": "chk_2020_01351_輝煌明天_p396_txt407",
+              "preview": "預期虧損率乃根據過往經歷的信貸虧損進行調整，以反映上述影響客戶結付應收款項的能力的即期及前瞻性資料。由於各類貿易應收款項的實際虧損率及未來宏觀經濟數據調整於截至2017年及2018年12月31日止年度並無重大變動， 貴公司董事認為，於截至2017年及2018年12月31日止年度，預期信貸虧損率變動並不重大。截至2017年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： 截至2018年12月31日止年度，來自第三方的貿易應收款項的預期信貸虧損率釐定如下： "
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                284,
+                285
+              ],
+              "score": 0.669622,
+              "chunk_id": "chk_2020_01351_輝煌明天_p284_txt290",
+              "preview": "鑒於(i)貿易應收款項周轉天數由截至2018年12月31日止年度的64 .2天增加至截至2019年12月31日止年度的92 .6天，主要由於部分主要客戶結付款項較慢；及(ii)我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量，主要由於貿易應收款項增加，我們採納更嚴格的政策及程序以管理日後資本及流動資金水平，旨在提升我們的流動資金水平，包括： (i) 對新客戶進行信用評估，例如經客戶同意後評估其背景、聲譽及財務"
+            }
+          ],
+          "expected_keywords": [
+            "财政困难",
+            "延迟付款",
+            "无法履行付款责任",
+            "营运资金",
+            "流失客户"
+          ],
+          "gold_preview": "宏觀經濟狀況亦可導致客戶出現財政困難，包括進入信貸市場受到限制、無力償債或破產，因此亦可能導致客戶延遲向我們付款、要求修改付款安排或無法向我們履行付款責任。在此情況下，我們的中介服務可能並無足夠營運資金，而我們可能因無法接受額外廣告訂單而流失客戶。"
+        },
+        {
+          "case_id": "manual_new_董飞飞_cat_bus_009",
+          "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "missing",
+          "interpretation": "content_miss",
+          "failure_reason": "generic_risk_outranks_actual_event",
+          "top1_preview": "廣告主是價值鏈的發起者，其尋求市場營銷解決方案，以進行產品和服務推廣及品牌建設。廣告主傾向委聘移動廣告公司提供移動廣告服務，因為(i)其通常不會直接與主要媒體發佈商聯繫，而後者不會設置龐大的人力團隊處理投放廣告請求；及(ii)移動廣告公司向其提供增值服務。移動廣告公司所增添的價值包括(i)豐富的行業經驗及專業知識，以接觸廣泛的媒體發佈商網絡；(ii)全方位附加服務，例如選擇合適媒體發佈商以達成廣告",
+          "top1_pages": [
+            8
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.2857,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "generic_risk_disclosure",
+              "pages": [
+                8
+              ],
+              "score": 0.756038,
+              "chunk_id": "chk_2020_01351_輝煌明天_p8_txt011",
+              "preview": "廣告主是價值鏈的發起者，其尋求市場營銷解決方案，以進行產品和服務推廣及品牌建設。廣告主傾向委聘移動廣告公司提供移動廣告服務，因為(i)其通常不會直接與主要媒體發佈商聯繫，而後者不會設置龐大的人力團隊處理投放廣告請求；及(ii)移動廣告公司向其提供增值服務。移動廣告公司所增添的價值包括(i)豐富的行業經驗及專業知識，以接觸廣泛的媒體發佈商網絡；(ii)全方位附加服務，例如選擇合適媒體發佈商以達成廣告主的目標，以及與媒體發佈商建立聯繫；(iii)因其與媒體發佈商建立的關係而獲提供"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                159
+              ],
+              "score": 0.743631,
+              "chunk_id": "chk_2020_01351_輝煌明天_p159_txt177",
+              "preview": "毛利率下降主要由於中介服務的利潤率（以百分比計）下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因為該等媒體發佈商通常會向移動廣告公司提供較小的折扣，而一線媒體發佈商通常具有穩定移動流量，以確保所投放廣告的效果。至於二線媒體發佈商，彼等一般向我們提供相對較"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "mitigation_or_improvement",
+              "pages": [
+                184
+              ],
+              "score": 0.734241,
+              "chunk_id": "chk_2020_01351_輝煌明天_p184_txt200",
+              "preview": "於移動廣告業，廣告代理收入一般受季節性因素影響而波動，舉例來說，許多廣告主為了配合假日購物增加，會將最大比例的廣告預算投放於節日假期期間。一般而言，由於電商公司通常會選擇在下半年進行促銷，廣告主在下半年就移動廣告服務作出的投入會較上半年為多。儘管如此，由於我們已建立由來自不同行業的客戶組成之客戶群，及由於我們於整個年度就廣告方案積極與客戶接洽，董事認為我們的營運不會因季節性而出現重大波動。 2019冠狀病毒病 自2020年初以來，2019冠狀病毒病已在中國乃至全球迅速散播。為"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                17
+              ],
+              "score": 0.730144,
+              "chunk_id": "chk_2020_01351_輝煌明天_p17_txt025",
+              "preview": "然而，我們錄得毛利率由截至2017年12月31日止年度的約38 .6%下降至截至2018年12月31日止年度的31 .3%及截至2019年12月31日止年度的28 .9%。毛利率下降主要由於中介服務的毛利率下降。作為我們業務策略的一部分，我們旨在建立並維持一個擁有各色媒體發佈商的穩健供應商基礎。隨著業務的發展以及財務狀況因隨著時間所增長的溢利而得以鞏固，我們擴大了媒體發佈商的組合，並具有足夠的競爭力擴展與一線媒體發佈商的業務，在該等媒體發佈商投放廣告所產生的利潤率通常較低，因"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "generic_risk_disclosure",
+              "pages": [
+                14
+              ],
+              "score": 0.730008,
+              "chunk_id": "chk_2020_01351_輝煌明天_p14_txt021",
+              "preview": "我們相信我們的競爭優勢有助我們成功及使我們於競爭對手中脫穎而出，包括(i)移動廣告業不斷發展，我們憑藉穩健的供應商基礎，把握新商機的能力；(ii)我們的優質廣告服務及穩固的客戶群；(iii)我們利用信息技術及研發的能力，而此有助我們為客戶提供量身定制的服務；及(iv)我們精通業內專業知識的富經驗管理團隊。詳情請參閱本招股章程「業務－我們的競爭優勢」一節。 我們的策略 我們的目標是在中國迅速增長的移動廣告代理市場不斷爭取市場份額。為了達成目標，我們擬採取以下策略：(i)通過增加"
+            }
+          ],
+          "expected_keywords": [
+            "竞争激烈",
+            "进入壁垒低",
+            "议价能力",
+            "降价",
+            "流失客户"
+          ],
+          "gold_preview": "由於對移動廣告服務的需求持續增長，加上進入壁壘低，我們預期新競爭對手將進入該等市場，且現有競爭對手將分配額外資源至該等市場。因此，移動廣告業的競爭預期將更趨激烈。新競爭及日趨激烈的競爭可能導致我們降價、利潤減少或失去市場地位，並可能導致我們流失現有客戶或收入減少。"
+        },
+        {
+          "case_id": "mgv1_maogeping_comp_no_litigation_001",
+          "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "hit",
+          "interpretation": "full_success",
+          "failure_reason": "ok",
+          "top1_preview": "截至最後實際可行日期，根據員工激勵計劃向合共四名參與者授出獎勵，根據員工激勵計劃向該四名參與者授出的獎勵的相關股份總數為本公司於股份拆細完成前600,000股面值人民幣1.0元的股份（相當於股份拆細完成後的1,200,000股股份），相當於緊接股份拆細及全球發售完成前已發行股份總數的約0.30%或緊隨股份拆細及全球發售完成後已發行股份總數的約0.26%（假設發售量調整權及超額配股權未獲行使）。截至",
+          "top1_pages": [
+            610,
+            611
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 1.0,
+              "content_hit": true,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                610,
+                611
+              ],
+              "score": 1.879852,
+              "chunk_id": "chk_2024_01318_毛戈平_p610_txt528",
+              "preview": "截至最後實際可行日期，根據員工激勵計劃向合共四名參與者授出獎勵，根據員工激勵計劃向該四名參與者授出的獎勵的相關股份總數為本公司於股份拆細完成前600,000股面值人民幣1.0元的股份（相當於股份拆細完成後的1,200,000股股份），相當於緊接股份拆細及全球發售完成前已發行股份總數的約0.30%或緊隨股份拆細及全球發售完成後已發行股份總數的約0.26%（假設發售量調整權及超額配股權未獲行使）。截至最後實際可行日期，四名參與者均為我們的僱員及本集團管理層成員，其中三名為獨立第三"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                554,
+                555
+              ],
+              "score": 1.585981,
+              "chunk_id": "chk_2024_01318_毛戈平_p554_txt491",
+              "preview": "外國人、無國籍人或外國企業或組織一般同中國公民、法人有同等的訴訟權利和責任。外國法院對中國公民和企業的訴訟權利加以限制的，中國法院可對該國公民和企業的訴訟權利實行對等原則。外國人、無國籍人、外國企業和組織在人民法院起訴、應訴，需要委託律師代理訴訟的，必須委託中華人民共和國的律師。根據中國締結或者參加的國際條約，或者按照互惠原則，中國人民法院和外國法院可以相互請求，代為送達文書、調查取證以及進行其他訴訟行為。外國法院請求協助的事項有損於中國的主權、安全或者社會公共利益的，中國人"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                565,
+                566
+              ],
+              "score": 1.584289,
+              "chunk_id": "chk_2024_01318_毛戈平_p565_txt503",
+              "preview": "董事或高級管理人員履行其職務時違反法律、行政法規或公司章程對公司造成損失，連續180日以上單獨或合共持有公司1%以上股份的股東，可以書面請求監事會代其向人民法院提起訴訟。若監事在執行公司職務時違反法律、行政法規或組織章程細則對公司造成損失，前述股東可以書面請求董事會代其向人民法院提起訴訟。若監事會或董事會收到前述規定的股東書面請求後拒絕提起訴訟，或自收到請求之日起30日內未能提起訴訟，或若情況緊急、不能立即提起訴訟將會使公司利益受到難以彌補的損害，前述規定的股東有權為公司的利"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                80,
+                81
+              ],
+              "score": 1.573934,
+              "chunk_id": "chk_2024_01318_毛戈平_p80_txt077",
+              "preview": "於2023年2月24日，中國證監會、財政部、中國國家保密局和中國國家檔案局頒佈了《關於加強境內企業境外發行證券和上市相關保密和檔案管理工作的規定》（「《檔案規定》」），於2023年3月31日生效。《檔案規定》規定，關於境內企業以直接或間接形式進行境外發行證券和上市活動的，相關境內企業以及提供相關證券服務的證券公司和證券服務機構均須嚴格遵守相關保密和檔案管理規定、建立健全保密和檔案工作制度，並採取必要措施落實其保密和檔案管理責任。未能遵守《檔案規定》可能嚴重影響我們的業務、經營"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0833,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                74,
+                75
+              ],
+              "score": 1.57186,
+              "chunk_id": "chk_2024_01318_毛戈平_p74_txt069",
+              "preview": "我們在日常業務過程中可能會不時捲入訴訟、索賠、糾紛、監管調查或法律程序。這些可能涉及（其中包括）違反合約、僱傭或勞資糾紛、反壟斷及侵犯知識產權相關問題。如果我們未能就任何有關索賠進行抗辯，我們可能須支付巨額損害賠償以補償索賠人。我們提起或針對我們提起（不論是否有理據）的任何索賠、糾紛或法律程序，均可能導致產生巨額成本及資源分散，並可能嚴重損害我們的聲譽。此外，針對我們提起的訴訟、索賠、糾紛、監管調查或法律程序可能由於供應商出售予我們的物品存在缺陷所招致，而此類供應商可能無法及"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "董事确认"
+          ],
+          "gold_preview": "授出獎勵。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或我們的子公司不可能承擔重大遺產稅責任。 2. 訴訟 據董事所知，本集團成員公司並無尚未完結或面臨重大訴訟或申索。"
+        },
+        {
+          "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+          "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+          "gold_rank": 1,
+          "recall_at_5": true,
+          "content_status": "hit",
+          "page_status": "hit",
+          "interpretation": "full_success",
+          "failure_reason": "ok",
+          "top1_preview": "截至最後實際可行日期，授予計劃參與者的獎勵相關股份總數為60,555股（均授予本集團七名僱員（均為獨立第三方）並由彼等歸屬及行使），相當於緊接全球發售完成前已發行股份總數的約0.09%以及緊隨全球發售完成後已發行股本總額的0.07%（假設超額配股權未獲行使）。 2023年僱員激勵計劃下的所有獎勵均已授出、歸屬及行使，且僱員激勵平台概無為根據2023年僱員激勵計劃向未來承授人授出獎勵而保留的相關股份",
+          "top1_pages": [
+            559,
+            560
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 1.0,
+              "content_hit": true,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                559,
+                560
+              ],
+              "score": 1.8925,
+              "chunk_id": "chk_2025_09678_雲知聲_p559_txt529",
+              "preview": "截至最後實際可行日期，授予計劃參與者的獎勵相關股份總數為60,555股（均授予本集團七名僱員（均為獨立第三方）並由彼等歸屬及行使），相當於緊接全球發售完成前已發行股份總數的約0.09%以及緊隨全球發售完成後已發行股本總額的0.07%（假設超額配股權未獲行使）。 2023年僱員激勵計劃下的所有獎勵均已授出、歸屬及行使，且僱員激勵平台概無為根據2023年僱員激勵計劃向未來承授人授出獎勵而保留的相關股份。 E. 其他資料 1. 遺產稅 董事已獲告知，本公司或其任何附屬公司不大可能承"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                57
+              ],
+              "score": 1.632654,
+              "chunk_id": "chk_2025_09678_雲知聲_p57_txt061",
+              "preview": "我們認為我們的商標、著作權、專利、專有技術、商業秘密及其他知識產權對我們的成功至關重要，並依賴專利、商標及版權法、商業秘密保護、披露限制及限制使用我們知識產權的其他協議來保護該等權利。儘管我們與業務夥伴的合約禁止未經授權使用我們的品牌、形象、角色及其他知識產權，但我們無法向 閣下保證彼等將一直遵守該等條款。該等協議可能無法有效防止機密資料的披露，且可能無法在未經授權披露機密資料的情況下提供足夠的補救措施。此外，第三方可能獨立發現商業秘密及自有資料，限制我們向該等人士主張任何商"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                63,
+                64
+              ],
+              "score": 1.623283,
+              "chunk_id": "chk_2025_09678_雲知聲_p63_txt071",
+              "preview": "此外，根據《境外上市法規》，我們首次公開發售後的任何未來發行或上市亦須通過中國證監會備案程序，且我們亦須於首次公開發售後向中國證監會報告若干重大事項。倘未能履行有關備案或報告程序，我們可能會受到中國證監會的行政處罰，這可能會損害我們的聲譽，並可能對我們的財務狀況造成不利影響。 閣下可能難以向我們及我們的管理層送達法律程序文件或執行外國判決。 我們根據中國法律註冊成立，所有業務及經營均位於中國。此外，我們幾乎所有董事、監事及高級職員均居住在中國，且其絕大部分資產均位於中國。由於"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                51,
+                52
+              ],
+              "score": 1.596294,
+              "chunk_id": "chk_2025_09678_雲知聲_p51_txt052",
+              "preview": "任何有關中斷或不足導致我們的經營中斷或未能維護網絡及服務器均可能影響客戶使用我們產品及解決方案的能力，並降低客戶滿意度。實際或被視為的攻擊或安全漏洞可能會損害我們的聲譽及品牌，使我們面臨潛在訴訟及責任的風險，並要求我們花費大量資金及其他資源來緩解該等攻擊或安全漏洞造成的問題。於往績記錄期間，我們並無遇到任何重大網絡或服務中斷、系統故障、數據丟失、不足、安全漏洞或網絡攻擊。我們無法向 閣下保證任何適用的恢復系統、安全協議、網絡保護機制或其他防禦程序會或將會足以防止該等網絡或服務"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                64
+              ],
+              "score": 1.562013,
+              "chunk_id": "chk_2025_09678_雲知聲_p64_txt072",
+              "preview": "此外，儘管我們的H股於聯交所上市後將須遵守上市規則及收購守則，但H股持有人將無法就違反上市規則提出訴訟，且必須依賴聯交所執行其規則。此外，收購守則並無法律效力，僅為在香港進行收購及合併交易以及股份購回提供被認為可接受的商業行為標準。 H股持有人與我們、我們的董事、監事、高級職員或非上市股份持有人之間因我們的組織章程細則或中國《公司法》及相關規則及法規所賦予或施加的權利或責任而產生的有關我們事務（包括轉讓我們的H股）的爭議，將通過仲裁而非法院解決。申索人可選擇將爭議提交香港或中"
+            }
+          ],
+          "expected_keywords": [
+            "重大诉讼",
+            "仲裁",
+            "行政程序"
+          ],
+          "gold_preview": " 董事已獲告知，本公司或其任何附屬公司不大可能承擔重大遺產稅責任。 2. 訴訟 除本招股章程所披露者外，據董事所知，本集團任何成員公司概無任何待決或遭受 威脅的重大訴訟或申索。 3. 聯席保薦人 聯席保薦人已代表我們向上市委員會申請批准H股上市及買賣。我們已作出所有必要 安排以使證券獲准納入中央結算系統。 聯席保薦人符合上市規則第3A.07條所載適用於保薦人的獨立性標準。聯席保薦人各 自將就擔任上"
+        },
+        {
+          "case_id": "mgv1_duodian_owner_connected_tx_001",
+          "question": "多点数智是否存在持续关连交易或关联方交易治理风险？",
+          "gold_rank": null,
+          "recall_at_5": false,
+          "content_status": "miss",
+          "page_status": "hit",
+          "interpretation": "content_miss_page_hit_elsewhere",
+          "failure_reason": "semantic_near_miss_or_chunk_boundary",
+          "top1_preview": "表格（6行）. 列: 1. 本集團向物美集團提供 零售核心服務雲解決方案 | 由於(i)麥德龍供應鏈集團、銀川新華集團及百安居實體 為物美科技的附屬公司及(ii)我們根據物美零售核心服務 雲交易(即交易A1.1.)向物美集團提供的零售核心服務雲 解決方案與我們根據麥德龍供應鏈零售核心服務雲框架 協議向麥德龍供應鏈集團（即交易B1.1.）、根據銀川新華 框架協議向銀川新華集團（即交易E.1.）及根據",
+          "top1_pages": [
+            243
+          ],
+          "ranked_brief": [
+            {
+              "rank": 1,
+              "coverage": 0.1667,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "future_risk_with_fact",
+              "pages": [
+                243
+              ],
+              "score": 1.038282,
+              "chunk_id": "chk_2024_02586_多點數智_p243_tbl109",
+              "preview": "表格（6行）. 列: 1. 本集團向物美集團提供 零售核心服務雲解決方案 | 由於(i)麥德龍供應鏈集團、銀川新華集團及百安居實體 為物美科技的附屬公司及(ii)我們根據物美零售核心服務 雲交易(即交易A1.1.)向物美集團提供的零售核心服務雲 解決方案與我們根據麥德龍供應鏈零售核心服務雲框架 協議向麥德龍供應鏈集團（即交易B1.1.）、根據銀川新華 框架協議向銀川新華集團（即交易E.1.）及根據百安居框架 協議向百安居實體(即交易C.1.)提供的零售核心服務雲 解決方案的性"
+            },
+            {
+              "rank": 2,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                242,
+                246
+              ],
+              "score": 0.96525,
+              "chunk_id": "chk_2024_02586_多點數智_p242_txt292",
+              "preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及我們的控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年12月31日止年度及截至2024年6月30日止六個月各期間，我們五大客戶產生的收益分別佔同年╱期我們收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年12月31日止"
+            },
+            {
+              "rank": 3,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": true,
+              "type": "historical_or_actual_event",
+              "pages": [
+                234,
+                235
+              ],
+              "score": 0.943416,
+              "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+              "preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記錄期間，我們確認來自與關聯方合作的大部分收益。下表載列於往績記錄期間按絕對金額及佔我們收益百分比計的關聯方、其他關聯方及"
+            },
+            {
+              "rank": 4,
+              "coverage": 0.0417,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                10
+              ],
+              "score": 0.94183,
+              "chunk_id": "chk_2024_02586_多點數智_p10_txt012",
+              "preview": "於往績記錄期間，我們於零售核心服務雲業務分部項下主要提供Dmall OS系統及AIoT解決方案。於2021年、2022年及2023年以及截至2023年及2024年6月30日止六個月，我們零售核心服務雲解決方案的收益分別為人民幣438.8百萬元、人民幣880.5百萬元、人民幣1,298.7百萬元、人民幣602.3百萬元及人民幣933.2百萬元，佔同年╱期收益的51.7%、66.3%、81.9%、78.8%及99.4%。於往績記錄期間，我們自零售核心服務雲解決方案的收益增加乃主要"
+            },
+            {
+              "rank": 5,
+              "coverage": 0.0,
+              "content_hit": false,
+              "page_hit": false,
+              "type": "historical_or_actual_event",
+              "pages": [
+                555,
+                556
+              ],
+              "score": 0.938016,
+              "chunk_id": "chk_2024_02586_多點數智_p555_txt633",
+              "preview": "於2021年、2022年、2023年12月31日及2024年6月30日，已發行予貴公司股權持有人的發行在外普通股分別為525,150,000股、525,150,000股、525,150,000股及525,150,000股。 (b) 儲備 (i) 資本儲備 貴集團及一名非控股股東向一家附屬公司注資 於2022年1月6日，多點（深圳）數字與北京物美超市有限公司向多點智聯注資總計人民幣60,928,000元，其中人民幣27,260,000元由貴集團以現金出資，而人民幣33,668,"
+            }
+          ],
+          "expected_keywords": [
+            "持续关连交易",
+            "关联方",
+            "合作协议"
+          ],
+          "gold_preview": "已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後構成本公司的一組控股股東。 請參閱「與控股股東的關係」一節以了解控股股東的進一步詳情。 持續關連交易 我們已訂立若干交易，根據上市規則，該等交易將於上市後構成本公司的非獲豁免 或部分豁免持續關連交易。我們已就該等交易向聯交所申請，且聯交所已授出嚴格遵守上 市規則第14A章的若干豁免。請參閱「關連交易」一節以了解詳情。 227 "
+        }
+      ]
+    }
+  },
+  "hard_ids": [
+    "manual_new_田歌_cat_fin_010",
+    "manual_new_董飞飞_seed_bus_005",
+    "manual_new_董飞飞_cat_bus_009",
+    "mgv1_maogeping_comp_no_litigation_001",
+    "mgv1_yunzhisheng_comp_no_litigation_001",
+    "mgv1_duodian_owner_connected_tx_001"
+  ]
+}

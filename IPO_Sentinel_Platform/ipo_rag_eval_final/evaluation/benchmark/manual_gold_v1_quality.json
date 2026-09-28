@@ -1,0 +1,30 @@
+{
+  "total_cases": 25,
+  "confirmed_cases": 25,
+  "pending_cases": 0,
+  "by_category": {
+    "business_risk": 5,
+    "financial_risk": 5,
+    "ipo_specific_risk": 5,
+    "ownership_risk": 5,
+    "compliance_risk": 5
+  },
+  "by_document": {
+    "2020_01147_伊登軟件": 4,
+    "2024_02586_多點數智": 7,
+    "2022_09863_零跑汽車": 4,
+    "2025_09678_雲知聲": 4,
+    "2021_09858_優然牧業": 3,
+    "2024_01318_毛戈平": 3
+  },
+  "by_annotator": {
+    "谭思怡": 4,
+    "陈慧": 1,
+    "Codex_manual_review": 20
+  },
+  "valid_physical_page_mapping_cases": 25,
+  "table_cases": 11,
+  "narrative_cases": 14,
+  "documents_covered": 6,
+  "max_document_case_share": 0.28
+}

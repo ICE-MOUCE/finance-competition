@@ -1,0 +1,339 @@
+{
+  "task": "preipo_terms_sufficiency_v1",
+  "timestamp": "2026-07-28T11:51:07+08:00",
+  "diagnosis": {
+    "root_cause": "answer_excerpt treated pre_ipo as not_applicable; ipo/role scored half-package overview almost equal to complete terms table",
+    "before_top1": "p21 half-package overview (rounds/amount/lockup, missing PE/discount%/rights conclusion)",
+    "before_best_complete": "p31 terms table often rank2"
+  },
+  "anchor_case": {
+    "id": "manual_new_董飞飞_cat_ipo_002",
+    "question": "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？",
+    "document_id": "2020_01351_輝煌明天",
+    "after_hge_top10": [
+      {
+        "rank": 1,
+        "score": 1.9957,
+        "pages": [
+          31
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p31_tbl037",
+        "block_type": "table",
+        "complete_dims": 4,
+        "dims": {
+          "valuation": true,
+          "discount": true,
+          "lockup": true,
+          "rights": true
+        },
+        "excerpt_net": 0.52,
+        "excerpt_reason": "preipo_complete_terms_package+preipo_terms_table_like",
+        "preview": "表格（10行）. 列: 下表概述首次公開招股前投資的主要條款以及朱先生及城市能源於本公司的投資. 第1行: 協議日期 | 2018年11月6日及2019年2月12日. 第2行: 首次公開招股前投資者名稱 | 城市能源（朱先生為唯一實益擁有人）. 第3行: 總投資額 | 約7.7百萬港元. 第4行: 本集團收取的所得款項總額 | 約7.4百萬港元（經扣除楊先生收取的約人民幣 0.3百萬元). 第5行: 首次公開招股前投資 的完成日期 | 2019年2月14日. 第6行: 每股成"
+      },
+      {
+        "rank": 2,
+        "score": 1.0198,
+        "pages": [
+          340,
+          341
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p340_txt353",
+        "block_type": "text",
+        "complete_dims": 1,
+        "dims": {
+          "valuation": true,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": 0.04,
+        "excerpt_reason": "preipo_single_term",
+        "preview": "預期發售價，連同配售的踴躍程度指標及公開發售的申請結果及公開發售股份的分配基準的公告將在聯交所網站www.hkexnews.hk 及本公司網站www.btomorrow.cn刊登。 申請時應付的價格 發售價將不超過每股發售股份1 .1港元，並預期不少於每股發售股份1 .0港元。公開發售的申請人於申請時須支付最高價格每股發售股份1 .1港元，另加1%經紀佣金、0 .005%聯交所交易費及0 .0027%證監會交易徵費，即每手2,000股股份應付合共2,222 .17港元。申請表"
+      },
+      {
+        "rank": 3,
+        "score": 0.9818,
+        "pages": [
+          467,
+          468,
+          469
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p467_txt458",
+        "block_type": "text",
+        "complete_dims": 0,
+        "dims": {
+          "valuation": false,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": 0.0,
+        "excerpt_reason": "neutral",
+        "preview": "(i) 於股份的權益 附註： (1) Brilliant League由董先生全資擁有。董先生及楊先生為一致行動人士。楊先生則全資擁有Highland Triumph。因此，董先生、楊先生、Brilliant League及Highland Triumph各自均被視為於Brilliant League及Highland Triumph所持全部股份中擁有權益。 (2) 高女士為董先生之配偶，故被視為於董先生的全部股份權益中擁有權益。 (ii)於相聯法團的權益 (b) 主要股東的"
+      },
+      {
+        "rank": 4,
+        "score": 0.9487,
+        "pages": [
+          4,
+          5
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p4_txt007",
+        "block_type": "text",
+        "complete_dims": 0,
+        "dims": {
+          "valuation": false,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": 0.0,
+        "excerpt_reason": "neutral",
+        "preview": "(9) 未領取的股票（如適用）及退款支票（如適用）將於領取時間結束後短期內，於本招股章程「如何申請公開發售股份－14 .寄發╱領取股票及退回股款」一節所述的退款支票寄發日期，以平郵方式寄往相關申請表格所示地址，郵誤風險概由申請人自行承擔。 僅公開發售於所有方面已成為無條件且包銷協議概無根據其條款而終止的情況下，股票方會在2020年11月11日（星期三）上午八時正成為有效的所有權憑證。投資者如在獲發股票前或股票成為有效所有權憑證前根據公開所得的分配詳情買賣股份，須自行承擔一切風"
+      },
+      {
+        "rank": 5,
+        "score": 0.9465,
+        "pages": [
+          21
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p21_txt031",
+        "block_type": "text",
+        "complete_dims": 2,
+        "dims": {
+          "valuation": true,
+          "discount": false,
+          "lockup": true,
+          "rights": false
+        },
+        "excerpt_net": -0.1,
+        "excerpt_reason": "preipo_partial_terms+preipo_half_package_overview",
+        "preview": "有權益，並受限於自上市日期起計為期六個月的禁售期。根據首次公開招股前投資作出的總投資總額約達7 .7百萬港元（包括已付楊先生的約0 .35百萬港元），而本集團得到的所得款項總額約為7 .4百萬港元。首次公開招股前投資分兩輪進行，即：(i)於2018年11月向楊先生收購湖州輝煌明天的1%股權，小額投資約為人民幣0 .3百萬元，相當於本集團估值約人民幣30 .0百萬元（經參考獨立第三方估值師評估的湖州輝煌明天及其附屬公司於2018年11月的資產淨值）；及(ii)於2019年2月認"
+      },
+      {
+        "rank": 6,
+        "score": 0.9393,
+        "pages": [
+          382
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p382_txt387",
+        "block_type": "text",
+        "complete_dims": 0,
+        "dims": {
+          "valuation": false,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": 0.0,
+        "excerpt_reason": "neutral",
+        "preview": "(ii) 於2018年10月9日，芳德有限公司（「芳德」）於英屬維爾京群島（「英屬維爾京群島」）成立為有限公司。於2018年11月14日，　貴公司獲配發及發行100股芳德股份。自同日起，所述轉讓已妥善合法完成並交收，而芳德隨後成為　貴公司的全資附屬公司。 (iii) 於2018年10月25日，湖州輝煌明天科技有限公司（「湖州輝煌明天」）在中國作為有限公司成立。湖州輝煌明天的初始法定股本約為人民幣30,060,000元，分別由董先生及楊先生擁有67%及33%。 (iv) 於20"
+      },
+      {
+        "rank": 7,
+        "score": 0.9092,
+        "pages": [
+          120
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p120_txt126",
+        "block_type": "text",
+        "complete_dims": 1,
+        "dims": {
+          "valuation": true,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": -0.1,
+        "excerpt_reason": "preipo_single_term+preipo_structure_noise",
+        "preview": "於2019年2月12日，城市能源（由朱先生全資擁有的公司）與本公司訂立股份認購協議，據此，城市能源同意認購而本公司同意配發及發行200股新美元股份（相當於緊接配發前本公司已發行股本的2 .0%及經配發擴大後的本公司已發行股本的1 .96%），認購價為7 .0百萬港元，乃根據本集團的協定市盈率約5 .95倍（乃基於當時可取得的初步財務資料計算所得）而釐定。股份認購協議包括認購價在內的條款，乃經參考(i)根據管理賬目，本集團於截至2018年12月31日止年度的財務表現；(ii)對"
+      },
+      {
+        "rank": 8,
+        "score": 0.8907,
+        "pages": [
+          116,
+          117
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p116_txt121",
+        "block_type": "text",
+        "complete_dims": 0,
+        "dims": {
+          "valuation": false,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": -0.14,
+        "excerpt_reason": "preipo_structure_noise",
+        "preview": "自深圳輝煌明天成立以來，董先生、楊先生及高女士一直積極參與深圳輝煌明天的業務發展及營運。董先生、楊先生及高女士營運深圳輝煌明天一年後，經考慮其快速增長勢頭，董先生及楊先生決定以深圳輝煌明天為其事業。於2017年3月20日，高女士以名義代價人民幣1 .0元分別將深圳輝煌明天的67 .0%及33 .0%股權轉讓予董先生及楊先生，旨在反映董先生及楊先生於深圳輝煌明天的實際股權。自此，董先生、楊先生及高女士就深圳輝煌明天的信託安排終止。中國法律顧問確認，根據中國法律，上述信託安排為有"
+      },
+      {
+        "rank": 9,
+        "score": 0.878,
+        "pages": [
+          127,
+          128,
+          129
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p127_txt135",
+        "block_type": "text",
+        "complete_dims": 0,
+        "dims": {
+          "valuation": false,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": -0.14,
+        "excerpt_reason": "preipo_structure_noise",
+        "preview": "公司架構 於重組完成後但於資本化發行及股份發售前，本集團的公司架構如下： 緊隨資本化發行及股份發售完成後的股權架構 下圖載列緊隨資本化發行及股份發售完成後的本集團股權架構，假設超額配股權未獲行使且根據購股權計劃可能授出的任何購股權概無獲行使： 附註： (1) 根據上市規則第8 .08條，城市能源持有的股份將計入公眾持股量。 (2) 深圳輝煌明天於2017年4月成立一間分公司，即深圳輝煌明天北京分公司。 股東之間的關係 董先生及楊先生於2019年4月8日的確認契據確認，自深圳輝"
+      },
+      {
+        "rank": 10,
+        "score": 0.8511,
+        "pages": [
+          472
+        ],
+        "chunk_id": "chk_2020_01351_輝煌明天_p472_txt462",
+        "block_type": "text",
+        "complete_dims": 1,
+        "dims": {
+          "valuation": true,
+          "discount": false,
+          "lockup": false,
+          "rights": false
+        },
+        "excerpt_net": 0.04,
+        "excerpt_reason": "preipo_single_term",
+        "preview": "購股權項下股份的認購價將由董事會釐定並知會各參與者，並須為以下最高者：(i)於購股權授出日期聯交所每日報價表所報的股份收市價，而該日必須為交易日；(ii)緊接購股權授出日期前五個交易日於聯交所每日報價表所報的平均股份收市價；及(iii)股份面值。計算認購價時，倘於授出日期，本公司上市時間不足五個交易日，則有關上市中股份首次公開招股項下的每股股份新發行價將用作上市日期前期內任何交易日的收市價。 (e) 股份數目上限 (i) 因根據購股權計劃及其他計劃將予授出的全部購股權獲行使而"
+      }
+    ],
+    "top1_complete_ge3": true,
+    "top1_complete_ge4": true,
+    "human4_row": {
+      "id": "manual_new_董飞飞_cat_ipo_002",
+      "question": "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？",
+      "gold_aligned_at_1": true,
+      "gold_aligned_at_3": true,
+      "gold_aligned_at_5": true,
+      "content_hit_at_1": true,
+      "content_hit_at_3": true,
+      "content_hit_at_5": true,
+      "interpretation": "content_success_page_mismatch",
+      "failure_reason": "content_hit_page_mismatch"
+    }
+  },
+  "human4": {
+    "experiment": "HGE_preipo_terms_sufficiency",
+    "n_cases": 19,
+    "summary": {
+      "gold_aligned_at_1": 0.9474,
+      "gold_aligned_at_3": 1.0,
+      "gold_aligned_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.9737,
+      "content_success_rate": 1.0
+    },
+    "watch_cases": {
+      "manual_ch_duodian_bus_001": {
+        "id": "manual_ch_duodian_bus_001",
+        "question": "多点数智是否存在对关联方客户收入的重大依赖？",
+        "gold_aligned_at_1": false,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": false,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "gold_recalled_but_rank_low"
+      },
+      "manual_new_董飞飞_cat_bus_009": {
+        "id": "manual_new_董飞飞_cat_bus_009",
+        "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_cat_fin_010": {
+        "id": "manual_new_董飞飞_cat_fin_010",
+        "question": "辉煌明天是否存在负经营现金流、垫付款与客户回款错配造成的营运资金压力？",
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_cat_ipo_002": {
+        "id": "manual_new_董飞飞_cat_ipo_002",
+        "question": "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？",
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_seed_bus_001": {
+        "id": "manual_new_董飞飞_seed_bus_001",
+        "question": "辉煌明天是否高度依赖少数主要客户，主要客户流失会产生什么影响？",
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      },
+      "manual_new_董飞飞_seed_bus_005": {
+        "id": "manual_new_董飞飞_seed_bus_005",
+        "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "full_success",
+        "failure_reason": "ok"
+      },
+      "manual_new_田歌_cat_fin_010": {
+        "id": "manual_new_田歌_cat_fin_010",
+        "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+        "gold_aligned_at_1": true,
+        "gold_aligned_at_3": true,
+        "gold_aligned_at_5": true,
+        "content_hit_at_1": true,
+        "content_hit_at_3": true,
+        "content_hit_at_5": true,
+        "interpretation": "content_success_page_mismatch",
+        "failure_reason": "content_hit_page_mismatch"
+      }
+    }
+  },
+  "default_flags": {
+    "enable_intent_multiquery": false,
+    "enable_answer_excerpt_rerank": false,
+    "enable_evidence_role_rerank": false,
+    "enable_ipo_specific_rerank": false,
+    "enable_related_party_quant_complement": false,
+    "enable_section_hard_prior": false,
+    "enable_sufficiency_rerank": false
+  },
+  "acceptance": {
+    "top1_complete_terms": true,
+    "human4_ga3": 1.0,
+    "default_flags_off": true
+  }
+}

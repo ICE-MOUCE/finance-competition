@@ -1,0 +1,5024 @@
+{
+  "timestamp": "2026-07-18T18:52:55.216149",
+  "results_file": "evaluation\\benchmark\\manual_gold_v1_results.json",
+  "system_page_basis": "MinerU page_idx, 0-based physical PDF page index",
+  "manual_page_basis_conclusion": "Manual ranges were standardized as printed_page_label with verified mapping to 0-based physical pages.",
+  "source_annotation_files": [
+    {
+      "file": "team_work\\teamer_ex\\PDF证据标注模板-谭思怡.txt",
+      "has_page_range_notation": true,
+      "has_multiple_page_ranges": false,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    },
+    {
+      "file": "team_work\\teamer_ex\\PDF证据标注模板-陈慧.txt",
+      "has_page_range_notation": true,
+      "has_multiple_page_ranges": true,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    },
+    {
+      "file": "team_work\\teamer_ex\\风险词与问题设计模板-谭思怡.txt",
+      "has_page_range_notation": false,
+      "has_multiple_page_ranges": false,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    },
+    {
+      "file": "team_work\\teamer_ex\\风险词与问题设计模板-陈慧.txt",
+      "has_page_range_notation": false,
+      "has_multiple_page_ranges": false,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    }
+  ],
+  "summary": {
+    "total_cases": 25,
+    "valid_page_gold_cases": 25,
+    "document_hit": {
+      "hits": 21,
+      "denominator": 25,
+      "rate": 0.84
+    },
+    "section_hit": {
+      "hits": 11,
+      "denominator": 25,
+      "rate": 0.44
+    },
+    "normalized_physical_page_hit": {
+      "hits": 10,
+      "denominator": 25,
+      "rate": 0.4
+    },
+    "strict_hit": {
+      "hits": 3,
+      "denominator": 25,
+      "rate": 0.12
+    },
+    "page_label_hit": {
+      "hits": 7,
+      "denominator": 14,
+      "rate": 0.5
+    },
+    "evidence_completeness": 1.0,
+    "page_reference_rate": 1.0,
+    "vector_count": 21563
+  },
+  "by_annotator": {
+    "Codex_manual_review": {
+      "case_count": 20,
+      "document_hit": {
+        "hits": 16,
+        "denominator": 20,
+        "rate": 0.8
+      },
+      "section_hit": {
+        "hits": 8,
+        "denominator": 20,
+        "rate": 0.4
+      },
+      "normalized_physical_page_hit": {
+        "hits": 7,
+        "denominator": 20,
+        "rate": 0.35
+      },
+      "strict_hit": {
+        "hits": 3,
+        "denominator": 20,
+        "rate": 0.15
+      },
+      "page_label_hit": {
+        "hits": 4,
+        "denominator": 9,
+        "rate": 0.4444
+      }
+    },
+    "谭思怡": {
+      "case_count": 4,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 4,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      }
+    },
+    "陈慧": {
+      "case_count": 1,
+      "document_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      }
+    }
+  },
+  "by_document": {
+    "2020_01147_伊登軟件": {
+      "case_count": 4,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 4,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      }
+    },
+    "2021_09858_優然牧業": {
+      "case_count": 3,
+      "document_hit": {
+        "hits": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 3,
+        "rate": 0.6667
+      },
+      "normalized_physical_page_hit": {
+        "hits": 1,
+        "denominator": 3,
+        "rate": 0.3333
+      },
+      "strict_hit": {
+        "hits": 1,
+        "denominator": 3,
+        "rate": 0.3333
+      },
+      "page_label_hit": {
+        "hits": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "2022_09863_零跑汽車": {
+      "case_count": 4,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 4,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "strict_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "page_label_hit": {
+        "hits": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "2024_01318_毛戈平": {
+      "case_count": 3,
+      "document_hit": {
+        "hits": 2,
+        "denominator": 3,
+        "rate": 0.6667
+      },
+      "section_hit": {
+        "hits": 0,
+        "denominator": 3,
+        "rate": 0.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 0,
+        "denominator": 3,
+        "rate": 0.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 3,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 0,
+        "denominator": 2,
+        "rate": 0.0
+      }
+    },
+    "2024_02586_多點數智": {
+      "case_count": 7,
+      "document_hit": {
+        "hits": 7,
+        "denominator": 7,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 5,
+        "denominator": 7,
+        "rate": 0.7143
+      },
+      "normalized_physical_page_hit": {
+        "hits": 5,
+        "denominator": 7,
+        "rate": 0.7143
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 7,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 5,
+        "denominator": 7,
+        "rate": 0.7143
+      }
+    },
+    "2025_09678_雲知聲": {
+      "case_count": 4,
+      "document_hit": {
+        "hits": 1,
+        "denominator": 4,
+        "rate": 0.25
+      },
+      "section_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      }
+    }
+  },
+  "by_category": {
+    "business_risk": {
+      "case_count": 5,
+      "document_hit": {
+        "hits": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 4,
+        "denominator": 5,
+        "rate": 0.8
+      },
+      "normalized_physical_page_hit": {
+        "hits": 4,
+        "denominator": 5,
+        "rate": 0.8
+      },
+      "strict_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "page_label_hit": {
+        "hits": 3,
+        "denominator": 4,
+        "rate": 0.75
+      }
+    },
+    "compliance_risk": {
+      "case_count": 5,
+      "document_hit": {
+        "hits": 3,
+        "denominator": 5,
+        "rate": 0.6
+      },
+      "section_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 5,
+        "rate": 0.4
+      },
+      "strict_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 2,
+        "rate": 0.5
+      }
+    },
+    "financial_risk": {
+      "case_count": 5,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 5,
+        "rate": 0.8
+      },
+      "section_hit": {
+        "hits": 3,
+        "denominator": 5,
+        "rate": 0.6
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 5,
+        "rate": 0.4
+      },
+      "strict_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 2,
+        "rate": 0.5
+      }
+    },
+    "ipo_specific_risk": {
+      "case_count": 5,
+      "document_hit": {
+        "hits": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "normalized_physical_page_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 4,
+        "rate": 0.25
+      }
+    },
+    "ownership_risk": {
+      "case_count": 5,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 5,
+        "rate": 0.8
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 5,
+        "rate": 0.4
+      },
+      "normalized_physical_page_hit": {
+        "hits": 1,
+        "denominator": 5,
+        "rate": 0.2
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 2,
+        "rate": 0.5
+      }
+    }
+  },
+  "failure_reason_counts": {
+    "retrieval_page_miss": 14,
+    "cross_page_chunk": 1
+  },
+  "remaining_failed_cases": [
+    {
+      "case_id": "manual_ts_yideng_fin_001",
+      "id": "manual_ts_yideng_fin_001",
+      "annotator": "谭思怡",
+      "category": "financial_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件是否存在经营现金流压力或经营现金流为负的风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          18,
+          19
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[18, 19]] and preserved printed page labels [[12, 13]].",
+      "retriever_returned_pages": [
+        101,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        95
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5922231078147888,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            101
+          ],
+          "page_labels": [
+            95
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.5755257606506348,
+          "chunk_id": "chk_2020_01147_伊登軟件_p101_txt100",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 82,
+        "expected_page": 19,
+        "returned_page": 101
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "id": "manual_ts_yideng_ipo_001",
+      "annotator": "谭思怡",
+      "category": "ipo_specific_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          283,
+          284
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[283, 284]] and preserved printed page labels [[277, 278]].",
+      "retriever_returned_pages": [
+        98,
+        102,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        92,
+        96
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            98
+          ],
+          "page_labels": [
+            92
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6225143671035767,
+          "chunk_id": "chk_2020_01147_伊登軟件_p98_txt094",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            102
+          ],
+          "page_labels": [
+            96
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6091428399085999,
+          "chunk_id": "chk_2020_01147_伊登軟件_p102_txt101",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5940729379653931,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 99,
+        "expected_page": 284,
+        "returned_page": 383
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_fin_loss_cash_001",
+      "id": "mgv1_yunzhisheng_fin_loss_cash_001",
+      "annotator": "Codex_manual_review",
+      "category": "financial_risk",
+      "label_status": "gold_seed",
+      "question": "云知声是否存在持续亏损、净负债或经营现金流净流出的风险？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          7,
+          9
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          7,
+          9
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          7,
+          9
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          15,
+          17
+        ],
+        [
+          19,
+          20
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[15, 17], [19, 20]] and preserved printed page labels [[7, 9], [11, 12]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_youran_fin_liquidity_001",
+      "id": "mgv1_youran_fin_liquidity_001",
+      "annotator": "Codex_manual_review",
+      "category": "financial_risk",
+      "label_status": "gold_seed",
+      "question": "优然牧业是否持续录得流动负债净额并面临流动资金风险？",
+      "expected_document": [
+        "2021_09858_優然牧業"
+      ],
+      "expected_document_ids": [
+        "2021_09858_優然牧業"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[25, 25], [85, 85]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        71,
+        72,
+        405,
+        406,
+        472,
+        479,
+        480,
+        763,
+        764,
+        765
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            472
+          ],
+          "page_labels": [],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.6545562744140625,
+          "chunk_id": "chk_2021_09858_優然牧業_p472_txt399",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 2,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            763,
+            764,
+            765
+          ],
+          "page_labels": [],
+          "section_path": [
+            "會 計 師 報 告 － 恆 天 然 中 國 牧 場"
+          ],
+          "score": 0.6503733992576599,
+          "chunk_id": "chk_2021_09858_優然牧業_p763_txt578",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            479,
+            480
+          ],
+          "page_labels": [],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.641339123249054,
+          "chunk_id": "chk_2021_09858_優然牧業_p479_txt404",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            71,
+            72
+          ],
+          "page_labels": [],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6181198358535767,
+          "chunk_id": "chk_2021_09858_優然牧業_p71_txt053",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            405,
+            406
+          ],
+          "page_labels": [],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.6095327734947205,
+          "chunk_id": "chk_2021_09858_優然牧業_p405_txt357",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -13,
+        "expected_page": 85,
+        "returned_page": 72
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_maogeping_bus_supplier_001",
+      "id": "mgv1_maogeping_bus_supplier_001",
+      "annotator": "Codex_manual_review",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "毛戈平是否依赖ODM/OEM供应商进行产品生产，供应链管理风险体现在哪里？",
+      "expected_document": [
+        "2024_01318_毛戈平"
+      ],
+      "expected_document_ids": [
+        "2024_01318_毛戈平"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          20,
+          20
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          20,
+          20
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          20,
+          20
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          19,
+          19
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[19, 19]] and preserved printed page labels [[20, 20]].",
+      "retriever_returned_pages": [
+        63,
+        68,
+        69,
+        213,
+        214,
+        247,
+        248
+      ],
+      "retriever_returned_page_labels": [
+        64,
+        69,
+        70,
+        214,
+        215,
+        248,
+        249
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            247,
+            248
+          ],
+          "page_labels": [
+            248,
+            249
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.6237966418266296,
+          "chunk_id": "chk_2024_01318_毛戈平_p247_txt233",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            213,
+            214
+          ],
+          "page_labels": [
+            214,
+            215
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.619865357875824,
+          "chunk_id": "chk_2024_01318_毛戈平_p213_txt203",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            63
+          ],
+          "page_labels": [
+            64
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6196776628494263,
+          "chunk_id": "chk_2024_01318_毛戈平_p63_txt050",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            63
+          ],
+          "page_labels": [
+            64
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6175402402877808,
+          "chunk_id": "chk_2024_01318_毛戈平_p63_txt049",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            68,
+            69
+          ],
+          "page_labels": [
+            69,
+            70
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6061879992485046,
+          "chunk_id": "chk_2024_01318_毛戈平_p68_txt057",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 44,
+        "expected_page": 19,
+        "returned_page": 63
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_duodian_owner_controller_001",
+      "id": "mgv1_duodian_owner_controller_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智的控股股东是谁，控股股东关系是否构成治理风险关注点？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          31,
+          31
+        ],
+        [
+          297,
+          297
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[31, 31], [297, 297]] and preserved printed page labels [[24, 24], [290, 290]].",
+      "retriever_returned_pages": [
+        299
+      ],
+      "retriever_returned_page_labels": [
+        292
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 2,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            299
+          ],
+          "page_labels": [
+            292
+          ],
+          "section_path": [
+            "與 控 股 股 東 的 關 係"
+          ],
+          "score": 0.5893279910087585,
+          "chunk_id": "chk_2024_02586_多點數智_p299_txt359",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 2,
+        "expected_page": 297,
+        "returned_page": 299
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_leapmotor_owner_no_controller_001",
+      "id": "mgv1_leapmotor_owner_no_controller_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "零跑汽车是否披露单一最大股东集团及上市后无控股股东安排？",
+      "expected_document": [
+        "2022_09863_零跑汽車"
+      ],
+      "expected_document_ids": [
+        "2022_09863_零跑汽車"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          19,
+          19
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          19,
+          19
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          19,
+          19
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          19,
+          19
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[19, 19]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        686,
+        687
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            686,
+            687
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.5824825763702393,
+          "chunk_id": "chk_2022_09863_零跑汽車_p686_txt610",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 667,
+        "expected_page": 19,
+        "returned_page": 686
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_owner_controller_001",
+      "id": "mgv1_yunzhisheng_owner_controller_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "云知声是否披露控股股东及其上市后持股影响？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          13,
+          13
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          13,
+          13
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          13,
+          13
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          21,
+          21
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[21, 21]] and preserved printed page labels [[13, 13]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_youran_owner_controller_connected_001",
+      "id": "mgv1_youran_owner_controller_connected_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "优然牧业与控股股东及伊利之间是否存在治理和持续关连交易关注点？",
+      "expected_document": [
+        "2021_09858_優然牧業"
+      ],
+      "expected_document_ids": [
+        "2021_09858_優然牧業"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          33,
+          35
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          33,
+          35
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          33,
+          35
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          33,
+          35
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[33, 35]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        18,
+        19,
+        20,
+        92,
+        192,
+        193,
+        272,
+        273
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            192,
+            193
+          ],
+          "page_labels": [],
+          "section_path": [
+            "歷 史 、 重 組 及 集 團 架 構"
+          ],
+          "score": 0.6399680376052856,
+          "chunk_id": "chk_2021_09858_優然牧業_p192_txt166",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            18
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6226016664505005,
+          "chunk_id": "chk_2021_09858_優然牧業_p18_txt016",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 3,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            92
+          ],
+          "page_labels": [],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.590986967086792,
+          "chunk_id": "chk_2021_09858_優然牧業_p92_txt081",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            19,
+            20
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.5852009439468384,
+          "chunk_id": "chk_2021_09858_優然牧業_p19_txt018",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            272,
+            273
+          ],
+          "page_labels": [],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5819411277770996,
+          "chunk_id": "chk_2021_09858_優然牧業_p272_txt233",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -13,
+        "expected_page": 33,
+        "returned_page": 20
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_duodian_comp_license_data_001",
+      "id": "mgv1_duodian_comp_license_data_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智是否面临牌照、许可证或数据合规风险？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          56,
+          59
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          56,
+          59
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          56,
+          59
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          63,
+          66
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[63, 66]] and preserved printed page labels [[56, 59]].",
+      "retriever_returned_pages": [
+        61,
+        62
+      ],
+      "retriever_returned_page_labels": [
+        54,
+        55
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            61,
+            62
+          ],
+          "page_labels": [
+            54,
+            55
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.5871409177780151,
+          "chunk_id": "chk_2024_02586_多點數智_p61_txt065",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -1,
+        "expected_page": 63,
+        "returned_page": 62
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "cross_page_chunk"
+    },
+    {
+      "case_id": "mgv1_maogeping_comp_no_litigation_001",
+      "id": "mgv1_maogeping_comp_no_litigation_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+      "expected_document": [
+        "2024_01318_毛戈平"
+      ],
+      "expected_document_ids": [
+        "2024_01318_毛戈平"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          611,
+          611
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          611,
+          611
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          611,
+          611
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          610,
+          610
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[610, 610]] and preserved printed page labels [[611, 611]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+      "id": "mgv1_yunzhisheng_comp_no_litigation_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          31,
+          31
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          31,
+          31
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          31,
+          31
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          559,
+          559
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[559, 559]] and preserved printed page labels [[31, 31]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_maogeping_ipo_use_proceeds_001",
+      "id": "mgv1_maogeping_ipo_use_proceeds_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "毛戈平计划如何使用全球发售所得款项？",
+      "expected_document": [
+        "2024_01318_毛戈平"
+      ],
+      "expected_document_ids": [
+        "2024_01318_毛戈平"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          27,
+          27
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          27,
+          27
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          27,
+          27
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          26,
+          26
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[26, 26]] and preserved printed page labels [[27, 27]].",
+      "retriever_returned_pages": [
+        0,
+        1,
+        482,
+        483,
+        484
+      ],
+      "retriever_returned_page_labels": [
+        1,
+        2,
+        483,
+        484,
+        485
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            0,
+            1
+          ],
+          "page_labels": [
+            1,
+            2
+          ],
+          "section_path": [
+            "（於中華人民共和國註冊成立的股份有限公司）"
+          ],
+          "score": 0.6293910145759583,
+          "chunk_id": "chk_2024_01318_毛戈平_p0_txt001",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            0
+          ],
+          "page_labels": [
+            1
+          ],
+          "section_path": [
+            "（於中華人民共和國註冊成立的股份有限公司）"
+          ],
+          "score": 0.6193897724151611,
+          "chunk_id": "chk_2024_01318_毛戈平_p0_img001",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            482,
+            483,
+            484
+          ],
+          "page_labels": [
+            483,
+            484,
+            485
+          ],
+          "section_path": [
+            "會 計 師 報 告"
+          ],
+          "score": 0.570637583732605,
+          "chunk_id": "chk_2024_01318_毛戈平_p482_txt432",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -25,
+        "expected_page": 26,
+        "returned_page": 1
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_leapmotor_ipo_use_proceeds_001",
+      "id": "mgv1_leapmotor_ipo_use_proceeds_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "零跑汽车上市募集资金主要用于哪些方向？",
+      "expected_document": [
+        "2022_09863_零跑汽車"
+      ],
+      "expected_document_ids": [
+        "2022_09863_零跑汽車"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          411,
+          414
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          411,
+          414
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          411,
+          414
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          411,
+          414
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[411, 414]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        22,
+        23,
+        351,
+        352,
+        471,
+        477,
+        479,
+        480,
+        686,
+        687,
+        688,
+        689
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            22,
+            23
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6020177984237671,
+          "chunk_id": "chk_2022_09863_零跑汽車_p22_txt027",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            351,
+            352
+          ],
+          "page_labels": [],
+          "section_path": [
+            "主 要 股 東"
+          ],
+          "score": 0.5845210552215576,
+          "chunk_id": "chk_2022_09863_零跑汽車_p351_txt352",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            688,
+            689
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.5833973288536072,
+          "chunk_id": "chk_2022_09863_零跑汽車_p688_txt612",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            686,
+            687
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.5829092264175415,
+          "chunk_id": "chk_2022_09863_零跑汽車_p686_txt610",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            471,
+            477,
+            479,
+            480
+          ],
+          "page_labels": [],
+          "section_path": [
+            "會 計 師 報 告"
+          ],
+          "score": 0.582060694694519,
+          "chunk_id": "chk_2022_09863_零跑汽車_p471_txt461",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 57,
+        "expected_page": 414,
+        "returned_page": 471
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "云知声上市所得款项是否主要投入研发和商业化？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          335,
+          338
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          335,
+          338
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          335,
+          338
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          343,
+          346
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[343, 346]] and preserved printed page labels [[335, 338]].",
+      "retriever_returned_pages": [
+        125,
+        126,
+        127,
+        128,
+        164,
+        165,
+        179,
+        188,
+        189
+      ],
+      "retriever_returned_page_labels": [
+        117,
+        118,
+        119,
+        120,
+        156,
+        157,
+        171,
+        180,
+        181
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 2,
+          "document_id": "2025_09678_雲知聲",
+          "pages": [
+            164,
+            165
+          ],
+          "page_labels": [
+            156,
+            157
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5733642578125,
+          "chunk_id": "chk_2025_09678_雲知聲_p164_txt171",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2025_09678_雲知聲",
+          "pages": [
+            125,
+            126,
+            127,
+            128
+          ],
+          "page_labels": [
+            117,
+            118,
+            119,
+            120
+          ],
+          "section_path": [
+            "監 管 概 覽"
+          ],
+          "score": 0.5600161552429199,
+          "chunk_id": "chk_2025_09678_雲知聲_p125_txt143",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2025_09678_雲知聲",
+          "pages": [
+            179,
+            188,
+            189
+          ],
+          "page_labels": [
+            171,
+            180,
+            181
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5542941093444824,
+          "chunk_id": "chk_2025_09678_雲知聲_p179_txt183",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -154,
+        "expected_page": 343,
+        "returned_page": 189
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "manual_ts_yideng_bus_001",
+      "id": "manual_ts_yideng_bus_001",
+      "annotator": "谭思怡",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "伊登软件是否严重依赖单一客户？该客户关系是否存在重大风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          5,
+          6
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          5,
+          6
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          5,
+          6
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          11,
+          12
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[11, 12]] and preserved printed page labels [[5, 6]].",
+      "retriever_returned_pages": [
+        11,
+        102,
+        103
+      ],
+      "retriever_returned_page_labels": [
+        5,
+        96,
+        97
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            11
+          ],
+          "page_labels": [
+            5
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6370162153244019,
+          "chunk_id": "chk_2020_01147_伊登軟件_p11_txt010",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            102,
+            103
+          ],
+          "page_labels": [
+            96,
+            97
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.5935260057449341,
+          "chunk_id": "chk_2020_01147_伊登軟件_p102_txt102",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 11,
+        "returned_page": 11
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "manual_ts_yideng_bus_002",
+      "id": "manual_ts_yideng_bus_002",
+      "annotator": "谭思怡",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "伊登软件是否严重依赖单一供应商？该供应关系是否存在风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          8,
+          9
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          8,
+          9
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          8,
+          9
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          14,
+          15
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[14, 15]] and preserved printed page labels [[8, 9]].",
+      "retriever_returned_pages": [
+        15,
+        16,
+        185,
+        191,
+        192
+      ],
+      "retriever_returned_page_labels": [
+        9,
+        10,
+        179,
+        185,
+        186
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            15,
+            16
+          ],
+          "page_labels": [
+            9,
+            10
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6159310722351075,
+          "chunk_id": "chk_2020_01147_伊登軟件_p15_txt015",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            191,
+            192
+          ],
+          "page_labels": [
+            185,
+            186
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5972734689712524,
+          "chunk_id": "chk_2020_01147_伊登軟件_p191_txt191",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            185
+          ],
+          "page_labels": [
+            179
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5792003870010376,
+          "chunk_id": "chk_2020_01147_伊登軟件_p185_txt182",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 15,
+        "returned_page": 15
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "manual_ts_yideng_fin_001",
+      "id": "manual_ts_yideng_fin_001",
+      "annotator": "谭思怡",
+      "category": "financial_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件是否存在经营现金流压力或经营现金流为负的风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          18,
+          19
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[18, 19]] and preserved printed page labels [[12, 13]].",
+      "retriever_returned_pages": [
+        101,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        95
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5922231078147888,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            101
+          ],
+          "page_labels": [
+            95
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.5755257606506348,
+          "chunk_id": "chk_2020_01147_伊登軟件_p101_txt100",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 82,
+        "expected_page": 19,
+        "returned_page": 101
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "id": "manual_ts_yideng_ipo_001",
+      "annotator": "谭思怡",
+      "category": "ipo_specific_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          283,
+          284
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw\\2020_138份\\01147_23-04-2020_伊登軟件_股份發售.pdf`; verified the evidence text on 0-based physical page range [[283, 284]] and preserved printed page labels [[277, 278]].",
+      "retriever_returned_pages": [
+        98,
+        102,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        92,
+        96
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            98
+          ],
+          "page_labels": [
+            92
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6225143671035767,
+          "chunk_id": "chk_2020_01147_伊登軟件_p98_txt094",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            102
+          ],
+          "page_labels": [
+            96
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6091428399085999,
+          "chunk_id": "chk_2020_01147_伊登軟件_p102_txt101",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5940729379653931,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 99,
+        "expected_page": 284,
+        "returned_page": 383
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "manual_ch_duodian_bus_001",
+      "id": "manual_ch_duodian_bus_001",
+      "annotator": "陈慧",
+      "category": "business_risk",
+      "label_status": "catalog_document_label",
+      "question": "多点数智是否存在对关联方客户收入的重大依赖？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          58,
+          58
+        ],
+        [
+          234,
+          234
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[58, 58], [234, 234]] and preserved printed page labels [[51, 51], [227, 227]].",
+      "retriever_returned_pages": [
+        16,
+        17,
+        18,
+        21,
+        22,
+        234,
+        235,
+        242,
+        246
+      ],
+      "retriever_returned_page_labels": [
+        9,
+        10,
+        11,
+        14,
+        15,
+        227,
+        228,
+        235,
+        239
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 2,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            16,
+            17,
+            18
+          ],
+          "page_labels": [
+            9,
+            10,
+            11
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6525782728195191,
+          "chunk_id": "chk_2024_02586_多點數智_p16_txt024",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            242,
+            246
+          ],
+          "page_labels": [
+            235,
+            239
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.6306542158126831,
+          "chunk_id": "chk_2024_02586_多點數智_p242_txt292",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            234,
+            235
+          ],
+          "page_labels": [
+            227,
+            228
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.62638258934021,
+          "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            21,
+            22
+          ],
+          "page_labels": [
+            14,
+            15
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6245275521278382,
+          "chunk_id": "chk_2024_02586_多點數智_p21_txt032",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 234,
+        "returned_page": 234
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_duodian_fin_margin_001",
+      "id": "mgv1_duodian_fin_margin_001",
+      "annotator": "Codex_manual_review",
+      "category": "financial_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智的毛利率是否出现波动或下降，是否提示盈利质量风险？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          5,
+          5
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          12,
+          12
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[12, 12]] and preserved printed page labels [[5, 5]].",
+      "retriever_returned_pages": [
+        12,
+        13
+      ],
+      "retriever_returned_page_labels": [
+        5,
+        6
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            12,
+            13
+          ],
+          "page_labels": [
+            5,
+            6
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6024852776527405,
+          "chunk_id": "chk_2024_02586_多點數智_p12_txt016",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 12,
+        "returned_page": 12
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_leapmotor_fin_loss_001",
+      "id": "mgv1_leapmotor_fin_loss_001",
+      "annotator": "Codex_manual_review",
+      "category": "financial_risk",
+      "label_status": "gold_seed",
+      "question": "零跑汽车是否持续录得净亏损及经调整净亏损？",
+      "expected_document": [
+        "2022_09863_零跑汽車"
+      ],
+      "expected_document_ids": [
+        "2022_09863_零跑汽車"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          20,
+          22
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          20,
+          22
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          20,
+          22
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          20,
+          22
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[20, 22]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        22,
+        23,
+        24,
+        25,
+        294,
+        295
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            22,
+            23
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.5541398906707764,
+          "chunk_id": "chk_2022_09863_零跑汽車_p22_txt027",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            23,
+            24
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.5488357925415039,
+          "chunk_id": "chk_2022_09863_零跑汽車_p23_txt028",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            24,
+            25
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.5472562694549561,
+          "chunk_id": "chk_2022_09863_零跑汽車_p24_txt029",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            294,
+            295
+          ],
+          "page_labels": [],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5237509608268738,
+          "chunk_id": "chk_2022_09863_零跑汽車_p294_txt308",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": null,
+      "strict_hit": true,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 22,
+        "returned_page": 22
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_fin_loss_cash_001",
+      "id": "mgv1_yunzhisheng_fin_loss_cash_001",
+      "annotator": "Codex_manual_review",
+      "category": "financial_risk",
+      "label_status": "gold_seed",
+      "question": "云知声是否存在持续亏损、净负债或经营现金流净流出的风险？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          7,
+          9
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          7,
+          9
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          7,
+          9
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          15,
+          17
+        ],
+        [
+          19,
+          20
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[15, 17], [19, 20]] and preserved printed page labels [[7, 9], [11, 12]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_youran_fin_liquidity_001",
+      "id": "mgv1_youran_fin_liquidity_001",
+      "annotator": "Codex_manual_review",
+      "category": "financial_risk",
+      "label_status": "gold_seed",
+      "question": "优然牧业是否持续录得流动负债净额并面临流动资金风险？",
+      "expected_document": [
+        "2021_09858_優然牧業"
+      ],
+      "expected_document_ids": [
+        "2021_09858_優然牧業"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          25,
+          25
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[25, 25], [85, 85]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        71,
+        72,
+        405,
+        406,
+        472,
+        479,
+        480,
+        763,
+        764,
+        765
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            472
+          ],
+          "page_labels": [],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.6545562744140625,
+          "chunk_id": "chk_2021_09858_優然牧業_p472_txt399",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 2,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            763,
+            764,
+            765
+          ],
+          "page_labels": [],
+          "section_path": [
+            "會 計 師 報 告 － 恆 天 然 中 國 牧 場"
+          ],
+          "score": 0.6503733992576599,
+          "chunk_id": "chk_2021_09858_優然牧業_p763_txt578",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            479,
+            480
+          ],
+          "page_labels": [],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.641339123249054,
+          "chunk_id": "chk_2021_09858_優然牧業_p479_txt404",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            71,
+            72
+          ],
+          "page_labels": [],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6181198358535767,
+          "chunk_id": "chk_2021_09858_優然牧業_p71_txt053",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            405,
+            406
+          ],
+          "page_labels": [],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.6095327734947205,
+          "chunk_id": "chk_2021_09858_優然牧業_p405_txt357",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -13,
+        "expected_page": 85,
+        "returned_page": 72
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_maogeping_bus_supplier_001",
+      "id": "mgv1_maogeping_bus_supplier_001",
+      "annotator": "Codex_manual_review",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "毛戈平是否依赖ODM/OEM供应商进行产品生产，供应链管理风险体现在哪里？",
+      "expected_document": [
+        "2024_01318_毛戈平"
+      ],
+      "expected_document_ids": [
+        "2024_01318_毛戈平"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          20,
+          20
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          20,
+          20
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          20,
+          20
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          19,
+          19
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[19, 19]] and preserved printed page labels [[20, 20]].",
+      "retriever_returned_pages": [
+        63,
+        68,
+        69,
+        213,
+        214,
+        247,
+        248
+      ],
+      "retriever_returned_page_labels": [
+        64,
+        69,
+        70,
+        214,
+        215,
+        248,
+        249
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            247,
+            248
+          ],
+          "page_labels": [
+            248,
+            249
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.6237966418266296,
+          "chunk_id": "chk_2024_01318_毛戈平_p247_txt233",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            213,
+            214
+          ],
+          "page_labels": [
+            214,
+            215
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.619865357875824,
+          "chunk_id": "chk_2024_01318_毛戈平_p213_txt203",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            63
+          ],
+          "page_labels": [
+            64
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6196776628494263,
+          "chunk_id": "chk_2024_01318_毛戈平_p63_txt050",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            63
+          ],
+          "page_labels": [
+            64
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6175402402877808,
+          "chunk_id": "chk_2024_01318_毛戈平_p63_txt049",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            68,
+            69
+          ],
+          "page_labels": [
+            69,
+            70
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.6061879992485046,
+          "chunk_id": "chk_2024_01318_毛戈平_p68_txt057",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 44,
+        "expected_page": 19,
+        "returned_page": 63
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_leapmotor_bus_customer_supplier_001",
+      "id": "mgv1_leapmotor_bus_customer_supplier_001",
+      "annotator": "Codex_manual_review",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "零跑汽车是否依赖单一客户，客户及供应商集中度如何？",
+      "expected_document": [
+        "2022_09863_零跑汽車"
+      ],
+      "expected_document_ids": [
+        "2022_09863_零跑汽車"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          17,
+          17
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          17,
+          17
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          17,
+          17
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          17,
+          17
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[17, 17]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        10,
+        17,
+        253,
+        254,
+        256
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            17
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6251540565490723,
+          "chunk_id": "chk_2022_09863_零跑汽車_p17_txt023",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 2,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            253,
+            254
+          ],
+          "page_labels": [],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.623001217842102,
+          "chunk_id": "chk_2022_09863_零跑汽車_p253_txt259",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            10
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.5953941726684571,
+          "chunk_id": "chk_2022_09863_零跑汽車_p10_txt014",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            256
+          ],
+          "page_labels": [],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.593093752861023,
+          "chunk_id": "chk_2022_09863_零跑汽車_p256_txt262",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": null,
+      "strict_hit": true,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 17,
+        "returned_page": 17
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_duodian_owner_controller_001",
+      "id": "mgv1_duodian_owner_controller_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智的控股股东是谁，控股股东关系是否构成治理风险关注点？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          31,
+          31
+        ],
+        [
+          297,
+          297
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[31, 31], [297, 297]] and preserved printed page labels [[24, 24], [290, 290]].",
+      "retriever_returned_pages": [
+        299
+      ],
+      "retriever_returned_page_labels": [
+        292
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 2,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            299
+          ],
+          "page_labels": [
+            292
+          ],
+          "section_path": [
+            "與 控 股 股 東 的 關 係"
+          ],
+          "score": 0.5893279910087585,
+          "chunk_id": "chk_2024_02586_多點數智_p299_txt359",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 2,
+        "expected_page": 297,
+        "returned_page": 299
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_duodian_owner_connected_tx_001",
+      "id": "mgv1_duodian_owner_connected_tx_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智是否存在持续关连交易或关联方交易治理风险？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          24,
+          24
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          31,
+          31
+        ],
+        [
+          234,
+          234
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[31, 31], [234, 234]] and preserved printed page labels [[24, 24], [227, 227]].",
+      "retriever_returned_pages": [
+        0,
+        1,
+        234,
+        235,
+        325,
+        555,
+        556
+      ],
+      "retriever_returned_page_labels": [
+        1,
+        2,
+        85,
+        86,
+        227,
+        228,
+        318
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            234,
+            235
+          ],
+          "page_labels": [
+            227,
+            228
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5966991186141968,
+          "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            0,
+            1
+          ],
+          "page_labels": [
+            1,
+            2
+          ],
+          "section_path": [
+            "多点DMALL"
+          ],
+          "score": 0.5901319980621338,
+          "chunk_id": "chk_2024_02586_多點數智_p0_txt001",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            325
+          ],
+          "page_labels": [
+            318
+          ],
+          "section_path": [
+            "關 連 交 易"
+          ],
+          "score": 0.578764796257019,
+          "chunk_id": "chk_2024_02586_多點數智_p325_txt393",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            555,
+            556
+          ],
+          "page_labels": [
+            85,
+            86
+          ],
+          "section_path": [
+            "會 計 師 報 告"
+          ],
+          "score": 0.5691120624542236,
+          "chunk_id": "chk_2024_02586_多點數智_p555_txt633",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 234,
+        "returned_page": 234
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_leapmotor_owner_no_controller_001",
+      "id": "mgv1_leapmotor_owner_no_controller_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "零跑汽车是否披露单一最大股东集团及上市后无控股股东安排？",
+      "expected_document": [
+        "2022_09863_零跑汽車"
+      ],
+      "expected_document_ids": [
+        "2022_09863_零跑汽車"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          19,
+          19
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          19,
+          19
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          19,
+          19
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          19,
+          19
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[19, 19]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        686,
+        687
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            686,
+            687
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.5824825763702393,
+          "chunk_id": "chk_2022_09863_零跑汽車_p686_txt610",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 667,
+        "expected_page": 19,
+        "returned_page": 686
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_owner_controller_001",
+      "id": "mgv1_yunzhisheng_owner_controller_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "云知声是否披露控股股东及其上市后持股影响？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          13,
+          13
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          13,
+          13
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          13,
+          13
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          21,
+          21
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[21, 21]] and preserved printed page labels [[13, 13]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_youran_owner_controller_connected_001",
+      "id": "mgv1_youran_owner_controller_connected_001",
+      "annotator": "Codex_manual_review",
+      "category": "ownership_risk",
+      "label_status": "gold_seed",
+      "question": "优然牧业与控股股东及伊利之间是否存在治理和持续关连交易关注点？",
+      "expected_document": [
+        "2021_09858_優然牧業"
+      ],
+      "expected_document_ids": [
+        "2021_09858_優然牧業"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          33,
+          35
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          33,
+          35
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          33,
+          35
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          33,
+          35
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[33, 35]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        18,
+        19,
+        20,
+        92,
+        192,
+        193,
+        272,
+        273
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            192,
+            193
+          ],
+          "page_labels": [],
+          "section_path": [
+            "歷 史 、 重 組 及 集 團 架 構"
+          ],
+          "score": 0.6399680376052856,
+          "chunk_id": "chk_2021_09858_優然牧業_p192_txt166",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            18
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6226016664505005,
+          "chunk_id": "chk_2021_09858_優然牧業_p18_txt016",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 3,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            92
+          ],
+          "page_labels": [],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.590986967086792,
+          "chunk_id": "chk_2021_09858_優然牧業_p92_txt081",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            19,
+            20
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.5852009439468384,
+          "chunk_id": "chk_2021_09858_優然牧業_p19_txt018",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            272,
+            273
+          ],
+          "page_labels": [],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5819411277770996,
+          "chunk_id": "chk_2021_09858_優然牧業_p272_txt233",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -13,
+        "expected_page": 33,
+        "returned_page": 20
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_duodian_comp_license_data_001",
+      "id": "mgv1_duodian_comp_license_data_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智是否面临牌照、许可证或数据合规风险？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          56,
+          59
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          56,
+          59
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          56,
+          59
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          63,
+          66
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[63, 66]] and preserved printed page labels [[56, 59]].",
+      "retriever_returned_pages": [
+        61,
+        62
+      ],
+      "retriever_returned_page_labels": [
+        54,
+        55
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            61,
+            62
+          ],
+          "page_labels": [
+            54,
+            55
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.5871409177780151,
+          "chunk_id": "chk_2024_02586_多點數智_p61_txt065",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -1,
+        "expected_page": 63,
+        "returned_page": 62
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "cross_page_chunk"
+    },
+    {
+      "case_id": "mgv1_duodian_comp_litigation_001",
+      "id": "mgv1_duodian_comp_litigation_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智是否存在供应商合同纠纷或诉讼风险？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          403,
+          403
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          403,
+          403
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          403,
+          403
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          410,
+          410
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[410, 410]] and preserved printed page labels [[403, 403]].",
+      "retriever_returned_pages": [
+        35,
+        61,
+        62,
+        77,
+        78,
+        410
+      ],
+      "retriever_returned_page_labels": [
+        28,
+        54,
+        55,
+        70,
+        71,
+        403
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            35
+          ],
+          "page_labels": [
+            28
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6065116310119629,
+          "chunk_id": "chk_2024_02586_多點數智_p35_txt050",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 2,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            410
+          ],
+          "page_labels": [
+            403
+          ],
+          "section_path": [
+            "財 務 資 料"
+          ],
+          "score": 0.5892019271850586,
+          "chunk_id": "chk_2024_02586_多點數智_p410_txt509",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            61,
+            62
+          ],
+          "page_labels": [
+            54,
+            55
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.5690286159515381,
+          "chunk_id": "chk_2024_02586_多點數智_p61_txt065",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            77,
+            78
+          ],
+          "page_labels": [
+            70,
+            71
+          ],
+          "section_path": [
+            "風 險 因 素"
+          ],
+          "score": 0.5614416599273682,
+          "chunk_id": "chk_2024_02586_多點數智_p77_txt092",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 410,
+        "returned_page": 410
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_maogeping_comp_no_litigation_001",
+      "id": "mgv1_maogeping_comp_no_litigation_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "毛戈平是否披露不存在重大诉讼或仲裁？",
+      "expected_document": [
+        "2024_01318_毛戈平"
+      ],
+      "expected_document_ids": [
+        "2024_01318_毛戈平"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          611,
+          611
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          611,
+          611
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          611,
+          611
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          610,
+          610
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[610, 610]] and preserved printed page labels [[611, 611]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+      "id": "mgv1_yunzhisheng_comp_no_litigation_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "云知声是否披露不存在重大诉讼、仲裁或行政程序？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          31,
+          31
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          31,
+          31
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          31,
+          31
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          559,
+          559
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[559, 559]] and preserved printed page labels [[31, 31]].",
+      "retriever_returned_pages": [],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [],
+      "document_hit": false,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": null,
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_youran_comp_arbitration_001",
+      "id": "mgv1_youran_comp_arbitration_001",
+      "annotator": "Codex_manual_review",
+      "category": "compliance_risk",
+      "label_status": "gold_seed",
+      "question": "优然牧业是否因赛科星收购事项面临仲裁或索赔风险？",
+      "expected_document": [
+        "2021_09858_優然牧業"
+      ],
+      "expected_document_ids": [
+        "2021_09858_優然牧業"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          824,
+          826
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          824,
+          826
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          824,
+          826
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          824,
+          826
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2021_88份\\09858_07-06-2021_優然牧業_全球發售.pdf`; verified the evidence text on 0-based physical page range [[824, 826]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        29,
+        30,
+        824,
+        825
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            824
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.7269325256347656,
+          "chunk_id": "chk_2021_09858_優然牧業_p824_txt630",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 2,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            29,
+            30
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.7035046005249024,
+          "chunk_id": "chk_2021_09858_優然牧業_p29_txt025",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            29
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6994386696815491,
+          "chunk_id": "chk_2021_09858_優然牧業_p29_txt024",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            30
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6983436727523804,
+          "chunk_id": "chk_2021_09858_優然牧業_p30_txt026",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2021_09858_優然牧業",
+          "pages": [
+            825
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.6811274886131287,
+          "chunk_id": "chk_2021_09858_優然牧業_p825_txt632",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": true,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 824,
+        "returned_page": 824
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_duodian_ipo_preipo_001",
+      "id": "mgv1_duodian_ipo_preipo_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "多点数智的首次公开发售前投资是否存在特殊权利或无禁售安排？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          148,
+          150
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          148,
+          150
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          148,
+          150
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          155,
+          157
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\02586_28-11-2024_多點數智_全球發售.pdf`; verified the evidence text on 0-based physical page range [[155, 157]] and preserved printed page labels [[148, 150]].",
+      "retriever_returned_pages": [
+        156,
+        157
+      ],
+      "retriever_returned_page_labels": [
+        149,
+        150
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 5,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            156,
+            157
+          ],
+          "page_labels": [
+            149,
+            150
+          ],
+          "section_path": [
+            "歷 史 、 重 組 及 公 司 架 構"
+          ],
+          "score": 0.6419493556022644,
+          "chunk_id": "chk_2024_02586_多點數智_p156_txt185",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 156,
+        "returned_page": 156
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "mgv1_maogeping_ipo_use_proceeds_001",
+      "id": "mgv1_maogeping_ipo_use_proceeds_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "毛戈平计划如何使用全球发售所得款项？",
+      "expected_document": [
+        "2024_01318_毛戈平"
+      ],
+      "expected_document_ids": [
+        "2024_01318_毛戈平"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          27,
+          27
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          27,
+          27
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          27,
+          27
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          26,
+          26
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2024_73份\\01318_02-12-2024_毛戈平_全球發售.pdf`; verified the evidence text on 0-based physical page range [[26, 26]] and preserved printed page labels [[27, 27]].",
+      "retriever_returned_pages": [
+        0,
+        1,
+        482,
+        483,
+        484
+      ],
+      "retriever_returned_page_labels": [
+        1,
+        2,
+        483,
+        484,
+        485
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            0,
+            1
+          ],
+          "page_labels": [
+            1,
+            2
+          ],
+          "section_path": [
+            "（於中華人民共和國註冊成立的股份有限公司）"
+          ],
+          "score": 0.6293910145759583,
+          "chunk_id": "chk_2024_01318_毛戈平_p0_txt001",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            0
+          ],
+          "page_labels": [
+            1
+          ],
+          "section_path": [
+            "（於中華人民共和國註冊成立的股份有限公司）"
+          ],
+          "score": 0.6193897724151611,
+          "chunk_id": "chk_2024_01318_毛戈平_p0_img001",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_01318_毛戈平",
+          "pages": [
+            482,
+            483,
+            484
+          ],
+          "page_labels": [
+            483,
+            484,
+            485
+          ],
+          "section_path": [
+            "會 計 師 報 告"
+          ],
+          "score": 0.570637583732605,
+          "chunk_id": "chk_2024_01318_毛戈平_p482_txt432",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -25,
+        "expected_page": 26,
+        "returned_page": 1
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_leapmotor_ipo_use_proceeds_001",
+      "id": "mgv1_leapmotor_ipo_use_proceeds_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "零跑汽车上市募集资金主要用于哪些方向？",
+      "expected_document": [
+        "2022_09863_零跑汽車"
+      ],
+      "expected_document_ids": [
+        "2022_09863_零跑汽車"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          411,
+          414
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          411,
+          414
+        ]
+      ],
+      "page_basis": "pdf_physical_page",
+      "expected_page_labels": [
+        [
+          411,
+          414
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          411,
+          414
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2022_87份\\09863_20-09-2022_零跑汽車_全球發售.pdf`; verified the evidence text on 0-based physical page range [[411, 414]] and preserved physical page numbers because PDF page labels are empty.",
+      "retriever_returned_pages": [
+        22,
+        23,
+        351,
+        352,
+        471,
+        477,
+        479,
+        480,
+        686,
+        687,
+        688,
+        689
+      ],
+      "retriever_returned_page_labels": [],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            22,
+            23
+          ],
+          "page_labels": [],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6020177984237671,
+          "chunk_id": "chk_2022_09863_零跑汽車_p22_txt027",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            351,
+            352
+          ],
+          "page_labels": [],
+          "section_path": [
+            "主 要 股 東"
+          ],
+          "score": 0.5845210552215576,
+          "chunk_id": "chk_2022_09863_零跑汽車_p351_txt352",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            688,
+            689
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.5833973288536072,
+          "chunk_id": "chk_2022_09863_零跑汽車_p688_txt612",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            686,
+            687
+          ],
+          "page_labels": [],
+          "section_path": [
+            "法 定 及 一 般 資 料"
+          ],
+          "score": 0.5829092264175415,
+          "chunk_id": "chk_2022_09863_零跑汽車_p686_txt610",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2022_09863_零跑汽車",
+          "pages": [
+            471,
+            477,
+            479,
+            480
+          ],
+          "page_labels": [],
+          "section_path": [
+            "會 計 師 報 告"
+          ],
+          "score": 0.582060694694519,
+          "chunk_id": "chk_2022_09863_零跑汽車_p471_txt461",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": null,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 57,
+        "expected_page": 414,
+        "returned_page": 471
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "annotator": "Codex_manual_review",
+      "category": "ipo_specific_risk",
+      "label_status": "gold_seed",
+      "question": "云知声上市所得款项是否主要投入研发和商业化？",
+      "expected_document": [
+        "2025_09678_雲知聲"
+      ],
+      "expected_document_ids": [
+        "2025_09678_雲知聲"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          335,
+          338
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          335,
+          338
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          335,
+          338
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          343,
+          346
+        ]
+      ],
+      "page_mapping_status": "confirmed",
+      "mapping_note": "Opened original PDF `data/raw_selected_20260716_12\\2025_116份\\09678_20-06-2025_雲知聲_全球發售.pdf`; verified the evidence text on 0-based physical page range [[343, 346]] and preserved printed page labels [[335, 338]].",
+      "retriever_returned_pages": [
+        125,
+        126,
+        127,
+        128,
+        164,
+        165,
+        179,
+        188,
+        189
+      ],
+      "retriever_returned_page_labels": [
+        117,
+        118,
+        119,
+        120,
+        156,
+        157,
+        171,
+        180,
+        181
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 2,
+          "document_id": "2025_09678_雲知聲",
+          "pages": [
+            164,
+            165
+          ],
+          "page_labels": [
+            156,
+            157
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5733642578125,
+          "chunk_id": "chk_2025_09678_雲知聲_p164_txt171",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2025_09678_雲知聲",
+          "pages": [
+            125,
+            126,
+            127,
+            128
+          ],
+          "page_labels": [
+            117,
+            118,
+            119,
+            120
+          ],
+          "section_path": [
+            "監 管 概 覽"
+          ],
+          "score": 0.5600161552429199,
+          "chunk_id": "chk_2025_09678_雲知聲_p125_txt143",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2025_09678_雲知聲",
+          "pages": [
+            179,
+            188,
+            189
+          ],
+          "page_labels": [
+            171,
+            180,
+            181
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5542941093444824,
+          "chunk_id": "chk_2025_09678_雲知聲_p179_txt183",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": -154,
+        "expected_page": 343,
+        "returned_page": 189
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    }
+  ]
+}

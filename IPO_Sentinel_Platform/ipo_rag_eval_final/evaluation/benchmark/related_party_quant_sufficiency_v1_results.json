@@ -1,0 +1,270 @@
+{
+  "task": "related_party_quant_sufficiency_v1",
+  "diagnosis": {
+    "evidence_ids_with_706_782": [
+      "ev_2024_02586_多點數智_p17_tbl001",
+      "ev_2024_02586_多點數智_p209_tbl002"
+    ],
+    "chunk_ids_with_706_782": [
+      "chk_2024_02586_多點數智_p17_tbl009",
+      "chk_2024_02586_多點數智_p209_tbl083"
+    ],
+    "in_vector_documents": true,
+    "pre_fix_bare_dense_rank": {
+      "p17_tbl": 54,
+      "p209_tbl": 65
+    },
+    "bottleneck_layer": "retrieval_candidate_pool / ranking_not_missing_embed",
+    "mechanism": "table quant exists in chunk.table_description and vector metadata.text_for_embedding, but related-party NL queries dense-head is dominated by summary narrative soft matches; tables sit ~rank 50-65 outside Top10",
+    "general_or_dmall_only": "general gap for related-party dependence questions over narrative-heavy prospectuses"
+  },
+  "fix_path": "C2_same_document_related_party_quant_complement",
+  "anchor_case": {
+    "id": "manual_ch_duodian_bus_001",
+    "before": {
+      "gold_aligned_at_1": false,
+      "gold_aligned_at_3": true,
+      "quant_hit_at_5": false,
+      "quant_hit_at_10": false,
+      "multi_span_support_at_10": false,
+      "sufficiency_narrative": "narrative_only_missing_quant",
+      "top1_pages": [
+        16,
+        17,
+        18
+      ],
+      "top1_preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們五大客戶產生的收益分別佔同年╱期收益的79.4",
+      "quant_markers_hit_top10": [],
+      "quant_table_hits": []
+    },
+    "after": {
+      "gold_aligned_at_1": false,
+      "gold_aligned_at_3": true,
+      "quant_hit_at_5": false,
+      "quant_hit_at_10": true,
+      "multi_span_support_at_10": true,
+      "sufficiency_narrative": "narrative_plus_quant_table",
+      "top1_pages": [
+        16,
+        17,
+        18
+      ],
+      "top1_preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們五大客戶產生的收益分別佔同年╱期收益的79.4",
+      "quant_markers_hit_top10": [
+        "70.6%",
+        "72.7%",
+        "75.9%",
+        "77.2%",
+        "78.2%",
+        "45.3%",
+        "51.6%"
+      ],
+      "quant_table_hits": [
+        {
+          "rank": 10,
+          "chunk_id": "chk_2024_02586_多點數智_p17_tbl009",
+          "pages": [
+            17
+          ],
+          "block": "table",
+          "score": 2.4811,
+          "preview": "表格（14行）. 列: 截至12月31日止年度 | 截至6月30日止六個月. 第1行: 2021年 | 2022年 | 2023年 | 2023年 | 2024年. 第2行: 人民幣元 | % | 人民幣元 | % | 人民幣元 | % |"
+        }
+      ]
+    }
+  },
+  "human4": {
+    "HGE_role_complement_off": {
+      "n": 19,
+      "GA@1": 0.8947,
+      "GA@3": 1.0,
+      "GA@5": 1.0,
+      "R@5": 1.0,
+      "quant@10": 0.4737,
+      "multi_span@10": 0.0
+    },
+    "HGE_role_complement_on": {
+      "n": 19,
+      "GA@1": 0.8947,
+      "GA@3": 1.0,
+      "GA@5": 1.0,
+      "R@5": 1.0,
+      "quant@10": 0.5263,
+      "multi_span@10": 0.0526
+    }
+  },
+  "union39": {
+    "HGE_role_complement_off": {
+      "n": 39,
+      "GA@1": 0.7179,
+      "GA@3": 0.9744,
+      "GA@5": 0.9744,
+      "R@5": 0.9744,
+      "quant@10": 0.4872,
+      "multi_span@10": 0.0
+    },
+    "HGE_role_complement_on": {
+      "n": 39,
+      "GA@1": 0.7179,
+      "GA@3": 0.9744,
+      "GA@5": 0.9744,
+      "R@5": 0.9744,
+      "quant@10": 0.5128,
+      "multi_span@10": 0.0256
+    }
+  },
+  "watch_cases": [
+    {
+      "id": "manual_ch_duodian_bus_001",
+      "old_ga1": false,
+      "new_ga1": false,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": false,
+      "new_quant10": true,
+      "old_top1_pages": [
+        16,
+        17,
+        18
+      ],
+      "new_top1_pages": [
+        16,
+        17,
+        18
+      ],
+      "old_preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我",
+      "new_preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我"
+    },
+    {
+      "id": "manual_new_田歌_cat_fin_010",
+      "old_ga1": true,
+      "new_ga1": true,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": false,
+      "new_quant10": false,
+      "old_top1_pages": [
+        81,
+        82
+      ],
+      "new_top1_pages": [
+        81,
+        82
+      ],
+      "old_preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該",
+      "new_preview": "於2021年8月至10月期間及2022年8月期間，我們收到若干知識產權侵權申索，寧德時代新能源科技股份有限公司（「寧德時代」）向本集團申索合共人民幣615百萬元的或有賠償及人民幣3.2百萬元的費用。該"
+    },
+    {
+      "id": "manual_new_董飞飞_seed_bus_001",
+      "old_ga1": true,
+      "new_ga1": true,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": true,
+      "new_quant10": true,
+      "old_top1_pages": [
+        185,
+        186,
+        189,
+        191,
+        192
+      ],
+      "new_top1_pages": [
+        185,
+        186,
+        189,
+        191,
+        192
+      ],
+      "old_preview": "截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們分別為279名、469名、592名及275名客戶提供服務。我們不時在與客戶訂立有關提供廣告服務的正式協議前，先評估客戶的誠信",
+      "new_preview": "截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們分別為279名、469名、592名及275名客戶提供服務。我們不時在與客戶訂立有關提供廣告服務的正式協議前，先評估客戶的誠信"
+    },
+    {
+      "id": "manual_new_董飞飞_seed_bus_005",
+      "old_ga1": true,
+      "new_ga1": true,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": false,
+      "new_quant10": false,
+      "old_top1_pages": [
+        50,
+        51
+      ],
+      "new_top1_pages": [
+        50,
+        51
+      ],
+      "old_preview": "宏觀經濟狀況亦可導致客戶出現財政困難，包括進入信貸市場受到限制、無力償債或破產，因此亦可能導致客戶延遲向我們付款、要求修改付款安排或無法向我們履行付款責任。在此情況下，我們的中介服務可能並無足夠營運資",
+      "new_preview": "宏觀經濟狀況亦可導致客戶出現財政困難，包括進入信貸市場受到限制、無力償債或破產，因此亦可能導致客戶延遲向我們付款、要求修改付款安排或無法向我們履行付款責任。在此情況下，我們的中介服務可能並無足夠營運資"
+    },
+    {
+      "id": "manual_new_董飞飞_cat_bus_009",
+      "old_ga1": true,
+      "new_ga1": true,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": false,
+      "new_quant10": false,
+      "old_top1_pages": [
+        44,
+        45
+      ],
+      "new_top1_pages": [
+        44,
+        45
+      ],
+      "old_preview": "我們的直接競爭對手為其他第三方移動廣告公司。由於取得核心廣告代理身份將為我們帶來更多來自更廣泛客戶群的廣告訂單，故我們不單就客戶進行競爭，亦就獲更多營運廣告媒體平台的媒體發佈商認可為核心廣告代理競爭。",
+      "new_preview": "我們的直接競爭對手為其他第三方移動廣告公司。由於取得核心廣告代理身份將為我們帶來更多來自更廣泛客戶群的廣告訂單，故我們不單就客戶進行競爭，亦就獲更多營運廣告媒體平台的媒體發佈商認可為核心廣告代理競爭。"
+    },
+    {
+      "id": "manual_new_董飞飞_cat_own_010",
+      "old_ga1": true,
+      "new_ga1": true,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": true,
+      "new_quant10": true,
+      "old_top1_pages": [
+        127,
+        128,
+        129
+      ],
+      "new_top1_pages": [
+        127,
+        128,
+        129
+      ],
+      "old_preview": "公司架構 於重組完成後但於資本化發行及股份發售前，本集團的公司架構如下： 緊隨資本化發行及股份發售完成後的股權架構 下圖載列緊隨資本化發行及股份發售完成後的本集團股權架構，假設超額配股權未獲行使且根據",
+      "new_preview": "公司架構 於重組完成後但於資本化發行及股份發售前，本集團的公司架構如下： 緊隨資本化發行及股份發售完成後的股權架構 下圖載列緊隨資本化發行及股份發售完成後的本集團股權架構，假設超額配股權未獲行使且根據"
+    },
+    {
+      "id": "manual_new_董飞飞_cat_own_012",
+      "old_ga1": true,
+      "new_ga1": true,
+      "old_ga3": true,
+      "new_ga3": true,
+      "old_quant10": false,
+      "new_quant10": false,
+      "old_top1_pages": [
+        63,
+        64
+      ],
+      "new_top1_pages": [
+        63,
+        64
+      ],
+      "old_preview": "控股股東對我們的業務具有重大影響力，包括我們的管理相關事宜、政策以及其他主要決策程序及若干企業行動。所有權集中可能會窒礙、延遲或阻止本公司的控制權變動，這可能會剝奪其他股東按其股份獲得溢價的機會。此外",
+      "new_preview": "控股股東對我們的業務具有重大影響力，包括我們的管理相關事宜、政策以及其他主要決策程序及若干企業行動。所有權集中可能會窒礙、延遲或阻止本公司的控制權變動，這可能會剝奪其他股東按其股份獲得溢價的機會。此外"
+    }
+  ],
+  "default_flags": {
+    "enable_related_party_quant_complement": false,
+    "hge_includes_enable_related_party_quant_complement": true
+  },
+  "local_rebuild": false,
+  "vector_count_before_after": [
+    21738,
+    21738
+  ]
+}

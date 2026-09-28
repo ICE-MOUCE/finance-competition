@@ -1,0 +1,1217 @@
+{
+  "timestamp": "2026-07-18T18:17:13.645343",
+  "results_file": "evaluation\\benchmark\\manual_teamer_results.json",
+  "system_page_basis": "MinerU page_idx, 0-based physical PDF page index",
+  "manual_page_basis_conclusion": "Manual ranges were standardized as printed_page_label with verified mapping to 0-based physical pages.",
+  "source_annotation_files": [
+    {
+      "file": "team_work\\teamer_ex\\PDF证据标注模板-谭思怡.txt",
+      "has_page_range_notation": true,
+      "has_multiple_page_ranges": false,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    },
+    {
+      "file": "team_work\\teamer_ex\\PDF证据标注模板-陈慧.txt",
+      "has_page_range_notation": true,
+      "has_multiple_page_ranges": true,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    },
+    {
+      "file": "team_work\\teamer_ex\\风险词与问题设计模板-谭思怡.txt",
+      "has_page_range_notation": false,
+      "has_multiple_page_ranges": false,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    },
+    {
+      "file": "team_work\\teamer_ex\\风险词与问题设计模板-陈慧.txt",
+      "has_page_range_notation": false,
+      "has_multiple_page_ranges": false,
+      "mentions_physical_page": false,
+      "mentions_pdf_reader_page": false,
+      "mentions_printed_page": false
+    }
+  ],
+  "summary": {
+    "total_cases": 5,
+    "valid_page_gold_cases": 5,
+    "document_hit": {
+      "hits": 5,
+      "denominator": 5,
+      "rate": 1.0
+    },
+    "section_hit": {
+      "hits": 3,
+      "denominator": 5,
+      "rate": 0.6
+    },
+    "normalized_physical_page_hit": {
+      "hits": 3,
+      "denominator": 5,
+      "rate": 0.6
+    },
+    "strict_hit": {
+      "hits": 0,
+      "denominator": 5,
+      "rate": 0.0
+    },
+    "page_label_hit": {
+      "hits": 3,
+      "denominator": 5,
+      "rate": 0.6
+    },
+    "evidence_completeness": 1.0,
+    "page_reference_rate": 1.0,
+    "vector_count": 21563
+  },
+  "by_annotator": {
+    "谭思怡": {
+      "case_count": 4,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 4,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      }
+    },
+    "陈慧": {
+      "case_count": 1,
+      "document_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      }
+    }
+  },
+  "by_document": {
+    "2020_01147_伊登軟件": {
+      "case_count": 4,
+      "document_hit": {
+        "hits": 4,
+        "denominator": 4,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "normalized_physical_page_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 4,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 2,
+        "denominator": 4,
+        "rate": 0.5
+      }
+    },
+    "2024_02586_多點數智": {
+      "case_count": 1,
+      "document_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      }
+    }
+  },
+  "by_category": {
+    "business_risk": {
+      "case_count": 3,
+      "document_hit": {
+        "hits": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 3,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 3,
+        "denominator": 3,
+        "rate": 1.0
+      }
+    },
+    "financial_risk": {
+      "case_count": 1,
+      "document_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      }
+    },
+    "ipo_specific_risk": {
+      "case_count": 1,
+      "document_hit": {
+        "hits": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "normalized_physical_page_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "strict_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "page_label_hit": {
+        "hits": 0,
+        "denominator": 1,
+        "rate": 0.0
+      }
+    }
+  },
+  "failure_reason_counts": {
+    "retrieval_page_miss": 2
+  },
+  "remaining_failed_cases": [
+    {
+      "case_id": "manual_ts_yideng_fin_001",
+      "id": "manual_ts_yideng_fin_001",
+      "annotator": "谭思怡",
+      "category": "financial_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件是否存在经营现金流压力或经营现金流为负的风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          18,
+          19
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; labels 12-13 repeat in appendices, and physical pages 18-19 were selected because they contain the expected 概要/现金流 evidence. Label status remains candidate because amounts need secondary review.",
+      "retriever_returned_pages": [
+        101,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        95
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5922231078147888,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            101
+          ],
+          "page_labels": [
+            95
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.5755257606506348,
+          "chunk_id": "chk_2020_01147_伊登軟件_p101_txt100",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 82,
+        "expected_page": 19,
+        "returned_page": 101
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "id": "manual_ts_yideng_ipo_001",
+      "annotator": "谭思怡",
+      "category": "ipo_specific_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          283,
+          284
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; physical pages 283-284 have printed/PDF labels 277-278 and contain 未来计划及所得款项用途. Label status remains candidate because ratios and amounts need secondary review.",
+      "retriever_returned_pages": [
+        98,
+        102,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        92,
+        96
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            98
+          ],
+          "page_labels": [
+            92
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6225143671035767,
+          "chunk_id": "chk_2020_01147_伊登軟件_p98_txt094",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            102
+          ],
+          "page_labels": [
+            96
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6091428399085999,
+          "chunk_id": "chk_2020_01147_伊登軟件_p102_txt101",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5940729379653931,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 99,
+        "expected_page": 284,
+        "returned_page": 383
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "manual_ts_yideng_bus_001",
+      "id": "manual_ts_yideng_bus_001",
+      "annotator": "谭思怡",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "伊登软件是否严重依赖单一客户？该客户关系是否存在重大风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          5,
+          6
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          5,
+          6
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          5,
+          6
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          11,
+          12
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; labels 5-6 repeat in appendices, and physical pages 11-12 were selected because they contain the expected 概要/客户A evidence.",
+      "retriever_returned_pages": [
+        11,
+        102,
+        103
+      ],
+      "retriever_returned_page_labels": [
+        5,
+        96,
+        97
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            11
+          ],
+          "page_labels": [
+            5
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6370162153244019,
+          "chunk_id": "chk_2020_01147_伊登軟件_p11_txt010",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            102,
+            103
+          ],
+          "page_labels": [
+            96,
+            97
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.5935260057449341,
+          "chunk_id": "chk_2020_01147_伊登軟件_p102_txt102",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 11,
+        "returned_page": 11
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "manual_ts_yideng_bus_002",
+      "id": "manual_ts_yideng_bus_002",
+      "annotator": "谭思怡",
+      "category": "business_risk",
+      "label_status": "gold_seed",
+      "question": "伊登软件是否严重依赖单一供应商？该供应关系是否存在风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          8,
+          9
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          8,
+          9
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          8,
+          9
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          14,
+          15
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; labels 8-9 repeat in appendices, and physical pages 14-15 were selected because they contain the expected 概要/供应商A evidence.",
+      "retriever_returned_pages": [
+        15,
+        16,
+        185,
+        191,
+        192
+      ],
+      "retriever_returned_page_labels": [
+        9,
+        10,
+        179,
+        185,
+        186
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            15,
+            16
+          ],
+          "page_labels": [
+            9,
+            10
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6159310722351075,
+          "chunk_id": "chk_2020_01147_伊登軟件_p15_txt015",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 2,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            191,
+            192
+          ],
+          "page_labels": [
+            185,
+            186
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5972734689712524,
+          "chunk_id": "chk_2020_01147_伊登軟件_p191_txt191",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            185
+          ],
+          "page_labels": [
+            179
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.5792003870010376,
+          "chunk_id": "chk_2020_01147_伊登軟件_p185_txt182",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 15,
+        "returned_page": 15
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": false,
+      "failure_reason": null
+    },
+    {
+      "case_id": "manual_ts_yideng_fin_001",
+      "id": "manual_ts_yideng_fin_001",
+      "annotator": "谭思怡",
+      "category": "financial_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件是否存在经营现金流压力或经营现金流为负的风险？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          18,
+          19
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; labels 12-13 repeat in appendices, and physical pages 18-19 were selected because they contain the expected 概要/现金流 evidence. Label status remains candidate because amounts need secondary review.",
+      "retriever_returned_pages": [
+        101,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        95
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5922231078147888,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            101
+          ],
+          "page_labels": [
+            95
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.5755257606506348,
+          "chunk_id": "chk_2020_01147_伊登軟件_p101_txt100",
+          "cross_page_chunk": false
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 82,
+        "expected_page": 19,
+        "returned_page": 101
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "id": "manual_ts_yideng_ipo_001",
+      "annotator": "谭思怡",
+      "category": "ipo_specific_risk",
+      "label_status": "catalog_document_label",
+      "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+      "expected_document": [
+        "2020_01147_伊登軟件"
+      ],
+      "expected_document_ids": [
+        "2020_01147_伊登軟件"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          283,
+          284
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; physical pages 283-284 have printed/PDF labels 277-278 and contain 未来计划及所得款项用途. Label status remains candidate because ratios and amounts need secondary review.",
+      "retriever_returned_pages": [
+        98,
+        102,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390
+      ],
+      "retriever_returned_page_labels": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        92,
+        96
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 1,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            98
+          ],
+          "page_labels": [
+            92
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6225143671035767,
+          "chunk_id": "chk_2020_01147_伊登軟件_p98_txt094",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 3,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            102
+          ],
+          "page_labels": [
+            96
+          ],
+          "section_path": [
+            "歷史及重組"
+          ],
+          "score": 0.6091428399085999,
+          "chunk_id": "chk_2020_01147_伊登軟件_p102_txt101",
+          "cross_page_chunk": false
+        },
+        {
+          "rank": 4,
+          "document_id": "2020_01147_伊登軟件",
+          "pages": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390
+          ],
+          "page_labels": [
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68
+          ],
+          "section_path": [
+            "會計師報告"
+          ],
+          "score": 0.5940729379653931,
+          "chunk_id": "chk_2020_01147_伊登軟件_p383_txt376",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": false,
+      "page_label_hit": false,
+      "strict_hit": false,
+      "normalized_physical_page_hit": false,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 99,
+        "expected_page": 284,
+        "returned_page": 383
+      },
+      "document_hit_but_page_mismatch": true,
+      "manual_review_required": true,
+      "failure_reason": "retrieval_page_miss"
+    },
+    {
+      "case_id": "manual_ch_duodian_bus_001",
+      "id": "manual_ch_duodian_bus_001",
+      "annotator": "陈慧",
+      "category": "business_risk",
+      "label_status": "catalog_document_label",
+      "question": "多点数智是否存在对关联方客户收入的重大依赖？",
+      "expected_document": [
+        "2024_02586_多點數智"
+      ],
+      "expected_document_ids": [
+        "2024_02586_多點數智"
+      ],
+      "raw_annotated_page_ranges": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "page_basis": "printed_page_label",
+      "expected_page_labels": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_physical_page_ranges_0_based": [
+        [
+          58,
+          58
+        ],
+        [
+          234,
+          234
+        ]
+      ],
+      "page_mapping_status": "mapped_verified",
+      "mapping_note": "Opened source PDF; physical page 58 has printed/PDF label 51 in 风险因素, and physical page 234 has printed/PDF label 227 in 业务. Candidate status remains because page/table numbers were marked for secondary review.",
+      "retriever_returned_pages": [
+        16,
+        17,
+        18,
+        21,
+        22,
+        234,
+        235,
+        242,
+        246
+      ],
+      "retriever_returned_page_labels": [
+        9,
+        10,
+        11,
+        14,
+        15,
+        227,
+        228,
+        235,
+        239
+      ],
+      "topk_expected_document_rows": [
+        {
+          "rank": 2,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            16,
+            17,
+            18
+          ],
+          "page_labels": [
+            9,
+            10,
+            11
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6525782728195191,
+          "chunk_id": "chk_2024_02586_多點數智_p16_txt024",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 3,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            242,
+            246
+          ],
+          "page_labels": [
+            235,
+            239
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.6306542158126831,
+          "chunk_id": "chk_2024_02586_多點數智_p242_txt292",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 4,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            234,
+            235
+          ],
+          "page_labels": [
+            227,
+            228
+          ],
+          "section_path": [
+            "業 務"
+          ],
+          "score": 0.62638258934021,
+          "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+          "cross_page_chunk": true
+        },
+        {
+          "rank": 5,
+          "document_id": "2024_02586_多點數智",
+          "pages": [
+            21,
+            22
+          ],
+          "page_labels": [
+            14,
+            15
+          ],
+          "section_path": [
+            "概 要"
+          ],
+          "score": 0.6245275521278382,
+          "chunk_id": "chk_2024_02586_多點數智_p21_txt032",
+          "cross_page_chunk": true
+        }
+      ],
+      "document_hit": true,
+      "section_hit": true,
+      "page_label_hit": true,
+      "strict_hit": false,
+      "normalized_physical_page_hit": true,
+      "page_reference_rate": 1.0,
+      "evidence_completeness": 1.0,
+      "nearest_physical_page_delta": {
+        "delta": 0,
+        "expected_page": 234,
+        "returned_page": 234
+      },
+      "document_hit_but_page_mismatch": false,
+      "manual_review_required": true,
+      "failure_reason": null
+    }
+  ]
+}

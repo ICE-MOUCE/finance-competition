@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ analysis.company_name }} IPO 风险穿透预警报告</title>
+  <style>
+    :root { --ink:#17212b; --muted:#66727f; --line:#d8dee5; --red:#b42318; --amber:#b54708; --green:#067647; --blue:#175cd3; --paper:#fff; --bg:#f4f6f8; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.65 Arial,"Microsoft YaHei",sans-serif; letter-spacing:0; }
+    main { width:min(1120px, calc(100% - 32px)); margin:24px auto 64px; background:var(--paper); border:1px solid var(--line); }
+    header { padding:34px 40px 28px; border-bottom:4px solid var(--ink); }
+    h1 { margin:0 0 8px; font-size:28px; letter-spacing:0; }
+    h2 { margin:0; padding:24px 40px 12px; font-size:20px; border-top:1px solid var(--line); letter-spacing:0; }
+    h3 { margin:0 0 8px; font-size:15px; letter-spacing:0; }
+    p, li, blockquote, .meta span { overflow-wrap:anywhere; word-break:break-word; }
+    p { margin:6px 0; }
+    .meta { color:var(--muted); display:flex; gap:18px; flex-wrap:wrap; }
+    .summary { min-width:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-bottom:1px solid var(--line); }
+    .metric { min-width:0; padding:20px 24px; border-right:1px solid var(--line); min-height:104px; }
+    .metric:last-child { border-right:0; }
+    .metric strong { display:block; margin-top:6px; font-size:22px; overflow-wrap:anywhere; word-break:break-word; }
+    .unavailable { color:var(--amber); }
+    .section { padding:0 40px 28px; }
+    .claim { border-left:4px solid var(--amber); padding:14px 18px; margin:10px 0; background:#fffaf2; }
+    .claim.accepted { border-color:var(--red); background:#fff7f6; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+    .tag { padding:2px 7px; border:1px solid var(--line); font-size:12px; background:#fff; }
+    blockquote { margin:8px 0; padding:8px 12px; border-left:2px solid #98a2b3; color:#344054; background:#fff; }
+    a { color:var(--blue); }
+    ul { margin:8px 0; padding-left:22px; }
+    .notice { margin:0 40px 28px; padding:14px 18px; background:#f2f4f7; border:1px solid var(--line); }
+    footer { padding:20px 40px; border-top:1px solid var(--line); color:var(--muted); }
+    @media (max-width:760px) { main{width:100%;min-width:0;margin:0;border:0}.summary{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.metric:nth-child(2){border-right:0}header,h2,.section,footer{padding-left:20px;padding-right:20px}.notice{margin-left:20px;margin-right:20px} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>{{ analysis.company_name }} IPO 风险穿透预警报告</h1>
+    <div class="meta">
+      <span>{{ analysis.stock_code }}</span><span>{{ analysis.mode }}</span>
+      <span>数据截止 {{ analysis.prediction_as_of }}</span><span>生成 {{ generated_at }}</span>
+    </div>
+  </header>
+  <section class="summary">
+    <div class="metric"><span>模型风险等级</span><strong class="{{ 'unavailable' if prediction.probabilities is none else '' }}">{{ '不可用' if prediction.risk_level == 'UNAVAILABLE' else prediction.risk_level }}</strong></div>
+    <div class="metric"><span>5 日下跌概率</span><strong class="{{ 'unavailable' if prediction.probabilities is none else '' }}">{{ '模型不可用' if prediction.probabilities is none else ('%.1f%%'|format(prediction.probabilities.p_5d_drop * 100)) }}</strong></div>
+    <div class="metric"><span>规则分</span><strong>{{ '%.1f'|format(prediction.rule_score) }}</strong></div>
+    <div class="metric"><span>已审计 Top 风险</span><strong>{{ top_claims|length }}</strong></div>
+  </section>
+  {% if prediction.probabilities is none %}<div class="notice"><strong>模型结果不可用。</strong> 未注册经过训练和校准的结构化模型，系统仅展示规则命中与已审计专家结论，没有生成或估算概率。</div>{% endif %}
+
+  <h2>结论摘要</h2>
+  <section class="section">
+    <p>规则命中：{{ prediction.rule_hits|join('、') if prediction.rule_hits else '无重大规则命中' }}。</p>
+    <p>解析 {{ parse_metadata.parsed_pages }}/{{ parse_metadata.pages }} 页，形成 {{ parse_metadata.evidence_count }} 个证据对象；疑似提示注入 {{ parse_metadata.injection_count }} 处。</p>
+  </section>
+
+  <h2>公司与发行信息</h2>
+  <section class="section">
+    <p>公司：{{ analysis.company_name }}；股票代码：{{ analysis.stock_code }}；上市日：{{ analysis.listing_date }}。</p>
+    <p>分析模式：{{ analysis.mode }}；招股书：{{ analysis.pdf_path }}。</p>
+  </section>
+
+  {% for section_name, items in sections.items() %}
+  <h2>{{ section_name }}</h2>
+  <section class="section">
+    {% if not items %}
+    <p>本模块暂无已审计风险结论。以下为检索/解析得到的相关证据，供人工复核，不视为已接受风险。</p>
+    {% set extras = section_evidence.get(section_name, []) %}
+    {% if extras %}
+    {% for ev in extras %}
+    <blockquote><a href="{{ ev.screenshot_uri }}" target="_blank">PDF 第 {{ ev.page }} 页 · {{ ev.evidence_id[:18] }}…</a><br>{{ ev.text[:420] }}</blockquote>
+    {% endfor %}
+    {% else %}
+    <p>本模块也未检索到可展示的对应证据，缺口见后文。</p>
+    {% endif %}
+    {% endif %}
+    {% for item in items %}
+    <article class="claim {{ item.claim.audit_status.value }}">
+      <h3>{{ item.claim.risk_code }} · {{ item.claim.claim }}</h3>
+      <div class="tags">
+        <span class="tag">严重度 {{ item.claim.severity }}/10</span>
+        <span class="tag">置信度 {{ '%.0f%%'|format(item.claim.confidence * 100) }}</span>
+        <span class="tag">审计 {{ item.claim.audit_status.value }}</span>
+        <span class="tag">窗口 {{ item.claim.applicable_windows|join('/') }}</span>
+      </div>
+      <p><strong>审计意见：</strong>{{ item.claim.audit_reason }}</p>
+      {% for ev in item.evidence %}
+      <blockquote><a href="{{ ev.screenshot_uri }}" target="_blank">PDF 第 {{ ev.page }} 页 · {{ ev.evidence_id[:18] }}…</a><br>{{ ev.text[:420] }}</blockquote>
+      {% endfor %}
+      {% if item.counters %}<p><strong>缓释/反证：</strong></p>{% endif %}
+      {% for ev in item.counters %}<blockquote><a href="{{ ev.screenshot_uri }}" target="_blank">第 {{ ev.page }} 页</a> {{ ev.text[:320] }}</blockquote>{% endfor %}
+    </article>
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  <h2>证据链</h2>
+  <section class="section">
+    <p>文档哈希：{{ parse_metadata.document_id }}；解析器：{{ parse_metadata.parser_version }}。</p>
+    <p>每个风险条目均链接到对应 PDF 页码与 bbox 截图。候选、拒绝或升级结论不会混入 Top 风险。</p>
+  </section>
+
+  <h2>风险共振与模型说明</h2>
+  <section class="section">
+    <p>规则分与模型概率独立保存。规则分只反映已审计 claim 的严重度与证据置信度，不是发生概率。</p>
+    <p>模型版本：{{ prediction.model_version or '未注册' }}；校准版本：{{ prediction.calibration_version or '未注册' }}；特征快照：{{ prediction.feature_snapshot_id }}。</p>
+  </section>
+
+  <h2>数据缺口与争议</h2>
+  <section class="section">
+    <ul>{% for gap in data_gaps %}<li>{{ gap }}</li>{% else %}<li>未发现已知数据缺口。</li>{% endfor %}</ul>
+    <ul>{% for conflict in conflicts %}<li>{{ conflict.type }}：{{ conflict.issue }}（{{ conflict.status }}）</li>{% endfor %}</ul>
+  </section>
+
+  <h2>人工复核清单</h2>
+  <section class="section">
+    <ul>
+      <li>复核严重度 7 以上或仅有单一证据块的结论。</li>
+      <li>确认关键财务表的币种、单位、期间和脚注。</li>
+      <li>补充带时点的市场、认购、可比公司和发行信息快照。</li>
+      <li>训练与校准结构化模型后再启用 1/5/20/60 日概率。</li>
+    </ul>
+  </section>
+  <footer>本报告用于研究辅助，不构成投资建议、法律意见或收益保证。</footer>
+</main>
+</body>
+</html>

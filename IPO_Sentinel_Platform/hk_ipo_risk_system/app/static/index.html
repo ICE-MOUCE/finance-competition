@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>港股 IPO 风险预警工作台</title>
+  <link rel="stylesheet" href="/static/styles.css?v=agentroom4">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>IPO SENTINEL</strong>
+      <span>港股 IPO Agentic AI 风险预警</span>
+    </div>
+    <div class="system-state"><span id="healthDot" class="dot"></span><span id="healthText">连接中</span></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="dataset-panel">
+      <div class="panel-heading">
+        <div><h1>招股书库</h1><span id="datasetCount">0 份</span></div>
+        <button id="refreshDataset" class="icon-button" title="刷新数据集" aria-label="刷新数据集">↻</button>
+      </div>
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="公司、股票代码或文件名">
+        <select id="yearFilter" aria-label="年份">
+          <option value="">全部年份</option>
+          <option>2025</option><option>2024</option><option>2023</option>
+          <option>2022</option><option>2021</option><option>2020</option>
+        </select>
+      </div>
+      <div id="datasetList" class="dataset-list" aria-live="polite"></div>
+    </aside>
+
+    <section class="content">
+      <section class="runbar" aria-label="分析任务">
+        <div class="field grow"><label for="companyName">公司</label><input id="companyName" placeholder="选择左侧招股书"></div>
+        <div class="field code"><label for="stockCode">股票代码</label><input id="stockCode" placeholder="00000.HK"></div>
+        <div class="field date"><label for="listingDate">上市日</label><input id="listingDate" type="date"></div>
+        <div class="field price"><label for="issuePrice">发行价 (HKD)</label><input id="issuePrice" type="number" min="0.001" step="0.001" inputmode="decimal"></div>
+        <div class="field date"><label for="predictionAsOf">预测截止</label><input id="predictionAsOf" type="datetime-local"></div>
+        <div class="field mode"><label for="mode">模式</label><select id="mode"><option>PREDICT</option><option>EVALUATE</option></select></div>
+        <button id="runAnalysis" class="primary" disabled>开始分析</button>
+      </section>
+
+      <section id="emptyState" class="empty-state">
+        <div class="empty-visual" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h2>选择一份招股书开始分析</h2>
+        <p>系统将建立可回溯证据链，执行专家尽调与独立审计。未注册结构化模型时不会生成概率。</p>
+      </section>
+
+      <section id="analysisView" class="analysis-view hidden">
+        <div class="analysis-heading">
+          <div>
+            <div class="eyebrow" id="analysisCode">—</div>
+            <h2 id="analysisTitle">分析任务</h2>
+          </div>
+          <div class="task-actions">
+            <span id="taskStatus" class="status">排队中</span>
+            <a id="reportLink" class="report-link hidden" target="_blank">打开完整报告</a>
+          </div>
+        </div>
+        <div class="progress-row"><div class="progress-track"><span id="progressBar"></span></div><span id="stageText">准备中</span><strong id="progressText">0%</strong></div>
+
+        <div class="metrics">
+          <div class="metric"><span>5 日下跌概率</span><strong id="probabilityMetric">—</strong><small id="probabilityNote">等待模型门禁</small></div>
+          <div class="metric"><span>规则风险分</span><strong id="ruleMetric">—</strong><small>非概率</small></div>
+          <div class="metric"><span>已审计结论</span><strong id="claimMetric">—</strong><small id="claimNote">accepted + revised</small></div>
+          <div class="metric"><span>证据对象</span><strong id="evidenceMetric">—</strong><small id="injectionNote">注入检测 0</small></div>
+        </div>
+
+        <nav class="tabs" aria-label="分析视图">
+          <button class="tab active" data-tab="overview">概览</button>
+          <button class="tab" data-tab="claims">风险结论</button>
+          <button class="tab" data-tab="evidence">证据链</button>
+          <button class="tab" data-tab="traces">Agent Trace</button>
+          <button class="tab" data-tab="agentroom">Agent 会诊室</button>
+        </nav>
+
+        <section id="overviewTab" class="tab-panel">
+          <div class="split">
+            <section>
+              <div class="section-heading"><h3>规则命中</h3><span id="ruleCount">0</span></div>
+              <div id="ruleHits" class="tag-list"><span class="muted">暂无</span></div>
+            </section>
+            <section>
+              <div class="section-heading"><h3>模型状态</h3></div>
+              <div id="modelStatus" class="notice">等待分析结果</div>
+            </section>
+          </div>
+          <section>
+            <div class="section-heading"><h3>文档解析</h3></div>
+            <div id="parseSummary" class="definition-grid"></div>
+          </section>
+          <section class="risk-radar-panel">
+            <div class="section-heading">
+              <div>
+                <h3>六维风险雷达图</h3>
+                <span class="radar-subtitle">基于已审计风险结论动态计算</span>
+              </div>
+              <span id="radarUpdated">等待分析</span>
+            </div>
+            <div class="risk-radar-layout">
+              <div id="riskRadar" class="risk-radar" aria-label="六维风险雷达图"></div>
+              <div id="radarLegend" class="radar-legend"></div>
+            </div>
+          </section>
+        </section>
+        <section id="claimsTab" class="tab-panel hidden"><div id="claimsTable" class="table-wrap"></div></section>
+        <section id="evidenceTab" class="tab-panel hidden"><div id="evidenceList" class="evidence-list"></div></section>
+        <section id="tracesTab" class="tab-panel hidden"><div id="traceList" class="trace-list"></div></section>
+
+        <section id="agentroomTab" class="tab-panel hidden">
+          <div class="agent-room">
+            <aside class="agent-roster" aria-label="Skill 席位">
+              <div class="section-heading">
+                <h3>六大风险 Agent</h3>
+                <span id="skillCount">0</span>
+              </div>
+              <div id="skillRoster" class="skill-roster"></div>
+              <div class="provider-panel">
+                <div class="section-heading"><h3>模型通道</h3></div>
+                <div id="providerStatus" class="provider-status"></div>
+              </div>
+              <div class="room-actions">
+                <button id="startAgentRoom" class="primary" disabled>启动会诊</button>
+                <button id="refreshAgentRoom" class="ghost-button" disabled>刷新</button>
+              </div>
+              <div id="roomSessionMeta" class="room-meta muted">分析完成后可启动多智能体会诊</div>
+            </aside>
+
+            <div class="agent-stage">
+              <div class="room-progress">
+                <div class="progress-track"><span id="roomProgressBar"></span></div>
+                <div class="room-progress-meta">
+                  <span id="roomStageText">待命</span>
+                  <strong id="roomProgressText">0%</strong>
+                </div>
+              </div>
+
+              <div class="section-heading">
+                <h3>协作时间线</h3>
+                <span id="roomMessageCount">0 条</span>
+              </div>
+              <div id="agentTimeline" class="agent-timeline">
+                <div class="muted">等待会诊开始…</div>
+              </div>
+
+              <div class="decision-board">
+                <div class="section-heading"><h3>会诊结论板</h3></div>
+                <div id="decisionBoard" class="decision-content muted">六大 Agent 会诊结论将显示在这里</div>
+              </div>
+
+              <form id="agentAskForm" class="agent-ask-form">
+                <div class="field grow">
+                  <label for="askQuestion">向 Agent 追问</label>
+                  <textarea id="askQuestion" rows="2" placeholder="例如：法务与财务结论是否冲突？请给出裁决理由。"></textarea>
+                </div>
+                <div class="field">
+                  <label for="askSkill">目标 Agent</label>
+                  <select id="askSkill">
+                    <option value="financial_risk">财务风险 Agent</option>
+                    <option value="legal_risk">法务风险 Agent</option>
+                    <option value="equity_risk">股权风险 Agent</option>
+                    <option value="business_risk">经营风险 Agent</option>
+                    <option value="market_risk">市场风险 Agent</option>
+                    <option value="nonstandard_risk">非标风险 Agent</option>
+                  </select>
+                </div>
+                <button id="askAgentBtn" class="primary" type="submit" disabled>发送追问</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src="/static/app.js?v=agentroom4"></script>
+</body>
+</html>
+
+

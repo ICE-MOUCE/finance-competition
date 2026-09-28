@@ -56,3 +56,8 @@ known_hosts.txt
 work/hk_ipo_risk_system/
 work/hk_ipo_risk_system_sync/
 work/hk_ipo_risk_system.git.bak/
+
+# The complete platform is published under its own directory and controls
+# its generated files with IPO_Sentinel_Platform/.gitignore.
+!IPO_Sentinel_Platform/
+!IPO_Sentinel_Platform/**

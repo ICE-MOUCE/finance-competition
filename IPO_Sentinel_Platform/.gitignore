@@ -1,0 +1,26 @@
+# Local configuration and secrets
+**/.env
+!**/.env.example
+
+# Python environments and caches
+**/.venv/
+**/.venv_*/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ipynb_checkpoints/
+**/*.py[cod]
+
+# Runtime state and generated data
+**/runtime/
+ipo_rag_eval_final/data/*
+!ipo_rag_eval_final/data/.gitkeep
+ipo_rag_eval_final/evaluation/results/
+ipo_rag_eval_final/evaluation/_tmp_*
+ipo_rag_eval_final/evaluation/benchmark/_*
+ipo_rag_eval_final/scripts/_tmp_*
+ipo_rag_eval_final/ipo-rag-final-*.tar.gz
+
+# Logs and process files
+**/*.log
+**/*.pid

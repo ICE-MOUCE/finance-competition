@@ -1,0 +1,134 @@
+[
+  {
+    "id": "strict_001",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "revenue_non_recurring_projects",
+    "risk_element": "收益主要源自非经常性项目，项目数量或服务需求下降会影响经营及财务表现。",
+    "query": "德合集團 非经常性项目 收益 项目数量 需求下降 经营财务业绩 风险",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p17_txt010"],
+    "expected_pages": [17]
+  },
+  {
+    "id": "strict_002",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "performance_bond_liquidity",
+    "risk_element": "履约保证需要质押大额现金存款，可能对流动资金状况造成不利影响。",
+    "query": "德合集團 履约保证 质押现金 存款 流动资金 不利影响",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p44_txt004"],
+    "expected_pages": [44]
+  },
+  {
+    "id": "strict_003",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "covid_project_award_and_receivable",
+    "risk_element": "COVID-19可能导致新项目延后或减少，并影响客户付款能力及应收款可收回性。",
+    "query": "德合集團 COVID-19 新项目 延后 减少 客户付款 应收款 可收回 减值亏损",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p44_txt006"],
+    "expected_pages": [44]
+  },
+  {
+    "id": "strict_004",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "covid_site_interruption",
+    "risk_element": "COVID-19健康安全风险可能导致劳工短缺、业务中断、项目延误及赔偿责任。",
+    "query": "德合集團 COVID-19 工地 停工 劳工短缺 工程延误 赔偿 业务中断",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p44_txt007"],
+    "expected_pages": [44]
+  },
+  {
+    "id": "strict_005",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "supplier_subcontractor_disruption",
+    "risk_element": "供应商或分包商受疫情影响可能延误或无法提供材料、产品、劳工或服务，导致违约及赔偿。",
+    "query": "德合集團 供应商 分包商 延误 无法提供 材料 劳工 服务 违约 赔偿",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p45_txt002"],
+    "expected_pages": [45]
+  },
+  {
+    "id": "strict_006",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "variation_order_margin_volatility",
+    "risk_element": "工程变更令数量和时间波动可能导致收益及毛利率下降。",
+    "query": "德合集團 工程变更令 数量 时间 收益 毛利率 下降 波动",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p45_txt005"],
+    "expected_pages": [45]
+  },
+  {
+    "id": "strict_007",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "variation_order_cost_recovery",
+    "risk_element": "公司曾因工程变更令成本无法收回而录得亏损，未来项目仍可能发生亏损。",
+    "query": "德合集團 工程变更令 成本 无法收回 项目亏损 经营业绩 财务表现",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p46_txt003"],
+    "expected_pages": [46]
+  },
+  {
+    "id": "strict_008",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "contract_asset_recoverability",
+    "risk_element": "合约资产可能无法按估计时间入账或全额收回，从而影响业务及财务表现。",
+    "query": "德合集團 合约资产 可收回性 未认证 未入账 估计时间 财务表现 风险",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p47_txt004"],
+    "expected_pages": [47]
+  },
+  {
+    "id": "strict_009",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "cost_estimation_overrun",
+    "risk_element": "实际时间及成本可能超出初步估计，导致延误、成本超支及利润低于预期。",
+    "query": "德合集團 成本加成 定价 估计 实际时间 成本 超支 延误 利润低于预期",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p47_txt009"],
+    "expected_pages": [47]
+  },
+  {
+    "id": "strict_010",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "subcontractor_performance",
+    "risk_element": "分包商不履约、表现不达标或延期履约可能导致服务质量下降、项目延误或无法完成。",
+    "query": "德合集團 分包商 不履约 表现不达标 延期履约 服务质量 项目延误",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p49_txt003"],
+    "expected_pages": [49]
+  },
+  {
+    "id": "strict_011",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "supplier_material_defect",
+    "risk_element": "供应商材料短缺、延误交付或材料缺陷可能导致项目无法按时完成及赔偿客户。",
+    "query": "德合集團 供应商 原材料 短缺 交付延迟 材料缺陷 无法按时完成 赔偿",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p49_txt007"],
+    "expected_pages": [49]
+  },
+  {
+    "id": "strict_012",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "insurance_coverage_gap",
+    "risk_element": "现有保险可能不足以覆盖所有潜在风险及损失，公司可能承担未充分投保或未投保的损失。",
+    "query": "德合集團 保险 覆盖范围 不足 潜在风险 损失 未充分投保 未投保 索赔",
+    "layer": "legal",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p53_txt002"],
+    "expected_pages": [53]
+  }
+]

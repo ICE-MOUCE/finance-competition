@@ -1,0 +1,541 @@
+{
+  "timestamp": "2026-07-18T21:09:09.524408",
+  "benchmark_file": "evaluation\\benchmark\\manual_gold_v1.json",
+  "top_k": 5,
+  "vector_stats": {
+    "total_vectors": 21563,
+    "dimension": 512,
+    "total_documents": 21563,
+    "index_size_bytes": 44161069,
+    "index_size_mb": 42.12
+  },
+  "routing": {
+    "status_counts": {
+      "matched": 25
+    },
+    "source_counts": {
+      "query": 25
+    },
+    "incorrect_routes": [],
+    "incorrect_route_count": 0,
+    "used_row_id_subset_count": 25,
+    "candidate_count": {
+      "min": 659,
+      "mean": 973.24,
+      "max": 1217
+    },
+    "calls_top_k_total_vectors_from_metadata": false
+  },
+  "performance": {
+    "timing_ms": {
+      "runs": 75,
+      "p50_ms": 21.0,
+      "p95_ms": 61.2,
+      "max_ms": 312.3,
+      "mean_ms": 30.761
+    },
+    "warmups_per_case": 1,
+    "repeats_per_case": 3,
+    "global_search_call_count": 0,
+    "row_id_subset_call_count": 100,
+    "global_search_top_k_values": [
+      25
+    ],
+    "row_id_subset_top_k_min_mean_max": {
+      "min": 659,
+      "mean": 973.24,
+      "max": 1217
+    },
+    "calls_top_k_total_vectors": false,
+    "global_fallback_probe": {
+      "query": "financial risk without company",
+      "result_count": 5,
+      "routing_status": "no_match",
+      "routing_source": "global_fallback",
+      "used_row_id_subset": false,
+      "calls_top_k_total_vectors": false
+    }
+  },
+  "comparison": {
+    "baseline_global_top5": {
+      "document_hit": {
+        "rate": 0.84,
+        "denominator": 25
+      },
+      "section_hit": {
+        "rate": 0.44,
+        "denominator": 25
+      },
+      "normalized_page_hit": {
+        "rate": 0.4,
+        "denominator": 25
+      }
+    },
+    "v2_exhaustive_upper_bound": {
+      "document_hit": {
+        "hits": 25,
+        "denominator": 25,
+        "rate": 1.0
+      },
+      "section_hit": {
+        "hits": 17,
+        "denominator": 25,
+        "rate": 0.68
+      },
+      "normalized_page_hit": {
+        "hits": 17,
+        "denominator": 25,
+        "rate": 0.68
+      }
+    },
+    "company_routing_v1": {
+      "document_hit": {
+        "rate": 1.0,
+        "denominator": 25
+      },
+      "section_hit": {
+        "rate": 0.68,
+        "denominator": 25
+      },
+      "normalized_page_hit": {
+        "rate": 0.68,
+        "denominator": 25
+      }
+    }
+  },
+  "decision_gate": {
+    "document_hit_at_least_25_of_25": true,
+    "section_hit_at_least_17_of_25": true,
+    "normalized_page_hit_at_least_17_of_25": true,
+    "incorrect_route_is_zero": true,
+    "routed_path_no_top_k_total_vectors": true,
+    "p95_under_100_ms": true
+  },
+  "per_case_performance": [
+    {
+      "case_id": "manual_ts_yideng_bus_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 15.5,
+        "p95_ms": 15.86,
+        "max_ms": 15.9,
+        "mean_ms": 15.267
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2020_01147_伊登軟件",
+      "routing_candidate_count": 659,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "manual_ts_yideng_bus_002",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 15.4,
+        "p95_ms": 16.39,
+        "max_ms": 16.5,
+        "mean_ms": 15.4
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2020_01147_伊登軟件",
+      "routing_candidate_count": 659,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "manual_ts_yideng_fin_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 15.1,
+        "p95_ms": 15.37,
+        "max_ms": 15.4,
+        "mean_ms": 15.133
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2020_01147_伊登軟件",
+      "routing_candidate_count": 659,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 11.9,
+        "p95_ms": 13.52,
+        "max_ms": 13.7,
+        "mean_ms": 12.5
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2020_01147_伊登軟件",
+      "routing_candidate_count": 659,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "manual_ch_duodian_bus_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 20.5,
+        "p95_ms": 74.41,
+        "max_ms": 80.4,
+        "mean_ms": 40.333
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_duodian_fin_margin_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 22.3,
+        "p95_ms": 23.11,
+        "max_ms": 23.2,
+        "mean_ms": 21.967
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_leapmotor_fin_loss_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 26.5,
+        "p95_ms": 33.25,
+        "max_ms": 34.0,
+        "mean_ms": 27.533
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2022_09863_零跑汽車",
+      "routing_candidate_count": 1043,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_fin_loss_cash_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 33.3,
+        "p95_ms": 36.99,
+        "max_ms": 37.4,
+        "mean_ms": 33.4
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2025_09678_雲知聲",
+      "routing_candidate_count": 895,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_youran_fin_liquidity_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 61.2,
+        "p95_ms": 73.71,
+        "max_ms": 75.1,
+        "mean_ms": 65.833
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2021_09858_優然牧業",
+      "routing_candidate_count": 1217,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_maogeping_bus_supplier_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 17.0,
+        "p95_ms": 18.8,
+        "max_ms": 19.0,
+        "mean_ms": 17.4
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_01318_毛戈平",
+      "routing_candidate_count": 899,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "mgv1_leapmotor_bus_customer_supplier_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 21.0,
+        "p95_ms": 21.0,
+        "max_ms": 21.0,
+        "mean_ms": 20.867
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2022_09863_零跑汽車",
+      "routing_candidate_count": 1043,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_duodian_owner_controller_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 21.3,
+        "p95_ms": 25.8,
+        "max_ms": 26.3,
+        "mean_ms": 22.767
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_duodian_owner_connected_tx_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 21.2,
+        "p95_ms": 21.92,
+        "max_ms": 22.0,
+        "mean_ms": 21.4
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_leapmotor_owner_no_controller_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 20.8,
+        "p95_ms": 20.8,
+        "max_ms": 20.8,
+        "mean_ms": 20.7
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2022_09863_零跑汽車",
+      "routing_candidate_count": 1043,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_owner_controller_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 35.4,
+        "p95_ms": 39.54,
+        "max_ms": 40.0,
+        "mean_ms": 36.533
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2025_09678_雲知聲",
+      "routing_candidate_count": 895,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_youran_owner_controller_connected_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 52.6,
+        "p95_ms": 52.87,
+        "max_ms": 52.9,
+        "mean_ms": 52.6
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2021_09858_優然牧業",
+      "routing_candidate_count": 1217,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "mgv1_duodian_comp_license_data_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 22.0,
+        "p95_ms": 23.08,
+        "max_ms": 23.2,
+        "mean_ms": 22.233
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_duodian_comp_litigation_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 23.3,
+        "p95_ms": 23.84,
+        "max_ms": 23.9,
+        "mean_ms": 23.367
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_maogeping_comp_no_litigation_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 16.1,
+        "p95_ms": 18.8,
+        "max_ms": 19.1,
+        "mean_ms": 17.067
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_01318_毛戈平",
+      "routing_candidate_count": 899,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_comp_no_litigation_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 36.1,
+        "p95_ms": 36.28,
+        "max_ms": 36.3,
+        "mean_ms": 35.567
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2025_09678_雲知聲",
+      "routing_candidate_count": 895,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "mgv1_youran_comp_arbitration_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 42.2,
+        "p95_ms": 285.29,
+        "max_ms": 312.3,
+        "mean_ms": 131.5
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2021_09858_優然牧業",
+      "routing_candidate_count": 1217,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_duodian_ipo_preipo_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 17.6,
+        "p95_ms": 17.69,
+        "max_ms": 17.7,
+        "mean_ms": 17.133
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_02586_多點數智",
+      "routing_candidate_count": 1085,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_maogeping_ipo_use_proceeds_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 13.7,
+        "p95_ms": 14.42,
+        "max_ms": 14.5,
+        "mean_ms": 13.5
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2024_01318_毛戈平",
+      "routing_candidate_count": 899,
+      "document_hit": true,
+      "section_hit": true,
+      "normalized_physical_page_hit": true
+    },
+    {
+      "case_id": "mgv1_leapmotor_ipo_use_proceeds_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 16.5,
+        "p95_ms": 16.68,
+        "max_ms": 16.7,
+        "mean_ms": 16.567
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2022_09863_零跑汽車",
+      "routing_candidate_count": 1043,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": false
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "timing_ms": {
+        "runs": 3,
+        "p50_ms": 52.6,
+        "p95_ms": 52.69,
+        "max_ms": 52.7,
+        "mean_ms": 52.467
+      },
+      "routing_status": "matched",
+      "routing_source": "query",
+      "routing_document_id": "2025_09678_雲知聲",
+      "routing_candidate_count": 895,
+      "document_hit": true,
+      "section_hit": false,
+      "normalized_physical_page_hit": false
+    }
+  ]
+}

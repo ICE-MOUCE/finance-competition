@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-07-23T08:46:00+08:00",
+  "scope": "Table Evidence / Chunk Representation Repair V1; Dmall single-document local repair only.",
+  "document_id": "2024_02586_????",
+  "data_chain": {
+    "mineru_artifact": {
+      "status": "has_fact",
+      "terms": [
+        "70.6",
+        "78.2"
+      ],
+      "note": "Values are present in MinerU Markdown/content_list HTML table cells."
+    },
+    "evidence_after_repair": {
+      "status": "has_fact",
+      "terms": [
+        "70.6",
+        "70.6%",
+        "78.2",
+        "78.2%"
+      ]
+    },
+    "chunk_after_repair": {
+      "status": "has_fact",
+      "terms": [
+        "70.6",
+        "70.6%",
+        "78.2",
+        "78.2%"
+      ]
+    },
+    "vector_document_after_repair": {
+      "status": "has_fact",
+      "terms": [
+        "70.6",
+        "70.6%",
+        "78.2",
+        "78.2%"
+      ],
+      "note": "Repaired Dmall table vector metadata includes text_for_embedding for auditability."
+    }
+  },
+  "repair_summary": {
+    "evidence_count": 5051,
+    "chunk_count": 1117,
+    "vector_total_before": 21563,
+    "vector_kept": 20478,
+    "vector_added_for_document": 1085,
+    "vector_total_after": 21563
+  },
+  "evidence_chain_after": {
+    "total_cases": 5,
+    "initial_full_support": 2,
+    "initial_full_support_rate": 0.4,
+    "final_full_support": 5,
+    "final_chain_support_rate": 1.0,
+    "missing_fact_cases": 3,
+    "missing_fact_recovered_cases": 3,
+    "missing_fact_recovery_rate": 1.0,
+    "evidence_fragment_recall_hits": 5,
+    "evidence_fragment_recall_rate": 1.0,
+    "risk_element_correct": 5,
+    "risk_element_accuracy_rate": 1.0,
+    "citation_valid": 5,
+    "citation_validity_rate": 1.0,
+    "section_grounding_count": 5,
+    "section_grounding_rate": 1.0,
+    "average_retrieval_rounds": 1.2
+  },
+  "duodian_case_after": {
+    "final_support_label": "full_support",
+    "evidence_fragment_recall_hit": true,
+    "risk_element_correct": true,
+    "matched_chain_terms": [
+      "关联方",
+      "收入百分比",
+      "独立客户",
+      "70.6%",
+      "78.2%",
+      "51.6%"
+    ],
+    "unresolved_missing_facts": [],
+    "supporting_chunks": [
+      {
+        "round": 1,
+        "chunk_id": "chk_2024_02586_多點數智_p17_tbl009",
+        "pages": [
+          17
+        ],
+        "matched_terms": [
+          "关联方",
+          "独立客户",
+          "70.6%",
+          "78.2%",
+          "51.6%"
+        ]
+      },
+      {
+        "round": 1,
+        "chunk_id": "chk_2024_02586_多點數智_p209_tbl083",
+        "pages": [
+          209
+        ],
+        "matched_terms": [
+          "关联方",
+          "独立客户",
+          "70.6%",
+          "78.2%",
+          "51.6%"
+        ]
+      },
+      {
+        "round": 2,
+        "chunk_id": "chk_2024_02586_多點數智_p17_tbl009",
+        "pages": [
+          17
+        ],
+        "matched_terms": [
+          "关联方",
+          "独立客户",
+          "70.6%",
+          "78.2%",
+          "51.6%"
+        ]
+      },
+      {
+        "round": 2,
+        "chunk_id": "chk_2024_02586_多點數智_p209_tbl083",
+        "pages": [
+          209
+        ],
+        "matched_terms": [
+          "关联方",
+          "独立客户",
+          "70.6%",
+          "78.2%",
+          "51.6%"
+        ]
+      }
+    ]
+  }
+}

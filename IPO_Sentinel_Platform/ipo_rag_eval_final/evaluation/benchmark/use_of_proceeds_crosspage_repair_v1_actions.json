@@ -1,0 +1,355 @@
+{
+  "dry_run": false,
+  "rebuild_vectors": true,
+  "scanned_docs": 5,
+  "triggered_docs": 5,
+  "selected_docs": [
+    "2025_09678_雲知聲",
+    "2024_01318_毛戈平",
+    "2022_09863_零跑汽車",
+    "2020_01147_伊登軟件",
+    "2020_01351_輝煌明天"
+  ],
+  "triggered_sample": [
+    {
+      "document_id": "2025_09678_雲知聲",
+      "evidence_count": 4625,
+      "uop_unit_count": 68,
+      "uop_pages": [
+        7,
+        21,
+        22,
+        24,
+        66,
+        253,
+        285,
+        287,
+        327,
+        332,
+        334,
+        335,
+        337,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        365,
+        396,
+        409,
+        413,
+        453,
+        473,
+        503
+      ],
+      "triggered": true
+    },
+    {
+      "document_id": "2024_01318_毛戈平",
+      "evidence_count": 4030,
+      "uop_unit_count": 67,
+      "uop_pages": [
+        8,
+        26,
+        29,
+        63,
+        166,
+        171,
+        201,
+        308,
+        312,
+        313,
+        341,
+        374,
+        378,
+        380,
+        381,
+        382,
+        387,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        406,
+        461,
+        463,
+        497,
+        499,
+        531,
+        549
+      ],
+      "triggered": true
+    },
+    {
+      "document_id": "2022_09863_零跑汽車",
+      "evidence_count": 5172,
+      "uop_unit_count": 70,
+      "uop_pages": [
+        7,
+        30,
+        31,
+        32,
+        97,
+        183,
+        268,
+        327,
+        330,
+        358,
+        361,
+        374,
+        379,
+        401,
+        402,
+        403,
+        404,
+        407,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        483,
+        487,
+        546,
+        552,
+        553,
+        580
+      ],
+      "triggered": true
+    },
+    {
+      "document_id": "2020_01147_伊登軟件",
+      "evidence_count": 3753,
+      "uop_unit_count": 65,
+      "uop_pages": [
+        5,
+        23,
+        25,
+        26,
+        47,
+        51,
+        52,
+        96,
+        102,
+        112,
+        127,
+        131,
+        137,
+        138,
+        139,
+        172,
+        173,
+        192,
+        193,
+        194,
+        220,
+        244,
+        256,
+        262,
+        264,
+        265,
+        279,
+        283,
+        284,
+        285
+      ],
+      "triggered": true
+    },
+    {
+      "document_id": "2020_01351_輝煌明天",
+      "evidence_count": 3548,
+      "uop_unit_count": 74,
+      "uop_pages": [
+        5,
+        21,
+        22,
+        23,
+        54,
+        65,
+        66,
+        71,
+        120,
+        126,
+        130,
+        138,
+        139,
+        140,
+        245,
+        287,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319
+      ],
+      "triggered": true
+    }
+  ],
+  "actions": [
+    {
+      "document_id": "2025_09678_雲知聲",
+      "chunks": {
+        "document_id": "2025_09678_雲知聲",
+        "old_chunk_count": 970,
+        "new_chunk_count": 970,
+        "text_chunks": 530,
+        "table_chunks": 384,
+        "image_chunks": 56
+      },
+      "vectors": {
+        "document_id": "2025_09678_雲知聲",
+        "vector_before": {
+          "total_vectors": 21575,
+          "dimension": 512,
+          "total_documents": 21575,
+          "index_size_bytes": 44185645,
+          "index_size_mb": 42.14
+        },
+        "vector_after": {
+          "total_vectors": 21603,
+          "dimension": 512,
+          "total_documents": 21603,
+          "index_size_bytes": 44242989,
+          "index_size_mb": 42.19
+        },
+        "kept_vectors": 20680,
+        "replaced_vectors": 923
+      }
+    },
+    {
+      "document_id": "2024_01318_毛戈平",
+      "chunks": {
+        "document_id": "2024_01318_毛戈平",
+        "old_chunk_count": 939,
+        "new_chunk_count": 962,
+        "text_chunks": 529,
+        "table_chunks": 374,
+        "image_chunks": 59
+      },
+      "vectors": {
+        "document_id": "2024_01318_毛戈平",
+        "vector_before": {
+          "total_vectors": 21603,
+          "dimension": 512,
+          "total_documents": 21603,
+          "index_size_bytes": 44242989,
+          "index_size_mb": 42.19
+        },
+        "vector_after": {
+          "total_vectors": 21626,
+          "dimension": 512,
+          "total_documents": 21626,
+          "index_size_bytes": 44290093,
+          "index_size_mb": 42.24
+        },
+        "kept_vectors": 20704,
+        "replaced_vectors": 922
+      }
+    },
+    {
+      "document_id": "2022_09863_零跑汽車",
+      "chunks": {
+        "document_id": "2022_09863_零跑汽車",
+        "old_chunk_count": 1089,
+        "new_chunk_count": 1112,
+        "text_chunks": 652,
+        "table_chunks": 424,
+        "image_chunks": 36
+      },
+      "vectors": {
+        "document_id": "2022_09863_零跑汽車",
+        "vector_before": {
+          "total_vectors": 21626,
+          "dimension": 512,
+          "total_documents": 21626,
+          "index_size_bytes": 44290093,
+          "index_size_mb": 42.24
+        },
+        "vector_after": {
+          "total_vectors": 21649,
+          "dimension": 512,
+          "total_documents": 21649,
+          "index_size_bytes": 44337197,
+          "index_size_mb": 42.28
+        },
+        "kept_vectors": 20583,
+        "replaced_vectors": 1066
+      }
+    },
+    {
+      "document_id": "2020_01147_伊登軟件",
+      "chunks": {
+        "document_id": "2020_01147_伊登軟件",
+        "old_chunk_count": 693,
+        "new_chunk_count": 725,
+        "text_chunks": 465,
+        "table_chunks": 248,
+        "image_chunks": 12
+      },
+      "vectors": {
+        "document_id": "2020_01147_伊登軟件",
+        "vector_before": {
+          "total_vectors": 21649,
+          "dimension": 512,
+          "total_documents": 21649,
+          "index_size_bytes": 44337197,
+          "index_size_mb": 42.28
+        },
+        "vector_after": {
+          "total_vectors": 21681,
+          "dimension": 512,
+          "total_documents": 21681,
+          "index_size_bytes": 44402733,
+          "index_size_mb": 42.35
+        },
+        "kept_vectors": 20978,
+        "replaced_vectors": 703
+      }
+    },
+    {
+      "document_id": "2020_01351_輝煌明天",
+      "chunks": {
+        "document_id": "2020_01351_輝煌明天",
+        "old_chunk_count": 730,
+        "new_chunk_count": 761,
+        "text_chunks": 469,
+        "table_chunks": 266,
+        "image_chunks": 26
+      },
+      "vectors": {
+        "document_id": "2020_01351_輝煌明天",
+        "vector_before": {
+          "total_vectors": 21681,
+          "dimension": 512,
+          "total_documents": 21681,
+          "index_size_bytes": 44402733,
+          "index_size_mb": 42.35
+        },
+        "vector_after": {
+          "total_vectors": 21738,
+          "dimension": 512,
+          "total_documents": 21738,
+          "index_size_bytes": 44519469,
+          "index_size_mb": 42.46
+        },
+        "kept_vectors": 21005,
+        "replaced_vectors": 733
+      }
+    }
+  ]
+}

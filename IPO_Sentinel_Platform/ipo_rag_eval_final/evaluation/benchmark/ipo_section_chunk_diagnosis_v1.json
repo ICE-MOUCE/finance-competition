@@ -1,0 +1,1634 @@
+{
+  "condition": {
+    "scope": "IPO-specific section/chunk diagnosis only",
+    "benchmark_paths": [
+      "evaluation\\benchmark\\manual_gold_v1.json",
+      "evaluation\\benchmark\\manual_new_annotators_v1.json"
+    ],
+    "target_case_ids": [
+      "manual_ts_yideng_ipo_001",
+      "mgv1_duodian_ipo_preipo_001",
+      "mgv1_maogeping_ipo_use_proceeds_001",
+      "mgv1_leapmotor_ipo_use_proceeds_001",
+      "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "manual_new_董飞飞_cat_ipo_002",
+      "manual_new_董飞飞_cat_ipo_004",
+      "manual_new_董飞飞_cat_ipo_005"
+    ],
+    "ranking_logic_changed": false,
+    "gold_dataset_changed": false,
+    "hybrid_bm25_reranker_used": false,
+    "ranking_flags_default_enabled": false,
+    "vector_document_count": 21575
+  },
+  "summary": {
+    "n_cases": 8,
+    "root_cause_counts": {
+      "query_intent_gap": 2,
+      "ranking_issue": 4,
+      "vector_missing": 1,
+      "section_label_issue": 1
+    },
+    "recommended_fix_counts": {
+      "query_intent_terms": 2,
+      "rerank_feature": 4,
+      "chunk_representation_repair": 1,
+      "section_label_repair": 1
+    },
+    "by_ipo_subtype_root_cause": {
+      "use_of_proceeds": {
+        "query_intent_gap": 2,
+        "ranking_issue": 2,
+        "vector_missing": 1
+      },
+      "pre_ipo": {
+        "ranking_issue": 1,
+        "section_label_issue": 1
+      },
+      "share_price_volatility": {
+        "ranking_issue": 1
+      }
+    },
+    "worth_continuing_query_intent": true,
+    "needs_chunk_or_section_expression_repair": true,
+    "hybrid_bm25_reranker_still_blocked": true,
+    "single_next_step": "rerank_feature"
+  },
+  "cases": [
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "dataset": "manual_gold_v1",
+      "ipo_subtype": "use_of_proceeds",
+      "document_id": "2020_01147_伊登軟件",
+      "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+      "expected_pages": [
+        [
+          283,
+          284
+        ]
+      ],
+      "expected_sections": [
+        "未来计划及所得款项用途"
+      ],
+      "gold_preview": "– 277 – 未來計劃及所得款項用途 未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲行使，則扣除股份發售的包 銷佣金、成本及其他估計開支後，我們估計將自股份發售收取所得款項淨額約74.0百萬港元。 根據我們的業務策略，我們擬將股份發售所得款項淨額用作以下用途： • 股份發售所得款項淨額的約33.0%（或約24.4百萬港元），將於截至2022年12月31日止年 度上半年前用於擴張我們的辦事處及增強我們的服務實力以把握中國各地區的商機，其 中(i) 股份發售所得款項淨額的約12.9%（或約9.6百萬港元）將用於擴展我們的深圳",
+      "gold_keywords": [
+        "所得款项",
+        "业务扩张",
+        "研发",
+        "云服务"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": true,
+      "dense_raw_rank": 41,
+      "baseline_rank": 2,
+      "b_intent_rank": 1,
+      "d_section_prior_rank": 37,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 2,
+          "exact_gold_chunk_rank": null,
+          "page_grounded_rank": null
+        },
+        "B_intent": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 1,
+          "exact_gold_chunk_rank": 49,
+          "page_grounded_rank": 49
+        },
+        "D_section_prior": {
+          "top10": false,
+          "top20": false,
+          "top50": true,
+          "rank": 37,
+          "exact_gold_chunk_rank": 48,
+          "page_grounded_rank": 48
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": false,
+        "top20": false,
+        "top50": true,
+        "rank": 41,
+        "exact_gold_chunk_rank": 50,
+        "candidate_count": 671
+      },
+      "hit_chunk_section_path": [
+        "概 要"
+      ],
+      "gold_chunk_id": "chk_2020_01147_伊登軟件_p282_txt294",
+      "gold_chunk_section_path": [
+        "財務資料"
+      ],
+      "gold_chunk_pages": [
+        282,
+        283
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "use_of_proceeds",
+      "intent_aux_queries": [
+        "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？ 未来计划及所得款项用途 所得款项净额 百分比 港元",
+        "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？ 所得款项用途 募资 用于 预计"
+      ],
+      "best_evidence_match": {
+        "content_hit": true,
+        "coverage": 0.5,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          283
+        ],
+        "score": 0.65,
+        "preview": "假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲行使，則扣除股份發售的包銷佣金、成本及其他估計開支後，我們估計將自股份發售收取所得款項淨額約74.0百萬港元。",
+        "id": "ev_2020_01147_伊登軟件_p283_txt004",
+        "section_path": [
+          "財務資料"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          282,
+          283
+        ],
+        "score": 1.0667,
+        "preview": "除預期將產生的與上市有關的一次過及非經常性開支以及預期自客戶A所得收益將因美國禁令於截至2020年12月31日止年度減少外，董事確認，直至本招股章程日期，我們的財務或經營狀況自2019年12月31日（本招股章程附錄一所載會計師報告所呈報期間結束之日）以來並無重大不利變動，自2019年12月31日以來並無事件會對本招股章程附錄一會計師報告所載資料造成重大影響。 未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲",
+        "id": "chk_2020_01147_伊登軟件_p282_txt294",
+        "section_path": [
+          "財務資料"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.5,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          283
+        ],
+        "score": 0.65,
+        "preview": "假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲行使，則扣除股份發售的包銷佣金、成本及其他估計開支後，我們估計將自股份發售收取所得款項淨額約74.0百萬港元。",
+        "id": "ev_2020_01147_伊登軟件_p283_txt004",
+        "section_path": [
+          "財務資料"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          282,
+          283
+        ],
+        "score": 1.0667,
+        "preview": "除預期將產生的與上市有關的一次過及非經常性開支以及預期自客戶A所得收益將因美國禁令於截至2020年12月31日止年度減少外，董事確認，直至本招股章程日期，我們的財務或經營狀況自2019年12月31日（本招股章程附錄一所載會計師報告所呈報期間結束之日）以來並無重大不利變動，自2019年12月31日以來並無事件會對本招股章程附錄一會計師報告所載資料造成重大影響。 未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲",
+        "id": "chk_2020_01147_伊登軟件_p282_txt294",
+        "section_path": [
+          "財務資料"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.25,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          283,
+          284
+        ],
+        "score": 1.3167,
+        "preview": "未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲行使，則扣除股份發售的包銷佣金、成本及其他估計開支後，我們估計將自股份發售收取所得款項淨額約74.0百萬港元。 根據我們的業務策略，我們擬將股份發售所得款項淨額用作以下用途： 股份發售所得款項淨額的約33.0%（或約24.4百萬港元），將於截至2022年12月31日止年度上半年前用於擴張我們的辦事處及增強我們的服務實力以把握中國各地區的商機，其中(i)股份發售"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.25,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          282,
+          283,
+          284,
+          285
+        ],
+        "score": 1.3167,
+        "preview": "除預期將產生的與上市有關的一次過及非經常性開支以及預期自客戶A所得收益將因美國禁令於截至2020年12月31日止年度減少外，董事確認，直至本招股章程日期，我們的財務或經營狀況自2019年12月31日（本招股章程附錄一所載會計師報告所呈報期間結束之日）以來並無重大不利變動，自2019年12月31日以來並無事件會對本招股章程附錄一會計師報告所載資料造成重大影響。 未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "evidence_chunk_vector_chain_present",
+      "final_root_cause": "query_intent_gap",
+      "recommended_fix_type": "query_intent_terms"
+    },
+    {
+      "case_id": "mgv1_duodian_ipo_preipo_001",
+      "dataset": "manual_gold_v1",
+      "ipo_subtype": "pre_ipo",
+      "document_id": "2024_02586_多點數智",
+      "question": "多点数智的首次公开发售前投资是否存在特殊权利或无禁售安排？",
+      "expected_pages": [
+        [
+          155,
+          157
+        ]
+      ],
+      "expected_sections": [
+        "历史、重组及公司架构",
+        "首次公开发售前投资"
+      ],
+      "gold_preview": "ous Link Group Limited持有的所有股份所附帶的投票權由董事會最終指示及控制，因為 受益人認為董事會將基於本公司及股東的整體利益行使投票權。 首次公開發售前投資 概覽 自成立以來，我們已收到三輪首次公開發售前投資，概述如下。所有首次公開發售 前投資者均根據首次公開發售前投資獲發行本公司優先股。 輪 投資協議日期 (1) 完成日期 (2) 投資協議項下 的股份總數 概約籌集金額 向本公司支付 的每股成本 於每輪首次公開 發售前投資 本集團的交易後 估值 (3) 發售價的折讓 (4) 1. A輪 2015年4月 2017年5月9日 106,000,000股 A輪優先股 106.0百萬美元 1.00美元 606.0百萬美",
+      "gold_keywords": [
+        "首次公开发售前投资",
+        "特殊权利",
+        "禁售"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": true,
+      "dense_raw_rank": 15,
+      "baseline_rank": null,
+      "b_intent_rank": null,
+      "d_section_prior_rank": 3,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": false,
+          "top20": false,
+          "top50": false,
+          "rank": null,
+          "exact_gold_chunk_rank": null,
+          "page_grounded_rank": null
+        },
+        "B_intent": {
+          "top10": false,
+          "top20": false,
+          "top50": false,
+          "rank": null,
+          "exact_gold_chunk_rank": null,
+          "page_grounded_rank": null
+        },
+        "D_section_prior": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 3,
+          "exact_gold_chunk_rank": 3,
+          "page_grounded_rank": 3
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": false,
+        "top20": true,
+        "top50": true,
+        "rank": 15,
+        "exact_gold_chunk_rank": 15,
+        "candidate_count": 1085
+      },
+      "hit_chunk_section_path": [
+        "歷 史 、 重 組 及 公 司 架 構"
+      ],
+      "gold_chunk_id": "chk_2024_02586_多點數智_p155_txt184",
+      "gold_chunk_section_path": [
+        "歷 史 、 重 組 及 公 司 架 構"
+      ],
+      "gold_chunk_pages": [
+        155,
+        156
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "pre_ipo_rights",
+      "intent_aux_queries": [
+        "多点数智的首次公开发售前投资是否存在特殊权利或无禁售安排？ 首次公开发售前投资 特殊权利 禁售期 发售价折让",
+        "多点数智的首次公开发售前投资是否存在特殊权利或无禁售安排？ Pre-IPO 投资者 特别权利 终止 上市"
+      ],
+      "best_evidence_match": {
+        "content_hit": false,
+        "coverage": 0.0833,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "禁售"
+        ],
+        "page_hit": true,
+        "pages": [
+          156
+        ],
+        "score": 0.5667,
+        "preview": "首次公開發售前投資項下協議的條款並無對任何首次公開發售前投資者於上市後持有的股份施加任何禁售責任。",
+        "id": "ev_2024_02586_多點數智_p156_txt007",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.6667,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "禁售"
+        ],
+        "page_hit": true,
+        "pages": [
+          155,
+          156
+        ],
+        "score": 1.15,
+        "preview": "(8) Vigorous Link Group Limited為根據英屬維爾京群島法律註冊成立的有限公司，由信託全資擁有，該信託為本集團若干董事、高級管理層及僱員的利益持有股份（其已全數歸屬）。由Vigorous Link Group Limited持有的股份中，5,000,000股股份為聯合創始人、執行董事兼總裁張先生的利益持有，3,698,734股股份為非執行董事陳志宇先生的利益持有，而餘下66,301,266股股份乃為本集團若干僱員、前僱員及高級管理層的利益持有。就本公司及受益人（大多數僅持有少量股份）的角度",
+        "id": "chk_2024_02586_多點數智_p155_txt184",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": false,
+        "coverage": 0.0833,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "禁售"
+        ],
+        "page_hit": true,
+        "pages": [
+          156
+        ],
+        "score": 0.5667,
+        "preview": "首次公開發售前投資項下協議的條款並無對任何首次公開發售前投資者於上市後持有的股份施加任何禁售責任。",
+        "id": "ev_2024_02586_多點數智_p156_txt007",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.6667,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "禁售"
+        ],
+        "page_hit": true,
+        "pages": [
+          155,
+          156
+        ],
+        "score": 1.15,
+        "preview": "(8) Vigorous Link Group Limited為根據英屬維爾京群島法律註冊成立的有限公司，由信託全資擁有，該信託為本集團若干董事、高級管理層及僱員的利益持有股份（其已全數歸屬）。由Vigorous Link Group Limited持有的股份中，5,000,000股股份為聯合創始人、執行董事兼總裁張先生的利益持有，3,698,734股股份為非執行董事陳志宇先生的利益持有，而餘下66,301,266股股份乃為本集團若干僱員、前僱員及高級管理層的利益持有。就本公司及受益人（大多數僅持有少量股份）的角度",
+        "id": "chk_2024_02586_多點數智_p155_txt184",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.6667,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "禁售"
+        ],
+        "page_hit": true,
+        "pages": [
+          155,
+          156,
+          157
+        ],
+        "score": 1.15,
+        "preview": "(2) 根據每股優先股將於全球發售成為無條件後轉換成一股普通股的假設，所有優先股於上市後將自動轉換成相同數目的普通股。 (3) 將優先股按一換一轉換成普通股後，不計及可轉換債券轉換後可予發行的股份，以及根據股份激勵計劃及超額配股權將予配發及發行的股份。 (4) IDG美元基金股東包括Lovely Tree Holdings Limited、OLIVER SPARK LIMITED、IDG-Accel China Capital IIL.P. 、IDG-Accel China Capital II Investors"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.6667,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "禁售"
+        ],
+        "page_hit": true,
+        "pages": [
+          153,
+          154,
+          155,
+          156,
+          157,
+          158
+        ],
+        "score": 1.15,
+        "preview": "為盡量減低潛在的法律及監管風險，於2024年4月24日，深圳新通路分別以代價人民幣1元向張先生及以代價人民幣1元向魯玉新女士轉讓其於多點新鮮（北京）50%的股權。轉讓代價乃基於普華永道諮詢（深圳）有限公司北京分公司對多點新鮮（北京）的估值釐定。緊隨該轉讓後，我們不再直接或間接持有多點新鮮（北京）的任何權益；張先生及魯玉新女士分別持有多點新鮮（北京）51%及49%的股權。多點新鮮（北京）總股權市值採用收益法及市場法評估。在收益法估值下，估值師考慮多點新鮮（北京）的現金流量及其資產和負債狀況。基於其分析，估值師已釐定多"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "evidence_chunk_vector_chain_present",
+      "final_root_cause": "ranking_issue",
+      "recommended_fix_type": "rerank_feature"
+    },
+    {
+      "case_id": "mgv1_maogeping_ipo_use_proceeds_001",
+      "dataset": "manual_gold_v1",
+      "ipo_subtype": "use_of_proceeds",
+      "document_id": "2024_01318_毛戈平",
+      "question": "毛戈平计划如何使用全球发售所得款项？",
+      "expected_pages": [
+        [
+          26,
+          26
+        ]
+      ],
+      "expected_sections": [
+        "概要",
+        "所得款项用途"
+      ],
+      "gold_preview": "概 要 – 17 – 所得款項用途 假設發售價為每股股份28.05港元（即本招股章程所述發售價範圍的中位數）以及 發售量調整權及超額配股權未獲行使，我們估計，經扣除我們就全球發售已付及應付 的包銷佣金及其他估計開支後，我們將收到的全球發售所得款項淨額約為1,844.5百萬 港元。根據我們的戰略，我們擬將全球發售所得款項按下述金額用於以下用途： • 所得款項淨額約25.0%或461.1百萬港元，預期將用於擴大我們的銷售網 絡； • 所得款項淨額約20.0%或369.0百萬港元，預期將用於品牌建設活動； • 所得款項淨額約15.0%或276.6百萬港元，預期將用於海外擴張及收購； • 所得款項淨額約10.0%或184.5百萬港元，預期將",
+      "gold_keywords": [
+        "所得款项",
+        "品牌",
+        "销售网络"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": false,
+      "dense_raw_rank": 5,
+      "baseline_rank": 6,
+      "b_intent_rank": 6,
+      "d_section_prior_rank": 5,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 6,
+          "exact_gold_chunk_rank": 8,
+          "page_grounded_rank": 8
+        },
+        "B_intent": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 6,
+          "exact_gold_chunk_rank": 6,
+          "page_grounded_rank": 6
+        },
+        "D_section_prior": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 5,
+          "exact_gold_chunk_rank": 5,
+          "page_grounded_rank": 5
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": true,
+        "top20": true,
+        "top50": true,
+        "rank": 5,
+        "exact_gold_chunk_rank": 526,
+        "candidate_count": 899
+      },
+      "hit_chunk_section_path": [
+        "財 務 資 料"
+      ],
+      "gold_chunk_id": "chk_2024_01318_毛戈平_p24_txt023",
+      "gold_chunk_section_path": [
+        "概 要"
+      ],
+      "gold_chunk_pages": [
+        24,
+        25,
+        26
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "use_of_proceeds",
+      "intent_aux_queries": [
+        "毛戈平计划如何使用全球发售所得款项？ 未来计划及所得款项用途 所得款项净额 百分比 港元",
+        "毛戈平计划如何使用全球发售所得款项？ 所得款项用途 募资 用于 预计"
+      ],
+      "best_evidence_match": {
+        "content_hit": true,
+        "coverage": 0.875,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          26
+        ],
+        "score": 1.025,
+        "preview": "假設發售價為每股股份28.05港元（即本招股章程所述發售價範圍的中位數）以及發售量調整權及超額配股權未獲行使，我們估計，經扣除我們就全球發售已付及應付的包銷佣金及其他估計開支後，我們將收到的全球發售所得款項淨額約為1,844.5百萬港元。根據我們的戰略，我們擬將全球發售所得款項按下述金額用於以下用途：",
+        "id": "ev_2024_01318_毛戈平_p26_txt002",
+        "section_path": [
+          "概 要"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          24,
+          25,
+          26
+        ],
+        "score": 1.0667,
+        "preview": "我們的流動資產淨值由截至2021年12月31日的人民幣606.2百萬元增加55.8%至截至2022年12月31日的人民幣944.4百萬元，主要由於(i)現金及現金等價物增加人民幣396.3百萬元；及(ii)存貨增加人民幣89.7百萬元，部分被貿易應付款項增加人民幣69.8百萬元及按公允價值計量且其變動計入當期損益的金融資產減少人民幣51.0百萬元所抵銷。 我們的資產淨值由截至2023年12月31日的人民幣1,548.0百萬元減少32.5%至截至2024年6月30日的人民幣1,044.8百萬元，主要由於截至2024年",
+        "id": "chk_2024_01318_毛戈平_p24_txt023",
+        "section_path": [
+          "概 要"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.875,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          26
+        ],
+        "score": 1.025,
+        "preview": "假設發售價為每股股份28.05港元（即本招股章程所述發售價範圍的中位數）以及發售量調整權及超額配股權未獲行使，我們估計，經扣除我們就全球發售已付及應付的包銷佣金及其他估計開支後，我們將收到的全球發售所得款項淨額約為1,844.5百萬港元。根據我們的戰略，我們擬將全球發售所得款項按下述金額用於以下用途：",
+        "id": "ev_2024_01318_毛戈平_p26_txt002",
+        "section_path": [
+          "概 要"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "品牌"
+        ],
+        "page_hit": false,
+        "pages": [
+          391
+        ],
+        "score": 1.25,
+        "preview": "假設發售價為每股股份28.05港元（即本招股章程所述發售價範圍的中位數）以及發售量調整權及超額配股權未獲行使，我們估計，經扣除我們就全球發售已付及應付的包銷佣金及其他估計開支後，我們將收到的全球發售所得款項淨額約為1,844.5百萬港元。根據我們的戰略，我們擬將全球發售所得款項按下述金額用於以下用途： 所得款項淨額約25.0%或461.1百萬港元，預期將用於擴大我們的銷售網絡，包括： (i) 所得款項淨額約10.0%或184.5百萬港元，將用於擴大線下銷售渠道，包括：(a)開設新品牌商店及專櫃；及(b)升級現有專櫃",
+        "id": "chk_2024_01318_毛戈平_p391_txt359",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9583,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "品牌"
+        ],
+        "page_hit": true,
+        "pages": [
+          26
+        ],
+        "score": 1.4417,
+        "preview": "所得款項用途 假設發售價為每股股份28.05港元（即本招股章程所述發售價範圍的中位數）以及發售量調整權及超額配股權未獲行使，我們估計，經扣除我們就全球發售已付及應付的包銷佣金及其他估計開支後，我們將收到的全球發售所得款項淨額約為1,844.5百萬港元。根據我們的戰略，我們擬將全球發售所得款項按下述金額用於以下用途： 所得款項淨額約25.0%或461.1百萬港元，預期將用於擴大我們的銷售網絡； 所得款項淨額約20.0%或369.0百萬港元，預期將用於品牌建設活動； 所得款項淨額約15.0%或276.6百萬港元，預期將"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9583,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "品牌"
+        ],
+        "page_hit": true,
+        "pages": [
+          24,
+          25,
+          26
+        ],
+        "score": 1.4417,
+        "preview": "我們的流動資產淨值由截至2021年12月31日的人民幣606.2百萬元增加55.8%至截至2022年12月31日的人民幣944.4百萬元，主要由於(i)現金及現金等價物增加人民幣396.3百萬元；及(ii)存貨增加人民幣89.7百萬元，部分被貿易應付款項增加人民幣69.8百萬元及按公允價值計量且其變動計入當期損益的金融資產減少人民幣51.0百萬元所抵銷。 我們的資產淨值由截至2023年12月31日的人民幣1,548.0百萬元減少32.5%至截至2024年6月30日的人民幣1,044.8百萬元，主要由於截至2024年"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "chunk_vectorized_but_vector_preview_does_not_show_full_gold_text",
+      "final_root_cause": "ranking_issue",
+      "recommended_fix_type": "rerank_feature"
+    },
+    {
+      "case_id": "mgv1_leapmotor_ipo_use_proceeds_001",
+      "dataset": "manual_gold_v1",
+      "ipo_subtype": "use_of_proceeds",
+      "document_id": "2022_09863_零跑汽車",
+      "question": "零跑汽车上市募集资金主要用于哪些方向？",
+      "expected_pages": [
+        [
+          411,
+          414
+        ]
+      ],
+      "expected_sections": [
+        "未来计划及所得款项用途"
+      ],
+      "gold_preview": "– 403 – 未來計劃及所得款項用途 未來計劃 有關未來計劃的詳盡討論，見「業務－我們的戰略」。 所得款項用途 假設發售價為每股發售股份55.00港元（即所述發售價範圍每股發售股份 48.00 港元至62.00 港元的中位數），經扣除包銷佣金、費用及有關全球發售的其他 估計開支並假設發售量調整權及超額配股權未獲行使，我們估計將收取全球發 售所得款項淨額約6,950.2 百萬港元，或倘發售量調整權及超額配股權獲悉數行使 則收取9,212.4 百萬港元。為了符合我們的戰略，我們擬按照如下用途動用全球發 售所得款項： • 所得款項淨額中約40.0% 或約2,780.1百萬港元用於我們的研發，包括： i. 所得款項淨額中約15.0%或約1",
+      "gold_keywords": [
+        "所得款项",
+        "研发",
+        "销售"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": true,
+      "dense_raw_rank": 88,
+      "baseline_rank": 20,
+      "b_intent_rank": 6,
+      "d_section_prior_rank": null,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": false,
+          "top20": true,
+          "top50": true,
+          "rank": 20,
+          "exact_gold_chunk_rank": null,
+          "page_grounded_rank": null
+        },
+        "B_intent": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 6,
+          "exact_gold_chunk_rank": null,
+          "page_grounded_rank": null
+        },
+        "D_section_prior": {
+          "top10": false,
+          "top20": false,
+          "top50": false,
+          "rank": null,
+          "exact_gold_chunk_rank": null,
+          "page_grounded_rank": null
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": false,
+        "top20": false,
+        "top50": false,
+        "rank": 88,
+        "exact_gold_chunk_rank": 88,
+        "candidate_count": 1043
+      },
+      "hit_chunk_section_path": [
+        "概 要"
+      ],
+      "gold_chunk_id": "chk_2022_09863_零跑汽車_p410_txt407",
+      "gold_chunk_section_path": [
+        "財 務 資 料"
+      ],
+      "gold_chunk_pages": [
+        410,
+        411
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "use_of_proceeds",
+      "intent_aux_queries": [
+        "零跑汽车上市募集资金主要用于哪些方向？ 未来计划及所得款项用途 所得款项净额 百分比 港元",
+        "零跑汽车上市募集资金主要用于哪些方向？ 所得款项用途 募资 用于 预计"
+      ],
+      "best_evidence_match": {
+        "content_hit": true,
+        "coverage": 0.75,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          411
+        ],
+        "score": 0.9,
+        "preview": "假 設 發 售 價 為 每 股 發 售 股 份55.00港 元（即 所 述 發 售 價 範 圍 每 股 發 售 股 份48.00港元至62.00港元的中位數），經扣除包銷佣金、費用及有關全球發售的其他估計開支並假設發售量調整權及超額配股權未獲行使，我們估計將收取全球發售所得款項淨額約6,950.2百萬港元，或倘發售量調整權及超額配股權獲悉數行使則收取9,212.4百萬港元。為了符合我們的戰略，我們擬按照如下用途動用全球發售所得款項：",
+        "id": "ev_2022_09863_零跑汽車_p411_txt004",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          410,
+          411
+        ],
+        "score": 1.4,
+        "preview": "於進行董事認為適當的充分盡職調查工作並經周詳審慎考慮後，董事確認，直至本招股章程日期，我們自2022年3月31日（即本招股章程附錄一會計師報告所呈報期間的結束日期）以來的財務或交易狀況或前景概無重大不利變動，且2022年3月31日後亦無發生會對本招股章程附錄一會計師報告所載資料造成重大影響的事件。 根據上市規則第13.13至13.19條的披露 董事確認，除本招股章程其他章節所披露者外，截至最後實際可行日期，概無任何情況會導致須遵守上市規則第13.13至13.19條的披露規定。 未來計劃 有關未來計劃的詳盡討論，見「",
+        "id": "chk_2022_09863_零跑汽車_p410_txt407",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.75,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          411
+        ],
+        "score": 0.9,
+        "preview": "假 設 發 售 價 為 每 股 發 售 股 份55.00港 元（即 所 述 發 售 價 範 圍 每 股 發 售 股 份48.00港元至62.00港元的中位數），經扣除包銷佣金、費用及有關全球發售的其他估計開支並假設發售量調整權及超額配股權未獲行使，我們估計將收取全球發售所得款項淨額約6,950.2百萬港元，或倘發售量調整權及超額配股權獲悉數行使則收取9,212.4百萬港元。為了符合我們的戰略，我們擬按照如下用途動用全球發售所得款項：",
+        "id": "ev_2022_09863_零跑汽車_p411_txt004",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          410,
+          411
+        ],
+        "score": 1.4,
+        "preview": "於進行董事認為適當的充分盡職調查工作並經周詳審慎考慮後，董事確認，直至本招股章程日期，我們自2022年3月31日（即本招股章程附錄一會計師報告所呈報期間的結束日期）以來的財務或交易狀況或前景概無重大不利變動，且2022年3月31日後亦無發生會對本招股章程附錄一會計師報告所載資料造成重大影響的事件。 根據上市規則第13.13至13.19條的披露 董事確認，除本招股章程其他章節所披露者外，截至最後實際可行日期，概無任何情況會導致須遵守上市規則第13.13至13.19條的披露規定。 未來計劃 有關未來計劃的詳盡討論，見「",
+        "id": "chk_2022_09863_零跑汽車_p410_txt407",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          411,
+          412,
+          413,
+          414
+        ],
+        "score": 1.4,
+        "preview": "未來計劃 有關未來計劃的詳盡討論，見「業務－我們的戰略」。 所得款項用途 假 設 發 售 價 為 每 股 發 售 股 份55.00港 元（即 所 述 發 售 價 範 圍 每 股 發 售 股 份48.00港元至62.00港元的中位數），經扣除包銷佣金、費用及有關全球發售的其他估計開支並假設發售量調整權及超額配股權未獲行使，我們估計將收取全球發售所得款項淨額約6,950.2百萬港元，或倘發售量調整權及超額配股權獲悉數行使則收取9,212.4百萬港元。為了符合我們的戰略，我們擬按照如下用途動用全球發售所得款項： 所得款項"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9167,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          410,
+          411,
+          412,
+          413,
+          414,
+          415
+        ],
+        "score": 1.4,
+        "preview": "於進行董事認為適當的充分盡職調查工作並經周詳審慎考慮後，董事確認，直至本招股章程日期，我們自2022年3月31日（即本招股章程附錄一會計師報告所呈報期間的結束日期）以來的財務或交易狀況或前景概無重大不利變動，且2022年3月31日後亦無發生會對本招股章程附錄一會計師報告所載資料造成重大影響的事件。 根據上市規則第13.13至13.19條的披露 董事確認，除本招股章程其他章節所披露者外，截至最後實際可行日期，概無任何情況會導致須遵守上市規則第13.13至13.19條的披露規定。 未來計劃 有關未來計劃的詳盡討論，見「"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "evidence_chunk_vector_chain_present",
+      "final_root_cause": "query_intent_gap",
+      "recommended_fix_type": "query_intent_terms"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "dataset": "manual_gold_v1",
+      "ipo_subtype": "use_of_proceeds",
+      "document_id": "2025_09678_雲知聲",
+      "question": "云知声上市所得款项是否主要投入研发和商业化？",
+      "expected_pages": [
+        [
+          343,
+          346
+        ]
+      ],
+      "expected_sections": [
+        "未来计划及所得款项用途"
+      ],
+      "gold_preview": "未來計劃及所得款項用途 335 GPU類型 估計總成本 單價 相關計算能力 通用GPU推理服務器 1.3百萬 港元 0.25百萬 港元 每個GPU服務器可提供最多1 PFLOPS的計算性能。該等服 務器可處理大量請求，並對超 過100億參數的大語言模型進 行同步推理，最高處理能力為 每天22百萬次（每次10秒）。 雲知大腦升級 о 約7.7%或13.6百萬港元，將用於升級雲知大腦，以進一步提高我們的AI技術開發 能力。我們計劃採購訓練語料以及人工反饋及標註服務，以支持我們的軟件和 算法的升級，滿足各種應用場景中不斷變化的需求。我們計劃提高我們的大語 言模型的表現，並提升其對應場景的快速適配能力。我們預期進一步提升大語 言模型的參數規",
+      "gold_keywords": [
+        "所得款项",
+        "研发",
+        "商业化"
+      ],
+      "gold_evidence_in_evidence_store": false,
+      "gold_chunk_exists": false,
+      "gold_vector_document_exists": false,
+      "vector_text_content_hit": false,
+      "dense_raw_rank": 1,
+      "baseline_rank": 29,
+      "b_intent_rank": 31,
+      "d_section_prior_rank": 31,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": false,
+          "top20": false,
+          "top50": true,
+          "rank": 29,
+          "exact_gold_chunk_rank": 7,
+          "page_grounded_rank": null
+        },
+        "B_intent": {
+          "top10": false,
+          "top20": false,
+          "top50": true,
+          "rank": 31,
+          "exact_gold_chunk_rank": 7,
+          "page_grounded_rank": null
+        },
+        "D_section_prior": {
+          "top10": false,
+          "top20": false,
+          "top50": true,
+          "rank": 31,
+          "exact_gold_chunk_rank": 10,
+          "page_grounded_rank": null
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": true,
+        "top20": true,
+        "top50": true,
+        "rank": 1,
+        "exact_gold_chunk_rank": 5,
+        "candidate_count": 895
+      },
+      "hit_chunk_section_path": [
+        "概 要"
+      ],
+      "gold_chunk_id": "chk_2025_09678_雲知聲_p341_txt339",
+      "gold_chunk_section_path": [
+        "財 務 資 料"
+      ],
+      "gold_chunk_pages": [
+        341,
+        342,
+        343
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "use_of_proceeds",
+      "intent_aux_queries": [
+        "云知声上市所得款项是否主要投入研发和商业化？ 未来计划及所得款项用途 所得款项净额 百分比 港元",
+        "云知声上市所得款项是否主要投入研发和商业化？ 所得款项用途 募资 用于 预计"
+      ],
+      "best_evidence_match": {
+        "content_hit": false,
+        "coverage": 0.0833,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          343
+        ],
+        "score": 0.5667,
+        "preview": "о 約7.1%或12.5百萬港元將被分配用於培養人才和進行研發合作。內部人才培訓方面，我們計劃提升我們的知識管理能力，建立內部知識庫，並組織培訓課程和會議。我們並計劃通過以下方式與外部機構（包括大學和研究院）合作：(i)建立聯合實驗室，研究和開發新興AI技術；(ii)開展聯合研究項目，並讓學生和研究人員參與進來，作為我們研究人才培養工作的一部分；及(iii)在雲知大腦上創建開源項目，這將使我們與更多行業參與者建立聯繫。我們計劃撥款約8.8百萬港元用於聯合實驗室及聯合研究項目。我們期望與擁有強大研發能力及大量技術人才",
+        "id": "ev_2025_09678_雲知聲_p343_txt005",
+        "section_path": [
+          "未 來 計 劃 及 所 得 款 項 用 途"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": false,
+        "coverage": 0.0833,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          341,
+          342,
+          343
+        ],
+        "score": 0.5667,
+        "preview": "經進行董事認為適當的充分盡職調查工作且經適當及仔細的考慮後，董事確認，直至本招股章程日期，自2024年12月31日（即本招股章程附錄一所報告期間結束的日期）以來，我們的財務或貿易狀況或前景並無重大不利變動，且自2024年12月31日以來，並無發生可能對本招股章程附錄一會計師報告所載資料造成重大影響的事件。 根據上市規則第13.13條至第13.19條作出的披露 董事確認，截至最後實際可行日期，並無任何情況導致須遵守上市規則第13.13條至第13.19條項下的披露規定。 未來計劃 請參閱「業務 — 我們的策略」。 所得",
+        "id": "chk_2025_09678_雲知聲_p341_txt339",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.8333,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": false,
+        "pages": [
+          314
+        ],
+        "score": 0.8333,
+        "preview": "表格（3行）. 列: GPU類型 | 估計總成本 | 單價 | 相關計算能力. 第1行: 用於大型語言模型訓練的 高性能GPU訓練服務器 | 21.0百萬 港元 | 1.5百萬 港元 | 每個GPU服務器可提供最 多3 PFLOPS的深度學習性 能。隨著深度學習的計算能 力從 300 PFLOPS擴展至 500 PFLOPS，我們將能夠在六週. 第2行: GPU類型 通用GPU推理服務器 | 估計總成本 | 單價 | 相關計算能力. 第3行: 1.3百萬 港元 | 0.25百萬 港元 | 每個GPU服務器可提供最多",
+        "id": "ev_2025_09678_雲知聲_p314_tbl001",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "table"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.8333,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": false,
+        "pages": [
+          314
+        ],
+        "score": 0.8333,
+        "preview": "表格（3行）. 列: GPU類型 | 估計總成本 | 單價 | 相關計算能力. 第1行: 用於大型語言模型訓練的 高性能GPU訓練服務器 | 21.0百萬 港元 | 1.5百萬 港元 | 每個GPU服務器可提供最 多3 PFLOPS的深度學習性 能。隨著深度學習的計算能 力從 300 PFLOPS擴展至 500 PFLOPS，我們將能夠在六週. 第2行: GPU類型 通用GPU推理服務器 | 估計總成本 | 單價 | 相關計算能力. 第3行: 1.3百萬 港元 | 0.25百萬 港元 | 每個GPU服務器可提供最多",
+        "id": "chk_2025_09678_雲知聲_p314_tbl183",
+        "section_path": [
+          "財 務 資 料"
+        ],
+        "block_type": "table"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": false,
+        "coverage": 0.1667,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          343,
+          344,
+          345,
+          346
+        ],
+        "score": 0.65,
+        "preview": "表格（12行）. 列: 於12月31日. 第1行: 2022年 | 2023年 | 2024年. 第2行: 合約資產(i) | 人民幣千元 | 人民幣千元 | 人民幣千元. 第3行: 日常生活……………… | 220 | 971 | 23. 第4行: 醫療.... | 3,091 | 1,764 | 1,169. 第5行: 減：合約資產減值撥備.... 第6行: (715) | (817) | (162). 第7行: 總計.. | 2,596 | 1,918 | 1,030. 第8行: 合約負債(ii). 第9行:"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": false,
+        "coverage": 0.1667,
+        "keyword_coverage": 0.3333,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          341,
+          342,
+          343,
+          344,
+          345,
+          346
+        ],
+        "score": 0.65,
+        "preview": "經進行董事認為適當的充分盡職調查工作且經適當及仔細的考慮後，董事確認，直至本招股章程日期，自2024年12月31日（即本招股章程附錄一所報告期間結束的日期）以來，我們的財務或貿易狀況或前景並無重大不利變動，且自2024年12月31日以來，並無發生可能對本招股章程附錄一會計師報告所載資料造成重大影響的事件。 根據上市規則第13.13條至第13.19條作出的披露 董事確認，截至最後實際可行日期，並無任何情況導致須遵守上市規則第13.13條至第13.19條項下的披露規定。 未來計劃 請參閱「業務 — 我們的策略」。 所得"
+      },
+      "chunk_boundary_diagnosis": "evidence store has weak partial overlap only",
+      "representation_diagnosis": "evidence_text_missing_or_too_fragmented",
+      "final_root_cause": "vector_missing",
+      "recommended_fix_type": "chunk_representation_repair"
+    },
+    {
+      "case_id": "manual_new_董飞飞_cat_ipo_002",
+      "dataset": "manual_new_annotators_v1",
+      "ipo_subtype": "pre_ipo",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？",
+      "expected_pages": [
+        [
+          119,
+          120
+        ],
+        [
+          123,
+          123
+        ]
+      ],
+      "expected_sections": [
+        "历史、重组及公司架构－首次公开招股前投资"
+      ],
+      "gold_preview": "於2019年2月12日，城市能源與本公司訂立股份認購協議，認購價為7.0百萬港元，乃根據本集團的協定市盈率約5.95倍而釐定。每股成本約0.7港元；發售價折讓約30.0%（發售價範圍的下限）及約36.4%（發售價範圍的上限）；首次公開招股前投資者受限於自上市日期起計為期六個月的禁售期。城市能源無權享有任何有關湖州輝煌明天、深圳輝煌明天、本公司或本集團任何其他成員公司的特別權利",
+      "gold_keywords": [
+        "市盈率",
+        "每股成本",
+        "发售价折让",
+        "禁售期",
+        "特别权利"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": true,
+      "dense_raw_rank": 6,
+      "baseline_rank": 7,
+      "b_intent_rank": 7,
+      "d_section_prior_rank": 7,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 7,
+          "exact_gold_chunk_rank": 7,
+          "page_grounded_rank": 7
+        },
+        "B_intent": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 7,
+          "exact_gold_chunk_rank": 7,
+          "page_grounded_rank": 7
+        },
+        "D_section_prior": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 7,
+          "exact_gold_chunk_rank": 7,
+          "page_grounded_rank": 7
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": true,
+        "top20": true,
+        "top50": true,
+        "rank": 6,
+        "exact_gold_chunk_rank": 6,
+        "candidate_count": 676
+      },
+      "hit_chunk_section_path": [
+        "歷 史 、 重 組 及 公 司 架 構"
+      ],
+      "gold_chunk_id": "chk_2020_01351_輝煌明天_p120_txt120",
+      "gold_chunk_section_path": [
+        "歷 史 、 重 組 及 公 司 架 構"
+      ],
+      "gold_chunk_pages": [
+        120,
+        121
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": false,
+      "query_intent": "pre_ipo_rights",
+      "intent_aux_queries": [
+        "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？ 首次公开发售前投资 特殊权利 禁售期 发售价折让",
+        "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？ Pre-IPO 投资者 特别权利 终止 上市"
+      ],
+      "best_evidence_match": {
+        "content_hit": true,
+        "coverage": 0.4167,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "市盈率"
+        ],
+        "page_hit": true,
+        "pages": [
+          120
+        ],
+        "score": 0.7667,
+        "preview": "於2019年2月12日，城市能源（由朱先生全資擁有的公司）與本公司訂立股份認購協議，據此，城市能源同意認購而本公司同意配發及發行200股新美元股份（相當於緊接配發前本公司已發行股本的2 .0%及經配發擴大後的本公司已發行股本的1 .96%），認購價為7 .0百萬港元，乃根據本集團的協定市盈率約5 .95倍（乃基於當時可取得的初步財務資料計算所得）而釐定。股份認購協議包括認購價在內的條款，乃經參考(i)根據管理賬目，本集團於截至2018年12月31日止年度的財務表現；(ii)對（其中包括）本集團的業務營運、財務及法律",
+        "id": "ev_2020_01351_輝煌明天_p120_txt002",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.4167,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "市盈率"
+        ],
+        "page_hit": true,
+        "pages": [
+          120,
+          121
+        ],
+        "score": 0.7667,
+        "preview": "於2019年2月12日，城市能源（由朱先生全資擁有的公司）與本公司訂立股份認購協議，據此，城市能源同意認購而本公司同意配發及發行200股新美元股份（相當於緊接配發前本公司已發行股本的2 .0%及經配發擴大後的本公司已發行股本的1 .96%），認購價為7 .0百萬港元，乃根據本集團的協定市盈率約5 .95倍（乃基於當時可取得的初步財務資料計算所得）而釐定。股份認購協議包括認購價在內的條款，乃經參考(i)根據管理賬目，本集團於截至2018年12月31日止年度的財務表現；(ii)對（其中包括）本集團的業務營運、財務及法律",
+        "id": "chk_2020_01351_輝煌明天_p120_txt120",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.4167,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "市盈率"
+        ],
+        "page_hit": true,
+        "pages": [
+          120
+        ],
+        "score": 0.7667,
+        "preview": "於2019年2月12日，城市能源（由朱先生全資擁有的公司）與本公司訂立股份認購協議，據此，城市能源同意認購而本公司同意配發及發行200股新美元股份（相當於緊接配發前本公司已發行股本的2 .0%及經配發擴大後的本公司已發行股本的1 .96%），認購價為7 .0百萬港元，乃根據本集團的協定市盈率約5 .95倍（乃基於當時可取得的初步財務資料計算所得）而釐定。股份認購協議包括認購價在內的條款，乃經參考(i)根據管理賬目，本集團於截至2018年12月31日止年度的財務表現；(ii)對（其中包括）本集團的業務營運、財務及法律",
+        "id": "ev_2020_01351_輝煌明天_p120_txt002",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.4167,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "市盈率"
+        ],
+        "page_hit": true,
+        "pages": [
+          120,
+          121
+        ],
+        "score": 0.7667,
+        "preview": "於2019年2月12日，城市能源（由朱先生全資擁有的公司）與本公司訂立股份認購協議，據此，城市能源同意認購而本公司同意配發及發行200股新美元股份（相當於緊接配發前本公司已發行股本的2 .0%及經配發擴大後的本公司已發行股本的1 .96%），認購價為7 .0百萬港元，乃根據本集團的協定市盈率約5 .95倍（乃基於當時可取得的初步財務資料計算所得）而釐定。股份認購協議包括認購價在內的條款，乃經參考(i)根據管理賬目，本集團於截至2018年12月31日止年度的財務表現；(ii)對（其中包括）本集團的業務營運、財務及法律",
+        "id": "chk_2020_01351_輝煌明天_p120_txt120",
+        "section_path": [
+          "歷 史 、 重 組 及 公 司 架 構"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.4583,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "市盈率"
+        ],
+        "page_hit": true,
+        "pages": [
+          119,
+          120,
+          123
+        ],
+        "score": 0.8083,
+        "preview": "33%。於2018年11月5日，湖州輝煌明天的註冊股本由董先生及楊先生以向湖州輝煌明天轉讓彼等所持的67%及33%深圳輝煌明天繳足股本的方式全額繳足。湖州輝煌明天的主營業務為提供移動廣告代理服務。本集團成立湖州輝煌明天以進入浙江省湖州市市場。 首次公開招股前投資 為了本集團長遠的業務發展及擴張，我們引進朱先生（連同城市能源）成為我們的首次公開招股前投資者。朱先生（連同城市能源）分兩輪投資於本集團。 首次公開招股前投資的背景及概述 於籌備上市的過程中，本集團擬引入一名戰略投資者，為我們成功上市作出貢獻。在2018年9"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.4583,
+        "keyword_coverage": 0.2,
+        "keyword_hit": [
+          "市盈率"
+        ],
+        "page_hit": true,
+        "pages": [
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124
+        ],
+        "score": 0.8083,
+        "preview": "深圳鄰度的主要業務為向本集團提供移動廣告代理服務以及計算機及互聯網技術的研發支援。 倘我們於收購之時已經為聯交所上市發行人，則於2016年10月收購深圳鄰度構成一項主要交易。於2016年10月14日至2016年12月31日期間，深圳鄰度產生約人民幣1 .01百萬元的收購後收入和約人民幣0 .45百萬元的淨溢利。 深圳鄰度於截至2019年12月31日止三個年度及截至2020年4月30日止四個月分別貢獻收入約人民幣43 .0百萬元、人民幣78 .1百萬元、人民幣117 .5百萬元及人民幣66 .7百萬元，而淨溢利分別約"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "evidence_chunk_vector_chain_present",
+      "final_root_cause": "section_label_issue",
+      "recommended_fix_type": "section_label_repair"
+    },
+    {
+      "case_id": "manual_new_董飞飞_cat_ipo_004",
+      "dataset": "manual_new_annotators_v1",
+      "ipo_subtype": "share_price_volatility",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的发售价是否可能偏离上市后交易价格，股份是否存在流动性和大幅波动风险？",
+      "expected_pages": [
+        [
+          69,
+          70
+        ]
+      ],
+      "expected_sections": [
+        "风险因素－股份过往并无公开市场",
+        "股份的成交价可能波动"
+      ],
+      "gold_preview": "於股份發售完成前，股份並無公開市場，不能保證股份能夠於股份發售完成後形成或維持活躍的買賣市場。發售價乃本公司與聯席全球協調人協商後的結果，未必反映股份於股份發售完成後的成交價，股份的市場價格可能下跌至低於指示性發售價範圍。股份的成交價或市場價格可能反覆不定，並可能基於我們不可控制的因素而大幅波動。",
+      "gold_keywords": [
+        "公开市场",
+        "发售价",
+        "成交价",
+        "波动",
+        "重大损失"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": true,
+      "dense_raw_rank": 3,
+      "baseline_rank": 10,
+      "b_intent_rank": 10,
+      "d_section_prior_rank": 10,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 10,
+          "exact_gold_chunk_rank": 10,
+          "page_grounded_rank": 10
+        },
+        "B_intent": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 10,
+          "exact_gold_chunk_rank": 10,
+          "page_grounded_rank": 10
+        },
+        "D_section_prior": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 10,
+          "exact_gold_chunk_rank": 10,
+          "page_grounded_rank": 10
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": true,
+        "top20": true,
+        "top50": true,
+        "rank": 3,
+        "exact_gold_chunk_rank": 3,
+        "candidate_count": 676
+      },
+      "hit_chunk_section_path": [
+        "風 險 因 素"
+      ],
+      "gold_chunk_id": "chk_2020_01351_輝煌明天_p69_txt071",
+      "gold_chunk_section_path": [
+        "風 險 因 素"
+      ],
+      "gold_chunk_pages": [
+        69,
+        70
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "generic_other",
+      "intent_aux_queries": [],
+      "best_evidence_match": {
+        "content_hit": true,
+        "coverage": 0.625,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          69
+        ],
+        "score": 0.775,
+        "preview": "於股份發售完成前，股份並無公開市場。不能保證股份能夠於股份發售完成後形成或維持活躍的買賣市場。發售價乃本公司與聯席全球協調人（為其本身及代表包銷商）進行協商後的結果，未必反映股份於股份發售完成後的成交價。股份的市場價格可能會於股份發售完成後的任何時間下跌至低於指示性發售價範圍。",
+        "id": "ev_2020_01351_輝煌明天_p69_txt005",
+        "section_path": [
+          "風 險 因 素"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.875,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          69,
+          70
+        ],
+        "score": 1.025,
+        "preview": "此外，規範本公司的法律框架與公司條例或其他司法權區的公司法在若干方面存在重大差異，包括對少數權益股東的保障。此外，在規範我們的企業管治框架下執行權利的機制亦相對不成熟及未經驗證。 與股份發售有關的風險 股份過往並無公開市場，且未必能形成活躍的買賣市場。 於股份發售完成前，股份並無公開市場。不能保證股份能夠於股份發售完成後形成或維持活躍的買賣市場。發售價乃本公司與聯席全球協調人（為其本身及代表包銷商）進行協商後的結果，未必反映股份於股份發售完成後的成交價。股份的市場價格可能會於股份發售完成後的任何時間下跌至低於指示性",
+        "id": "chk_2020_01351_輝煌明天_p69_txt071",
+        "section_path": [
+          "風 險 因 素"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.625,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          69
+        ],
+        "score": 0.775,
+        "preview": "於股份發售完成前，股份並無公開市場。不能保證股份能夠於股份發售完成後形成或維持活躍的買賣市場。發售價乃本公司與聯席全球協調人（為其本身及代表包銷商）進行協商後的結果，未必反映股份於股份發售完成後的成交價。股份的市場價格可能會於股份發售完成後的任何時間下跌至低於指示性發售價範圍。",
+        "id": "ev_2020_01351_輝煌明天_p69_txt005",
+        "section_path": [
+          "風 險 因 素"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.875,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          69,
+          70
+        ],
+        "score": 1.025,
+        "preview": "此外，規範本公司的法律框架與公司條例或其他司法權區的公司法在若干方面存在重大差異，包括對少數權益股東的保障。此外，在規範我們的企業管治框架下執行權利的機制亦相對不成熟及未經驗證。 與股份發售有關的風險 股份過往並無公開市場，且未必能形成活躍的買賣市場。 於股份發售完成前，股份並無公開市場。不能保證股份能夠於股份發售完成後形成或維持活躍的買賣市場。發售價乃本公司與聯席全球協調人（為其本身及代表包銷商）進行協商後的結果，未必反映股份於股份發售完成後的成交價。股份的市場價格可能會於股份發售完成後的任何時間下跌至低於指示性",
+        "id": "chk_2020_01351_輝煌明天_p69_txt071",
+        "section_path": [
+          "風 險 因 素"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.875,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          69,
+          70
+        ],
+        "score": 1.025,
+        "preview": "於2006年7月，中國最高人民法院與香港政府簽訂《最高人民法院關於內地與香港特別行政區法院相互認可和執行當事人協議管轄的民商事案件判決的安排》。根據該項安排，倘由當事人雙方經書面選擇的中國任何指定的人民法院或香港任何指定的法院對民商事案件作出需支付款項的可執行終審裁決，當事人可向相關中國人民法院或香港法院申請認可和執行有關裁決，惟並非所有由香港法院作出的判決均可根據此安排強制執行，且根據該項安排所提出行動的效力仍有不確定性。 此外，規範本公司的法律框架與公司條例或其他司法權區的公司法在若干方面存在重大差異，包括對少"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.875,
+        "keyword_coverage": 0.0,
+        "keyword_hit": [],
+        "page_hit": true,
+        "pages": [
+          68,
+          69,
+          70,
+          71
+        ],
+        "score": 1.025,
+        "preview": "我們面對過去及未來若干涉及中國應稅資產的交易（如境外重組及出售我們境外附屬公司的股份）的申報及其他影響方面的不確定因素。根據國家稅務總局7號文，我們及我們的非中國居民投資者可能於該等交易中承擔備案責任。就非中國居民企業的投資者轉讓本公司股份而言，我們的中國附屬公司可能被要求協助根據國家稅務總局7號文辦理備案。因此，我們可能須耗用寶貴資源以符合國家稅務總局7號文，或要求我們購買應稅資產的有關轉讓人遵守此等公告，或確定本公司在此等情況下毋須繳稅，因而可能對我們的財務狀況及經營業績構成重大不利影響。 可能難以對我們、我們"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "evidence_chunk_vector_chain_present",
+      "final_root_cause": "ranking_issue",
+      "recommended_fix_type": "rerank_feature"
+    },
+    {
+      "case_id": "manual_new_董飞飞_cat_ipo_005",
+      "dataset": "manual_new_annotators_v1",
+      "ipo_subtype": "use_of_proceeds",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "股份发售所得款项计划如何使用，管理层是否对实际用途拥有较大酌情权？",
+      "expected_pages": [
+        [
+          71,
+          71
+        ],
+        [
+          315,
+          317
+        ]
+      ],
+      "expected_sections": [
+        "风险因素－我们对如何使用股份发售所得款项净额有重大酌情权",
+        "未来计划及所得款项用途－所得款项用途"
+      ],
+      "gold_preview": "管理層可能會以 閣下不同意或不會取得有利回報的方式使用股份發售的所得款項淨額；管理層將有權酌情決定所得款項淨額的實際用途。按發售價範圍中位數計算，預計所得款項淨額合共約64.9%將用於擴展中介服務，約21.3%將用於擴展營銷、客戶服務及設計團隊，約10.5%將用於研發以及提升信息技術及數據管理平台系統，約3.3%將用於其他營運資金及一般企業用途。",
+      "gold_keywords": [
+        "所得款项净额",
+        "重大酌情权",
+        "中介服务",
+        "扩大客户群",
+        "研发",
+        "营运资金"
+      ],
+      "gold_evidence_in_evidence_store": true,
+      "gold_chunk_exists": true,
+      "gold_vector_document_exists": true,
+      "vector_text_content_hit": true,
+      "dense_raw_rank": 6,
+      "baseline_rank": 1,
+      "b_intent_rank": 1,
+      "d_section_prior_rank": 7,
+      "topk_content_hit": {
+        "baseline": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 1,
+          "exact_gold_chunk_rank": 11,
+          "page_grounded_rank": 6
+        },
+        "B_intent": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 1,
+          "exact_gold_chunk_rank": 10,
+          "page_grounded_rank": 9
+        },
+        "D_section_prior": {
+          "top10": true,
+          "top20": true,
+          "top50": true,
+          "rank": 7,
+          "exact_gold_chunk_rank": 7,
+          "page_grounded_rank": 7
+        }
+      },
+      "dense_candidate_hit": {
+        "top10": true,
+        "top20": true,
+        "top50": true,
+        "rank": 6,
+        "exact_gold_chunk_rank": 258,
+        "candidate_count": 676
+      },
+      "hit_chunk_section_path": [
+        "概 要"
+      ],
+      "gold_chunk_id": "chk_2020_01351_輝煌明天_p316_txt306",
+      "gold_chunk_section_path": [
+        "未 來 計 劃 及 所 得 款 項 用 途"
+      ],
+      "gold_chunk_pages": [
+        316,
+        317,
+        318
+      ],
+      "gold_chunk_block_type": "text",
+      "section_label_match": true,
+      "query_intent": "use_of_proceeds",
+      "intent_aux_queries": [
+        "股份发售所得款项计划如何使用，管理层是否对实际用途拥有较大酌情权？ 未来计划及所得款项用途 所得款项净额 百分比 港元",
+        "股份发售所得款项计划如何使用，管理层是否对实际用途拥有较大酌情权？ 所得款项用途 募资 用于 预计"
+      ],
+      "best_evidence_match": {
+        "content_hit": true,
+        "coverage": 0.25,
+        "keyword_coverage": 0.1667,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          317
+        ],
+        "score": 0.5667,
+        "preview": "預計所得款項淨額合共約10 .5%或約8 .4百萬港元（相當於人民幣7 .6百萬元），將用於研發以及提升信息技術及數據管理平台系統。",
+        "id": "ev_2020_01351_輝煌明天_p317_txt001",
+        "section_path": [
+          "未 來 計 劃 及 所 得 款 項 用 途"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match": {
+        "content_hit": true,
+        "coverage": 0.4,
+        "keyword_coverage": 0.1667,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          316,
+          317,
+          318
+        ],
+        "score": 0.7167,
+        "preview": "我們將在未來兩年招聘大約20名員工。該等新聘員工將專注於開發視頻形式廣告，而該等新聘員工包括客戶服務職能下的設計師、攝影師及編輯團隊內的視頻編輯、視頻導演、動畫製作及視頻設計。招聘該等員工將令我們能為客戶提供更多種類的視頻形式的廣告。我們將為此目的使用約3 .3百萬港元（相當於人民幣3 .0百萬元）。 預計所得款項淨額合共約10 .5%或約8 .4百萬港元（相當於人民幣7 .6百萬元），將用於研發以及提升信息技術及數據管理平台系統。 我們將在未來兩年招聘大約18名於移動廣告業擁有超過三年經驗的研發人員。我們將為此目",
+        "id": "chk_2020_01351_輝煌明天_p316_txt306",
+        "section_path": [
+          "未 來 計 劃 及 所 得 款 項 用 途"
+        ],
+        "block_type": "text"
+      },
+      "best_evidence_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.25,
+        "keyword_coverage": 0.1667,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          317
+        ],
+        "score": 0.5667,
+        "preview": "預計所得款項淨額合共約10 .5%或約8 .4百萬港元（相當於人民幣7 .6百萬元），將用於研發以及提升信息技術及數據管理平台系統。",
+        "id": "ev_2020_01351_輝煌明天_p317_txt001",
+        "section_path": [
+          "未 來 計 劃 及 所 得 款 項 用 途"
+        ],
+        "block_type": "text"
+      },
+      "best_chunk_match_any_page": {
+        "content_hit": true,
+        "coverage": 0.4,
+        "keyword_coverage": 0.1667,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          316,
+          317,
+          318
+        ],
+        "score": 0.7167,
+        "preview": "我們將在未來兩年招聘大約20名員工。該等新聘員工將專注於開發視頻形式廣告，而該等新聘員工包括客戶服務職能下的設計師、攝影師及編輯團隊內的視頻編輯、視頻導演、動畫製作及視頻設計。招聘該等員工將令我們能為客戶提供更多種類的視頻形式的廣告。我們將為此目的使用約3 .3百萬港元（相當於人民幣3 .0百萬元）。 預計所得款項淨額合共約10 .5%或約8 .4百萬港元（相當於人民幣7 .6百萬元），將用於研發以及提升信息技術及數據管理平台系統。 我們將在未來兩年招聘大約18名於移動廣告業擁有超過三年經驗的研發人員。我們將為此目",
+        "id": "chk_2020_01351_輝煌明天_p316_txt306",
+        "section_path": [
+          "未 來 計 劃 及 所 得 款 項 用 途"
+        ],
+        "block_type": "text"
+      },
+      "expected_page_evidence_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9,
+        "keyword_coverage": 0.1667,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          71,
+          315,
+          316,
+          317
+        ],
+        "score": 1.2167,
+        "preview": "我們對如何使用股份發售所得款項淨額有重大酌情權。 管理層可能會以 閣下不同意或不會取得有利回報的方式使用股份發售的所得款項淨額。有關所得款項的計劃用途詳情，請參閱「未來計劃及所得款項用途」。然而，管理層將有權酌情決定所得款項淨額的實際用途。 閣下向管理層託付資金作為是次股份發售所得款項淨額的特定用途，而 閣下須信賴管理層的判斷。 不能保證本文件所載取材自多份政府刊物、市場數據提供者及其他獨立第三方來源（包括行業專家報告）的若干事實、預測及其他統計數據的準確性或完整性。 本文件（尤其是本招股章程「行業概覽」一節）載有"
+      },
+      "expected_page_chunk_aggregate": {
+        "content_hit": true,
+        "coverage": 0.9,
+        "keyword_coverage": 0.1667,
+        "keyword_hit": [
+          "研发"
+        ],
+        "page_hit": true,
+        "pages": [
+          70,
+          71,
+          72,
+          314,
+          315,
+          316,
+          317,
+          318
+        ],
+        "score": 1.2167,
+        "preview": "本公司是一間在開曼群島註冊成立的獲豁免有限公司，而開曼群島的法例在某些方面與香港或投資者可能身處的其他司法權區的法例不同。本公司的公司事務乃受到大綱及細則、公司法及開曼群島的普通法所管轄。股東針對本公司及╱或董事採取法律行動的權利、少數股東採取的行動及董事根據開曼群島法例對本公司的受信責任，在很大程度上受到開曼群島的普通法所管轄。開曼群島的普通法部分衍生自開曼群島較為有限的司法先例及英國普通法（其對開曼群島的法院具有說服力但無約束力）。股東在面對本公司管理層、董事或大股東所採取的行動而行使其權利時所擁有的補救措施，"
+      },
+      "chunk_boundary_diagnosis": "gold facts preserved in a retrievable chunk",
+      "representation_diagnosis": "evidence_chunk_vector_chain_present",
+      "final_root_cause": "ranking_issue",
+      "recommended_fix_type": "rerank_feature"
+    }
+  ]
+}

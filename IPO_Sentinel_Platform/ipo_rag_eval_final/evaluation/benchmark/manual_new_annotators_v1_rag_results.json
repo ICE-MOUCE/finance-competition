@@ -1,0 +1,870 @@
+{
+  "summary": {
+    "n_cases": 14,
+    "document_hit_rate": 1.0,
+    "keyword_hit_rate": 0.2857,
+    "excerpt_hit_rate": 0.7857,
+    "page_hit_rate": 0.2857,
+    "by_annotator": {
+      "董飞飞": {
+        "n": 13,
+        "document_hit_rate": 1.0,
+        "keyword_hit_rate": 0.3077,
+        "excerpt_hit_rate": 0.7692,
+        "page_hit_rate": 0.3077
+      },
+      "田歌": {
+        "n": 1,
+        "document_hit_rate": 1.0,
+        "keyword_hit_rate": 0.0,
+        "excerpt_hit_rate": 1.0,
+        "page_hit_rate": 0.0
+      }
+    },
+    "by_document": {
+      "2020_01351_輝煌明天": {
+        "n": 13,
+        "document_hit_rate": 1.0,
+        "keyword_hit_rate": 0.3077,
+        "excerpt_hit_rate": 0.7692,
+        "page_hit_rate": 0.3077
+      },
+      "2022_03931_中創新航": {
+        "n": 1,
+        "document_hit_rate": 1.0,
+        "keyword_hit_rate": 0.0,
+        "excerpt_hit_rate": 1.0,
+        "page_hit_rate": 0.0
+      }
+    },
+    "index_vectors": {
+      "2020_01351_輝煌明天": 676,
+      "2022_03931_中創新航": 1156
+    },
+    "staged_pdfs": [
+      {
+        "pdf": "01351_28-10-2020_辉煌明天_股份发售.pdf",
+        "document_id": "2020_01351_輝煌明天",
+        "agent_pdf": "E:\\WorkSpace\\IPO-Full-System\\agent\\data\\prospectuses\\01351_28-10-2020_輝煌明天_股份發售.pdf",
+        "status": "exists",
+        "vectors_expected_doc": "2020_01351_輝煌明天"
+      },
+      {
+        "pdf": "03931_23-09-2022_中創新航_全球發售.pdf",
+        "document_id": "2022_03931_中創新航",
+        "agent_pdf": "E:\\WorkSpace\\IPO-Full-System\\agent\\data\\prospectuses\\03931_23-09-2022_中創新航_全球發售.pdf",
+        "status": "exists",
+        "vectors_expected_doc": "2022_03931_中創新航"
+      }
+    ],
+    "note": "RAG-only offline evaluation. No Agent/LLM keys used."
+  },
+  "results": [
+    {
+      "id": "manual_new_董飞飞_seed_fin_004",
+      "annotator": "董飞飞",
+      "category": "financial_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天是否存在毛利率或业务利润率下降、盈利质量承压的风险？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.25,
+      "keyword_matched": [
+        "下降"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.85,
+      "excerpt_matched_tokens": [
+        "截至",
+        "2019",
+        "12",
+        "31",
+        "日止三個年度及截",
+        "2020",
+        "4",
+        "30",
+        "日止四個月",
+        "我們的中介服務利"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        17,
+        269,
+        270,
+        271,
+        274,
+        275,
+        278,
+        279
+      ],
+      "expected_physical_pages": [
+        [
+          48,
+          48
+        ]
+      ],
+      "top1_pages": [
+        274,
+        275
+      ],
+      "top1_preview": "以股份為基礎的付款開支－非僱員指截至股份發行日期已發行權益股份的公允價值與朱先生於截至2018年及2019年12月31日止年度收購湖州輝煌明天1%權益股份所得現金代價之間的差額。本公司已委聘獨立估值師，以評估本集團權益於2018年12月31日及2019年12月31日（即朱先生及城市能源分別於2018年11月及2019年2月收購及認購股份的估值基準日）的公允價值。根據獨立估值師參考貼現現金流模型進行的估值，本集團於2018年11月的1%權",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_fin_010",
+      "annotator": "董飞飞",
+      "category": "financial_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天是否存在负经营现金流、垫付款与客户回款错配造成的营运资金压力？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.45,
+      "excerpt_matched_tokens": [
+        "截至",
+        "2018",
+        "12",
+        "31",
+        "日及",
+        "2019",
+        "2020",
+        "4",
+        "30"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        19,
+        20,
+        23,
+        24,
+        283,
+        284,
+        285
+      ],
+      "expected_physical_pages": [
+        [
+          49,
+          50
+        ],
+        [
+          53,
+          53
+        ]
+      ],
+      "top1_pages": [
+        19,
+        20
+      ],
+      "top1_preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流動資金水平，包括(i)對新客戶進行信用評",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_seed_comp_002",
+      "annotator": "董飞飞",
+      "category": "compliance_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的移动广告业务是否面临未来新增执照、批准或许可要求的合规风险？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.2,
+      "keyword_matched": [
+        "批准"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.95,
+      "excerpt_matched_tokens": [
+        "管制移動廣告",
+        "移動分析及互聯網",
+        "相關業務的法律及",
+        "法規",
+        "以及適用於互聯網",
+        "移動廣告及移動分",
+        "析業公司的執照及",
+        "許可證要求相對較",
+        "仍在不斷發展",
+        "倘任何政府認為我"
+      ],
+      "page_hit": true,
+      "result_pages": [
+        46,
+        47,
+        50,
+        51,
+        57,
+        58,
+        115,
+        116
+      ],
+      "expected_physical_pages": [
+        [
+          58,
+          58
+        ]
+      ],
+      "top1_pages": [
+        57,
+        58
+      ],
+      "top1_preview": "為現有及潛在客戶制定廣告方案時，我們依賴數據管理平台獲取準確及真實的廣告相關市場數據及其他數據，以匹配合適的廣告庫存，以及釐定我們所收取的服務費。我們亦依賴於供應商允許我們獲取的有關廣告表現的實時數據，以評估我們客戶廣告方案的有效性。然而，概無保證所獲取的數據均屬準確，倘出現數據不準確或不充足的情況，我們將無法為客戶改善及實現更佳表現，繼而可能導致我們與客戶出現糾紛、損害我們的聲譽及對我們的業務、經營業績及財務狀況構成不利影響。 規管移",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_comp_004",
+      "annotator": "董飞飞",
+      "category": "compliance_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天是否存在已发生的行政合规缺口，并可能因此被追缴或处罚？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": false,
+      "excerpt_coverage": 0.05,
+      "excerpt_matched_tokens": [
+        "50"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        58,
+        59,
+        60,
+        61,
+        68,
+        69,
+        73,
+        74,
+        75,
+        115,
+        116
+      ],
+      "expected_physical_pages": [
+        [
+          62,
+          63
+        ]
+      ],
+      "top1_pages": [
+        73,
+        74,
+        75
+      ],
+      "top1_preview": "(ii) 每名執行董事及獨立非執行董事在外遊或離開崗位時，均將向授權代表提供有效的電話號碼或通訊方式； (iii) 所有執行董事、獨立非執行董事及授權代表將向聯交所提供流動電話號碼、傳真號碼（如有）及電郵地址（如有）； (d) 所有非常駐香港的董事已確認，彼等持有或能夠申請到訪香港的有效旅遊證件，並可在合理時間內與聯交所人員會面；及 (e) 聯交所及董事的會議可通過本公司授權代表或合規顧問或在合理時間範圍內直接與董事安排。如本公司授權代",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_seed_bus_001",
+      "annotator": "董飞飞",
+      "category": "business_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天是否高度依赖少数主要客户，主要客户流失会产生什么影响？",
+      "document_hit": true,
+      "keyword_hit": true,
+      "keyword_coverage": 0.4,
+      "keyword_matched": [
+        "总收入",
+        "集中风险"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.9,
+      "excerpt_matched_tokens": [
+        "截至",
+        "2019",
+        "12",
+        "31",
+        "日止三個年度及截",
+        "2020",
+        "4",
+        "30",
+        "日止四個月",
+        "60.0%"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        11,
+        12,
+        13,
+        185,
+        186,
+        189,
+        191,
+        192,
+        194,
+        195
+      ],
+      "expected_physical_pages": [
+        [
+          51,
+          52
+        ]
+      ],
+      "top1_pages": [
+        194,
+        195
+      ],
+      "top1_preview": "• 終止 。 任何一方可通過發出30日的書面通知終止協議。 我們相信，憑藉我們提供優質的廣告服務，我們能夠建立忠誠的客戶群。下表載列於往績記錄期的回頭客數量以及彼等對本集團的收入貢獻（中介服務及精準廣告服務均按收入確認總額基準列賬）： 附註： (1) 客戶流失率乃根據相關年度╱期間開始時所服務的客戶總數減去相關年度╱期間的回頭客數量，再除以相關年度╱期間開始時所服務的客戶總數並乘以100%計算所得。 (2) 客戶保留率乃根據相關年度╱期",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_seed_bus_002",
+      "annotator": "董飞飞",
+      "category": "business_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的服务成本是否集中于少数供应商，是否存在供应商依赖？",
+      "document_hit": true,
+      "keyword_hit": true,
+      "keyword_coverage": 0.4,
+      "keyword_matched": [
+        "47.2%",
+        "25.5%"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 1.0,
+      "excerpt_matched_tokens": [
+        "截至",
+        "2019",
+        "12",
+        "31",
+        "日止三個年度各年",
+        "及截至",
+        "2020",
+        "4",
+        "30",
+        "日止四個月"
+      ],
+      "page_hit": true,
+      "result_pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        21,
+        22,
+        209,
+        210,
+        212,
+        213,
+        214
+      ],
+      "expected_physical_pages": [
+        [
+          209,
+          211
+        ]
+      ],
+      "top1_pages": [
+        12,
+        13
+      ],
+      "top1_preview": "截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們的五大供應商分別佔我們的服務成本約46 .2%、30 .2%、35 .6%及47 .2%。同期，我們的最大供應商分別佔我們的服務成本約17 .0%、12 .1%、13 .6%及25 .5%。詳情請參閱本招股章程「業務－我們的供應商」一節。 客戶與供應商的重疊 我們的部分客戶亦為我們的供應商，反之亦然。於往績記錄期，來自兼為主要客戶及供應商的毛收入於我們的總收入佔",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_seed_bus_005",
+      "annotator": "董飞飞",
+      "category": "business_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "客户财务状况恶化或付款能力下降是否会造成辉煌明天回款、营运资金和接单压力？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": false,
+      "excerpt_coverage": 0.0,
+      "excerpt_matched_tokens": [],
+      "page_hit": false,
+      "result_pages": [
+        9,
+        10,
+        17,
+        19,
+        20,
+        23,
+        24,
+        396,
+        397
+      ],
+      "expected_physical_pages": [
+        [
+          50,
+          50
+        ]
+      ],
+      "top1_pages": [
+        19,
+        20
+      ],
+      "top1_preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流動資金水平，包括(i)對新客戶進行信用評",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_bus_009",
+      "annotator": "董飞飞",
+      "category": "business_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "移动广告行业竞争加剧是否可能导致辉煌明天降价、利润下降或客户流失？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.2632,
+      "excerpt_matched_tokens": [
+        "由於對移動廣告服",
+        "務的需求持續增長",
+        "加上進入壁壘低",
+        "我們預期新競爭對",
+        "因此"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        8,
+        13,
+        14,
+        159,
+        184
+      ],
+      "expected_physical_pages": [
+        [
+          51,
+          52
+        ]
+      ],
+      "top1_pages": [
+        13,
+        14
+      ],
+      "top1_preview": "在移動互聯網用戶數量及數字媒體使用率均有所增長的驅動下，中國移動廣告市場由2014年的人民幣375億元激增至2019年的人民幣4,149億元，複合年增長率為61 .7%，而中國移動廣告代理市場由2014年的人民幣219億元增長至2019年的人民幣1,541億元，複合年增長率為47 .7%。隨著移動廣告技術的發展，移動廣告市場預計將繼續增長，於2024年達至人民幣7,954億元，複合年增長率為13 .9%，而移動廣告代理市場將於2024年",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_own_010",
+      "annotator": "董飞飞",
+      "category": "ownership_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的实际控制人及一致行动安排是什么，上市后控制权如何集中？",
+      "document_hit": true,
+      "keyword_hit": true,
+      "keyword_coverage": 0.6,
+      "keyword_matched": [
+        "控股股东",
+        "72.8%",
+        "董先生"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.6,
+      "excerpt_matched_tokens": [
+        "緊隨資本化發行及",
+        "股份發售完成後",
+        "董先生",
+        "楊先生",
+        "將屬一組控股股東",
+        "共同及實益擁有合",
+        "共約",
+        "72.8%",
+        "的已發行股本",
+        "2019"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        20,
+        231,
+        232,
+        233,
+        234,
+        245,
+        246,
+        247
+      ],
+      "expected_physical_pages": [
+        [
+          237,
+          237
+        ]
+      ],
+      "top1_pages": [
+        231,
+        232
+      ],
+      "top1_preview": "我們已實施一系列內部控制程序，以促進高效獨立經營業務。 此外，於最後實際可行日期，本集團與控股股東及彼等的緊密聯繫人之間並無業務交易。董事認為，本集團能夠獨立於控股股東及彼等各自的緊密聯繫人經營。 財務可行性及財務獨立 於往績記錄期及直至最後實際可行日期，我們自設內部控制及會計系統、財務團隊，以及現金收款與付款庫務職能。 於往績記錄期，本集團擁有若干應付董事或彼等各自的聯繫人及股東的非貿易相關款項。該等金額主要為主要管理人員補償以及股東",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_own_012",
+      "annotator": "董飞飞",
+      "category": "ownership_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "控股股东的高度持股和影响力是否可能损害其他股东利益或阻碍控制权变更？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.2,
+      "keyword_matched": [
+        "其他股东"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.875,
+      "excerpt_matched_tokens": [
+        "控股股東對我們的",
+        "業務具有重大影響",
+        "包括我們的管理相",
+        "關事宜",
+        "政策以及其他主要",
+        "決策程序及若干企",
+        "業行動",
+        "所有權集中可能會",
+        "窒礙",
+        "延遲或阻止本公司"
+      ],
+      "page_hit": true,
+      "result_pages": [
+        63,
+        64,
+        231,
+        232,
+        233,
+        234,
+        247,
+        248,
+        249,
+        334,
+        335
+      ],
+      "expected_physical_pages": [
+        [
+          63,
+          63
+        ]
+      ],
+      "top1_pages": [
+        232,
+        233,
+        234
+      ],
+      "top1_preview": "(a) 就控股股東於其中擁有重大權益的建議交易事項而召開股東大會時，控股股東須就有關決議案放棄投票，且不得計入投票的法定人數； (b) 我們致力確保董事會的執行及非執行董事（包括獨立非執行董事）組成比例均衡，以確保董事會充分獨立，能夠有效作出獨立判斷，並能夠提供中立及專業的建議，從而保障少數股東的權益； (c) 董事將依照細則行事，細則規定有利害關係的董事就該等事項作出完整披露，且不得就批准其或其任何緊密聯繫人擁有重大權益的任何合約或安",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_ipo_002",
+      "annotator": "董飞飞",
+      "category": "ipo_specific_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的首次公开招股前投资采用什么估值和折价安排，投资者是否享有特殊权利？",
+      "document_hit": true,
+      "keyword_hit": true,
+      "keyword_coverage": 0.4,
+      "keyword_matched": [
+        "市盈率",
+        "禁售期"
+      ],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.3,
+      "excerpt_matched_tokens": [
+        "2019",
+        "2",
+        "12",
+        "7.0",
+        "百萬港元",
+        "港元"
+      ],
+      "page_hit": true,
+      "result_pages": [
+        0,
+        1,
+        21,
+        119,
+        124,
+        125
+      ],
+      "expected_physical_pages": [
+        [
+          119,
+          120
+        ],
+        [
+          123,
+          123
+        ]
+      ],
+      "top1_pages": [
+        21
+      ],
+      "top1_preview": "有權益，並受限於自上市日期起計為期六個月的禁售期。根據首次公開招股前投資作出的總投資總額約達7 .7百萬港元（包括已付楊先生的約0 .35百萬港元），而本集團得到的所得款項總額約為7 .4百萬港元。首次公開招股前投資分兩輪進行，即：(i)於2018年11月向楊先生收購湖州輝煌明天的1%股權，小額投資約為人民幣0 .3百萬元，相當於本集團估值約人民幣30 .0百萬元（經參考獨立第三方估值師評估的湖州輝煌明天及其附屬公司於2018年11月的",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_ipo_004",
+      "annotator": "董飞飞",
+      "category": "ipo_specific_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "辉煌明天的发售价是否可能偏离上市后交易价格，股份是否存在流动性和大幅波动风险？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": false,
+      "excerpt_coverage": 0.1,
+      "excerpt_matched_tokens": [
+        "於股份發售完成後",
+        "性發售價範圍"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        14,
+        15,
+        20,
+        21,
+        22
+      ],
+      "expected_physical_pages": [
+        [
+          69,
+          70
+        ]
+      ],
+      "top1_pages": [
+        21,
+        22
+      ],
+      "top1_preview": "假設發售價為每股發售股份1 .05港元（即指示性發售價範圍每股發售股份1 .0港元至1 .1港元的中位數），與股份發售有關的上市開支主要包括包銷佣金及其他開支，估計約為51 .0百萬港元（相當於約人民幣46 .4百萬元）（相當於股份發售所得款項總額約38 .9%），其中約8 .8百萬港元（相當於約人民幣8 .0百萬元）、12 .2百萬港元（相當於約人民幣11 .1百萬元）及4 .4百萬港元（相當於約人民幣4 .0百萬元）分別於截至201",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_董飞飞_cat_ipo_005",
+      "annotator": "董飞飞",
+      "category": "ipo_specific_risk",
+      "document_id": "2020_01351_輝煌明天",
+      "question": "股份发售所得款项计划如何使用，管理层是否对实际用途拥有较大酌情权？",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.35,
+      "excerpt_matched_tokens": [
+        "所得款項淨額",
+        "合共約",
+        "64.9%",
+        "21.3%",
+        "客戶服務及設計團",
+        "10.5%",
+        "升信息技術及數據"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        21,
+        22,
+        23,
+        318,
+        319,
+        321,
+        322,
+        323
+      ],
+      "expected_physical_pages": [
+        [
+          71,
+          71
+        ],
+        [
+          315,
+          317
+        ]
+      ],
+      "top1_pages": [
+        21,
+        22
+      ],
+      "top1_preview": "假設發售價為每股發售股份1 .05港元（即指示性發售價範圍每股發售股份1 .0港元至1 .1港元的中位數），與股份發售有關的上市開支主要包括包銷佣金及其他開支，估計約為51 .0百萬港元（相當於約人民幣46 .4百萬元）（相當於股份發售所得款項總額約38 .9%），其中約8 .8百萬港元（相當於約人民幣8 .0百萬元）、12 .2百萬港元（相當於約人民幣11 .1百萬元）及4 .4百萬港元（相當於約人民幣4 .0百萬元）分別於截至201",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2020_01351_輝煌明天",
+        "company": "輝煌明天",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2020_01351_輝煌明天"
+        ]
+      }
+    },
+    {
+      "id": "manual_new_田歌_cat_fin_010",
+      "annotator": "田歌",
+      "category": "compliance_risk",
+      "document_id": "2022_03931_中創新航",
+      "question": "专利侵权、产品质量诉讼等重大法律纠纷是否充分披露?",
+      "document_hit": true,
+      "keyword_hit": false,
+      "keyword_coverage": 0.0,
+      "keyword_matched": [],
+      "excerpt_hit": true,
+      "excerpt_coverage": 0.4,
+      "excerpt_matched_tokens": [
+        "2021",
+        "8",
+        "10",
+        "權侵權申",
+        "並於",
+        "2022",
+        "人民法院",
+        "法院"
+      ],
+      "page_hit": false,
+      "result_pages": [
+        81,
+        82,
+        84,
+        85,
+        86,
+        350,
+        351,
+        785,
+        786
+      ],
+      "expected_physical_pages": [
+        [
+          336,
+          336
+        ]
+      ],
+      "top1_pages": [
+        84,
+        85
+      ],
+      "top1_preview": "我們主要依賴專利、商業秘密、商標、由僱員簽署保密協議及與第三方簽署保密協議相結合的方式保護知識產權。截至最後實際可行日期，我們並無涉及任何我們認為侵犯我們知識產權的法律訴訟。請參閱「業務－知識產權」及附錄六「法定及一般資料－B.知識產權」。為保護知識產權及維持競爭優勢，我們或會對疑似侵害我們的知識產權的人士提出法律訴訟。法律訴訟一般費用高昂，且管理層或須費神兼顧，並會耗用我們的業務資源。於若干情況下，我們或會於海外司法權區提出法律訴訟，",
+      "n_results": 5,
+      "routing": {
+        "status": "matched",
+        "source": "document_id",
+        "document_id": "2022_03931_中創新航",
+        "company": "中創新航",
+        "matched_name": null,
+        "candidate_document_ids": [
+          "2022_03931_中創新航"
+        ]
+      }
+    }
+  ]
+}

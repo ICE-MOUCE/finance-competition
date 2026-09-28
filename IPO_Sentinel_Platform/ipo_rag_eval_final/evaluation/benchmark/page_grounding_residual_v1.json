@@ -1,0 +1,1379 @@
+{
+  "generated_at": "2026-07-27T18:56:31",
+  "source_results": "E:\\WorkSpace\\IPO-Risk-Agent\\evaluation\\benchmark\\use_of_proceeds_crosspage_repair_v1_results.json",
+  "experiment": "G_plus_E",
+  "n_cases": 39,
+  "page_mismatch_total": 9,
+  "page_hit_any_rate": 0.7436,
+  "failure_reason_counts": {
+    "ok": 11,
+    "content_hit_page_mismatch": 9,
+    "gold_recalled_but_rank_low": 13,
+    "gold_not_in_topk_content": 1,
+    "semantic_near_miss_or_chunk_boundary": 5
+  },
+  "root_cause_counts": {
+    "A_multi_location_disclosure": 7,
+    "B_chunk_page_span_too_wide": 0,
+    "C_gold_page_basis_issue": 0,
+    "D_evaluator_page_match_too_strict": 1,
+    "E_true_page_grounding_error": 1
+  },
+  "ratios": {
+    "acceptable_multi_location": 0.7778,
+    "packing_page_span": 0.0,
+    "true_page_grounding_error": 0.1111,
+    "page_grounding_fail_only": 1.0
+  },
+  "impact_on_hard_metrics": {
+    "content_or_sufficiency_underestimated": true,
+    "page_grounding_should_be_independent_metric": true,
+    "g_plus_e_content_success_if_page_split": {
+      "current_ok": 11,
+      "page_mismatch": 9,
+      "ok_plus_page_mismatch": 20,
+      "note": "R@k already counts content_hit; failure_reason label currently over-penalizes interpretation."
+    }
+  },
+  "recommend_code_change": true,
+  "single_next_step": "evaluator_metric_split",
+  "single_next_step_detail": "主因不是检索没找到证据，而是 content 已命中后仍被 page mismatch 叙事否掉。唯一下一步只改评估口径：把 content/sufficiency 与 page grounding 拆成独立指标；R@k 继续按 content_hit，page grounding 单独报告，不再用 content_hit_page_mismatch 掩盖 sufficiency 成功。",
+  "diagnostics": [
+    {
+      "case_id": "manual_ts_yideng_fin_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "financial_risk",
+      "question": "伊登软件是否存在经营现金流压力或经营现金流为负的风险？",
+      "document_id": "2020_01147_伊登軟件",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          18,
+          19
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          12,
+          13
+        ]
+      ],
+      "expected_keywords": [
+        "经营活动",
+        "现金流量",
+        "流动负债"
+      ],
+      "gold_preview": "營運資金變動 (16,016) (5,818) (18,400) (20,266) 已付所得稅 (2,188) (1,770) (2,781) (4,417) 經營活動（所用）╱所得現金流量淨額 (902) 21,777 12,594 10,071 投資活動（所用）╱所得現金流量淨額 (12,600) 3,560 1,137 (2,889) 融資活動所得╱（所用）現金流量淨額 29,995 (54,769) (13,479) 2,366 現金及現金等價物增加╱（減少）淨額 1",
+      "hit_chunk_id": "chk_2020_01147_伊登軟件_p263_txt293",
+      "hit_pages": [
+        263
+      ],
+      "hit_section_path": [
+        "財務資料"
+      ],
+      "hit_preview": "本集團的現金流量 下表為於所示年度的綜合現金流量表簡明概要： 節選綜合現金流量表 經營活動（所用）所得現金流量 經營活動所得或所用現金淨額包括主要就非現金項目（如折舊、商譽減值、出售附屬公司的虧損、遞延收入、貿易應收款項及應收票據以及其他應收款項撥回╱減值、租賃使用權折舊、出售物業、廠房及設備所得收益、就福州東湖應佔一間聯營公司虧損）作出調整後及就營運資金變動作出調整後的除所得稅前溢利。於往績記錄期，我們的經營活動所得現金流量主要來自就IT基礎設施服務、IT實施及支持服務及雲",
+      "hit_coverage": 0.2917,
+      "hit_keyword_coverage": 0.6667,
+      "hit_keyword_hit": [
+        "经营活动",
+        "现金流量"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "本集團的現金流量 下表為於所示年度的綜合現金流量表簡明概要： 節選綜合現金流量表 經營活動（所用）所得現金流量 經營活動所得或所用現金淨額包括主要就非現金項目（如折舊、商譽減值、出售附屬公司的虧損、遞延收入、貿易應收款項及應收票據以及其他應收款項撥回╱減值、租賃使用權折舊、出售物業、廠房及設備所得收益、就福州東湖應佔一間聯營公司虧損）作出調整後及就營運資金變動作出調整後的除所得稅前溢利。於往績記錄期，我們的經營活動所得現金流量主要來自就IT基礎設施服務、IT實施及支持服務及雲服務收取的客戶付款。我們的經營活動所用現金主要包括(i)購買硬件及軟件；(ii)供應商及分包商所提供服務付款；(iii)員工成本；及(iv)若干IT供應商的保函",
+      "chunk_pages_field": [
+        263
+      ],
+      "evidence_ids": [
+        "ev_2020_01147_伊登軟件_p263_txt001",
+        "ev_2020_01147_伊登軟件_p263_txt002",
+        "ev_2020_01147_伊登軟件_p263_txt003",
+        "ev_2020_01147_伊登軟件_p263_txt004",
+        "ev_2020_01147_伊登軟件_p263_txt005",
+        "ev_2020_01147_伊登軟件_p263_txt006"
+      ],
+      "evidence_pages": [
+        263
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 4,
+          "pages": [
+            19,
+            20
+          ],
+          "coverage": 0.25,
+          "chunk_id": "chk_2020_01147_伊登軟件_p19_txt017",
+          "preview": "截至2016年12月31日止年度，我們經營活動所用現金流量淨額約為人民幣0.9百萬元，主要是由於(i)存貨增加約人民幣24.0百萬元（主要由於2015年12月31日的存貨水平因我們於截至2015年12月31日止年度之前已向我們的客戶交付大部分存貨而較低）；(ii)貿易應收款項及應收票據主要因我們截至2016年12月31日止年度的銷售額較截至2015年12月3"
+        },
+        {
+          "rank": 5,
+          "pages": [
+            18
+          ],
+          "coverage": 0.9583,
+          "chunk_id": "chk_2020_01147_伊登軟件_p18_tbl015",
+          "preview": "表格（14行）. 列: 截至12月31日止年度. 第1行: 2016年 人民幣千元 | 2017年 | 2018年 | 2019年. 第2行: 人民幣千元 | 人民幣千元 | 人民幣千元. 第3行: 營運資金變動前的經營現金流量 | 17,302 | 29,365 | 33,775 | 34,754. 第4行: 營運資金變動 | (16,016) | (5,"
+        }
+      ],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.2917,
+          "keyword_coverage": 0.3333,
+          "keyword_hit": [
+            "现金流量"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 244,
+          "signed_delta": 244,
+          "expected_page": 19,
+          "returned_page": 263
+        },
+        "cross_page_chunk": false,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          263
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 2
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "manual_ch_duodian_bus_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "business_risk",
+      "question": "多点数智是否存在对关联方客户收入的重大依赖？",
+      "document_id": "2024_02586_多點數智",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          58,
+          58
+        ],
+        [
+          234,
+          234
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          51,
+          51
+        ],
+        [
+          227,
+          227
+        ]
+      ],
+      "expected_keywords": [
+        "关联方",
+        "收益",
+        "收益百分比",
+        "物美集团",
+        "独立客户"
+      ],
+      "gold_preview": "51 風險因素 我們非常依賴關聯方，而我們與關聯方關係的任何重大變化均會對我們的業務、財務狀況 和經營業績產生重大不利影響。 我們與關聯方有密切的業務關係，並於往績記錄期間進行了大量的業務交易，且希望 在未來繼續與他們保持業務關係。於往績記錄期間，我們淨收益的絕大部分來自關聯方， 而物美集團亦為本集團的最大客戶。截至2021年、2022年及2023年12月31日止年度以及截 至2024年6月30日止六個月，(i)我們來自物美集團的收益分別為人民幣384.1百萬元、人民幣 56",
+      "hit_chunk_id": "chk_2024_02586_多點數智_p16_txt024",
+      "hit_pages": [
+        16,
+        17,
+        18
+      ],
+      "hit_section_path": [
+        "概 要"
+      ],
+      "hit_preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們五大客戶產生的收益分別佔同年╱期收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，",
+      "hit_coverage": 0.2917,
+      "hit_keyword_coverage": 0.6,
+      "hit_keyword_hit": [
+        "关联方",
+        "收益",
+        "收益百分比"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "我們與關聯方有密切的業務關係，並進行了大量的業務交易。張文中博士為我們的創始人、高級顧問及控股股東，彼為中國本地零售行業的傑出領袖，並為物美科技集團有限公司（物美集團的控股公司）的創始人及控股股東。我們的客戶主要為零售商及品牌商。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們五大客戶產生的收益分別佔同年╱期收益的79.4%、83.3%、87.2%及89.6%。截至2021年、2022年、2023年各年以及截至2024年6月30日止六個月，我們最大客戶產生的收益分別佔同年╱期收益的60.0%、64.0%、71.9%及75.3%。請參閱「業務 — 客戶」及「業務 — 我們與關聯方的關係」。 於往績記",
+      "chunk_pages_field": [
+        16,
+        17,
+        18
+      ],
+      "evidence_ids": [
+        "ev_2024_02586_多點數智_p16_txt010",
+        "ev_2024_02586_多點數智_p17_txt002",
+        "ev_2024_02586_多點數智_p17_txt003",
+        "ev_2024_02586_多點數智_p18_txt001"
+      ],
+      "evidence_pages": [
+        16,
+        17,
+        18
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 2,
+          "pages": [
+            234,
+            235
+          ],
+          "coverage": 0.1667,
+          "chunk_id": "chk_2024_02586_多點數智_p234_txt282",
+          "preview": "多點新鮮（北京）主要從事提供網絡營銷及廣告服務以及Dmall app營運。截至2024年6月30日，張先生及魯玉新女士分別持有多點新鮮（北京）約51%及49%的股權。 與關聯方的合作 我們已於往績記錄期間與關聯方進行大量業務交易且預計於未來繼續與他們開展業務關係。根據與我們客戶的安排，我們已與關聯方訂立合作協議。請參閱「— 客戶」以了解進一步資料。 於往績記"
+        }
+      ],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.375,
+          "keyword_coverage": 0.6,
+          "keyword_hit": [
+            "关联方",
+            "收益",
+            "收益百分比"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 40,
+          "signed_delta": -40,
+          "expected_page": 58,
+          "returned_page": 18
+        },
+        "cross_page_chunk": true,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          16,
+          17,
+          18
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 1
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "mgv1_leapmotor_fin_loss_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "financial_risk",
+      "question": "零跑汽车是否持续录得净亏损及经调整净亏损？",
+      "document_id": "2022_09863_零跑汽車",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          20,
+          22
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          20,
+          22
+        ]
+      ],
+      "expected_page_labels": [],
+      "expected_keywords": [
+        "净亏损",
+        "经调整净亏损",
+        "收益"
+      ],
+      "gold_preview": "03) – 13 – 概 要 非國際財務報告準則計量 為補充我們根據國際財務報告準則呈列的合併財務報表，我們亦採用並非 國際財務報告準則所規定或據此呈列的經調整淨虧損作為額外財務計量。我們 認為，此項非國際財務報告準則計量可消除項目的潛在影響，有助於比較不同年 度及不同公司間的經營表現。 我們相信，此項計量提供有用信息，供投資者及其他人士以與管理層相同 方式了解及評估我們的合併經營業績。然而，我們呈列的經調整淨虧損未必與其 他公司所呈列類似名目的計量可比。將此項非國際財務報告",
+      "hit_chunk_id": "chk_2022_09863_零跑汽車_p361_txt376",
+      "hit_pages": [
+        361,
+        362,
+        363
+      ],
+      "hit_section_path": [
+        "財 務 資 料"
+      ],
+      "hit_preview": "在建工程指未完工工程及在建或待安裝設備，按成本減減值虧損呈列。成本包括包含建設期間建設應佔借款成本在內的直接建設成本。相關資產完工並可用作擬定用途時方會就在建工程計提折舊撥備。 公允價值估計 並無於活躍市場買賣的金融資產的公允價值使用估值技術釐定。我們運用判斷選擇多種方法及主要基於各報告期末的市場情況作出假設。該等假設及估計的變動可能會對該等投資各自的公允價值帶來重大影響。參閱本招股章程附錄一會計師報告附註3.3。 經營業績 下表載列我們於呈列期間的合併經營業績概要： 非國際",
+      "hit_coverage": 0.9167,
+      "hit_keyword_coverage": 0.3333,
+      "hit_keyword_hit": [
+        "净亏损"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "在建工程指未完工工程及在建或待安裝設備，按成本減減值虧損呈列。成本包括包含建設期間建設應佔借款成本在內的直接建設成本。相關資產完工並可用作擬定用途時方會就在建工程計提折舊撥備。 公允價值估計 並無於活躍市場買賣的金融資產的公允價值使用估值技術釐定。我們運用判斷選擇多種方法及主要基於各報告期末的市場情況作出假設。該等假設及估計的變動可能會對該等投資各自的公允價值帶來重大影響。參閱本招股章程附錄一會計師報告附註3.3。 經營業績 下表載列我們於呈列期間的合併經營業績概要： 非國際財務報告準則計量 為補充我們根據國際財務報告準則呈列的合併財務報表，我們亦採用並非國際財務報告準則所規定或據此呈列的經調整淨虧損作為額外財務計量。我們認為，此項",
+      "chunk_pages_field": [
+        361,
+        362,
+        363
+      ],
+      "evidence_ids": [
+        "ev_2022_09863_零跑汽車_p361_txt004",
+        "ev_2022_09863_零跑汽車_p361_txt005",
+        "ev_2022_09863_零跑汽車_p361_txt006",
+        "ev_2022_09863_零跑汽車_p362_txt001",
+        "ev_2022_09863_零跑汽車_p362_txt002",
+        "ev_2022_09863_零跑汽車_p363_txt001",
+        "ev_2022_09863_零跑汽車_p363_txt002",
+        "ev_2022_09863_零跑汽車_p363_txt003",
+        "ev_2022_09863_零跑汽車_p363_txt004",
+        "ev_2022_09863_零跑汽車_p363_txt005",
+        "ev_2022_09863_零跑汽車_p363_txt006"
+      ],
+      "evidence_pages": [
+        361,
+        362,
+        363
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 2,
+          "pages": [
+            21,
+            22
+          ],
+          "coverage": 0.375,
+          "chunk_id": "chk_2022_09863_零跑汽車_p21_txt027",
+          "preview": "我們相信，此項計量提供有用信息，供投資者及其他人士以與管理層相同方式了解及評估我們的合併經營業績。然而，我們呈列的經調整淨虧損未必與其他公司所呈列類似名目的計量可比。將此項非國際財務報告準則計量用作分析工具存在局限性，閣下不應視其為獨立於或可代替我們根據國際財務報告準則所呈報經營業績或財務狀況的分析。我們將經調整淨虧損定義為加回以股份為基礎的付款開支及按攤銷"
+        },
+        {
+          "rank": 3,
+          "pages": [
+            19,
+            20,
+            21
+          ],
+          "coverage": 0.7083,
+          "chunk_id": "chk_2022_09863_零跑汽車_p19_txt026",
+          "preview": "截至最後實際可行日期，朱先生、傅先生、劉女士（朱先生的配偶）及陳女士（傅先生的配偶）根據彼等之間的一致行動安排合共於我們已發行股本總額中擁有約31.01%的權益，包括(i)朱先生直接及透過杭州芯圖、寧波景航及萬載明昭間接控制的11.89%權益，(ii)傅先生直接及透過寧波華暘及寧波顧麟間接控制的13.53%權益及(iii) 陳女士透過寧波華綾間接控制的5.5"
+        }
+      ],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.9167,
+          "keyword_coverage": 0.0,
+          "keyword_hit": [],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 339,
+          "signed_delta": 339,
+          "expected_page": 22,
+          "returned_page": 361
+        },
+        "cross_page_chunk": true,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          361,
+          362,
+          363
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 2
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "mgv1_duodian_owner_controller_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "ownership_risk",
+      "question": "多点数智的控股股东是谁，控股股东关系是否构成治理风险关注点？",
+      "document_id": "2024_02586_多點數智",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": false,
+      "expected_physical_page_ranges_0_based": [
+        [
+          31,
+          31
+        ],
+        [
+          297,
+          297
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          24,
+          24
+        ],
+        [
+          290,
+          290
+        ]
+      ],
+      "expected_keywords": [
+        "控股股东",
+        "物美",
+        "张文中"
+      ],
+      "gold_preview": "幣 50.0百萬元，並將可轉換債券本金金額修改為人民幣140.0元百萬元。請參閱本文件「歷史、 重組及公司架構 — 首次公開發售前投資」一節以了解進一步詳情。 控股股東 緊隨全球發售完成後（假設超額配股權未獲行使、可轉換債券未獲轉換及並無根據股 份激勵計劃發行股份），我們的創始人兼高級顧問張博士將通過多家中介機構（均為由他全 資擁有或控制的公司）擁有及控制合共502,452,135股股份的權益，合共佔我們已發行股份總 數的約56.67%。因此，張博士連同有關中介機構將於上市後",
+      "hit_chunk_id": "chk_2024_02586_多點數智_p299_txt359",
+      "hit_pages": [
+        299
+      ],
+      "hit_section_path": [
+        "與 控 股 股 東 的 關 係"
+      ],
+      "hit_preview": "(h) 我們已採納一系列的企業管治措施，以管理本集團與控股股東之間的利益衝突（倘有），以支持我們的獨立管理。請參閱本節「— 企業管治措施」以了解進一步資料。 基於上文所述，董事認為，董事會整體及連同我們的高級管理層團隊能夠獨立履行本集團的管理職責。 經營獨立 董事認為本集團於經營方面獨立於控股股東。本公司（通過我們的附屬公司）持有所有相關許可證，並擁有開展業務所需的所有相關知識產權及研發設施。我們有足夠的資金、設施、設備及僱員以獨立於控股股東經營我們的業務。我們亦可獨立接觸客",
+      "hit_coverage": 0.0417,
+      "hit_keyword_coverage": 0.6667,
+      "hit_keyword_hit": [
+        "控股股东",
+        "物美"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "(h) 我們已採納一系列的企業管治措施，以管理本集團與控股股東之間的利益衝突（倘有），以支持我們的獨立管理。請參閱本節「— 企業管治措施」以了解進一步資料。 基於上文所述，董事認為，董事會整體及連同我們的高級管理層團隊能夠獨立履行本集團的管理職責。 經營獨立 董事認為本集團於經營方面獨立於控股股東。本公司（通過我們的附屬公司）持有所有相關許可證，並擁有開展業務所需的所有相關知識產權及研發設施。我們有足夠的資金、設施、設備及僱員以獨立於控股股東經營我們的業務。我們亦可獨立接觸客戶，並擁有獨立管理團隊以經營我們的業務。我們已採納一套內部控制程序以維持我們的業務有效及獨立經營。 與關聯方的交易 作為我們日常業務過程的一部分，我們已提供及預",
+      "chunk_pages_field": [
+        299
+      ],
+      "evidence_ids": [
+        "ev_2024_02586_多點數智_p299_txt001",
+        "ev_2024_02586_多點數智_p299_txt002",
+        "ev_2024_02586_多點數智_p299_txt003",
+        "ev_2024_02586_多點數智_p299_txt004",
+        "ev_2024_02586_多點數智_p299_txt005",
+        "ev_2024_02586_多點數智_p299_txt006",
+        "ev_2024_02586_多點數智_p299_txt007",
+        "ev_2024_02586_多點數智_p299_txt008"
+      ],
+      "evidence_pages": [
+        299
+      ],
+      "alternative_page_hit_candidates": [],
+      "classification": {
+        "root_cause": "D_evaluator_page_match_too_strict",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.0417,
+          "keyword_coverage": 0.6667,
+          "keyword_hit": [
+            "控股股东",
+            "物美"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 2,
+          "signed_delta": 2,
+          "expected_page": 297,
+          "returned_page": 299
+        },
+        "cross_page_chunk": false,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": false,
+        "evidence_pages": [
+          299
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": false,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": false,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 0
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": true,
+      "minimal_fix_layer": "evaluator_metric_split_page_vs_content"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_owner_controller_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "ownership_risk",
+      "question": "云知声是否披露控股股东及其上市后持股影响？",
+      "document_id": "2025_09678_雲知聲",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          21,
+          21
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          13,
+          13
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          13,
+          13
+        ]
+      ],
+      "expected_keywords": [
+        "控股股东",
+        "发售股份",
+        "股本"
+      ],
+      "gold_preview": "概 要 13 33.18%。因此，上市後，彼等將繼續作為我們的控股股東。請參閱「歷史、發展及公司架構 — 控股股東」及「與控股股東的關係」以了解詳情。 發售統計數據 下表所有統計數據基於以下假設得出：(i)全球發售已完成，並根據全球發售發行 1,560,980股H股；(ii)全球發售完成後，70,953,453股股份已發行在外（下文附註(2)所披露者除 外）；及(iii)將境內非上市股份及非上市外資股轉換為H股，且超額配股權未獲行使。 根據每股發售價 165.00港元 根據每",
+      "hit_chunk_id": "chk_2025_09678_雲知聲_p291_txt292",
+      "hit_pages": [
+        291,
+        292
+      ],
+      "hit_section_path": [
+        "主 要 股 東"
+      ],
+      "hit_preview": "(1) 截至最後實際可行日期，雲思尚義及雲創互動分別直接持有16,710,714股及2,639,158股股份。雲思尚義及雲創互動各自的普通合夥人為天津雲盛，由黃博士及執行董事劉升平先生分別持有99%及1%。黃博士亦為雲思尚義最大的有限合夥人，持有82.59%合夥權益。概無有限合夥人於天津雲盛擁有50%或以上的合夥權益。因此，雲思尚義及雲創互動均由黃博士控制。因此，就證券及期貨條例第XV部而言，天津雲盛及黃博士各自被視為於雲思尚義及雲創互動持有的股份中擁有權益。截至最後實際可行",
+      "hit_coverage": 0.1667,
+      "hit_keyword_coverage": 0.6667,
+      "hit_keyword_hit": [
+        "控股股东",
+        "股本"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "(1) 截至最後實際可行日期，雲思尚義及雲創互動分別直接持有16,710,714股及2,639,158股股份。雲思尚義及雲創互動各自的普通合夥人為天津雲盛，由黃博士及執行董事劉升平先生分別持有99%及1%。黃博士亦為雲思尚義最大的有限合夥人，持有82.59%合夥權益。概無有限合夥人於天津雲盛擁有50%或以上的合夥權益。因此，雲思尚義及雲創互動均由黃博士控制。因此，就證券及期貨條例第XV部而言，天津雲盛及黃博士各自被視為於雲思尚義及雲創互動持有的股份中擁有權益。截至最後實際可行日期，黃博士、梁博士及康博士根據彼等之間的一致行動安排，共同擁有我們已發行股本總額約33.93%權益。請參閱「與控股股東的關係」一節以了解詳情。因此，就證券及期",
+      "chunk_pages_field": [
+        291,
+        292
+      ],
+      "evidence_ids": [
+        "ev_2025_09678_雲知聲_p291_txt003",
+        "ev_2025_09678_雲知聲_p291_txt004",
+        "ev_2025_09678_雲知聲_p291_txt005",
+        "ev_2025_09678_雲知聲_p291_txt006",
+        "ev_2025_09678_雲知聲_p291_txt007",
+        "ev_2025_09678_雲知聲_p292_txt001"
+      ],
+      "evidence_pages": [
+        291,
+        292
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 3,
+          "pages": [
+            20,
+            21
+          ],
+          "coverage": 0.9583,
+          "chunk_id": "chk_2025_09678_雲知聲_p20_txt023",
+          "preview": "關鍵財務比率 下表載列我們於所示年度的關鍵財務比率： 我們的控股股東 截至最後實際可行日期，梁博士、黃博士及康博士，根據彼等之間的一致行動安排合共於已發行股本總額中擁有約33.93%的權益，包括(i)梁博士直接持有已發行股本總額的3.78%；(ii)黃博士分別透過雲思尚義及雲創互動（其各自普通合夥人均為天津雲盛（由黃博士持有99%的權益））間接控制已發行股本"
+        }
+      ],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.25,
+          "keyword_coverage": 0.6667,
+          "keyword_hit": [
+            "控股股东",
+            "股本"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 270,
+          "signed_delta": 270,
+          "expected_page": 21,
+          "returned_page": 291
+        },
+        "cross_page_chunk": true,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          291,
+          292
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 1
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "mgv1_youran_owner_controller_connected_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "ownership_risk",
+      "question": "优然牧业与控股股东及伊利之间是否存在治理和持续关连交易关注点？",
+      "document_id": "2021_09858_優然牧業",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": false,
+      "expected_physical_page_ranges_0_based": [
+        [
+          33,
+          35
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          33,
+          35
+        ]
+      ],
+      "expected_page_labels": [],
+      "expected_keywords": [
+        "控股股东",
+        "持续关连交易",
+        "伊利"
+      ],
+      "gold_preview": "所支 付的代價總額分別為人民幣3,467.1百萬元及460百萬美元。有關進一步詳情，請參閱 本招股章程「歷史、重組及集團架構－首次公開發售前投資」一節。 我們的控股股東 截至最後實際可行日期，本公司的股權分別由PAG實體及伊利股份（透過其全 資附屬公司中國優然牧業控股有限公司及金港控股）持有約42.89%及40.00%。緊隨全 球發售完成後，PAG實體及伊利股份將分別於我們的已發行股本中擁有約31.46%及 34.80%的權益（假設超額配股權並無獲行使且可換股票據未被轉換）。",
+      "hit_chunk_id": "chk_2021_09858_優然牧業_p303_txt268",
+      "hit_pages": [
+        303,
+        304
+      ],
+      "hit_section_path": [
+        "與 控 股 股 東 的 關 係"
+      ],
+      "hit_preview": "(f) 倘股東會議召開目的為審議任何控股股東於其中擁有重大權益的建議交易，則控股股東須對決議案放棄投票，及不應計入投票的法定人數；及 (g) 本公司已委任力高企業融資有限公司為我們的合規顧問，其將在遵守相關法律及上市規則（包括與董事職責及企業管治有關的各種規定）方面為本集團提供建議及指引。 基於上文所述，董事認為，董事會整體連同我們的高級管理層團隊能夠獨立履行其在本集團的管理職責。 經營獨立性 本集團透過其附屬公司以其本身名義持有對我們的業務經營屬重大的所有牌照。就資本、廠房",
+      "hit_coverage": 0.2917,
+      "hit_keyword_coverage": 0.6667,
+      "hit_keyword_hit": [
+        "控股股东",
+        "伊利"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "(f) 倘股東會議召開目的為審議任何控股股東於其中擁有重大權益的建議交易，則控股股東須對決議案放棄投票，及不應計入投票的法定人數；及 (g) 本公司已委任力高企業融資有限公司為我們的合規顧問，其將在遵守相關法律及上市規則（包括與董事職責及企業管治有關的各種規定）方面為本集團提供建議及指引。 基於上文所述，董事認為，董事會整體連同我們的高級管理層團隊能夠獨立履行其在本集團的管理職責。 經營獨立性 本集團透過其附屬公司以其本身名義持有對我們的業務經營屬重大的所有牌照。就資本、廠房及機器設備、設施、物業及僱員而言，我們有足夠經營能力以獨立於我們的控股股東經營業務。我們亦採納一系列內部控制程序以維持業務的有效及獨立運營。 原料奶購銷框架協議",
+      "chunk_pages_field": [
+        303,
+        304
+      ],
+      "evidence_ids": [
+        "ev_2021_09858_優然牧業_p303_txt005",
+        "ev_2021_09858_優然牧業_p303_txt006",
+        "ev_2021_09858_優然牧業_p303_txt007",
+        "ev_2021_09858_優然牧業_p303_txt008",
+        "ev_2021_09858_優然牧業_p303_txt009",
+        "ev_2021_09858_優然牧業_p304_txt001",
+        "ev_2021_09858_優然牧業_p304_txt002",
+        "ev_2021_09858_優然牧業_p304_txt003"
+      ],
+      "evidence_pages": [
+        303,
+        304
+      ],
+      "alternative_page_hit_candidates": [],
+      "classification": {
+        "root_cause": "E_true_page_grounding_error",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.2083,
+          "keyword_coverage": 0.6667,
+          "keyword_hit": [
+            "控股股东",
+            "伊利"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 268,
+          "signed_delta": 268,
+          "expected_page": 35,
+          "returned_page": 303
+        },
+        "cross_page_chunk": true,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": false,
+        "evidence_pages": [
+          303,
+          304
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": false,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": false,
+          "true_error": true,
+          "strong_alt_page_hit": false,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 0
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": true,
+      "minimal_fix_layer": "retrieval_or_chunk_page_grounding_minifix"
+    },
+    {
+      "case_id": "mgv1_yunzhisheng_ipo_use_proceeds_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "ipo_specific_risk",
+      "question": "云知声上市所得款项是否主要投入研发和商业化？",
+      "document_id": "2025_09678_雲知聲",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          343,
+          346
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          335,
+          338
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          335,
+          338
+        ]
+      ],
+      "expected_keywords": [
+        "所得款项",
+        "研发",
+        "商业化"
+      ],
+      "gold_preview": "未來計劃及所得款項用途 335 GPU類型 估計總成本 單價 相關計算能力 通用GPU推理服務器 1.3百萬 港元 0.25百萬 港元 每個GPU服務器可提供最多1 PFLOPS的計算性能。該等服 務器可處理大量請求，並對超 過100億參數的大語言模型進 行同步推理，最高處理能力為 每天22百萬次（每次10秒）。 雲知大腦升級 о 約7.7%或13.6百萬港元，將用於升級雲知大腦，以進一步提高我們的AI技術開發 能力。我們計劃採購訓練語料以及人工反饋及標註服務，以支持我們的軟",
+      "hit_chunk_id": "chk_2025_09678_雲知聲_p24_txt032",
+      "hit_pages": [
+        24
+      ],
+      "hit_section_path": [
+        "所得款項用途"
+      ],
+      "hit_preview": "所得款項用途 假設每股發售股份的發售價為185.00港元（即發售價範圍的中位數），我們預計將自全球發售收取的所得款項淨額約為176.6百萬港元（經扣除有關全球發售的包銷佣金及其他估計開支，並假設超額配股權未獲行使）。與我們的策略一致，我們擬按下列所載用途及金額使用全球發售所得款項： • 約45.6%或80.5百萬港元將在未來五年被用於提高我們的研發能力，將予分配的所得款項詳細明細如下： ο 約30.8%或54.4百萬港元將被分配用於投資我們的Atlas AI基礎設施； ο 約",
+      "hit_coverage": 0.0833,
+      "hit_keyword_coverage": 0.6667,
+      "hit_keyword_hit": [
+        "所得款项",
+        "研发"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "所得款項用途 假設每股發售股份的發售價為185.00港元（即發售價範圍的中位數），我們預計將自全球發售收取的所得款項淨額約為176.6百萬港元（經扣除有關全球發售的包銷佣金及其他估計開支，並假設超額配股權未獲行使）。與我們的策略一致，我們擬按下列所載用途及金額使用全球發售所得款項： • 約45.6%或80.5百萬港元將在未來五年被用於提高我們的研發能力，將予分配的所得款項詳細明細如下： ο 約30.8%或54.4百萬港元將被分配用於投資我們的Atlas AI基礎設施； ο 約7.7%或13.6百萬港元將被分配用於升級雲知大腦，以進一步提高我們的AI開發能力；及 ο 約7.1%或12.5百萬港元將被分配用於培養人才和進行研發合作。 約",
+      "chunk_pages_field": [
+        24
+      ],
+      "evidence_ids": [
+        "ev_2025_09678_雲知聲_p24_txt005",
+        "ev_2025_09678_雲知聲_p24_txt006",
+        "ev_2025_09678_雲知聲_p24_txt007",
+        "ev_2025_09678_雲知聲_p24_txt008",
+        "ev_2025_09678_雲知聲_p24_txt009",
+        "ev_2025_09678_雲知聲_p24_txt010",
+        "ev_2025_09678_雲知聲_p24_txt011",
+        "ev_2025_09678_雲知聲_p24_txt012",
+        "ev_2025_09678_雲知聲_p24_txt013"
+      ],
+      "evidence_pages": [
+        24
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 3,
+          "pages": [
+            345,
+            346,
+            347
+          ],
+          "coverage": 0.0833,
+          "chunk_id": "chk_2025_09678_雲知聲_p345_txt364",
+          "preview": "約7.4%或13.1百萬港元將被分配於營運資金和一般企業用途。 倘發售價定於發售價範圍的上限或發售價範圍的下限，則全球發售所得款項淨額將分別增加或減少約29.8百萬港元及29.8百萬港元。倘全球發售所得款項淨額超過或低於預期，我們將按比例增加或減少將所得款項淨額用作上述用途。 倘超額配股權獲悉數行使，按發售價每股發售股份185.00港元（即發售價範圍的中位數"
+        },
+        {
+          "rank": 4,
+          "pages": [
+            342,
+            343
+          ],
+          "coverage": 0.0833,
+          "chunk_id": "chk_2025_09678_雲知聲_p342_txt355",
+          "preview": "此外，我們計劃根據我們的運營需要升級和擴大我們的計算、存儲和網絡通訊能力。我們預計將通過購買GPU、數據存儲、服務器和網絡設備等硬件，以及為我們的服務器和IT設備購買第三方主機託管服務，不斷擴大我們的智能計算集群。我們計劃以靈活的方式向第三方購買雲計算服務，以滿足我們業務的彈性拓展需求。下表載列我們的GPU採購計劃： 雲知大腦升級 [UOP allocati"
+        },
+        {
+          "rank": 5,
+          "pages": [
+            343
+          ],
+          "coverage": 0.0833,
+          "chunk_id": "chk_2025_09678_雲知聲_p343_txt357",
+          "preview": "人才培養与共同研發 [UOP allocation facts] 約45.6%或80.5百萬港元將於未來五年被用於提高我們的研發能力，所得款項的詳細分類將分配如下： | о 約30.8%或54.4百萬港元將被分配用於投資我們的Atlas AI基礎設施。我們將不斷優化我們的超級計算平台的調度系統，以提高AI模型訓練效率。我們計劃密切跟進和繼續升級主流機器學習算"
+        }
+      ],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.0833,
+          "keyword_coverage": 0.6667,
+          "keyword_hit": [
+            "所得款项",
+            "研发"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 319,
+          "signed_delta": -319,
+          "expected_page": 343,
+          "returned_page": 24
+        },
+        "cross_page_chunk": false,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          24
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 3
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "manual_new_董飞飞_cat_fin_010",
+      "experiment": "G_plus_E",
+      "dataset": "manual_new_annotators_v1",
+      "category": "financial_risk",
+      "question": "辉煌明天是否存在负经营现金流、垫付款与客户回款错配造成的营运资金压力？",
+      "document_id": "2020_01351_輝煌明天",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          49,
+          50
+        ],
+        [
+          53,
+          53
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          43,
+          44
+        ],
+        [
+          47,
+          47
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          43,
+          44
+        ],
+        [
+          47,
+          47
+        ]
+      ],
+      "expected_keywords": [
+        "预付款项",
+        "贸易应收款项",
+        "时间错配",
+        "负经营现金流",
+        "流动资金风险"
+      ],
+      "gold_preview": "我們在向媒體發佈商購買虛擬代幣與收到客戶付款之間出現時間錯配，為我們的中介服務帶來龐大現金需求……我們在預付款項安排及客戶後續結算方面面臨流動資金風險。截至2018年12月31日及2019年12月31日止各年度以及截至2020年4月30日止四個月，我們分別錄得經營活動所用現金淨額約人民幣0.6百萬元、人民幣12.2百萬元及人民幣15.1百萬元。此外，我們預計截至2020年12月31日止年度將錄得負經營現金流量。。",
+      "hit_chunk_id": "chk_2020_01351_輝煌明天_p19_txt029",
+      "hit_pages": [
+        19,
+        20
+      ],
+      "hit_section_path": [
+        "概 要"
+      ],
+      "hit_preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流動資金水平，包括(i)對新客戶進行信用評估；(ii)定期審查客戶的信譽；(iii",
+      "hit_coverage": 0.375,
+      "hit_keyword_coverage": 0.2,
+      "hit_keyword_hit": [
+        "负经营现金流"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "於往績記錄期及直至最後實際可行日期，我們主要以內部產生資金、股東及董事貸款以及股東資本貢獻撥付我們的現金需求。我們於2019年12月取得首筆銀行貸款。我們訂立三份業務保理協議，將我們的貿易應收款項轉入中國一間商業銀行。我們於截至2018年12月31日及2019年12月31日止年度以及截至2020年4月30日止四個月錄得負經營現金流量。為了管理日後的現金流量狀況，我們採納監察政策及程序以管理資本及流動資金水平，包括(i)對新客戶進行信用評估；(ii)定期審查客戶的信譽；(iii)每月審查貿易應收款項的賬齡；及(iv)對逾期的貿易應收款項採取後續行動。有關我們的資本及流動資金管理政策詳情，請參閱本招股章程「財務資料－流動資金及資本結構一",
+      "chunk_pages_field": [
+        19,
+        20
+      ],
+      "evidence_ids": [
+        "ev_2020_01351_輝煌明天_p19_txt005",
+        "ev_2020_01351_輝煌明天_p20_txt001",
+        "ev_2020_01351_輝煌明天_p20_txt002",
+        "ev_2020_01351_輝煌明天_p20_txt003",
+        "ev_2020_01351_輝煌明天_p20_txt004",
+        "ev_2020_01351_輝煌明天_p20_txt005"
+      ],
+      "evidence_pages": [
+        19,
+        20
+      ],
+      "alternative_page_hit_candidates": [],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.3913,
+          "keyword_coverage": 0.0,
+          "keyword_hit": [],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 29,
+          "signed_delta": -29,
+          "expected_page": 49,
+          "returned_page": 20
+        },
+        "cross_page_chunk": true,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          19,
+          20
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": false,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 0
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "manual_new_董飞飞_seed_bus_002",
+      "experiment": "G_plus_E",
+      "dataset": "manual_new_annotators_v1",
+      "category": "business_risk",
+      "question": "辉煌明天的服务成本是否集中于少数供应商，是否存在供应商依赖？",
+      "document_id": "2020_01351_輝煌明天",
+      "failure_reason": "content_hit_page_mismatch",
+      "is_content_hit_page_mismatch": true,
+      "gold_rank": 1,
+      "recall_at_1": true,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          209,
+          211
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          203,
+          205
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          203,
+          205
+        ]
+      ],
+      "expected_keywords": [
+        "五大供应商",
+        "最大供应商",
+        "服务成本",
+        "47.2%",
+        "25.5%"
+      ],
+      "gold_preview": "截至2019年12月31日止三個年度各年及截至2020年4月30日止四個月，我們的五大供應商分別佔我們的服務成本約46.2%、30.2%、35.6%及47.2%。同期，我們的最大供應商分別佔我們的服務成本約17.0%、12.1%、13.6%及25.5%。",
+      "hit_chunk_id": "chk_2020_01351_輝煌明天_p12_txt018",
+      "hit_pages": [
+        12,
+        13
+      ],
+      "hit_section_path": [
+        "概 要"
+      ],
+      "hit_preview": "截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們的五大供應商分別佔我們的服務成本約46 .2%、30 .2%、35 .6%及47 .2%。同期，我們的最大供應商分別佔我們的服務成本約17 .0%、12 .1%、13 .6%及25 .5%。詳情請參閱本招股章程「業務－我們的供應商」一節。 客戶與供應商的重疊 我們的部分客戶亦為我們的供應商，反之亦然。於往績記錄期，來自兼為主要客戶及供應商的毛收入於我們的總收入佔比介乎約0 .0001%至24 .0%，",
+      "hit_coverage": 0.95,
+      "hit_keyword_coverage": 1.0,
+      "hit_keyword_hit": [
+        "五大供应商",
+        "最大供应商",
+        "服务成本",
+        "47.2%",
+        "25.5%"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "截至2019年12月31日止三個年度及截至2020年4月30日止四個月，我們的五大供應商分別佔我們的服務成本約46 .2%、30 .2%、35 .6%及47 .2%。同期，我們的最大供應商分別佔我們的服務成本約17 .0%、12 .1%、13 .6%及25 .5%。詳情請參閱本招股章程「業務－我們的供應商」一節。 客戶與供應商的重疊 我們的部分客戶亦為我們的供應商，反之亦然。於往績記錄期，來自兼為主要客戶及供應商的毛收入於我們的總收入佔比介乎約0 .0001%至24 .0%，而於總廣告成本的 佔比則介乎約0 .0003%至23 .0%。更多詳情請參閱本招股章程「業務－我們的供應商－客戶與供應商的重疊」一節。 我們的歷史財務表現",
+      "chunk_pages_field": [
+        12,
+        13
+      ],
+      "evidence_ids": [
+        "ev_2020_01351_輝煌明天_p12_txt007",
+        "ev_2020_01351_輝煌明天_p12_txt008",
+        "ev_2020_01351_輝煌明天_p12_txt009",
+        "ev_2020_01351_輝煌明天_p13_txt001",
+        "ev_2020_01351_輝煌明天_p13_txt002"
+      ],
+      "evidence_pages": [
+        12,
+        13
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 2,
+          "pages": [
+            209,
+            210,
+            212,
+            213,
+            214
+          ],
+          "coverage": 1.0,
+          "chunk_id": "chk_2020_01351_輝煌明天_p209_txt223",
+          "preview": "截至2019年12月31日止三個年度各年及截至2020年4月30日止四個月，我們的五大供應商分別佔我們的服務成本約46 .2%、30 .2%、35 .6%及47 .2%。同期，我們的最大供應商分別佔我們的服務成本約17 .0%、12 .1%、13 .6%及25 .5%。於往績記錄期，我們的五大供應商向我們授出的信貸期自發票日期起計介乎三至20個營業日（否則供"
+        }
+      ],
+      "classification": {
+        "root_cause": "A_multi_location_disclosure",
+        "supports_answer": true,
+        "support_metrics": {
+          "supports_answer": true,
+          "coverage": 0.9474,
+          "keyword_coverage": 1.0,
+          "keyword_hit": [
+            "五大供应商",
+            "最大供应商",
+            "服务成本",
+            "47.2%",
+            "25.5%"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 196,
+          "signed_delta": -196,
+          "expected_page": 209,
+          "returned_page": 13
+        },
+        "cross_page_chunk": true,
+        "has_uop_enrichment": false,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          12,
+          13
+        ],
+        "ranking_success": true,
+        "page_grounding_fail_only": true,
+        "signals": {
+          "multi_location": true,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": true,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 1
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": true,
+        "count_as_page_grounding_fail_only": true,
+        "should_not_zero_out_content_hit": true
+      },
+      "code_change_needed": false,
+      "minimal_fix_layer": "no_code_metric_split_or_gold_multi_location_annotation"
+    },
+    {
+      "case_id": "manual_ts_yideng_ipo_001",
+      "experiment": "G_plus_E",
+      "dataset": "manual_gold_v1",
+      "category": "ipo_specific_risk",
+      "question": "伊登软件计划如何使用IPO募集资金？其业务扩张计划的商业合理性如何？",
+      "document_id": "2020_01147_伊登軟件",
+      "failure_reason": "gold_recalled_but_rank_low",
+      "is_content_hit_page_mismatch": false,
+      "gold_rank": 2,
+      "recall_at_1": false,
+      "recall_at_5": true,
+      "page_hit_any": true,
+      "expected_physical_page_ranges_0_based": [
+        [
+          283,
+          284
+        ]
+      ],
+      "expected_page_ranges": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_page_labels": [
+        [
+          277,
+          278
+        ]
+      ],
+      "expected_keywords": [
+        "所得款项",
+        "业务扩张",
+        "研发",
+        "云服务"
+      ],
+      "gold_preview": "– 277 – 未來計劃及所得款項用途 未來計劃 有關我們未來計劃的詳情說明，請參閱本招股章程「業務－我們的策略」一段。 所得款項用途 假設發售價為每股股份0.25港元（即發售價）及超額配股權並無獲行使，則扣除股份發售的包 銷佣金、成本及其他估計開支後，我們估計將自股份發售收取所得款項淨額約74.0百萬港元。 根據我們的業務策略，我們擬將股份發售所得款項淨額用作以下用途： • 股份發售所得款項淨額的約33.0%（或約24.4百萬港元），將於截至2022年12月31日止年 度上",
+      "hit_chunk_id": "chk_2020_01147_伊登軟件_p285_txt321",
+      "hit_pages": [
+        285
+      ],
+      "hit_section_path": [
+        "未來計劃及所得款項用途"
+      ],
+      "hit_preview": "債務融資的限制 [UOP allocation facts] 股份發售所得款項淨額的約10.0%（或約7.4百萬港元），將用作營運資金及一般公司用途。",
+      "hit_coverage": 0.0833,
+      "hit_keyword_coverage": 0.25,
+      "hit_keyword_hit": [
+        "所得款项"
+      ],
+      "hit_page_hit": false,
+      "chunk_text_preview": "債務融資的限制\n\n[UOP allocation facts] 股份發售所得款項淨額的約10.0%（或約7.4百萬港元），將用作營運資金及一般公司用途。",
+      "chunk_pages_field": [
+        285
+      ],
+      "evidence_ids": [
+        "ev_2020_01147_伊登軟件_p285_txt003"
+      ],
+      "evidence_pages": [
+        285
+      ],
+      "alternative_page_hit_candidates": [
+        {
+          "rank": 2,
+          "pages": [
+            283,
+            284
+          ],
+          "coverage": 0.25,
+          "chunk_id": "chk_2020_01147_伊登軟件_p283_txt319",
+          "preview": "股份發售所得款項淨額的約16.7%（或約12.4百萬港元），將於截至2020年12月31日止年度前用作備存履約保證金的資金； 股份發售所得款項淨額的約5.2%（或約3.8百萬港元），將於截至2022年12月31日止年度上半年前用於通過參與IT行業展會、IT有獎競賽以及舉辦營銷活動加強我們的營銷力度及提升我們的品牌知名度； 股份發售所得款項淨額的約10.0%（"
+        },
+        {
+          "rank": 4,
+          "pages": [
+            282,
+            283
+          ],
+          "coverage": 0.9167,
+          "chunk_id": "chk_2020_01147_伊登軟件_p282_txt318",
+          "preview": "除預期將產生的與上市有關的一次過及非經常性開支以及預期自客戶A所得收益將因美國禁令於截至2020年12月31日止年度減少外，董事確認，直至本招股章程日期，我們的財務或經營狀況自2019年12月31日（本招股章程附錄一所載會計師報告所呈報期間結束之日）以來並無重大不利變動，自2019年12月31日以來並無事件會對本招股章程附錄一會計師報告所載資料造成重大影響。"
+        }
+      ],
+      "classification": {
+        "root_cause": "E_true_page_grounding_error",
+        "supports_answer": false,
+        "support_metrics": {
+          "supports_answer": false,
+          "coverage": 0.125,
+          "keyword_coverage": 0.25,
+          "keyword_hit": [
+            "所得款项"
+          ],
+          "support_source": "full_text"
+        },
+        "nearest_delta": {
+          "abs_delta": 1,
+          "signed_delta": 1,
+          "expected_page": 284,
+          "returned_page": 285
+        },
+        "cross_page_chunk": false,
+        "has_uop_enrichment": true,
+        "page_hit_any_in_topk": true,
+        "evidence_pages": [
+          285
+        ],
+        "ranking_success": false,
+        "page_grounding_fail_only": false,
+        "signals": {
+          "multi_location": false,
+          "packing_span": false,
+          "gold_basis": false,
+          "evaluator_strict": false,
+          "true_error": false,
+          "strong_alt_page_hit": true,
+          "evidence_span_wider_than_chunk_pages": false,
+          "alt_page_hit_count_in_brief": 2
+        }
+      },
+      "metric_accounting": {
+        "count_as_ranking_or_sufficiency_success": false,
+        "count_as_page_grounding_fail_only": false,
+        "should_not_zero_out_content_hit": false
+      },
+      "code_change_needed": true,
+      "minimal_fix_layer": "retrieval_or_chunk_page_grounding_minifix"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "gold_001",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "customer_concentration",
+    "risk_element": "最大客户及五大客户收入占比较高，存在客户集中度风险。",
+    "query": "德合集團 最大客户 五大客户 收益占比 客户集中度风险",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p10_txt002"],
+    "expected_pages": [10]
+  },
+  {
+    "id": "gold_002",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "supplier_concentration",
+    "risk_element": "最大供应商及五大供应商采购占比较高，存在供应商集中度风险。",
+    "query": "德合集團 最大供应商 五大供应商 采购额占比 供应商集中度风险",
+    "layer": "market",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p10_txt004"],
+    "expected_pages": [10]
+  },
+  {
+    "id": "gold_003",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "cash_flow_pressure",
+    "risk_element": "项目初期可能产生净现金流出，客户付款延迟可能造成现金流错配。",
+    "query": "德合集團 项目初期 净现金流出 现金流量错配 客户付款",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p41_txt005"],
+    "expected_pages": [41]
+  },
+  {
+    "id": "gold_004",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "operating_cash_outflow",
+    "risk_element": "经营活动所用现金净额约58.3百万港元，存在经营现金流消耗压力。",
+    "query": "德合集團 经营活动所用现金净额 58.3 百万港元 现金流出",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p14_txt004"],
+    "expected_pages": [14]
+  },
+  {
+    "id": "gold_005",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "litigation",
+    "risk_element": "存在正在进行的诉讼，涉及租赁纠纷、赔偿及上诉。",
+    "query": "德合集團 正在进行的诉讼 租赁纠纷 创基工程 上诉",
+    "layer": "legal",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p16_txt006"],
+    "expected_pages": [16]
+  },
+  {
+    "id": "gold_006",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "license_qualification",
+    "risk_element": "经营装修业务需持有若干资格及注册，存在牌照资质合规风险。",
+    "query": "德合集團 牌照 资格 注册 装修业务 合规风险",
+    "layer": "legal",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p49_txt009"],
+    "expected_pages": [49]
+  },
+  {
+    "id": "gold_007",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "loss",
+    "risk_element": "最近四个月录得亏损净额增加，存在短期盈利波动风险。",
+    "query": "德合集團 截至二零二零年四月 亏损净额增加 收益减少",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p17_txt009"],
+    "expected_pages": [17]
+  },
+  {
+    "id": "gold_008",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "gross_margin",
+    "risk_element": "毛利及毛利率是判断盈利质量的重要指标。",
+    "query": "德合集團 毛利率 毛利总额 装修服务 盈利质量",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p13_txt008"],
+    "expected_pages": [13]
+  },
+  {
+    "id": "gold_009",
+    "document_id": "2020_00368_德合集團",
+    "company": "德合集團",
+    "risk_type": "debt_ratio",
+    "risk_element": "资产负债比率以总债务除以权益总额计算，债务包括银行借款及租赁负债。",
+    "query": "德合集團 资产负债比率 银行借款 租赁负债 债务指标",
+    "layer": "financial",
+    "expected_evidence_ids": ["ev_2020_00368_德合集團_p15_txt008"],
+    "expected_pages": [15]
+  }
+]
